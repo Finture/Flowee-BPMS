@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.gson;
+package com.finture.bpm.qa.upgrade.gson;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 import java.util.Date;
 
@@ -37,7 +37,7 @@ public class TimerChangeProcessDefinitionScenario {
       public void execute(ProcessEngine engine, String scenarioName) {
 
         String processDefinitionIdWithoutTenant = engine.getRepositoryService().createDeployment()
-          .addClasspathResource("org/camunda/bpm/qa/upgrade/gson/oneTaskProcessTimer.bpmn20.xml")
+          .addClasspathResource("com/finture/bpm/qa/upgrade/gson/oneTaskProcessTimer.bpmn20.xml")
           .tenantId(null)
           .deployWithResult()
           .getDeployedProcessDefinitions()
@@ -55,7 +55,7 @@ public class TimerChangeProcessDefinitionScenario {
           .suspend();
 
         String processDefinitionIdWithTenant = engine.getRepositoryService().createDeployment()
-          .addClasspathResource("org/camunda/bpm/qa/upgrade/gson/oneTaskProcessTimer.bpmn20.xml")
+          .addClasspathResource("com/finture/bpm/qa/upgrade/gson/oneTaskProcessTimer.bpmn20.xml")
           .tenantId("aTenantId")
           .deployWithResult()
           .getDeployedProcessDefinitions()

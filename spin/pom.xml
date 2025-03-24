@@ -2,15 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-parent</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../parent</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.spin</groupId>
-  <artifactId>camunda-spin-root</artifactId>
-  <name>camunda Spin - root</name>
+  <groupId>com.finture.spin</groupId>
+  <artifactId>flowee-bpms-spin-root</artifactId>
+  <name>Flowee BPMS Spin - root</name>
   <inceptionYear>2014</inceptionYear>
   <packaging>pom</packaging>
 
@@ -36,8 +36,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -146,7 +146,7 @@
           <version>3.5.0</version>
           <configuration>
             <instructions>
-              <Export-Package>org.camunda.spin*</Export-Package>
+              <Export-Package>com.finture.spin*</Export-Package>
             </instructions>
           </configuration>
         </plugin>
@@ -189,10 +189,10 @@
   </profiles>
 
   <scm>
-    <url>https://github.com/camunda/camunda-bpm-platform</url>
-    <connection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</connection>
-    <developerConnection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</developerConnection>
-    <tag>7.22.0</tag>
+    <url>https://github.com/flowee-bpms/flowee-bpms-bpm-platform</url>
+    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</connection>
+    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</developerConnection>
+    <tag>0.1</tag>
   </scm>
 
 </project>

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.test;
+package com.finture.bpm.container.impl.jboss.test;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

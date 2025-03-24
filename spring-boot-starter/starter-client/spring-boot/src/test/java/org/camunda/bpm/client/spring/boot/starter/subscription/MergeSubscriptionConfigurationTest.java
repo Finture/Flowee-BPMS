@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.subscription;
+package com.finture.bpm.client.spring.boot.starter.subscription;
 
-import org.camunda.bpm.client.ExternalTaskClient;
-import org.camunda.bpm.client.spring.SpringTopicSubscription;
-import org.camunda.bpm.client.spring.boot.starter.subscription.configuration.FullSubscriptionConfiguration;
-import org.camunda.bpm.client.spring.boot.starter.ParsePropertiesHelper;
-import org.camunda.bpm.client.spring.boot.starter.impl.ClientAutoConfiguration;
+import com.finture.bpm.client.ExternalTaskClient;
+import com.finture.bpm.client.spring.SpringTopicSubscription;
+import com.finture.bpm.client.spring.boot.starter.subscription.configuration.FullSubscriptionConfiguration;
+import com.finture.bpm.client.spring.boot.starter.ParsePropertiesHelper;
+import com.finture.bpm.client.spring.boot.starter.impl.ClientAutoConfiguration;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;

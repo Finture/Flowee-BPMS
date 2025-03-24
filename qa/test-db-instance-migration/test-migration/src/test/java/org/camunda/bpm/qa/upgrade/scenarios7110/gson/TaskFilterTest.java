@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.gson;
+package com.finture.bpm.qa.upgrade.scenarios7110.gson;
 
-import org.camunda.bpm.engine.filter.Filter;
-import org.camunda.bpm.engine.impl.QueryEntityRelationCondition;
-import org.camunda.bpm.engine.impl.QueryOperator;
-import org.camunda.bpm.engine.impl.QueryOrderingProperty;
-import org.camunda.bpm.engine.impl.TaskQueryImpl;
-import org.camunda.bpm.engine.impl.TaskQueryVariableValue;
-import org.camunda.bpm.engine.impl.persistence.entity.SuspensionState;
-import org.camunda.bpm.engine.task.DelegationState;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.engine.variable.type.ValueType;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.filter.Filter;
+import com.finture.bpm.engine.impl.QueryEntityRelationCondition;
+import com.finture.bpm.engine.impl.QueryOperator;
+import com.finture.bpm.engine.impl.QueryOrderingProperty;
+import com.finture.bpm.engine.impl.TaskQueryImpl;
+import com.finture.bpm.engine.impl.TaskQueryVariableValue;
+import com.finture.bpm.engine.impl.persistence.entity.SuspensionState;
+import com.finture.bpm.engine.task.DelegationState;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.variable.type.ValueType;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Rule;
 import org.junit.Test;
 

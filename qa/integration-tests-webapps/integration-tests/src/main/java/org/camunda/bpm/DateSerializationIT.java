@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm;
+package com.finture.bpm;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 
 import javax.ws.rs.core.MediaType;
 
-import org.camunda.bpm.engine.rest.mapper.JacksonConfigurator;
+import com.finture.bpm.engine.rest.mapper.JacksonConfigurator;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;

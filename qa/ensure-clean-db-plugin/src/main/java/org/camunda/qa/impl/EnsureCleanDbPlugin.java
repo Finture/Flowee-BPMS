@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.qa.impl;
+package com.finture.qa.impl;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.application.ProcessApplicationInterface;
-import org.camunda.bpm.container.impl.plugin.BpmPlatformPlugin;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.ManagementServiceImpl;
-import org.camunda.bpm.engine.impl.management.DatabasePurgeReport;
-import org.camunda.bpm.engine.impl.management.PurgeReport;
-import org.camunda.bpm.engine.impl.persistence.deploy.cache.CachePurgeReport;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.application.ProcessApplicationInterface;
+import com.finture.bpm.container.impl.plugin.BpmPlatformPlugin;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.ManagementServiceImpl;
+import com.finture.bpm.engine.impl.management.DatabasePurgeReport;
+import com.finture.bpm.engine.impl.management.PurgeReport;
+import com.finture.bpm.engine.impl.persistence.deploy.cache.CachePurgeReport;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;

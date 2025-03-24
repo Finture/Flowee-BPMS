@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-qa-integration-tests-webapps</artifactId>
-  <name>Camunda Platform - QA Integration Tests - Webapps ITs</name>
+  <artifactId>flowee-bpms-qa-integration-tests-webapps</artifactId>
+  <name>Flowee BPMS Platform - QA Integration Tests - Webapps ITs</name>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa-integration-tests-webapps-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa-integration-tests-webapps-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>../</relativePath>
   </parent>
   
@@ -43,13 +43,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest</artifactId>
+      <version>${project.version}</version>
       <type>jar</type>
       <classifier>classes</classifier>
       <scope>provided</scope>

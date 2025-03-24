@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios720.boundary;
+package com.finture.bpm.qa.upgrade.scenarios720.boundary;
 
-import static org.camunda.bpm.qa.upgrade.util.ActivityInstanceAssert.assertThat;
-import static org.camunda.bpm.qa.upgrade.util.ActivityInstanceAssert.describeActivityInstanceTree;
+import static com.finture.bpm.qa.upgrade.util.ActivityInstanceAssert.assertThat;
+import static com.finture.bpm.qa.upgrade.util.ActivityInstanceAssert.describeActivityInstanceTree;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.runtime.ActivityInstance;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.runtime.ActivityInstance;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

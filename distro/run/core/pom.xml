@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.run</groupId>
-    <artifactId>camunda-bpm-run-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.run</groupId>
+    <artifactId>flowee-bpms-bpm-run-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>camunda-bpm-run-core</artifactId>
-  <name>Camunda Platform - Run - Core</name>
+  <artifactId>flowee-bpms-bpm-run-core</artifactId>
+  <name>Flowee BPMS Platform - Run - Core</name>
   <packaging>jar</packaging>
 
   <properties>
@@ -25,33 +25,39 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-spin</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-connect</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-all</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-all</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.identity</groupId>
-      <artifactId>camunda-identity-ldap</artifactId>
+      <groupId>com.finture.bpm.identity</groupId>
+      <artifactId>flowee-bpms-identity-ldap</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter-rest</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -132,8 +138,8 @@
           <layout>ZIP</layout>
           <excludes>
             <exclude>
-              <groupId>org.camunda.bpm.springboot</groupId>
-              <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+              <groupId>com.finture.bpm.springboot</groupId>
+              <artifactId>flowee-bpms-bpm-spring-boot-starter-rest</artifactId>
             </exclude>
           </excludes>
         </configuration>

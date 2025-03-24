@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.el;
+package com.finture.bpm.integrationtest.functional.el;
 
-import org.camunda.bpm.application.AbstractProcessApplication;
-import org.camunda.bpm.application.ProcessApplicationElResolver;
-import org.camunda.bpm.impl.juel.jakarta.el.ELResolver;
+import com.finture.bpm.application.AbstractProcessApplication;
+import com.finture.bpm.application.ProcessApplicationElResolver;
+import com.finture.bpm.impl.juel.jakarta.el.ELResolver;
 
 /**
  * @author Thorben Lindhauer

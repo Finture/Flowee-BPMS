@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.extension.resource;
+package com.finture.bpm.container.impl.jboss.extension.resource;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.camunda.bpm.container.impl.jboss.extension.BpmPlatformExtension;
-import org.camunda.bpm.container.impl.jboss.extension.ModelConstants;
-import org.camunda.bpm.container.impl.jboss.extension.SubsystemAttributeDefinitons;
-import org.camunda.bpm.container.impl.jboss.extension.handler.JobExecutorAdd;
-import org.camunda.bpm.container.impl.jboss.extension.handler.JobExecutorRemove;
+import com.finture.bpm.container.impl.jboss.extension.BpmPlatformExtension;
+import com.finture.bpm.container.impl.jboss.extension.ModelConstants;
+import com.finture.bpm.container.impl.jboss.extension.SubsystemAttributeDefinitons;
+import com.finture.bpm.container.impl.jboss.extension.handler.JobExecutorAdd;
+import com.finture.bpm.container.impl.jboss.extension.handler.JobExecutorRemove;
 import org.jboss.as.controller.AttributeDefinition;
 import org.jboss.as.controller.PersistentResourceDefinition;
 

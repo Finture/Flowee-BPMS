@@ -4,21 +4,21 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.quarkus</groupId>
-    <artifactId>camunda-bpm-quarkus-engine-parent</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.quarkus</groupId>
+    <artifactId>flowee-bpms-bpm-quarkus-engine-parent</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-bpm-quarkus-engine-deployment</artifactId>
+  <artifactId>flowee-bpms-bpm-quarkus-engine-deployment</artifactId>
 
-  <name>Camunda Platform - Quarkus Extension - Engine - Deployment</name>
+  <name>Flowee BPMS Platform - Quarkus Extension - Engine - Deployment</name>
 
   <dependencies>
 
-    <!-- Camunda dependencies -->
+    <!-- Flowee BPMS dependencies -->
     <dependency>
-      <groupId>org.camunda.bpm.quarkus</groupId>
-      <artifactId>camunda-bpm-quarkus-engine</artifactId>
+      <groupId>com.finture.bpm.quarkus</groupId>
+      <artifactId>flowee-bpms-bpm-quarkus-engine</artifactId>
       <version>${project.version}</version>
     </dependency>
 

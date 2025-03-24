@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.util;
+package com.finture.bpm.integrationtest.util;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.ProcessEngineService;
-import org.camunda.bpm.engine.CaseService;
-import org.camunda.bpm.engine.DecisionService;
-import org.camunda.bpm.engine.FormService;
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.impl.ProcessEngineImpl;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.jobexecutor.JobExecutor;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.Job;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.ProcessEngineService;
+import com.finture.bpm.engine.CaseService;
+import com.finture.bpm.engine.DecisionService;
+import com.finture.bpm.engine.FormService;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.impl.ProcessEngineImpl;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.jobexecutor.JobExecutor;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.Job;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
@@ -65,7 +65,7 @@ public abstract class AbstractFoxPlatformIntegrationTest {
 
   public static WebArchive initWebArchiveDeployment(String name, String processesXmlPath) {
     WebArchive archive = ShrinkWrap.create(WebArchive.class, name)
-              .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+              .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
               .addAsLibraries(DeploymentHelper.getEngineCdi())
               .addAsResource(processesXmlPath, "META-INF/processes.xml")
               .addClass(AbstractFoxPlatformIntegrationTest.class)

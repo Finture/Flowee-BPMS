@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.request;
+package com.finture.bpm.integrationtest.functional.ejb.request;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.InvocationCounter;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterDelegateBean;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterService;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterServiceBean;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterServiceLocal;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.InvocationCounter;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterDelegateBean;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterService;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterServiceBean;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.InvocationCounterServiceLocal;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -53,13 +53,13 @@ public class JobExecutorRequestContextRemoteInvocationTest extends AbstractFoxPl
     return initWebArchiveDeployment()
       .addClass(InvocationCounterDelegateBean.class)
       .addClass(InvocationCounterService.class) // interface (remote)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/request/JobExecutorRequestContextRemoteInvocationTest.testContextPropagationEjbRemote.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/request/JobExecutorRequestContextRemoteInvocationTest.testContextPropagationEjbRemote.bpmn20.xml");
   }
 
   @Deployment(order=1)
   public static WebArchive delegateDeployment() {
     return ShrinkWrap.create(WebArchive.class, "service.war")
-      .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+      .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
       .addClass(AbstractFoxPlatformIntegrationTest.class)
       .addClass(InvocationCounter.class) // @RequestScoped CDI bean
       .addClass(InvocationCounterService.class) // interface (remote)

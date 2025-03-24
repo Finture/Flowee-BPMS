@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios720.multiinstance;
+package com.finture.bpm.qa.upgrade.scenarios720.multiinstance;
 
-import static org.camunda.bpm.qa.upgrade.util.ActivityInstanceAssert.assertThat;
-import static org.camunda.bpm.qa.upgrade.util.ActivityInstanceAssert.describeActivityInstanceTree;
+import static com.finture.bpm.qa.upgrade.util.ActivityInstanceAssert.assertThat;
+import static com.finture.bpm.qa.upgrade.util.ActivityInstanceAssert.describeActivityInstanceTree;
 
-import org.camunda.bpm.engine.migration.MigrationPlan;
-import org.camunda.bpm.engine.runtime.ActivityInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.migration.MigrationPlan;
+import com.finture.bpm.engine.runtime.ActivityInstance;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Rule;

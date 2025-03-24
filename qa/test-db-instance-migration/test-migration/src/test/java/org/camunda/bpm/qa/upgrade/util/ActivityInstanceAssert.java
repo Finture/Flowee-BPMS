@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.util;
+package com.finture.bpm.qa.upgrade.util;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
-import org.camunda.bpm.engine.impl.bpmn.parser.BpmnParse;
-import org.camunda.bpm.engine.runtime.ActivityInstance;
-import org.camunda.bpm.engine.runtime.TransitionInstance;
+import com.finture.bpm.engine.impl.bpmn.parser.BpmnParse;
+import com.finture.bpm.engine.runtime.ActivityInstance;
+import com.finture.bpm.engine.runtime.TransitionInstance;
 import org.junit.Assert;
 
 /**

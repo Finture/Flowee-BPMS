@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>camunda-engine-rest-core-jakarta</artifactId>
-  <name>Camunda Platform - engine - REST Jakarta</name>
+  <artifactId>flowee-bpms-engine-rest-core-jakarta</artifactId>
+  <name>Flowee BPMS Platform - engine - REST Jakarta</name>
   <packaging>jar</packaging>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-engine-rest-root</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-engine-rest-root</artifactId>
     <relativePath>../</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
   <properties>
@@ -102,8 +102,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -114,8 +115,10 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
+      <version>${project.version}</version>
+
       <scope>provided</scope>
     </dependency>
 
@@ -124,16 +127,16 @@
       BOMs must be installed before this module is built
     -->
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-bom</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-bom</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-core-internal-dependencies</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <scope>test</scope>
@@ -191,8 +194,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-testing</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-testing</artifactId>
+      <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 

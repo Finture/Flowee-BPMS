@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.batch;
+package com.finture.bpm.qa.rolling.update.batch;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 import java.util.List;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.history.HistoricActivityInstance;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
-import org.camunda.bpm.qa.rolling.update.RollingUpdateConstants;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.history.HistoricActivityInstance;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
+import com.finture.bpm.qa.rolling.update.RollingUpdateConstants;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Before;
 import org.junit.Test;
 

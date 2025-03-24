@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.dmn;
+package com.finture.bpm.qa.performance.engine.dmn;
 
 import java.util.Map;
 
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
-import org.camunda.bpm.qa.performance.engine.steps.StartProcessInstanceStep;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
+import com.finture.bpm.qa.performance.engine.steps.StartProcessInstanceStep;
 import org.junit.Test;
 
 /**
@@ -32,8 +32,8 @@ import org.junit.Test;
  */
 public class DmnBusinessRuleTaskTest extends ProcessEnginePerformanceTestCase {
 
-  private final static String BPMN = "org/camunda/bpm/qa/performance/engine/dmn/DmnBusinessRuleTaskTest.businessRuleTask.bpmn";
-  private final static String DMN_DIR = "org/camunda/bpm/qa/performance/engine/dmn/";
+  private final static String BPMN = "com/finture/bpm/qa/performance/engine/dmn/DmnBusinessRuleTaskTest.businessRuleTask.bpmn";
+  private final static String DMN_DIR = "com/finture/bpm/qa/performance/engine/dmn/";
 
   private static final String PROCESS_DEFINITION_KEY = "Process";
 

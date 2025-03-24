@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.timestamp;
+package com.finture.bpm.qa.rolling.update.timestamp;
 
-import org.camunda.bpm.engine.runtime.Incident;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.runtime.Incident;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

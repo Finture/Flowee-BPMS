@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: User Forum
-    url: https://forum.camunda.io/
-    about: Ask questions about using Camunda Platform here.
+    url: https://forum.flowee-bpms.io/
+    about: Ask questions about using Flowee BPMS Platform here.
   - name: Enterprise Support
-    url: https://docs.camunda.org/enterprise/support/
+    url: https://docs.flowee-bpms.org/enterprise/support/
     about: As an enterprise customer, contact our product support here.

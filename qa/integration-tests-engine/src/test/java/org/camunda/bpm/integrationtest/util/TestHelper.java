@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.util;
+package com.finture.bpm.integrationtest.util;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.cdi.impl.util.ProgrammaticBeanLookup;
-import org.camunda.bpm.engine.impl.util.IoUtil;
-import org.camunda.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.cdi.impl.util.ProgrammaticBeanLookup;
+import com.finture.bpm.engine.impl.util.IoUtil;
+import com.finture.bpm.engine.repository.ProcessDefinition;
 import org.jboss.shrinkwrap.api.asset.Asset;
 import org.jboss.shrinkwrap.api.asset.ByteArrayAsset;
 import org.junit.Assert;

@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.gson.batch;
+package com.finture.bpm.qa.upgrade.scenarios7110.gson.batch;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Rule;
 import org.junit.Test;
 

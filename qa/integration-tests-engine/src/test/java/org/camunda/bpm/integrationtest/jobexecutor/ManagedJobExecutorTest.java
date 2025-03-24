@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineException;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.cdi.impl.util.ProgrammaticBeanLookup;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.jobexecutor.JobExecutor;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.ManagedJobExecutorBean;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineException;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.cdi.impl.util.ProgrammaticBeanLookup;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.jobexecutor.JobExecutor;
+import com.finture.bpm.integrationtest.jobexecutor.beans.ManagedJobExecutorBean;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -45,11 +45,11 @@ public class ManagedJobExecutorTest {
   @Deployment
   public static WebArchive createDeployment() {
     WebArchive archive = ShrinkWrap.create(WebArchive.class, "test.war")
-        .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+        .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
         .addAsLibraries(DeploymentHelper.getEngineCdi())
         .addClass(ManagedJobExecutorTest.class)
         .addClass(ManagedJobExecutorBean.class)
-        .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/ManagedJobExecutorTest.testManagedExecutorUsed.bpmn20.xml");
+        .addAsResource("com/finture/bpm/integrationtest/jobexecutor/ManagedJobExecutorTest.testManagedExecutorUsed.bpmn20.xml");
 
     TestContainer.addContainerSpecificResourcesForNonPa(archive);
 
@@ -76,8 +76,8 @@ public class ManagedJobExecutorTest {
 
   @Test
   public void testManagedExecutorUsed() throws InterruptedException {
-    org.camunda.bpm.engine.repository.Deployment deployment = processEngine.getRepositoryService().createDeployment()
-      .addClasspathResource("org/camunda/bpm/integrationtest/jobexecutor/ManagedJobExecutorTest.testManagedExecutorUsed.bpmn20.xml")
+    com.finture.bpm.engine.repository.Deployment deployment = processEngine.getRepositoryService().createDeployment()
+      .addClasspathResource("com/finture/bpm/integrationtest/jobexecutor/ManagedJobExecutorTest.testManagedExecutorUsed.bpmn20.xml")
       .deploy();
 
     try {

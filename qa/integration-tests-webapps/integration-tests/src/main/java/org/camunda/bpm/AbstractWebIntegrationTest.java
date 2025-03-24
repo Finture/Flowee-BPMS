@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm;
+package com.finture.bpm;
 
 import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ws.rs.core.MediaType;
 
-import org.camunda.bpm.util.TestUtil;
+import com.finture.bpm.util.TestUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriverService;

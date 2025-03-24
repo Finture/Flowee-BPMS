@@ -1,0 +1,1 @@
+order = S(input, "application/xml").mapTo("com.finture.spin.xml.mapping.Order")

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.upgrade.ScenarioRunner;
-import org.camunda.bpm.qa.upgrade.variable.CreateProcessInstanceWithVariableScenario;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.upgrade.ScenarioRunner;
+import com.finture.bpm.qa.upgrade.variable.CreateProcessInstanceWithVariableScenario;
 
 public class TestFixture {
 

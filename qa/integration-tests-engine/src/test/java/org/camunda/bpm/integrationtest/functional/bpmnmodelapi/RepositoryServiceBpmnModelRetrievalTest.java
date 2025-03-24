@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.bpmnmodelapi;
+package com.finture.bpm.integrationtest.functional.bpmnmodelapi;
 
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.asset.StringAsset;

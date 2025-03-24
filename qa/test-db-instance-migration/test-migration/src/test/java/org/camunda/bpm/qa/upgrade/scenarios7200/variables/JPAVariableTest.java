@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7200.variables;
+package com.finture.bpm.qa.upgrade.scenarios7200.variables;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.Map;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.ProcessEngineException;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.ProcessEngineException;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

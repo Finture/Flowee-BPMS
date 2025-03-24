@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.useroperationlog;
+package com.finture.bpm.qa.upgrade.scenarios7110.useroperationlog;
 
 
-import static org.camunda.bpm.engine.authorization.Resources.PROCESS_DEFINITION;
-import static org.camunda.bpm.engine.authorization.Permissions.DELETE_HISTORY;
+import static com.finture.bpm.engine.authorization.Resources.PROCESS_DEFINITION;
+import static com.finture.bpm.engine.authorization.Permissions.DELETE_HISTORY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -26,16 +26,16 @@ import static org.junit.Assert.fail;
 import java.util.Date;
 import java.util.List;
 
-import org.camunda.bpm.engine.AuthorizationException;
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.authorization.Authorization;
-import org.camunda.bpm.engine.authorization.Permissions;
-import org.camunda.bpm.engine.authorization.Resources;
-import org.camunda.bpm.engine.history.UserOperationLogEntry;
-import org.camunda.bpm.engine.history.UserOperationLogQuery;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.AuthorizationException;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.authorization.Authorization;
+import com.finture.bpm.engine.authorization.Permissions;
+import com.finture.bpm.engine.authorization.Resources;
+import com.finture.bpm.engine.history.UserOperationLogEntry;
+import com.finture.bpm.engine.history.UserOperationLogQuery;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

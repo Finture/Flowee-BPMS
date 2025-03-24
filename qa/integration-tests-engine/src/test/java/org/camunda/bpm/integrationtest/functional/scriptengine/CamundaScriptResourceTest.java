@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.scriptengine;
+package com.finture.bpm.integrationtest.functional.scriptengine;
 
-import org.camunda.bpm.engine.history.HistoricVariableInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.history.HistoricVariableInstance;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -38,8 +38,8 @@ public class CamundaScriptResourceTest extends AbstractFoxPlatformIntegrationTes
   public static WebArchive processArchive() {
 
     return initWebArchiveDeployment()
-      .addAsResource("org/camunda/bpm/integrationtest/functional/scriptengine/CamundaScriptResourceTest.examplescript.js", "CamundaScriptResourceTest.examplescript.js")
-      .addAsResource("org/camunda/bpm/integrationtest/functional/scriptengine/CamundaScriptResourceTest.exampleprocess.bpmn", "CamundaScriptResourceTest.exampleprocess.bpmn");
+      .addAsResource("com/finture/bpm/integrationtest/functional/scriptengine/CamundaScriptResourceTest.examplescript.js", "CamundaScriptResourceTest.examplescript.js")
+      .addAsResource("com/finture/bpm/integrationtest/functional/scriptengine/CamundaScriptResourceTest.exampleprocess.bpmn", "CamundaScriptResourceTest.exampleprocess.bpmn");
   }
 
   @Test

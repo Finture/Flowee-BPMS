@@ -1,13 +1,13 @@
-<module xmlns="urn:jboss:module:1.0" name="org.camunda.bpm.model.camunda-cmmn-model">
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.model.flowee-bpms-cmmn-model">
   <resources>
-    <resource-root path="camunda-cmmn-model-@project.version@.jar" />
+    <resource-root path="flowee-bpms-cmmn-model-@project.version@.jar" />
   </resources>
 
   <dependencies>
 
     <module name="java.base" />
     <module name="java.xml" />
-    <module name="org.camunda.bpm.model.camunda-xml-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-xml-model" />
 
   </dependencies>
 </module>

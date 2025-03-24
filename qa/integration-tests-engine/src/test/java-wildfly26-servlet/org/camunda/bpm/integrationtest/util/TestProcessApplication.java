@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.util;
+package com.finture.bpm.integrationtest.util;
 
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.application.impl.ServletProcessApplication;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.application.impl.ServletProcessApplication;
 
 /**
  * @author meyerd
@@ -25,6 +25,6 @@ import org.camunda.bpm.application.impl.ServletProcessApplication;
  */
 @ProcessApplication
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class TestProcessApplication extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class TestProcessApplication extends com.finture.bpm.application.impl.ServletProcessApplication {
 
 }

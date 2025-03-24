@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.largedata.optimize;
+package com.finture.bpm.qa.largedata.optimize;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import org.camunda.bpm.engine.impl.OptimizeService;
-import org.camunda.bpm.engine.impl.test.TestHelper;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.largedata.util.EngineDataGenerator;
+import com.finture.bpm.engine.impl.OptimizeService;
+import com.finture.bpm.engine.impl.test.TestHelper;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.largedata.util.EngineDataGenerator;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;

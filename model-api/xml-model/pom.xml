@@ -2,23 +2,23 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.model</groupId>
-    <artifactId>camunda-model-apis</artifactId>
+    <groupId>com.finture.bpm.model</groupId>
+    <artifactId>flowee-bpms-model-apis</artifactId>
     <relativePath>../</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-xml-model</artifactId>
+  <artifactId>flowee-bpms-xml-model</artifactId>
   <packaging>jar</packaging>
 
-  <name>Camunda Platform - Xml Model API</name>
+  <name>Flowee BPMS Platform - Xml Model API</name>
   <inceptionYear>2014</inceptionYear>
   <properties>
-    <camunda.artifact>org.camunda.bpm.model.xml</camunda.artifact>
-    <camunda.osgi.import.additional>
+    <flowee-bpms.artifact>com.finture.bpm.model.xml</flowee-bpms.artifact>
+    <flowee-bpms.osgi.import.additional>
       org.assertj.*;resolution:=optional,
       org.junit.*;resolution:=optional
-    </camunda.osgi.import.additional>
+    </flowee-bpms.osgi.import.additional>
   </properties>
   <dependencies>
 
@@ -73,10 +73,10 @@
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>clirr-maven-plugin</artifactId>
             <configuration>
-              <comparisonVersion>${camunda.version.old}</comparisonVersion>
+              <comparisonVersion>${flowee-bpms.version.old}</comparisonVersion>
               <logResults>true</logResults>
               <excludes>
-                <exclude>org/camunda/bpm/model/xml/impl/**</exclude>
+                <exclude>com/finture/bpm/model/xml/impl/**</exclude>
               </excludes>
             </configuration>
             <executions>

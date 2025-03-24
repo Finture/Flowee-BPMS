@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.sqlstatementlog;
+package com.finture.bpm.qa.performance.engine.sqlstatementlog;
 
 import java.util.List;
 
-import org.camunda.bpm.qa.performance.engine.framework.PerfTest;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestPass;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestRun;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestStep;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestWatcher;
-import org.camunda.bpm.qa.performance.engine.sqlstatementlog.StatementLogSqlSession.SqlStatementLog;
+import com.finture.bpm.qa.performance.engine.framework.PerfTest;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestPass;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestRun;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestStep;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestWatcher;
+import com.finture.bpm.qa.performance.engine.sqlstatementlog.StatementLogSqlSession.SqlStatementLog;
 
 /**
  * {@link PerfTestWatcher} performing statement logging.

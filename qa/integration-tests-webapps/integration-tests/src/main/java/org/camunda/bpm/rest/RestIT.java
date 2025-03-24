@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.rest;
+package com.finture.bpm.rest;
 
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import org.camunda.bpm.AbstractWebIntegrationTest;
-import org.camunda.bpm.engine.rest.hal.Hal;
-import org.camunda.bpm.engine.rest.mapper.JacksonConfigurator;
+import com.finture.bpm.AbstractWebIntegrationTest;
+import com.finture.bpm.engine.rest.hal.Hal;
+import com.finture.bpm.engine.rest.mapper.JacksonConfigurator;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -244,7 +244,7 @@ public class RestIT extends AbstractWebIntegrationTest {
     // check that definition is also serialized
     for (int i = 0; i < definitionStatistics.length(); i++) {
       JSONObject definitionStatistic = definitionStatistics.getJSONObject(i);
-      assertEquals("org.camunda.bpm.engine.rest.dto.repository.ProcessDefinitionStatisticsResultDto", definitionStatistic.getString("@class"));
+      assertEquals("com.finture.bpm.engine.rest.dto.repository.ProcessDefinitionStatisticsResultDto", definitionStatistic.getString("@class"));
       assertEquals(0, definitionStatistic.getJSONArray("incidents").length());
       JSONObject definition = definitionStatistic.getJSONObject("definition");
       assertTrue(definition.getString("name").toLowerCase().contains("invoice"));

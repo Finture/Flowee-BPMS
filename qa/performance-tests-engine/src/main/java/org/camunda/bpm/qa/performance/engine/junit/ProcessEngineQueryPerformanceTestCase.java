@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.junit;
+package com.finture.bpm.qa.performance.engine.junit;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.Before;
 import org.junit.Rule;
 

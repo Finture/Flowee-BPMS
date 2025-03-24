@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios730.boundary;
+package com.finture.bpm.qa.upgrade.scenarios730.boundary;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.management.ActivityStatistics;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.management.ActivityStatistics;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

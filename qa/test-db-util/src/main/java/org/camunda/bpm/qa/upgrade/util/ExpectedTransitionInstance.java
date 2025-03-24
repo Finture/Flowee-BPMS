@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.util;
+package com.finture.bpm.qa.upgrade.util;
 
 /**
  * @author Thorben Lindhauer

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.task;
+package com.finture.bpm.qa.rolling.update.task;
 
 import java.util.Date;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Assert;
 import org.junit.Test;
 

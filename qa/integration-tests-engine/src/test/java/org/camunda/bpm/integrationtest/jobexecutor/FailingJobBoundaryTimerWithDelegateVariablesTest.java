@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.DemoDelegate;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.DemoVariableClass;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.jobexecutor.beans.DemoDelegate;
+import com.finture.bpm.integrationtest.jobexecutor.beans.DemoVariableClass;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -47,7 +47,7 @@ public class FailingJobBoundaryTimerWithDelegateVariablesTest extends AbstractFo
     return initWebArchiveDeployment()
             .addClass(DemoDelegate.class)
             .addClass(DemoVariableClass.class)
-            .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/ImmediatelyFailing.bpmn20.xml");
+            .addAsResource("com/finture/bpm/integrationtest/jobexecutor/ImmediatelyFailing.bpmn20.xml");
   }
 
   @Test

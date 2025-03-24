@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.run</groupId>
-    <artifactId>camunda-bpm-run-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.run</groupId>
+    <artifactId>flowee-bpms-bpm-run-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>camunda-bpm-run-qa</artifactId>
-  <name>Camunda Platform - Run - QA</name>
+  <artifactId>flowee-bpms-bpm-run-qa</artifactId>
+  <name>Flowee BPMS Platform - Run - QA</name>
   <packaging>pom</packaging>
 
   <properties>
@@ -86,7 +86,7 @@
       </modules>
     </profile>
     <profile>
-      <id>integration-test-camunda-run</id>
+      <id>integration-test-flowee-bpms-run</id>
       <modules>
         <module>example-plugin</module>
         <module>integration-tests</module>

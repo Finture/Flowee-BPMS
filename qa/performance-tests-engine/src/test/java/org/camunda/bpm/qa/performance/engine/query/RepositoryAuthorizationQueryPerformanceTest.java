@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.query;
+package com.finture.bpm.qa.performance.engine.query;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.authorization.Authorization;
-import org.camunda.bpm.engine.authorization.Permission;
-import org.camunda.bpm.engine.authorization.Resource;
-import org.camunda.bpm.engine.impl.identity.Authentication;
-import org.camunda.bpm.engine.query.Query;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestRunContext;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestStepBehavior;
-import org.camunda.bpm.qa.performance.engine.junit.AuthorizationPerformanceTestCase;
-import org.camunda.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.authorization.Authorization;
+import com.finture.bpm.engine.authorization.Permission;
+import com.finture.bpm.engine.authorization.Resource;
+import com.finture.bpm.engine.impl.identity.Authentication;
+import com.finture.bpm.engine.query.Query;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestRunContext;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestStepBehavior;
+import com.finture.bpm.qa.performance.engine.junit.AuthorizationPerformanceTestCase;
+import com.finture.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,8 +40,8 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import static org.camunda.bpm.engine.authorization.Resources.*;
-import static org.camunda.bpm.engine.authorization.Permissions.*;
+import static com.finture.bpm.engine.authorization.Resources.*;
+import static com.finture.bpm.engine.authorization.Permissions.*;
 
 /**
  * @author Daniel Meyer

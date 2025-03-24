@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.sentry;
+package com.finture.bpm.qa.upgrade.scenarios.sentry;
 
-import org.camunda.bpm.engine.CaseService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.runtime.CaseExecutionQuery;
-import org.camunda.bpm.engine.runtime.CaseInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.CaseService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.runtime.CaseExecutionQuery;
+import com.finture.bpm.engine.runtime.CaseInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 /**
  * @author Roman Smirnov
@@ -32,7 +32,7 @@ public class SentryScenario {
   
   @Deployment
   public static String deployOneTaskProcess() {
-    return "org/camunda/bpm/qa/upgrade/sentry/sentry.cmmn";
+    return "com/finture/bpm/qa/upgrade/sentry/sentry.cmmn";
   }
 
   @DescribesScenario("triggerTaskEntryCriterion")

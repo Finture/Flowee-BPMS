@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.TransitionInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.PriorityBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.TransitionInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.jobexecutor.beans.PriorityBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -43,10 +43,10 @@ public class JobPrioritizationTest extends AbstractFoxPlatformIntegrationTest {
   public static WebArchive createDeployment() {
     return initWebArchiveDeployment()
       .addClass(PriorityBean.class)
-      .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/JobPrioritizationTest.priorityProcess.bpmn20.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/JobPrioritizationTest.serviceTask.bpmn20.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/JobPrioritizationTest.userTask.bpmn20.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/JobPrioritizationTest.intermediateMessage.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/jobexecutor/JobPrioritizationTest.priorityProcess.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/jobexecutor/JobPrioritizationTest.serviceTask.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/jobexecutor/JobPrioritizationTest.userTask.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/jobexecutor/JobPrioritizationTest.intermediateMessage.bpmn20.xml");
   }
 
   @After

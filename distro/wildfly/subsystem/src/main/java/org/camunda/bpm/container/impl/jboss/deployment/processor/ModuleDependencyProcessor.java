@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.deployment.processor;
+package com.finture.bpm.container.impl.jboss.deployment.processor;
 
 import java.util.function.Consumer;
 
-import org.camunda.bpm.container.impl.jboss.deployment.marker.ProcessApplicationAttachments;
-import org.camunda.bpm.container.impl.jboss.service.ProcessApplicationModuleService;
-import org.camunda.bpm.container.impl.jboss.service.ServiceNames;
+import com.finture.bpm.container.impl.jboss.deployment.marker.ProcessApplicationAttachments;
+import com.finture.bpm.container.impl.jboss.service.ProcessApplicationModuleService;
+import com.finture.bpm.container.impl.jboss.service.ServiceNames;
 import org.jboss.as.server.deployment.AttachmentList;
 import org.jboss.as.server.deployment.Attachments;
 import org.jboss.as.server.deployment.DeploymentPhaseContext;
@@ -50,16 +50,16 @@ public class ModuleDependencyProcessor implements DeploymentUnitProcessor {
 
   public static final int PRIORITY = 0x2300;
 
-  public static String MODULE_IDENTIFIER_PROCESS_ENGINE = "org.camunda.bpm.camunda-engine";
-  public static String MODULE_IDENTIFIER_XML_MODEL = "org.camunda.bpm.model.camunda-xml-model";
-  public static String MODULE_IDENTIFIER_BPMN_MODEL = "org.camunda.bpm.model.camunda-bpmn-model";
-  public static String MODULE_IDENTIFIER_CMMN_MODEL = "org.camunda.bpm.model.camunda-cmmn-model";
-  public static String MODULE_IDENTIFIER_DMN_MODEL = "org.camunda.bpm.model.camunda-dmn-model";
-  public static String MODULE_IDENTIFIER_SPIN = "org.camunda.spin.camunda-spin-core";
-  public static String MODULE_IDENTIFIER_CONNECT = "org.camunda.connect.camunda-connect-core";
-  public static String MODULE_IDENTIFIER_ENGINE_DMN = "org.camunda.bpm.dmn.camunda-engine-dmn";
+  public static String MODULE_IDENTIFIER_PROCESS_ENGINE = "com.finture.bpm.camunda-engine";
+  public static String MODULE_IDENTIFIER_XML_MODEL = "com.finture.bpm.model.camunda-xml-model";
+  public static String MODULE_IDENTIFIER_BPMN_MODEL = "com.finture.bpm.model.camunda-bpmn-model";
+  public static String MODULE_IDENTIFIER_CMMN_MODEL = "com.finture.bpm.model.camunda-cmmn-model";
+  public static String MODULE_IDENTIFIER_DMN_MODEL = "com.finture.bpm.model.camunda-dmn-model";
+  public static String MODULE_IDENTIFIER_SPIN = "com.finture.spin.camunda-spin-core";
+  public static String MODULE_IDENTIFIER_CONNECT = "com.finture.connect.camunda-connect-core";
+  public static String MODULE_IDENTIFIER_ENGINE_DMN = "com.finture.bpm.dmn.camunda-engine-dmn";
   public static String MODULE_IDENTIFIER_GRAAL_JS = "org.graalvm.js.js-scriptengine";
-  public static String MODULE_IDENTIFIER_JUEL = "org.camunda.bpm.juel.camunda-juel";
+  public static String MODULE_IDENTIFIER_JUEL = "com.finture.bpm.juel.camunda-juel";
 
   @Override
   public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {

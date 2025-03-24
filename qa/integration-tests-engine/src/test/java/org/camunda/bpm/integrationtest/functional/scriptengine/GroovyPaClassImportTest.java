@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.scriptengine;
+package com.finture.bpm.integrationtest.functional.scriptengine;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.camunda.bpm.integrationtest.functional.scriptengine.classes.CustomClass;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.integrationtest.functional.scriptengine.classes.CustomClass;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -39,7 +39,7 @@ import org.junit.runner.RunWith;
 public class GroovyPaClassImportTest extends AbstractFoxPlatformIntegrationTest {
 
   public static final String SCRIPT_WITH_IMPORT =
-      "import org.camunda.bpm.integrationtest.functional.scriptengine.classes.CustomClass\n"
+      "import com.finture.bpm.integrationtest.functional.scriptengine.classes.CustomClass\n"
     + "execution.setVariable('greeting', new CustomClass().greet())";
 
   public static final String GROOVY_MODULE_DEPENDENCY =

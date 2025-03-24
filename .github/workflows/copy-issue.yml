@@ -12,7 +12,7 @@ on:
       
 jobs:
   call-reusable-flow:
-    uses: camunda/automation-platform-github-actions/.github/workflows/copy-issue.yml@main
+    uses: flowee-bpms/automation-platform-github-actions/.github/workflows/copy-issue.yml@main
     with: 
       issue: ${{ github.event.inputs.issue }}
       version: ${{ github.event.inputs.version }}

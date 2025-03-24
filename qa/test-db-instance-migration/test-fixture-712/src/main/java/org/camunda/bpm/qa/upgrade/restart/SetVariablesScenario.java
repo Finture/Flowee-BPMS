@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.restart;
+package com.finture.bpm.qa.upgrade.restart;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class SetVariablesScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/upgrade/async/oneAsyncTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/async/oneAsyncTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("setVariablesScenario")

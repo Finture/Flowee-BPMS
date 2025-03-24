@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.sqlstatementlog;
+package com.finture.bpm.qa.performance.engine.sqlstatementlog;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestResults;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestStepResult;
-import org.camunda.bpm.qa.performance.engine.framework.aggregate.TabularResultAggregator;
-import org.camunda.bpm.qa.performance.engine.framework.aggregate.TabularResultSet;
-import org.camunda.bpm.qa.performance.engine.sqlstatementlog.StatementLogSqlSession.SqlStatementType;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestResults;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestStepResult;
+import com.finture.bpm.qa.performance.engine.framework.aggregate.TabularResultAggregator;
+import com.finture.bpm.qa.performance.engine.framework.aggregate.TabularResultSet;
+import com.finture.bpm.qa.performance.engine.sqlstatementlog.StatementLogSqlSession.SqlStatementType;
 
 /**
  * Aggregates the results from a Sql Statement Test run.

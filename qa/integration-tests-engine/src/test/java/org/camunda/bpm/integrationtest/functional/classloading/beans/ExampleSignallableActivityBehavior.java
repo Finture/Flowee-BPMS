@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.beans;
+package com.finture.bpm.integrationtest.functional.classloading.beans;
 
-import org.camunda.bpm.engine.impl.bpmn.behavior.AbstractBpmnActivityBehavior;
-import org.camunda.bpm.engine.impl.pvm.delegate.ActivityExecution;
+import com.finture.bpm.engine.impl.bpmn.behavior.AbstractBpmnActivityBehavior;
+import com.finture.bpm.engine.impl.pvm.delegate.ActivityExecution;
 
 /**
  * @author Daniel Meyer

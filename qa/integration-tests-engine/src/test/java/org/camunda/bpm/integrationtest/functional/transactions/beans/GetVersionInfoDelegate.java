@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.transactions.beans;
+package com.finture.bpm.integrationtest.functional.transactions.beans;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
 
 
 public class GetVersionInfoDelegate implements JavaDelegate {

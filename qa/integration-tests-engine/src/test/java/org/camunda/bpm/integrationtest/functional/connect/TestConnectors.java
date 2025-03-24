@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.connect;
+package com.finture.bpm.integrationtest.functional.connect;
 
-import org.camunda.connect.Connectors;
-import org.camunda.connect.spi.Connector;
+import com.finture.connect.Connectors;
+import com.finture.connect.spi.Connector;
 
 /**
  * @author Thorben Lindhauer

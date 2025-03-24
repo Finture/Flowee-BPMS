@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.application.PostDeploy;
-import org.camunda.bpm.application.ProcessApplication;
+import com.finture.bpm.application.PostDeploy;
+import com.finture.bpm.application.ProcessApplication;
 
 /**
- * {@link org.camunda.bpm.application.impl.ServletProcessApplication} is fine on all containers as the tests
+ * {@link com.finture.bpm.application.impl.ServletProcessApplication} is fine on all containers as the tests
  * don't require Java EE features
  *
  * @author Thorben Lindhauer
  */
 @ProcessApplication
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class ReferenceStoringProcessApplication extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class ReferenceStoringProcessApplication extends com.finture.bpm.application.impl.ServletProcessApplication {
 
   public static ReferenceStoringProcessApplication INSTANCE = null;
 

@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.remote;
+package com.finture.bpm.integrationtest.functional.ejb.remote;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.ejb.remote.bean.BusinessInterface;
-import org.camunda.bpm.integrationtest.functional.ejb.remote.bean.RemoteSLSBClientDelegateBean;
-import org.camunda.bpm.integrationtest.functional.ejb.remote.bean.RemoteSLSBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.ejb.remote.bean.BusinessInterface;
+import com.finture.bpm.integrationtest.functional.ejb.remote.bean.RemoteSLSBClientDelegateBean;
+import com.finture.bpm.integrationtest.functional.ejb.remote.bean.RemoteSLSBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -53,14 +53,14 @@ public class RemoteSLSBInvocationTest extends AbstractFoxPlatformIntegrationTest
     return initWebArchiveDeployment()
       .addClass(RemoteSLSBClientDelegateBean.class)
       .addClass(BusinessInterface.class) // the business interface
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/remote/RemoteSLSBInvocationTest.testInvokeBean.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/remote/RemoteSLSBInvocationTest.testInvokeBean.bpmn20.xml");
   }
 
   @Deployment(order=1)
   public static WebArchive delegateDeployment() {
     WebArchive webArchive = ShrinkWrap.create(WebArchive.class, "service.war")
       .addAsLibraries(DeploymentHelper.getEjbClient())
-      .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+      .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
       .addClass(AbstractFoxPlatformIntegrationTest.class)
       .addClass(RemoteSLSBean.class) // the EJB
       .addClass(BusinessInterface.class); // the business interface

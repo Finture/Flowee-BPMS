@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.service;
+package com.finture.bpm.container.impl.jboss.service;
 
 import java.util.logging.Logger;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.container.impl.jboss.util.BindingUtil;
-import org.camunda.bpm.container.impl.jboss.util.ProcessEngineManagedReferenceFactory;
-import org.camunda.bpm.container.impl.jmx.services.JmxManagedProcessEngine;
-import org.camunda.bpm.engine.ProcessEngine;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.container.impl.jboss.util.BindingUtil;
+import com.finture.bpm.container.impl.jboss.util.ProcessEngineManagedReferenceFactory;
+import com.finture.bpm.container.impl.jmx.services.JmxManagedProcessEngine;
+import com.finture.bpm.engine.ProcessEngine;
 import org.jboss.as.naming.ManagedReferenceFactory;
 import org.jboss.as.naming.deployment.ContextNames;
 import org.jboss.msc.inject.Injector;

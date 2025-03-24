@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7160.externaltask;
+package com.finture.bpm.qa.upgrade.scenarios7160.externaltask;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.camunda.bpm.engine.ExternalTaskService;
-import org.camunda.bpm.engine.externaltask.ExternalTask;
-import org.camunda.bpm.engine.history.HistoricIncident;
-import org.camunda.bpm.engine.runtime.Incident;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.ExternalTaskService;
+import com.finture.bpm.engine.externaltask.ExternalTask;
+import com.finture.bpm.engine.history.HistoricIncident;
+import com.finture.bpm.engine.runtime.Incident;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

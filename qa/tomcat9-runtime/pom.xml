@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-qa-tomcat9-runtime</artifactId>
+  <artifactId>flowee-bpms-qa-tomcat9-runtime</artifactId>
   <packaging>pom</packaging>
 
-  <name>Camunda Platform - QA Tomcat 9 Test Runtime</name>
+  <name>Flowee BPMS Platform - QA Tomcat 9 Test Runtime</name>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.5.1</version>
   </parent>
 
   <dependencies>
@@ -36,8 +36,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.qa</groupId>
-      <artifactId>camunda-qa-ensure-clean-db</artifactId>
+      <groupId>com.finture.bpm.qa</groupId>
+      <artifactId>flowee-bpms-qa-ensure-clean-db</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
@@ -112,8 +112,9 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
+          <version>${project.version}</version>
           <exclusions>
             <exclusion>
               <groupId>org.springframework</groupId>
@@ -127,53 +128,61 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm.identity</groupId>
-          <artifactId>camunda-identity-ldap</artifactId>
+          <groupId>com.finture.bpm.identity</groupId>
+          <artifactId>flowee-bpms-identity-ldap</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-core</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-core</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-spin</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-dataformat-all</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-dataformat-all</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.connect</groupId>
-          <artifactId>camunda-connect-core</artifactId>
+          <groupId>com.finture.connect</groupId>
+          <artifactId>flowee-bpms-connect-core</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-connect</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.connect</groupId>
-          <artifactId>camunda-connect-connectors-all</artifactId>
+          <groupId>com.finture.connect</groupId>
+          <artifactId>flowee-bpms-connect-connectors-all</artifactId>
+          <version>${project.version}</version>
           <exclusions>
             <exclusion>
-              <groupId>org.camunda.connect</groupId>
-              <artifactId>camunda-connect-http-client</artifactId>
+              <groupId>com.finture.connect</groupId>
+              <artifactId>flowee-bpms-connect-http-client</artifactId>
             </exclusion>
             <exclusion>
-              <groupId>org.camunda.connect</groupId>
-              <artifactId>camunda-connect-soap-http-client</artifactId>
+              <groupId>com.finture.connect</groupId>
+              <artifactId>flowee-bpms-connect-soap-http-client</artifactId>
             </exclusion>
           </exclusions>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.template-engines</groupId>
-          <artifactId>camunda-template-engines-freemarker</artifactId>
+          <groupId>com.finture.template-engines</groupId>
+          <artifactId>flowee-bpms-template-engines-freemarker</artifactId>
+          <version>${project.version}</version>
         </dependency>
 
         <dependency>
@@ -194,7 +203,7 @@
         <!-- The order of declaration of the plugin executions is important to preserve the correct build sequence of
              a) packing b) unpacking the server c) copy libs so that the properties are resolved correctly. -->
         <plugins>
-          <!-- Produces the camunda-qa-tomcat9.tar.gz -->
+          <!-- Produces the flowee-bpms-qa-tomcat9.tar.gz -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
@@ -214,7 +223,7 @@
                   <outputDirectory>target/</outputDirectory>
                   <workDirectory>target/assembly/work</workDirectory>
                   <tarLongFileMode>gnu</tarLongFileMode>
-                  <finalName>camunda-qa-tomcat9</finalName>
+                  <finalName>flowee-bpms-qa-tomcat9</finalName>
                 </configuration>
               </execution>
             </executions>
@@ -231,7 +240,7 @@
                 <phase>generate-resources</phase>
                 <configuration>
                   <target>
-                    <untar src="${project.build.directory}/camunda-qa-tomcat9.tar.gz" dest="${project.build.directory}/" compression="gzip" />
+                    <untar src="${project.build.directory}/flowee-bpms-qa-tomcat9.tar.gz" dest="${project.build.directory}/" compression="gzip" />
                   </target>
                 </configuration>
                 <goals>

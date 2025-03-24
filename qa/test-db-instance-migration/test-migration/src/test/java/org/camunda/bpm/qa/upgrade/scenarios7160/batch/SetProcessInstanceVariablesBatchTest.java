@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7160.batch;
+package com.finture.bpm.qa.upgrade.scenarios7160.batch;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

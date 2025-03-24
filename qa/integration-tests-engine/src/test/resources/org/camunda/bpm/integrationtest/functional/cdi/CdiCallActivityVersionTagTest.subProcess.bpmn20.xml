@@ -6,7 +6,7 @@
                   xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
                   id="Definitions_078kz9j"
                   targetNamespace="http://bpmn.io/schema/bpmn"
-                  exporter="Camunda Modeler"
+                  exporter="Flowee BPMS Modeler"
                   exporterVersion="1.12.0">
   <bpmn:process id="subProcess" name="versionTagProcess" isExecutable="true" camunda:versionTag="ver-0.1" camunda:historyTimeToLive="P180D">
     <bpmn:startEvent id="StartEvent_1">

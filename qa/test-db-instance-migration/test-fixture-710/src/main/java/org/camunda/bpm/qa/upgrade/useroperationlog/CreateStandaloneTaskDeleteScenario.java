@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.useroperationlog;
+package com.finture.bpm.qa.upgrade.useroperationlog;
 
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 /**
  * @author Yana.Vasileva

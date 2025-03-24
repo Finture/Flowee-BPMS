@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.rest.beans;
+package com.finture.bpm.rest.beans;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.rest.spi.ProcessEngineProvider;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.rest.spi.ProcessEngineProvider;
 
 import java.util.Set;
 

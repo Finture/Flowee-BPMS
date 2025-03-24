@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.variables;
+package com.finture.bpm.qa.upgrade.variables;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,12 +22,12 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.variable.serializer.jpa.EntityManagerSession;
-import org.camunda.bpm.engine.impl.variable.serializer.jpa.EntityManagerSessionFactory;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.variable.serializer.jpa.EntityManagerSession;
+import com.finture.bpm.engine.impl.variable.serializer.jpa.EntityManagerSessionFactory;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class JpaVariableScenario {
 
@@ -36,7 +36,7 @@ public class JpaVariableScenario {
 
   @Deployment
   public static String deployOneTask() {
-    return "org/camunda/bpm/qa/upgrade/variables/JpaEntitiesScenario.oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/variables/JpaEntitiesScenario.oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("createJpaVariable")

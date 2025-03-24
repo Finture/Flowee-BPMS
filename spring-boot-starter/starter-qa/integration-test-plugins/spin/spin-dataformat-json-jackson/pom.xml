@@ -4,34 +4,38 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.springboot.project</groupId>
+    <groupId>com.finture.bpm.springboot.project</groupId>
     <artifactId>qa-plugins-spin</artifactId>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
   <artifactId>qa-plugins-spin-dataformat-json-jackson</artifactId>
-  <name>Camunda Platform - Spring Boot Starter - QA - Plugins - Spin Json Jackson</name>
+  <name>Flowee BPMS Platform - Spring Boot Starter - QA - Plugins - Spin Json Jackson</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter-test</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-spin</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>

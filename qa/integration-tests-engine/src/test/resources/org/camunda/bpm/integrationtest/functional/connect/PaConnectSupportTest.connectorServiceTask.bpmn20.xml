@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="__hiYAGQLEeSn4PUJP2d52Q" exporter="camunda modeler" exporterVersion="2.6.0" targetNamespace="http://camunda.org/schema/1.0/bpmn">
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="__hiYAGQLEeSn4PUJP2d52Q" exporter="flowee-bpms modeler" exporterVersion="2.6.0" targetNamespace="http://flowee-bpms.org/schema/1.0/bpmn">
   <process id="testProcess" isExecutable="true" camunda:historyTimeToLive="5">
     <startEvent id="start" />
     <sequenceFlow sourceRef="start" targetRef="serviceTask" />
@@ -9,7 +9,7 @@
           <camunda:connectorId>pa-test-connector</camunda:connectorId>
           <camunda:inputOutput>
             <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="url">http://camunda.org</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://flowee-bpms.org</camunda:inputParameter>
             <camunda:inputParameter name="headers">
               <camunda:map>
                 <camunda:entry key="Content-Type">

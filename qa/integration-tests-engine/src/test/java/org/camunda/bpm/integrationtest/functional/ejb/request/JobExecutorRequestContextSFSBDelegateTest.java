@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.request;
+package com.finture.bpm.integrationtest.functional.ejb.request;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.functional.ejb.request.beans.RequestScopedSFSBDelegate;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.functional.ejb.request.beans.RequestScopedSFSBDelegate;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -47,7 +47,7 @@ public class JobExecutorRequestContextSFSBDelegateTest extends AbstractFoxPlatfo
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
       .addClass(RequestScopedSFSBDelegate.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/request/JobExecutorRequestContextSFSBDelegateTest.testScopingSFSB.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/request/JobExecutorRequestContextSFSBDelegateTest.testScopingSFSB.bpmn20.xml");
   }
 
 

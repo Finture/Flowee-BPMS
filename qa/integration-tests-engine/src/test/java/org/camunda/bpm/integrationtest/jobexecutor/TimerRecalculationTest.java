@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -24,12 +24,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.JobQuery;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstanceQuery;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.TimerExpressionBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.JobQuery;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.ProcessInstanceQuery;
+import com.finture.bpm.integrationtest.jobexecutor.beans.TimerExpressionBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -46,7 +46,7 @@ public class TimerRecalculationTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive processArchive() {
     WebArchive archive = initWebArchiveDeployment()
-            .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/TimerRecalculation.bpmn20.xml")
+            .addAsResource("com/finture/bpm/integrationtest/jobexecutor/TimerRecalculation.bpmn20.xml")
             .addClass(TimerExpressionBean.class);
 
     return archive;

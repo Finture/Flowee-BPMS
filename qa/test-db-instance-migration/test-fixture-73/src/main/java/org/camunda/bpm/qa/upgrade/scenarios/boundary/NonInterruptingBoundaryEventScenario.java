@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.boundary;
+package com.finture.bpm.qa.upgrade.scenarios.boundary;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  * @author Thorben Lindhauer
@@ -30,7 +30,7 @@ public class NonInterruptingBoundaryEventScenario {
 
   @Deployment
   public static String deployMessageBoundary() {
-    return "org/camunda/bpm/qa/upgrade/boundary/nonInterruptingMessageBoundaryEvent.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/boundary/nonInterruptingMessageBoundaryEvent.bpmn20.xml";
   }
 
   @DescribesScenario("init")

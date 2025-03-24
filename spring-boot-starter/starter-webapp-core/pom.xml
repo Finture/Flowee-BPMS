@@ -2,32 +2,33 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.springboot.project</groupId>
-    <artifactId>camunda-bpm-spring-boot-starter-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.springboot.project</groupId>
+    <artifactId>flowee-bpms-bpm-spring-boot-starter-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.bpm.springboot</groupId>
-  <artifactId>camunda-bpm-spring-boot-starter-webapp-core</artifactId>
-  <name>Camunda Platform - Spring Boot Starter - Webapps Core</name>
+  <groupId>com.finture.bpm.springboot</groupId>
+  <artifactId>flowee-bpms-bpm-spring-boot-starter-webapp-core</artifactId>
+  <name>Flowee BPMS Platform - Spring Boot Starter - Webapps Core</name>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp-jakarta</artifactId>
+      <groupId>com.finture.bpm.webapp</groupId>
+      <artifactId>flowee-bpms-webapp-jakarta</artifactId>
+      <version>${project.version}</version>
       <type>jar</type>
       <classifier>classes</classifier>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp-webjar</artifactId>
-      <scope>test</scope>
+      <groupId>com.finture.bpm.webapp</groupId>
+      <artifactId>flowee-bpms-webapp-webjar</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -47,10 +48,9 @@
     </dependency>
 
     <dependency>
-      <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter-test</artifactId>
       <version>${project.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>

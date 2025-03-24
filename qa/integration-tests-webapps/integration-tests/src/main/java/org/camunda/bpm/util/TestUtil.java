@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.util;
+package com.finture.bpm.util;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.camunda.bpm.TestProperties;
-import org.camunda.bpm.engine.rest.dto.identity.UserCredentialsDto;
-import org.camunda.bpm.engine.rest.dto.identity.UserDto;
-import org.camunda.bpm.engine.rest.dto.identity.UserProfileDto;
+import com.finture.bpm.TestProperties;
+import com.finture.bpm.engine.rest.dto.identity.UserCredentialsDto;
+import com.finture.bpm.engine.rest.dto.identity.UserDto;
+import com.finture.bpm.engine.rest.dto.identity.UserProfileDto;
 
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;

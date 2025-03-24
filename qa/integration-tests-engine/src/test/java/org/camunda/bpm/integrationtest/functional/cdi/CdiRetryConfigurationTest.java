@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.cdi;
+package com.finture.bpm.integrationtest.functional.cdi;
 
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.JobQuery;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.cdi.beans.DependentScopedBean;
-import org.camunda.bpm.integrationtest.functional.cdi.beans.ErrorDelegate;
-import org.camunda.bpm.integrationtest.functional.cdi.beans.RetryConfig;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.JobQuery;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.cdi.beans.DependentScopedBean;
+import com.finture.bpm.integrationtest.functional.cdi.beans.ErrorDelegate;
+import com.finture.bpm.integrationtest.functional.cdi.beans.RetryConfig;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -42,13 +42,13 @@ public class CdiRetryConfigurationTest extends AbstractFoxPlatformIntegrationTes
     return initWebArchiveDeployment()
       .addClass(ErrorDelegate.class)
       .addClass(RetryConfig.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/RetryConfigurationTest.testResolveRetryConfigBean.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/RetryConfigurationTest.testResolveRetryConfigBean.bpmn20.xml");
   }
 
   @Deployment(name="clientDeployment")
   public static WebArchive clientDeployment() {
     WebArchive deployment = ShrinkWrap.create(WebArchive.class, "client.war")
-            .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+            .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
             .addClass(AbstractFoxPlatformIntegrationTest.class)
             .addClass(DependentScopedBean.class)
             .addAsLibraries(DeploymentHelper.getEngineCdi());

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.spring.timer;
+package com.finture.bpm.integrationtest.deployment.spring.timer;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.ProcessEngineService;
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.spring.application.SpringProcessApplication;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.ProcessEngineService;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.spring.application.SpringProcessApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

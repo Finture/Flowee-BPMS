@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.variables;
+package com.finture.bpm.integrationtest.functional.classloading.variables;
 
-import org.camunda.bpm.engine.history.HistoricVariableInstance;
-import org.camunda.bpm.engine.impl.persistence.entity.HistoricVariableInstanceEntity;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.GetDeserializableVariableDelegate;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.SerializableVariable;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.SetVariableDelegate;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.history.HistoricVariableInstance;
+import com.finture.bpm.engine.impl.persistence.entity.HistoricVariableInstanceEntity;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.GetDeserializableVariableDelegate;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.SerializableVariable;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.SetVariableDelegate;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -50,7 +50,7 @@ public class DeserializableVariableTest extends AbstractFoxPlatformIntegrationTe
       .addClass(GetDeserializableVariableDelegate.class)
       .addClass(SetVariableDelegate.class)
       .addClass(SerializableVariable.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/classloading/DeserializableVariableTest.testVariableDeserializationOnProcessApplicationRestart.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/classloading/DeserializableVariableTest.testVariableDeserializationOnProcessApplicationRestart.bpmn20.xml");
   }
 
   @Deployment(name="clientDeployment")

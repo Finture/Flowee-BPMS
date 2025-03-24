@@ -14,28 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.largedata.util;
+package com.finture.bpm.qa.largedata.util;
 
 import com.google.common.collect.Lists;
-import org.camunda.bpm.engine.DecisionService;
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.identity.Group;
-import org.camunda.bpm.engine.identity.User;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.repository.DeploymentBuilder;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.model.dmn.DmnModelInstance;
+import com.finture.bpm.engine.DecisionService;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.identity.Group;
+import com.finture.bpm.engine.identity.User;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.repository.DeploymentBuilder;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.model.dmn.DmnModelInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.camunda.bpm.qa.largedata.util.DmnHelper.createSimpleDmnModel;
+import static com.finture.bpm.qa.largedata.util.DmnHelper.createSimpleDmnModel;
 
 import java.util.Date;
 import java.util.HashMap;

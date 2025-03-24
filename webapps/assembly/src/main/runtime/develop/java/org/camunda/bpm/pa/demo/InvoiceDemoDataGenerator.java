@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.pa.demo;
+package com.finture.bpm.pa.demo;
 
-import static org.camunda.bpm.engine.authorization.Authorization.AUTH_TYPE_GRANT;
-import static org.camunda.bpm.engine.authorization.Permissions.ACCESS;
-import static org.camunda.bpm.engine.authorization.Permissions.READ;
-import static org.camunda.bpm.engine.authorization.Resources.APPLICATION;
-import static org.camunda.bpm.engine.authorization.Resources.USER;
+import static com.finture.bpm.engine.authorization.Authorization.AUTH_TYPE_GRANT;
+import static com.finture.bpm.engine.authorization.Permissions.ACCESS;
+import static com.finture.bpm.engine.authorization.Permissions.READ;
+import static com.finture.bpm.engine.authorization.Resources.APPLICATION;
+import static com.finture.bpm.engine.authorization.Resources.USER;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,15 +28,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.FilterService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.authorization.Authorization;
-import org.camunda.bpm.engine.filter.Filter;
-import org.camunda.bpm.engine.identity.Group;
-import org.camunda.bpm.engine.identity.User;
-import org.camunda.bpm.engine.task.TaskQuery;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.FilterService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.authorization.Authorization;
+import com.finture.bpm.engine.filter.Filter;
+import com.finture.bpm.engine.identity.Group;
+import com.finture.bpm.engine.identity.User;
+import com.finture.bpm.engine.task.TaskQuery;
 
 /**
  * @author drobisch

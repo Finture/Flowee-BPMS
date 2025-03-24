@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.beans;
+package com.finture.bpm.integrationtest.functional.classloading.beans;
 
 import javax.inject.Named;
 
-import org.camunda.bpm.engine.delegate.CaseExecutionListener;
-import org.camunda.bpm.engine.delegate.DelegateCaseExecution;
+import com.finture.bpm.engine.delegate.CaseExecutionListener;
+import com.finture.bpm.engine.delegate.DelegateCaseExecution;
 
 /**
  * @author Roman Smirnov

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.el;
+package com.finture.bpm.integrationtest.functional.el;
 
-import org.camunda.bpm.engine.form.TaskFormData;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.functional.el.beans.ResolveFormDataBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.form.TaskFormData;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.functional.el.beans.ResolveFormDataBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -38,7 +38,7 @@ public class ElResolveTaskFormDataTest extends AbstractFoxPlatformIntegrationTes
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
       .addClass(ResolveFormDataBean.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/el/elTaskFormProcessWithFormData.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/el/elTaskFormProcessWithFormData.bpmn20.xml");
   }
 
   @Test

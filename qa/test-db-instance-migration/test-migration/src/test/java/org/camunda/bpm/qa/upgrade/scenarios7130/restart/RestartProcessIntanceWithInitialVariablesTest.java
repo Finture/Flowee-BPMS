@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7130.restart;
+package com.finture.bpm.qa.upgrade.scenarios7130.restart;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -23,16 +23,16 @@ import static org.junit.Assert.fail;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.history.HistoricDetail;
-import org.camunda.bpm.engine.history.HistoricVariableInstance;
-import org.camunda.bpm.engine.impl.history.event.HistoricVariableUpdateEventEntity;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.VariableInstance;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.history.HistoricDetail;
+import com.finture.bpm.engine.history.HistoricVariableInstance;
+import com.finture.bpm.engine.impl.history.event.HistoricVariableUpdateEventEntity;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.VariableInstance;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

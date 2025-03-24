@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.query;
+package com.finture.bpm.qa.performance.engine.query;
 
 import java.util.Arrays;
 import java.util.Date;
-import org.camunda.bpm.engine.management.Metrics;
-import org.camunda.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.tasks.GenerateMetricsTask;
-import org.camunda.bpm.qa.performance.engine.steps.MetricIntervalStep;
-import org.camunda.bpm.qa.performance.engine.steps.MetricSumStep;
+import com.finture.bpm.engine.management.Metrics;
+import com.finture.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
+import com.finture.bpm.qa.performance.engine.loadgenerator.tasks.GenerateMetricsTask;
+import com.finture.bpm.qa.performance.engine.steps.MetricIntervalStep;
+import com.finture.bpm.qa.performance.engine.steps.MetricSumStep;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

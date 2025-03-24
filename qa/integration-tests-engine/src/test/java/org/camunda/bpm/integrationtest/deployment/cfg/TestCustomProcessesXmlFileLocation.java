@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.cfg;
+package com.finture.bpm.integrationtest.deployment.cfg;
 
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -40,12 +40,12 @@ public class TestCustomProcessesXmlFileLocation extends AbstractFoxPlatformInteg
   public static WebArchive processArchive() {    
     
     WebArchive archive = ShrinkWrap.create(WebArchive.class, "test.war")
-        .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+        .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
         .addAsLibraries(DeploymentHelper.getEngineCdi())
-        .addAsResource("org/camunda/bpm/integrationtest/deployment/cfg/processes.xml", "my/alternate/location/processes.xml")
+        .addAsResource("com/finture/bpm/integrationtest/deployment/cfg/processes.xml", "my/alternate/location/processes.xml")
         .addClass(AbstractFoxPlatformIntegrationTest.class)
         .addClass(CustomProcessApplication.class)
-        .addAsResource("org/camunda/bpm/integrationtest/deployment/cfg/invoice-it.bpmn20.xml");
+        .addAsResource("com/finture/bpm/integrationtest/deployment/cfg/invoice-it.bpmn20.xml");
     
     return archive;
     

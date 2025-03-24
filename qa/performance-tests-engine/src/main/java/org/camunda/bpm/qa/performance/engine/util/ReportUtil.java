@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.util;
+package com.finture.bpm.qa.performance.engine.util;
 
 import java.io.File;
 
-import org.camunda.bpm.qa.performance.engine.framework.aggregate.TabularResultAggregator;
-import org.camunda.bpm.qa.performance.engine.framework.aggregate.TabularResultSet;
-import org.camunda.bpm.qa.performance.engine.framework.report.HtmlReportBuilder;
+import com.finture.bpm.qa.performance.engine.framework.aggregate.TabularResultAggregator;
+import com.finture.bpm.qa.performance.engine.framework.aggregate.TabularResultSet;
+import com.finture.bpm.qa.performance.engine.framework.report.HtmlReportBuilder;
 
 /**
  * @author Daniel Meyer

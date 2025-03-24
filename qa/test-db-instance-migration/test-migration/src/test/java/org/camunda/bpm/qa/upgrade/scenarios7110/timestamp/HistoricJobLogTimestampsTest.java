@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.timestamp;
+package com.finture.bpm.qa.upgrade.scenarios7110.timestamp;
 
-import org.camunda.bpm.engine.history.HistoricJobLog;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.history.HistoricJobLog;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

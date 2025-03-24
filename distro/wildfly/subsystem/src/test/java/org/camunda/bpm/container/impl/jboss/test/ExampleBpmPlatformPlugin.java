@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.test;
+package com.finture.bpm.container.impl.jboss.test;
 
-import org.camunda.bpm.application.ProcessApplicationInterface;
-import org.camunda.bpm.container.impl.plugin.BpmPlatformPlugin;
+import com.finture.bpm.application.ProcessApplicationInterface;
+import com.finture.bpm.container.impl.plugin.BpmPlatformPlugin;
 
 /**
  * @author Thorben Lindhauer

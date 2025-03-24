@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.extension.resource;
+package com.finture.bpm.container.impl.jboss.extension.resource;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.camunda.bpm.container.impl.jboss.extension.BpmPlatformExtension;
-import org.camunda.bpm.container.impl.jboss.extension.handler.BpmPlatformSubsystemAdd;
-import org.camunda.bpm.container.impl.jboss.extension.handler.BpmPlatformSubsystemRemove;
+import com.finture.bpm.container.impl.jboss.extension.BpmPlatformExtension;
+import com.finture.bpm.container.impl.jboss.extension.handler.BpmPlatformSubsystemAdd;
+import com.finture.bpm.container.impl.jboss.extension.handler.BpmPlatformSubsystemRemove;
 import org.jboss.as.controller.AttributeDefinition;
 import org.jboss.as.controller.PersistentResourceDefinition;
 import org.jboss.as.controller.operations.common.GenericSubsystemDescribeHandler;

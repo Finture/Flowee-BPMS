@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.engine.ProcessEngineException;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.ProcessEngineException;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -33,7 +33,7 @@ public class SpinJsonPathTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive createDeployment() {
     return initWebArchiveDeployment()
-        .addAsResource("org/camunda/bpm/integrationtest/jsonpath-process.bpmn");
+        .addAsResource("com/finture/bpm/integrationtest/jsonpath-process.bpmn");
   }
 
   @Test

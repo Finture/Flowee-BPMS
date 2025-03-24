@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios790;
+package com.finture.bpm.qa.upgrade.scenarios790;
 
 import java.util.HashMap;
 import java.util.List;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.VariableInstance;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.engine.variable.value.TypedValue;
-import org.camunda.bpm.qa.upgrade.Origin;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.VariableInstance;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.variable.value.TypedValue;
+import com.finture.bpm.qa.upgrade.Origin;
 
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.json.beans.ObjectList;
-import org.camunda.bpm.qa.upgrade.json.beans.Order;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.json.beans.ObjectList;
+import com.finture.bpm.qa.upgrade.json.beans.Order;
 
-import org.camunda.bpm.qa.upgrade.json.beans.RegularCustomer;
+import com.finture.bpm.qa.upgrade.json.beans.RegularCustomer;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

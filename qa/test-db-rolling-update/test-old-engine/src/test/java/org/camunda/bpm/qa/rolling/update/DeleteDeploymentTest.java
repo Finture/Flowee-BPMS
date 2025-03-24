@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update;
+package com.finture.bpm.qa.rolling.update;
 
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Test;
 
 /**

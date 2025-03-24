@@ -13,13 +13,13 @@
   <logger name="org.apache.mina" level="info" />
   <logger name="JdbmIndex" level="info" />
 
-  <logger name="org.camunda" level="info" />
-  <logger name="org.camunda.bpm.engine.impl.bpmn" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.cfg" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.cmd" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.jobexecutor" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.pvm" level="debug" />
-  <logger name="org.camunda.bpm.identity.impl.ldap" level="debug" />
+  <logger name="com.finture" level="info" />
+  <logger name="com.finture.bpm.engine.impl.bpmn" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.cfg" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.cmd" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.jobexecutor" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.pvm" level="debug" />
+  <logger name="com.finture.bpm.identity.impl.ldap" level="debug" />
   
   <root level="info">
     <appender-ref ref="STDOUT" />

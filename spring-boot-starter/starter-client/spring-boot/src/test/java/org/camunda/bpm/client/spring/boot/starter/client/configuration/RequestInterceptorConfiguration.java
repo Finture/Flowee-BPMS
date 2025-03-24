@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.client.configuration;
+package com.finture.bpm.client.spring.boot.starter.client.configuration;
 
-import org.camunda.bpm.client.interceptor.ClientRequestInterceptor;
+import com.finture.bpm.client.interceptor.ClientRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 
 public class RequestInterceptorConfiguration {

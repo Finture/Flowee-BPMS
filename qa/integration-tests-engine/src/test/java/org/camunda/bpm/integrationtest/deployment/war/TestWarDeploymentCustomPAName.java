@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.war;
+package com.finture.bpm.integrationtest.deployment.war;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.integrationtest.deployment.war.apps.CustomNameServletPA;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.integrationtest.deployment.war.apps.CustomNameServletPA;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -42,7 +42,7 @@ public class TestWarDeploymentCustomPAName extends AbstractFoxPlatformIntegratio
         .addAsResource("META-INF/processes.xml")
         .addClass(AbstractFoxPlatformIntegrationTest.class)
         .addClass(CustomNameServletPA.class)
-        .addAsResource("org/camunda/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
+        .addAsResource("com/finture/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
   }
 
   @Test

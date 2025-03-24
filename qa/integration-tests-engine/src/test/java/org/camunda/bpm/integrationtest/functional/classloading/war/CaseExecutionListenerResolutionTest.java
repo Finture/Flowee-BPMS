@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.war;
+package com.finture.bpm.integrationtest.functional.classloading.war;
 
-import org.camunda.bpm.engine.runtime.VariableInstanceQuery;
-import org.camunda.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.runtime.VariableInstanceQuery;
+import com.finture.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -40,7 +40,7 @@ public class CaseExecutionListenerResolutionTest extends AbstractFoxPlatformInte
   public static WebArchive createProcessArchiveDeplyoment() {
     return initWebArchiveDeployment()
             .addClass(ExampleCaseExecutionListener.class)
-            .addAsResource("org/camunda/bpm/integrationtest/functional/classloading/CaseExecutionListenerResolutionTest.cmmn");
+            .addAsResource("com/finture/bpm/integrationtest/functional/classloading/CaseExecutionListenerResolutionTest.cmmn");
   }
 
   @Deployment(name="clientDeployment")
@@ -59,7 +59,7 @@ public class CaseExecutionListenerResolutionTest extends AbstractFoxPlatformInte
   public void testResolveCaseExecutionListenerClass() {
     // assert that we cannot load the delegate here:
     try {
-      Class.forName("org.camunda.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener");
+      Class.forName("com.finture.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener");
       Assert.fail("CNFE expected");
     }catch (ClassNotFoundException e) {
       // expected

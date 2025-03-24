@@ -1,0 +1,5 @@
+xml1 = S(input, com.finture.spin.DataFormats.xml());
+
+xml2 = S(input, "application/xml");
+
+xml3 = S(input);

@@ -3,49 +3,49 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.camunda.bpm.dmn</groupId>
-  <artifactId>camunda-engine-dmn-bom</artifactId>
-  <version>7.22.0</version>
-  <name>camunda DMN - engine - bom</name>
+  <groupId>com.finture.bpm.dmn</groupId>
+  <artifactId>flowee-bpms-engine-dmn-bom</artifactId>
+  <version>0.5.1</version>
+  <name>Flowee BPMS DMN - engine - bom</name>
   <packaging>pom</packaging>
 
   <dependencyManagement>
     <dependencies>
 
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-dmn</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-dmn</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-api</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-api</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-juel</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-juel</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-scala</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-scala</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <!-- See CAM-11346
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-spin</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-spin</artifactId>
         <version>${project.version}</version>
       </dependency>
       -->

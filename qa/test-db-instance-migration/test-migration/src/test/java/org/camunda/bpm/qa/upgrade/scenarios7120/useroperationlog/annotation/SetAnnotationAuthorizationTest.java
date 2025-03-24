@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7120.useroperationlog.annotation;
+package com.finture.bpm.qa.upgrade.scenarios7120.useroperationlog.annotation;
 
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.authorization.Authorization;
-import org.camunda.bpm.engine.authorization.ProcessDefinitionPermissions;
-import org.camunda.bpm.engine.authorization.Resources;
-import org.camunda.bpm.engine.history.UserOperationLogEntry;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.authorization.Authorization;
+import com.finture.bpm.engine.authorization.ProcessDefinitionPermissions;
+import com.finture.bpm.engine.authorization.Resources;
+import com.finture.bpm.engine.history.UserOperationLogEntry;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

@@ -1,7 +1,7 @@
-<module xmlns="urn:jboss:module:1.0" name="org.camunda.bpm.camunda-engine-plugins">
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.flowee-bpms-engine-plugins">
 
   <dependencies>
     <!-- Add custom engine plugins here -->
-    <!-- <module name="org.camunda.bpm.camunda-custom-engine-plugin" export="true" /> -->
+    <!-- <module name="com.finture.bpm.flowee-bpms-custom-engine-plugin" export="true" /> -->
   </dependencies>
 </module>

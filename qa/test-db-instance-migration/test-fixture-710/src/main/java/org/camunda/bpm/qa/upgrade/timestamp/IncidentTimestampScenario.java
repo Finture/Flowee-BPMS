@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.timestamp;
+package com.finture.bpm.qa.upgrade.timestamp;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineException;
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineException;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  * @author Nikola Koevski

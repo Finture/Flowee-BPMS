@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.local.bean;
+package com.finture.bpm.integrationtest.functional.ejb.local.bean;
 
 import javax.ejb.EJB;
 import javax.inject.Named;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
 
 /**
  * A CDI bean delegating to the local business 
@@ -32,7 +32,7 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 @Named
 public class LocalSLSBClientDelegateBean implements JavaDelegate {
   
-  @EJB(lookup="java:global/service/LocalSLSBean!org.camunda.bpm.integrationtest.functional.ejb.local.bean.BusinessInterface")
+  @EJB(lookup="java:global/service/LocalSLSBean!com.finture.bpm.integrationtest.functional.ejb.local.bean.BusinessInterface")
   private BusinessInterface businessInterface;
 
   @Override

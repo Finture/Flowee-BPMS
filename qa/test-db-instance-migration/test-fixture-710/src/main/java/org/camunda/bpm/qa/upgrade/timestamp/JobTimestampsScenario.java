@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.timestamp;
+package com.finture.bpm.qa.upgrade.timestamp;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandContext;
-import org.camunda.bpm.engine.impl.persistence.entity.JobEntity;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandContext;
+import com.finture.bpm.engine.impl.persistence.entity.JobEntity;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

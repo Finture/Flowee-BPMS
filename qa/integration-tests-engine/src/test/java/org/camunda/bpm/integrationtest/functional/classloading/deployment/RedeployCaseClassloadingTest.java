@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.deployment;
+package com.finture.bpm.integrationtest.functional.classloading.deployment;
 
-import org.camunda.bpm.engine.runtime.VariableInstanceQuery;
-import org.camunda.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.runtime.VariableInstanceQuery;
+import com.finture.bpm.integrationtest.functional.classloading.beans.ExampleCaseExecutionListener;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -40,7 +40,7 @@ public class RedeployCaseClassloadingTest extends AbstractFoxPlatformIntegration
   public static WebArchive createProcessArchiveDeplyoment() {
     return initWebArchiveDeployment()
             .addClass(ExampleCaseExecutionListener.class)
-            .addAsResource("org/camunda/bpm/integrationtest/functional/classloading/deployment/RedeployCaseClassloadingTest.testRedeployClassloading.cmmn10.xml");
+            .addAsResource("com/finture/bpm/integrationtest/functional/classloading/deployment/RedeployCaseClassloadingTest.testRedeployClassloading.cmmn10.xml");
   }
 
 
@@ -58,9 +58,9 @@ public class RedeployCaseClassloadingTest extends AbstractFoxPlatformIntegration
   @OperateOnDeployment("clientDeployment")
   public void testRedeployClassloading() {
     // given
-    org.camunda.bpm.engine.repository.Deployment deployment = repositoryService.createDeploymentQuery().singleResult();
+    com.finture.bpm.engine.repository.Deployment deployment = repositoryService.createDeploymentQuery().singleResult();
 
-    org.camunda.bpm.engine.repository.Deployment deployment2 = repositoryService
+    com.finture.bpm.engine.repository.Deployment deployment2 = repositoryService
       .createDeployment()
       .nameFromDeployment(deployment.getId())
       .addDeploymentResources(deployment.getId())

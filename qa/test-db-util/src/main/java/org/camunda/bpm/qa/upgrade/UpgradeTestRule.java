@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
-import org.camunda.bpm.engine.history.HistoricIncidentQuery;
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.engine.management.JobDefinitionQuery;
-import org.camunda.bpm.engine.runtime.CaseExecutionQuery;
-import org.camunda.bpm.engine.runtime.CaseInstance;
-import org.camunda.bpm.engine.runtime.CaseInstanceQuery;
-import org.camunda.bpm.engine.runtime.ExecutionQuery;
-import org.camunda.bpm.engine.runtime.IncidentQuery;
-import org.camunda.bpm.engine.runtime.JobQuery;
-import org.camunda.bpm.engine.runtime.MessageCorrelationBuilder;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstanceQuery;
-import org.camunda.bpm.engine.task.TaskQuery;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.history.HistoricIncidentQuery;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.engine.management.JobDefinitionQuery;
+import com.finture.bpm.engine.runtime.CaseExecutionQuery;
+import com.finture.bpm.engine.runtime.CaseInstance;
+import com.finture.bpm.engine.runtime.CaseInstanceQuery;
+import com.finture.bpm.engine.runtime.ExecutionQuery;
+import com.finture.bpm.engine.runtime.IncidentQuery;
+import com.finture.bpm.engine.runtime.JobQuery;
+import com.finture.bpm.engine.runtime.MessageCorrelationBuilder;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.ProcessInstanceQuery;
+import com.finture.bpm.engine.task.TaskQuery;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.Assert;
 import org.junit.runner.Description;
 

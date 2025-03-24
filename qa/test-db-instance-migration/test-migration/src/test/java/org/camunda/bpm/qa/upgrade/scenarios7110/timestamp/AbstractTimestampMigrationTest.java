@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.timestamp;
+package com.finture.bpm.qa.upgrade.scenarios7110.timestamp;
 
-import org.camunda.bpm.engine.ExternalTaskService;
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.ExternalTaskService;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.Before;
 import org.junit.Rule;
 

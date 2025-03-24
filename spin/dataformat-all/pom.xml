@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.spin</groupId>
-    <artifactId>camunda-spin-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.spin</groupId>
+    <artifactId>flowee-bpms-spin-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-spin-dataformat-all</artifactId>
-  <name>camunda Spin - all dataformats in one</name>
+  <artifactId>flowee-bpms-spin-dataformat-all</artifactId>
+  <name>Flowee BPMS Spin - all dataformats in one</name>
 
   <properties>
     <!-- We shade artifacts into the jar, so we need to generate 
@@ -21,13 +21,15 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-xml-dom</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-xml-dom</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -60,8 +62,8 @@
               <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
               <artifactSet>
                 <excludes>
-                  <exclude>org.camunda.commons:*</exclude>
-                  <exclude>org.camunda.spin:camunda-spin-core</exclude>
+                  <exclude>com.finture.commons:*</exclude>
+                  <exclude>com.finture.spin:flowee-bpms-spin-core</exclude>
                   <exclude>org.slf4j:*</exclude>
                 </excludes>
               </artifactSet>
@@ -136,7 +138,7 @@
         <configuration>
           <includeDependencySources>true</includeDependencySources>
           <includeTransitiveDependencySources>true</includeTransitiveDependencySources>
-          <dependencySourceIncludes><include>org.camunda.spin:*</include></dependencySourceIncludes>
+          <dependencySourceIncludes><include>com.finture.spin:*</include></dependencySourceIncludes>
           <additionalDependencies>
            <additionalDependency>
              <groupId>junit</groupId>
@@ -164,8 +166,8 @@
               !net.minidev.json*,
               !org.codehaus.jackson*,
               org.slf4j,
-              org.camunda.commons.utils,
-              org.camunda.commons.logging,
+              com.finture.commons.utils,
+              com.finture.commons.logging,
               *
             </Import-Package>
             <Bundle-ClassPath>.</Bundle-ClassPath>

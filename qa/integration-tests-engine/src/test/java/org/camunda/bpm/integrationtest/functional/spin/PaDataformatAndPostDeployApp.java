@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.camunda.bpm.application.PostDeploy;
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.engine.ProcessEngine;
+import com.finture.bpm.application.PostDeploy;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.engine.ProcessEngine;
 
 
 /**
@@ -29,7 +29,7 @@ import org.camunda.bpm.engine.ProcessEngine;
  */
 @ProcessApplication(PaDataformatAndPostDeployApp.PA_NAME)
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class PaDataformatAndPostDeployApp extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class PaDataformatAndPostDeployApp extends com.finture.bpm.application.impl.ServletProcessApplication {
 
   public final static String PA_NAME  = "PaDataformatAndPostDeployApp";
 

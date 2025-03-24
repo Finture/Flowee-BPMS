@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.SampleServiceBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.jobexecutor.beans.SampleServiceBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -38,7 +38,7 @@ public class TimerExecutionTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive processArchive() {
     WebArchive archive = initWebArchiveDeployment()
-            .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/TimerExecution.bpmn20.xml")
+            .addAsResource("com/finture/bpm/integrationtest/jobexecutor/TimerExecution.bpmn20.xml")
             .addClass(SampleServiceBean.class);
 
     return archive;

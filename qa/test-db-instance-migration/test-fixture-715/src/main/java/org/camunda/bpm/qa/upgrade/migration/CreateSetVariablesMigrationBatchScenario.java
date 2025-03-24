@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.migration;
+package com.finture.bpm.qa.upgrade.migration;
 
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.migration.MigrationPlan;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.migration.MigrationPlan;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class CreateSetVariablesMigrationBatchScenario {
 
   @Deployment
   public static String sourceDeployment() {
-    return "org/camunda/bpm/qa/upgrade/migration/oneTaskProcess-source.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/migration/oneTaskProcess-source.bpmn20.xml";
   }
 
   @Deployment
   public static String targetDeployment() {
-    return "org/camunda/bpm/qa/upgrade/migration/oneTaskProcess-target.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/migration/oneTaskProcess-target.bpmn20.xml";
   }
 
   @DescribesScenario("createSetVariablesMigrationBatchScenario")

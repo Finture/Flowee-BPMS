@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.util;
+package com.finture.bpm.qa.upgrade.util;
 
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandContext;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandContext;
 
 /**
  * @author Tom Baeyens

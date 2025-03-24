@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.loadgenerator.tasks;
+package com.finture.bpm.qa.performance.engine.loadgenerator.tasks;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.repository.DeploymentBuilder;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.repository.DeploymentBuilder;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
 
 /**
  * @author Daniel Meyer

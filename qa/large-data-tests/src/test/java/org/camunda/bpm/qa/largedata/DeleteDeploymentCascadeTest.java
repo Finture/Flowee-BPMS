@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.largedata;
+package com.finture.bpm.qa.largedata;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.engine.impl.db.sql.DbSqlSessionFactory;
-import org.camunda.bpm.engine.impl.util.CollectionUtil;
-import org.camunda.bpm.engine.repository.Deployment;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.largedata.util.EngineDataGenerator;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.engine.impl.db.sql.DbSqlSessionFactory;
+import com.finture.bpm.engine.impl.util.CollectionUtil;
+import com.finture.bpm.engine.repository.Deployment;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.largedata.util.EngineDataGenerator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

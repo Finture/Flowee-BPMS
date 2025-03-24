@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.variable;
+package com.finture.bpm.qa.rolling.update.variable;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.camunda.bpm.engine.runtime.VariableInstance;
-import org.camunda.bpm.engine.runtime.VariableInstanceQuery;
-import org.camunda.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.runtime.VariableInstance;
+import com.finture.bpm.engine.runtime.VariableInstanceQuery;
+import com.finture.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Test;
 
 /**

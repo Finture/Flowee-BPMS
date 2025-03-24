@@ -2,17 +2,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-qa-old-engine</artifactId>
+  <artifactId>flowee-bpms-qa-old-engine</artifactId>
   <packaging>jar</packaging>
-  <name>Camunda Platform - QA - test new schema with old engine</name>
+  <name>Flowee BPMS Platform - QA - test new schema with old engine</name>
 
   <properties>
-    <camunda.old.engine.version>7.21.0</camunda.old.engine.version>
+    <flowee-bpms.old.engine.version>7.21.0</flowee-bpms.old.engine.version>
   </properties>
 
   <build>
@@ -22,8 +22,8 @@
         <directory>${project.build.directory}/engine-test-sources</directory>
         <excludes>
           <exclude>**/*.java</exclude>
-          <exclude>camunda.cfg.xml</exclude>
-          <exclude>**/historycleanup.camunda.cfg.xml</exclude>
+          <exclude>flowee-bpms.cfg.xml</exclude>
+          <exclude>**/historycleanup.flowee-bpms.cfg.xml</exclude>
         </excludes>
       </testResource>
       <testResource>
@@ -110,8 +110,8 @@
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-bom</artifactId>
+            <groupId>com.finture.bpm</groupId>
+            <artifactId>flowee-bpms-bom</artifactId>
             <!-- Cannot use variables due to bug in Maven Release Plugin -->
             <version>7.21.0</version>
             <scope>import</scope>
@@ -207,15 +207,16 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm.distro</groupId>
-          <artifactId>camunda-sql-scripts</artifactId>
+          <groupId>com.finture.bpm.distro</groupId>
+          <artifactId>flowee-bpms-sql-scripts</artifactId>
           <version>${project.version}</version>
           <type>test-jar</type>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
+          <version>${project.version}</version>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -239,8 +240,9 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.commons</groupId>
-          <artifactId>camunda-commons-testing</artifactId>
+          <groupId>com.finture.commons</groupId>
+          <artifactId>flowee-bpms-commons-testing</artifactId>
+          <version>${project.version}</version>
           <scope>test</scope>
         </dependency>
 
@@ -301,9 +303,9 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm</groupId>
-                      <artifactId>camunda-engine</artifactId>
-                      <version>${camunda.old.engine.version}</version>
+                      <groupId>com.finture.bpm</groupId>
+                      <artifactId>flowee-bpms-engine</artifactId>
+                      <version>${flowee-bpms.old.engine.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/test-classes</outputDirectory>
                     </artifactItem>
@@ -321,8 +323,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm.distro</groupId>
-                      <artifactId>camunda-sql-scripts</artifactId>
+                      <groupId>com.finture.bpm.distro</groupId>
+                      <artifactId>flowee-bpms-sql-scripts</artifactId>
                       <version>${project.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/scripts-current</outputDirectory>
@@ -424,7 +426,7 @@
                 <exclude>**/ManagementServiceTableCountTest.java</exclude>
 
                 <!-- The test is not relevant in `old-engine` setup since the feature has been removed -->
-                <!-- See https://github.com/camunda/camunda-bpm-platform/pull/4544#discussion_r1728748399 -->
+                <!-- See https://github.com/flowee-bpms/flowee-bpms-bpm-platform/pull/4544#discussion_r1728748399 -->
                 <exclude>**/ConcurrentTelemetryConfigurationTest.java</exclude>
               </excludes>
               <testFailureIgnore>false</testFailureIgnore>

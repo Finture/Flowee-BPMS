@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.camunda.bpm.qa.upgrade</groupId>
-  <artifactId>camunda-qa-db-instance-migration</artifactId>
+  <groupId>com.finture.bpm.qa.upgrade</groupId>
+  <artifactId>flowee-bpms-qa-db-instance-migration</artifactId>
 
   <packaging>pom</packaging>
-  <name>Camunda Platform - QA - upgrade - instance migration</name>
+  <name>Flowee BPMS Platform - QA - upgrade - instance migration</name>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.5.1</version>
   </parent>
 
   <properties>

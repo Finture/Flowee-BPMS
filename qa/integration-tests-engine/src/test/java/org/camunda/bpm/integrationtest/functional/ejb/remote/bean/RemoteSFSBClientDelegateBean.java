@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.remote.bean;
+package com.finture.bpm.integrationtest.functional.ejb.remote.bean;
 
 import javax.inject.Named;
 import javax.naming.InitialContext;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.integrationtest.util.TestConstants;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.integrationtest.util.TestConstants;
 
 
 /**
@@ -39,7 +39,7 @@ public class RemoteSFSBClientDelegateBean implements JavaDelegate {
     BusinessInterface businessInterface = (BusinessInterface) new InitialContext().lookup("java:global/" +
         TestConstants.getAppName() +
         "service/" +
-        "RemoteSFSBean!org.camunda.bpm.integrationtest.functional.ejb.remote.bean.BusinessInterface");
+        "RemoteSFSBean!com.finture.bpm.integrationtest.functional.ejb.remote.bean.BusinessInterface");
 
     execution.setVariable("result", businessInterface.doBusiness());
   }

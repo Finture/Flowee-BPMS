@@ -14,29 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update;
+package com.finture.bpm.qa.rolling.update;
 
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.rolling.update.scenarios.DeploymentWhichShouldBeDeletedScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.authorization.AuthorizationScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.batch.SetRemovalTimeToProcessInstanceScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.callactivity.ProcessWithCallActivityScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.cleanup.HistoryCleanupScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.eventSubProcess.ProcessWithEventSubProcessScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.externalTask.ProcessWithExternalTaskScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.mulltiInstance.ProcessWithMultiInstanceCallActivityScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.task.ProcessWithAsyncServiceTaskScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.task.ProcessWithParallelGatewayAndServiceTaskScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.task.ProcessWithParallelGatewayScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.task.ProcessWithUserTaskAndTimerScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.task.ProcessWithUserTaskScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.timestamp.IncidentTimestampUpdateScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.timestamp.JobTimestampsUpdateScenario;
-import org.camunda.bpm.qa.rolling.update.scenarios.variable.EmptyStringVariableScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioRunner;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.rolling.update.scenarios.DeploymentWhichShouldBeDeletedScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.authorization.AuthorizationScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.batch.SetRemovalTimeToProcessInstanceScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.callactivity.ProcessWithCallActivityScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.cleanup.HistoryCleanupScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.eventSubProcess.ProcessWithEventSubProcessScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.externalTask.ProcessWithExternalTaskScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.mulltiInstance.ProcessWithMultiInstanceCallActivityScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.task.ProcessWithAsyncServiceTaskScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.task.ProcessWithParallelGatewayAndServiceTaskScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.task.ProcessWithParallelGatewayScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.task.ProcessWithUserTaskAndTimerScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.task.ProcessWithUserTaskScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.timestamp.IncidentTimestampUpdateScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.timestamp.JobTimestampsUpdateScenario;
+import com.finture.bpm.qa.rolling.update.scenarios.variable.EmptyStringVariableScenario;
+import com.finture.bpm.qa.upgrade.ScenarioRunner;
 
 /**
  * Sets up scenarios for rolling updates.

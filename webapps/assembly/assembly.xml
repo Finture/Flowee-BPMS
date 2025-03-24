@@ -9,7 +9,7 @@
   <formats>
     <format>zip</format>
   </formats>
-  <baseDirectory>camunda-webapp-frontend-sources</baseDirectory>
+  <baseDirectory>flowee-bpms-webapp-frontend-sources</baseDirectory>
   <fileSets>
     <!-- Only respect frontend code -->
     <fileSet>

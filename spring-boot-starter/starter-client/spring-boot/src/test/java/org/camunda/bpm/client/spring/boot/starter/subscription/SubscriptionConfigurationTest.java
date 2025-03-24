@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.subscription;
+package com.finture.bpm.client.spring.boot.starter.subscription;
 
-import org.camunda.bpm.client.spring.boot.starter.ParsePropertiesHelper;
-import org.camunda.bpm.client.spring.impl.subscription.SubscriptionConfiguration;
+import com.finture.bpm.client.spring.boot.starter.ParsePropertiesHelper;
+import com.finture.bpm.client.spring.impl.subscription.SubscriptionConfiguration;
 import org.junit.Test;
 import org.springframework.test.context.TestPropertySource;
 

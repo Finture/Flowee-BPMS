@@ -1,1 +1,1 @@
-org.camunda.bpm.application.impl.JakartaServletProcessApplicationDeployer
+com.finture.bpm.application.impl.JakartaServletProcessApplicationDeployer

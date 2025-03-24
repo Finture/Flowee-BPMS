@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.bpmn;
+package com.finture.bpm.qa.performance.engine.bpmn;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.camunda.bpm.engine.repository.Deployment;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.qa.performance.engine.bpmn.delegate.NoopDelegate;
-import org.camunda.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
-import org.camunda.bpm.qa.performance.engine.steps.StartProcessInstanceStep;
+import com.finture.bpm.engine.repository.Deployment;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.qa.performance.engine.bpmn.delegate.NoopDelegate;
+import com.finture.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
+import com.finture.bpm.qa.performance.engine.steps.StartProcessInstanceStep;
 import org.junit.Test;
 
 /**

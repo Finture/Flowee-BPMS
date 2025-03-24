@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.war.beans;
+package com.finture.bpm.integrationtest.deployment.war.beans;
 
 import javax.script.ScriptEngineManager;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin;
-import org.camunda.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver;
-import org.camunda.bpm.engine.impl.scripting.engine.ScriptBindingsFactory;
-import org.camunda.bpm.engine.impl.scripting.engine.ScriptingEngines;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.cfg.ProcessEnginePlugin;
+import com.finture.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver;
+import com.finture.bpm.engine.impl.scripting.engine.ScriptBindingsFactory;
+import com.finture.bpm.engine.impl.scripting.engine.ScriptingEngines;
 
 public class GroovyProcessEnginePlugin implements ProcessEnginePlugin {
 

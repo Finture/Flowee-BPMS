@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.task;
+package com.finture.bpm.qa.upgrade.scenarios.task;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  * @author Thorben Lindhauer
@@ -30,12 +30,12 @@ public class ParallelScopeTasksScenario {
 
   @Deployment
   public static String deployProcess() {
-    return "org/camunda/bpm/qa/upgrade/task/parallelScopeTasksProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/task/parallelScopeTasksProcess.bpmn20.xml";
   }
 
   @Deployment
   public static String deployNestedProcess() {
-    return "org/camunda/bpm/qa/upgrade/task/nestedParallelScopeTasksProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/task/nestedParallelScopeTasksProcess.bpmn20.xml";
   }
 
   @DescribesScenario("init.plain")

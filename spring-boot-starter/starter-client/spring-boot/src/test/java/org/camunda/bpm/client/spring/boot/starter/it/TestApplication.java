@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.it;
+package com.finture.bpm.client.spring.boot.starter.it;
 
-import org.camunda.bpm.client.spring.annotation.ExternalTaskSubscription;
-import org.camunda.bpm.client.task.ExternalTaskHandler;
+import com.finture.bpm.client.spring.annotation.ExternalTaskSubscription;
+import com.finture.bpm.client.task.ExternalTaskHandler;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 

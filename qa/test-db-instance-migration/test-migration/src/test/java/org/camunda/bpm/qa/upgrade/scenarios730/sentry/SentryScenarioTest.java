@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios730.sentry;
+package com.finture.bpm.qa.upgrade.scenarios730.sentry;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -22,17 +22,17 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import org.camunda.bpm.engine.CaseService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.cmmn.entity.runtime.CaseSentryPartEntity;
-import org.camunda.bpm.engine.impl.cmmn.entity.runtime.CaseSentryPartQueryImpl;
-import org.camunda.bpm.engine.impl.interceptor.CommandExecutor;
-import org.camunda.bpm.engine.runtime.CaseExecution;
-import org.camunda.bpm.engine.runtime.CaseInstance;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.CaseService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.cmmn.entity.runtime.CaseSentryPartEntity;
+import com.finture.bpm.engine.impl.cmmn.entity.runtime.CaseSentryPartQueryImpl;
+import com.finture.bpm.engine.impl.interceptor.CommandExecutor;
+import com.finture.bpm.engine.runtime.CaseExecution;
+import com.finture.bpm.engine.runtime.CaseInstance;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

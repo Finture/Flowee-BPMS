@@ -2,33 +2,33 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda</groupId>
-    <artifactId>camunda-bpm-release-parent</artifactId>
-    <version>2.3.0</version>
+    <groupId>com.finture</groupId>
+    <artifactId>flowee-bpms-release-parent</artifactId>
+    <version>0.5.1</version>
     <!-- do not remove empty tag - http://jira.codehaus.org/browse/MNG-4687 -->
     <relativePath />
   </parent>
 
-  <groupId>org.camunda.bpm</groupId>
-  <artifactId>camunda-root</artifactId>
-  <version>7.22.0</version>
+  <groupId>com.finture.bpm</groupId>
+  <artifactId>flowee-bpms-root</artifactId>
+  <version>0.5.1</version>
   <packaging>pom</packaging>
-  <name>Camunda Platform - Root Pom</name>
+  <name>Flowee BPMS - Root Pom</name>
   <inceptionYear>2013</inceptionYear>
 
   <description>
     This pom defines the modules that make up the build.
-    The parent pom for all Camunda Platform projects can be found in the parent directory relative to this file.
+    The parent pom for all Flowee BPMS Platform projects can be found in the parent directory relative to this file.
   </description>
 
   <properties>
     <license.includeTransitiveDependencies>false</license.includeTransitiveDependencies>
 
-    <!-- These properties are used in both the BOM as well as camunda-parent and subprojects -->
+    <!-- These properties are used in both the BOM as well as flowee-bpms-parent and subprojects -->
     <version.mybatis>3.5.15</version.mybatis>
     <version.joda-time>2.12.5</version.joda-time>
     <version.uuid-generator>4.3.0</version.uuid-generator>
-    <version.feel-scala>1.17.5</version.feel-scala>
+    <version.feel-scala>1.19.3</version.feel-scala>
   </properties>
 
   <build>
@@ -61,7 +61,6 @@
 
         <module>quarkus-extension</module>
 
-        <module>qa</module>
 
         <module>javaee/ejb-service</module>
         <module>javaee/ejb-client</module>
@@ -139,8 +138,8 @@
                 <additionalJOption>-Xdoclint:none</additionalJOption>
                 <additionalJOption>--ignore-source-errors</additionalJOption>
               </additionalJOptions>
-              <doctitle>Camunda Platform Javadocs ${project.version}</doctitle>
-              <windowtitle>Camunda Platform Javadocs ${project.version}</windowtitle>
+              <doctitle>Flowee BPMS Platform Javadocs ${project.version}</doctitle>
+              <windowtitle>Flowee BPMS Platform Javadocs ${project.version}</windowtitle>
             </configuration>
           </plugin>
         </plugins>
@@ -150,7 +149,6 @@
     <profile>
       <id>distro-serverless</id>
       <modules>
-        <module>qa</module>
 
         <module>engine</module>
         <module>engine-cdi</module>
@@ -180,20 +178,6 @@
       <modules>
         <module>distro/license-book</module>
         <module>distro/tomcat</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>distro-wildfly</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <modules>
-        <module>javaee/ejb-client</module>
-        <module>javaee/ejb-client-jakarta</module>
-        <module>distro/license-book</module>
-        <module>distro/wildfly</module>
-        <module>distro/wildfly26</module>
       </modules>
     </profile>
 
@@ -319,15 +303,15 @@
     </repository>
     <repository>
       <!-- Required for local builds by community users on master branch -->
-      <id>camunda-public-repository</id>
-      <name>Camunda Platform Maven Repository</name>
-      <url>https://artifacts.camunda.com/artifactory/public/</url>
+      <id>flowee-bpms-public-repository</id>
+      <name>Flowee BPMS Platform Maven Repository</name>
+      <url>https://artifacts.flowee-bpms.com/artifactory/public/</url>
     </repository>
     <repository>
       <!-- Required for local builds by developers on maintainance branches -->
-      <id>camunda-nexus</id>
-      <name>Camunda Nexus</name>
-      <url>https://artifacts.camunda.com/artifactory/internal</url>
+      <id>flowee-bpms-nexus</id>
+      <name>Flowee BPMS Nexus</name>
+      <url>https://artifacts.flowee-bpms.com/artifactory/internal</url>
     </repository>
   </repositories>
 
@@ -339,31 +323,31 @@
   </licenses>
 
   <organization>
-    <name>camunda services GmbH</name>
-    <url>http://www.camunda.com</url>
+    <name>flowee-bpms services GmbH</name>
+    <url>http://www.flowee-bpms.com</url>
   </organization>
 
-  <url>http://www.camunda.org</url>
+  <url>http://www.flowee-bpms.org</url>
 
   <developers>
     <developer>
-      <id>camunda.org</id>
-      <name>Camunda Platform Community</name>
-      <organization>camunda.org</organization>
-      <organizationUrl>http://camunda.org</organizationUrl>
+      <id>flowee-bpms.org</id>
+      <name>Flowee BPMS Platform Community</name>
+      <organization>flowee-bpms.org</organization>
+      <organizationUrl>http://flowee-bpms.org</organizationUrl>
     </developer>
   </developers>
 
   <scm>
-    <url>https://github.com/camunda/camunda-bpm-platform</url>
-    <connection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</connection>
-    <developerConnection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</developerConnection>
-    <tag>7.22.0</tag>
+    <url>https://github.com/flowee-bpms/flowee-bpms-bpm-platform</url>
+    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</connection>
+    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</developerConnection>
+    <tag>0.1</tag>
   </scm>
 
   <issueManagement>
     <system>Jira</system>
-    <url>https://app.camunda.com/jira/browse/CAM/</url>
+    <url>https://app.flowee-bpms.com/jira/browse/CAM/</url>
   </issueManagement>
 
 </project>

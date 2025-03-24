@@ -2,21 +2,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.run</groupId>
-    <artifactId>camunda-bpm-run-qa</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.run</groupId>
+    <artifactId>flowee-bpms-bpm-run-qa</artifactId>
+    <version>0.5.1</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>camunda-bpm-run-example-plugin</artifactId>
-  <name>Camunda Platform - Run - QA - Example Plugin</name>
+  <artifactId>flowee-bpms-bpm-run-example-plugin</artifactId>
+  <name>Flowee BPMS Platform - Run - QA - Example Plugin</name>
   <packaging>jar</packaging>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp-jakarta</artifactId>
+      <groupId>com.finture.bpm.webapp</groupId>
+      <artifactId>flowee-bpms-webapp-jakarta</artifactId>
+      <version>${project.version}</version>
       <classifier>classes</classifier>
     </dependency>
 

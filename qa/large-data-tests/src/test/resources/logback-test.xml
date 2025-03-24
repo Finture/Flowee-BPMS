@@ -9,8 +9,8 @@
     </encoder>
   </appender>
 
-  <!-- camunda -->
-  <logger name="org.camunda" level="info" />
+  <!-- flowee-bpms -->
+  <logger name="com.finture" level="info" />
 
   <!-- common dependencies -->
   <logger name="org.apache.ibatis" level="info" />

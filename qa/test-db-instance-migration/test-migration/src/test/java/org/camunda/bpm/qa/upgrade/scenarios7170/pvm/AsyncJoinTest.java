@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7170.pvm;
+package com.finture.bpm.qa.upgrade.scenarios7170.pvm;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.assertj.core.api.Assertions;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.impl.persistence.entity.JobEntity;
-import org.camunda.bpm.engine.runtime.JobQuery;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.impl.persistence.entity.JobEntity;
+import com.finture.bpm.engine.runtime.JobQuery;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

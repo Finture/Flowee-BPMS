@@ -14,40 +14,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.upgrade.gson.ProcessInstanceModificationScenario;
-import org.camunda.bpm.qa.upgrade.gson.TaskFilterPropertiesScenario;
-import org.camunda.bpm.qa.upgrade.gson.TaskFilterScenario;
-import org.camunda.bpm.qa.upgrade.gson.TaskFilterVariablesScenario;
-import org.camunda.bpm.qa.upgrade.gson.TimerChangeJobDefinitionScenario;
-import org.camunda.bpm.qa.upgrade.gson.TimerChangeProcessDefinitionScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.DeleteHistoricDecisionsBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.DeleteHistoricProcessInstancesBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.DeleteProcessInstancesBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.MigrationBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.ModificationBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.RestartProcessInstanceBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.SetExternalTaskRetriesBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.SetJobRetriesBatchScenario;
-import org.camunda.bpm.qa.upgrade.gson.batch.UpdateProcessInstanceSuspendStateBatchScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.DeploymentDeployTimeScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.EventSubscriptionCreateTimeScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.ExternalTaskLockExpTimeScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.IncidentTimestampScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.JobTimestampsScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.MeterLogTimestampScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.TaskCreateTimeScenario;
-import org.camunda.bpm.qa.upgrade.timestamp.UserLockExpTimeScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.CreateStandaloneTaskDeleteScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.CreateStandaloneTaskScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.SetAssigneeProcessInstanceTaskScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.SuspendProcessDefinitionDeleteScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.annotation.AuthorizationCheckProcessDefinitionScenario;
-import org.camunda.bpm.qa.upgrade.useroperationlog.annotation.NoAuthorizationCheckScenario;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.upgrade.gson.ProcessInstanceModificationScenario;
+import com.finture.bpm.qa.upgrade.gson.TaskFilterPropertiesScenario;
+import com.finture.bpm.qa.upgrade.gson.TaskFilterScenario;
+import com.finture.bpm.qa.upgrade.gson.TaskFilterVariablesScenario;
+import com.finture.bpm.qa.upgrade.gson.TimerChangeJobDefinitionScenario;
+import com.finture.bpm.qa.upgrade.gson.TimerChangeProcessDefinitionScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.DeleteHistoricDecisionsBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.DeleteHistoricProcessInstancesBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.DeleteProcessInstancesBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.MigrationBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.ModificationBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.RestartProcessInstanceBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.SetExternalTaskRetriesBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.SetJobRetriesBatchScenario;
+import com.finture.bpm.qa.upgrade.gson.batch.UpdateProcessInstanceSuspendStateBatchScenario;
+import com.finture.bpm.qa.upgrade.timestamp.DeploymentDeployTimeScenario;
+import com.finture.bpm.qa.upgrade.timestamp.EventSubscriptionCreateTimeScenario;
+import com.finture.bpm.qa.upgrade.timestamp.ExternalTaskLockExpTimeScenario;
+import com.finture.bpm.qa.upgrade.timestamp.IncidentTimestampScenario;
+import com.finture.bpm.qa.upgrade.timestamp.JobTimestampsScenario;
+import com.finture.bpm.qa.upgrade.timestamp.MeterLogTimestampScenario;
+import com.finture.bpm.qa.upgrade.timestamp.TaskCreateTimeScenario;
+import com.finture.bpm.qa.upgrade.timestamp.UserLockExpTimeScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.CreateStandaloneTaskDeleteScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.CreateStandaloneTaskScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.SetAssigneeProcessInstanceTaskScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.SuspendProcessDefinitionDeleteScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.annotation.AuthorizationCheckProcessDefinitionScenario;
+import com.finture.bpm.qa.upgrade.useroperationlog.annotation.NoAuthorizationCheckScenario;
 
 /**
  * @author Tassilo Weidner

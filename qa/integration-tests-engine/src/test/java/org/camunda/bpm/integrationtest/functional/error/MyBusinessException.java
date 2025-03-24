@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.error;
+package com.finture.bpm.integrationtest.functional.error;
 
 public class MyBusinessException extends Exception {
 

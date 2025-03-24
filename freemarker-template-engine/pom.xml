@@ -2,17 +2,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-parent</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../parent</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.template-engines</groupId>
-  <artifactId>camunda-template-engines-freemarker</artifactId>
-  <version>7.22.0</version>
+  <groupId>com.finture.template-engines</groupId>
+  <artifactId>flowee-bpms-template-engines-freemarker</artifactId>
+  <version>0.5.1</version>
   
-  <name>camunda template engine jsr223 freemarker</name>
+  <name>Flowee BPMS template engine jsr223 freemarker</name>
 
   <inceptionYear>2014</inceptionYear>
 
@@ -59,7 +59,7 @@
         <version>${maven-bundle-plugin.version}</version>
         <configuration>
           <instructions>
-            <Export-Package>org.camunda.templateengines*</Export-Package>
+            <Export-Package>com.finture.templateengines*</Export-Package>
           </instructions>
         </configuration>
         <executions>
@@ -99,10 +99,10 @@
   </profiles>
 
   <scm>
-    <url>https://github.com/camunda/camunda-bpm-platform</url>
-    <connection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</connection>
-    <developerConnection>scm:git:git@github.com:camunda/camunda-bpm-platform.git</developerConnection>
-    <tag>7.22.0</tag>
+    <url>https://github.com/flowee-bpms/flowee-bpms-bpm-platform</url>
+    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</connection>
+    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</developerConnection>
+    <tag>0.1</tag>
   </scm>
 
 </project>

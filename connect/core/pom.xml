@@ -2,24 +2,27 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.connect</groupId>
-    <artifactId>camunda-connect-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.connect</groupId>
+    <artifactId>flowee-bpms-connect-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-connect-core</artifactId>
-  <name>Camunda Platform - connect - core</name>
+  <artifactId>flowee-bpms-connect-core</artifactId>
+  <name>Flowee BPMS Platform - connect - core</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
+      <version>${project.version}</version>
+
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-utils</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-utils</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -77,7 +80,7 @@
               <comparisonVersion>${connect.version.old}</comparisonVersion>
               <logResults>true</logResults>
               <excludes>
-                <exclude>org/camunda/connect/impl/**</exclude>
+                <exclude>com/finture/connect/impl/**</exclude>
               </excludes>
             </configuration>
             <executions>

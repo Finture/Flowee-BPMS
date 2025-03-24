@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.ProcessEngineService;
-import org.camunda.bpm.application.ProcessApplicationDeploymentInfo;
-import org.camunda.bpm.application.ProcessApplicationInfo;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.ProcessEngineImpl;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.cmd.AcquireJobsCmd;
-import org.camunda.bpm.engine.impl.interceptor.CommandExecutor;
-import org.camunda.bpm.engine.impl.jobexecutor.AcquiredJobs;
-import org.camunda.bpm.engine.impl.jobexecutor.JobExecutor;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.ProcessEngineService;
+import com.finture.bpm.application.ProcessApplicationDeploymentInfo;
+import com.finture.bpm.application.ProcessApplicationInfo;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.ProcessEngineImpl;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.cmd.AcquireJobsCmd;
+import com.finture.bpm.engine.impl.interceptor.CommandExecutor;
+import com.finture.bpm.engine.impl.jobexecutor.AcquiredJobs;
+import com.finture.bpm.engine.impl.jobexecutor.JobExecutor;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -62,8 +62,8 @@ public class IndependentJobExecutionTest extends AbstractFoxPlatformIntegrationT
   @Deployment(order = 0, name="pa1")
   public static WebArchive processArchive1() {
 
-    WebArchive deployment = initWebArchiveDeployment("pa1.war", "org/camunda/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.pa1.xml")
-        .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.process1.bpmn20.xml")
+    WebArchive deployment = initWebArchiveDeployment("pa1.war", "com/finture/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.pa1.xml")
+        .addAsResource("com/finture/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.process1.bpmn20.xml")
         .setWebXML(new StringAsset(Descriptors.create(WebAppDescriptor.class).version("3.0").exportAsString()));
 
     TestContainer.addContainerSpecificProcessEngineConfigurationClass(deployment);
@@ -75,8 +75,8 @@ public class IndependentJobExecutionTest extends AbstractFoxPlatformIntegrationT
   @Deployment(order = 1, name="pa2")
   public static WebArchive processArchive2() {
 
-    return initWebArchiveDeployment("pa2.war", "org/camunda/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.pa2.xml")
-        .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.process2.bpmn20.xml")
+    return initWebArchiveDeployment("pa2.war", "com/finture/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.pa2.xml")
+        .addAsResource("com/finture/bpm/integrationtest/jobexecutor/IndependentJobExecutionTest.process2.bpmn20.xml")
         .setWebXML(new StringAsset(Descriptors.create(WebAppDescriptor.class).version("3.0").exportAsString()));
   }
 

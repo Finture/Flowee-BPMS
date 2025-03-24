@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.batch;
+package com.finture.bpm.qa.upgrade.batch;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class CreateSetProcessInstanceVariablesBatchScenario {
 
   @Deployment
   public static String modelDeployment() {
-    return "org/camunda/bpm/qa/upgrade/batch/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/batch/oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("createSeedCreatedScenario")

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.test;
+package com.finture.bpm.container.impl.jboss.test;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.camunda.bpm.container.impl.jboss.extension.BpmPlatformExtension;
-import org.camunda.bpm.container.impl.jboss.extension.ModelConstants;
+import com.finture.bpm.container.impl.jboss.extension.BpmPlatformExtension;
+import com.finture.bpm.container.impl.jboss.extension.ModelConstants;
 import org.jboss.as.subsystem.test.AbstractSubsystemBaseTest;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -35,12 +35,12 @@ public class BpmPlatformSubsystemWithExpressionsTest extends AbstractSubsystemBa
   private static Map<String, String> PROPERTIES = new HashMap<>();
   
   static {
-    PROPERTIES.put("org.camunda.bpm.jboss.process-engine.test.isDefault", "true");
-    PROPERTIES.put("org.camunda.bpm.jboss.job-executor.core-threads", "5");          
-    PROPERTIES.put("org.camunda.bpm.jboss.job-executor.max-threads", "15");          
-    PROPERTIES.put("org.camunda.bpm.jboss.job-executor.queue-length", "15");         
-    PROPERTIES.put("org.camunda.bpm.jboss.job-executor.keepalive-time", "10");       
-    PROPERTIES.put("org.camunda.bpm.jboss.job-executor.allow-core-timeout", "false");
+    PROPERTIES.put("com.finture.bpm.jboss.process-engine.test.isDefault", "true");
+    PROPERTIES.put("com.finture.bpm.jboss.job-executor.core-threads", "5");          
+    PROPERTIES.put("com.finture.bpm.jboss.job-executor.max-threads", "15");          
+    PROPERTIES.put("com.finture.bpm.jboss.job-executor.queue-length", "15");         
+    PROPERTIES.put("com.finture.bpm.jboss.job-executor.keepalive-time", "10");       
+    PROPERTIES.put("com.finture.bpm.jboss.job-executor.allow-core-timeout", "false");
   }
   
   public BpmPlatformSubsystemWithExpressionsTest() {

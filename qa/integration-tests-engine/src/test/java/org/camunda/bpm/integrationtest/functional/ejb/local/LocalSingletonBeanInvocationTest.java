@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb.local;
+package com.finture.bpm.integrationtest.functional.ejb.local;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.ejb.local.bean.BusinessInterface;
-import org.camunda.bpm.integrationtest.functional.ejb.local.bean.LocalSingletonBean;
-import org.camunda.bpm.integrationtest.functional.ejb.local.bean.LocalSingletonBeanClientDelegateBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.ejb.local.bean.BusinessInterface;
+import com.finture.bpm.integrationtest.functional.ejb.local.bean.LocalSingletonBean;
+import com.finture.bpm.integrationtest.functional.ejb.local.bean.LocalSingletonBeanClientDelegateBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -52,15 +52,15 @@ public class LocalSingletonBeanInvocationTest extends AbstractFoxPlatformIntegra
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
       .addClass(LocalSingletonBeanClientDelegateBean.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/local/LocalSingletonBeanInvocationTest.testInvokeBean.bpmn20.xml")
-      .addAsWebInfResource("org/camunda/bpm/integrationtest/functional/ejb/local/jboss-deployment-structure.xml","jboss-deployment-structure.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/local/LocalSingletonBeanInvocationTest.testInvokeBean.bpmn20.xml")
+      .addAsWebInfResource("com/finture/bpm/integrationtest/functional/ejb/local/jboss-deployment-structure.xml","jboss-deployment-structure.xml");
   }
 
   @Deployment(order=1)
   public static WebArchive delegateDeployment() {
     WebArchive webArchive = ShrinkWrap.create(WebArchive.class, "service.war")
       .addAsLibraries(DeploymentHelper.getEjbClient())
-      .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+      .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
       .addClass(AbstractFoxPlatformIntegrationTest.class)
       .addClass(LocalSingletonBean.class) // the EJB
       .addClass(BusinessInterface.class); // the business interface

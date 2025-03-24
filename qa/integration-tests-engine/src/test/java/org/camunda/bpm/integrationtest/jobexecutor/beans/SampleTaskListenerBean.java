@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor.beans;
+package com.finture.bpm.integrationtest.jobexecutor.beans;
 
-import org.camunda.bpm.engine.delegate.DelegateTask;
-import org.camunda.bpm.engine.delegate.TaskListener;
+import com.finture.bpm.engine.delegate.DelegateTask;
+import com.finture.bpm.engine.delegate.TaskListener;
 
 public class SampleTaskListenerBean implements TaskListener {
 

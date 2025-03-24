@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.variables;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.GetVariableDelegate;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.SerializableVariable;
-import org.camunda.bpm.integrationtest.functional.classloading.variables.beans.SetVariableDelegate;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+package com.finture.bpm.integrationtest.functional.classloading.variables;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.GetVariableDelegate;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.SerializableVariable;
+import com.finture.bpm.integrationtest.functional.classloading.variables.beans.SetVariableDelegate;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -42,7 +42,7 @@ public class SerializableVariableTest extends AbstractFoxPlatformIntegrationTest
       .addClass(GetVariableDelegate.class)
       .addClass(SetVariableDelegate.class)
       .addClass(SerializableVariable.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/classloading/SerializableVariableTest.testResolveVariable.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/classloading/SerializableVariableTest.testResolveVariable.bpmn20.xml");
   }
 
   @Test

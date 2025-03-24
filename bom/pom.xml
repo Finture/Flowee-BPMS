@@ -3,19 +3,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>camunda-bom-root</artifactId>
+  <artifactId>flowee-bpms-bom-root</artifactId>
   <packaging>pom</packaging>
-  <name>Camunda Platform - Bom Root</name>
+  <name>Flowee BPMS Platform - Bom Root</name>
 
   <modules>
-    <module>camunda-only-bom</module>
-    <module>camunda-bom</module>
+    <module>flowee-bpms-only-bom</module>
+    <module>flowee-bpms-bom</module>
   </modules>
 
 </project>

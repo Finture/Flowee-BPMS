@@ -1,6 +1,6 @@
-<module xmlns="urn:jboss:module:1.0" name="org.camunda.bpm.camunda-engine">
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.flowee-bpms-engine">
   <resources>
-    <resource-root path="camunda-engine-@project.version@.jar" />
+    <resource-root path="flowee-bpms-engine-@project.version@.jar" />
   </resources>
 
   <dependencies>
@@ -30,19 +30,19 @@
 
     <module name="sun.jdk" services="import"/>
 
-    <module name="org.camunda.bpm.model.camunda-xml-model" />
-    <module name="org.camunda.bpm.model.camunda-bpmn-model" />
-    <module name="org.camunda.bpm.model.camunda-cmmn-model" />
-    <module name="org.camunda.bpm.model.camunda-dmn-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-xml-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-bpmn-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-cmmn-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-dmn-model" />
 
-    <module name="org.camunda.commons.camunda-commons-logging" />
-    <module name="org.camunda.commons.camunda-commons-utils" />
-    <module name="org.camunda.commons.camunda-commons-typed-values" export="true" />
-    <module name="org.camunda.template-engines.camunda-template-engines-freemarker" services="import" />
-    <module name="org.camunda.spin.camunda-spin-core" services="import" />
+    <module name="com.finture.commons.flowee-bpms-commons-logging" />
+    <module name="com.finture.commons.flowee-bpms-commons-utils" />
+    <module name="com.finture.commons.flowee-bpms-commons-typed-values" export="true" />
+    <module name="com.finture.template-engines.flowee-bpms-template-engines-freemarker" services="import" />
+    <module name="com.finture.spin.flowee-bpms-spin-core" services="import" />
 
-    <module name="org.camunda.bpm.dmn.camunda-engine-dmn" />
-    <module name="org.camunda.bpm.juel.camunda-juel" services="import"/>
+    <module name="com.finture.bpm.dmn.flowee-bpms-engine-dmn" />
+    <module name="com.finture.bpm.juel.flowee-bpms-juel" services="import"/>
 
     <module name="org.slf4j" />
 

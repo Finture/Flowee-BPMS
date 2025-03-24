@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.authorization;
+package com.finture.bpm.qa.upgrade.authorization;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
 
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.authorization.Groups;
-import org.camunda.bpm.engine.authorization.Permissions;
-import org.camunda.bpm.engine.authorization.Resources;
-import org.camunda.bpm.engine.impl.db.sql.DbSqlSessionFactory;
-import org.camunda.bpm.engine.impl.test.RequiredDatabase;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.authorization.Groups;
+import com.finture.bpm.engine.authorization.Permissions;
+import com.finture.bpm.engine.authorization.Resources;
+import com.finture.bpm.engine.impl.db.sql.DbSqlSessionFactory;
+import com.finture.bpm.engine.impl.test.RequiredDatabase;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

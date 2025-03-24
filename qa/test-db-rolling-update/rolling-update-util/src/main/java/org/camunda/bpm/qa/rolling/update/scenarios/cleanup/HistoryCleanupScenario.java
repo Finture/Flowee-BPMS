@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.scenarios.cleanup;
+package com.finture.bpm.qa.rolling.update.scenarios.cleanup;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -38,7 +38,7 @@ public class HistoryCleanupScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/rolling/update/cleanup/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/rolling/update/cleanup/oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("initHistoryCleanup")

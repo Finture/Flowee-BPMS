@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.junit;
+package com.finture.bpm.qa.performance.engine.junit;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestBuilder;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestConfiguration;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestBuilder;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestConfiguration;
 import org.junit.Before;
 import org.junit.Rule;
 

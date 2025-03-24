@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-qa-integration-tests-engine-jakarta</artifactId>
-  <name>Camunda Platform - QA Integration Tests - Engine - Jakarta</name>
+  <artifactId>flowee-bpms-qa-integration-tests-engine-jakarta</artifactId>
+  <name>Flowee BPMS Platform - QA Integration Tests - Engine - Jakarta</name>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.5.1</version>
   </parent>
 
   <properties>
@@ -149,27 +149,30 @@
     <!-- CDI engine & Client -->
 
     <dependency>
-      <groupId>org.camunda.bpm.javaee</groupId>
-      <artifactId>camunda-ejb-client-jakarta</artifactId>
+      <groupId>com.finture.bpm.javaee</groupId>
+      <artifactId>flowee-bpms-ejb-client-jakarta</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-cdi-jakarta</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-cdi-jakarta</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
-          <artifactId>camunda-engine</artifactId>
-          <groupId>org.camunda.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
         </exclusion>
       </exclusions>
     </dependency>
 
-    <!-- camunda -->
+    <!-- flowee-bpms -->
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -180,8 +183,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.dmn</groupId>
-      <artifactId>camunda-engine-dmn</artifactId>
+      <groupId>com.finture.bpm.dmn</groupId>
+      <artifactId>flowee-bpms-engine-dmn</artifactId>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -200,26 +203,28 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-spring-6</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-spring-6</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
-          <artifactId>camunda-engine</artifactId>
-          <groupId>org.camunda.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
         </exclusion>
       </exclusions>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-core</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -232,28 +237,29 @@
       BOM must be installed before this module is built
     -->
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-bom</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-bom</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-core-internal-dependencies</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.connect</groupId>
-      <artifactId>camunda-connect-core</artifactId>
+      <groupId>com.finture.connect</groupId>
+      <artifactId>flowee-bpms-connect-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <!-- explicit Spring dependencies for applications
-      that pack camunda-engine-spring -->
+      that pack flowee-bpms-engine-spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -300,9 +306,9 @@
             <configuration>
               <forceCreation>true</forceCreation>
               <excludes>
-                <exclude>org/camunda/bpm/integrationtest/util/TestConstants*</exclude>
-                <exclude>org/camunda/bpm/integrationtest/util/TestContainer*</exclude>
-                <exclude>org/camunda/bpm/integrationtest/util/TestProcessApplication*</exclude>
+                <exclude>com/finture/bpm/integrationtest/util/TestConstants*</exclude>
+                <exclude>com/finture/bpm/integrationtest/util/TestContainer*</exclude>
+                <exclude>com/finture/bpm/integrationtest/util/TestProcessApplication*</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -579,8 +585,8 @@
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-core-internal-dependencies</artifactId>
+            <groupId>com.finture.bpm</groupId>
+            <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
             <version>${project.version}</version>
             <scope>import</scope>
             <type>pom</type>
@@ -591,8 +597,8 @@
       <dependencies>
         <dependency>
           <!-- make sure this comes after runtime in the reactor build -->
-          <groupId>org.camunda.bpm.qa</groupId>
-          <artifactId>camunda-qa-tomcat-runtime</artifactId>
+          <groupId>com.finture.bpm.qa</groupId>
+          <artifactId>flowee-bpms-qa-tomcat-runtime</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
           <type>pom</type>
@@ -696,7 +702,7 @@
                 <exclude>**/ManagedJobExecutorTest.java</exclude>
 
                 <!-- TODO Please delete the following exclusions after the Tomcat 10 issue with Arquillian -->
-                <!-- See Relevant issue: https://github.com/camunda/camunda-bpm-platform/issues/4434 -->
+                <!-- See Relevant issue: https://github.com/flowee-bpms/flowee-bpms-bpm-platform/issues/4434 -->
                 <exclude>**/CallActivityContextSwitchTest.java</exclude>
                 <exclude>**/CdiBeanCallActivityResolutionTest.java</exclude>
 
@@ -715,8 +721,8 @@
       <dependencies>
         <dependency>
           <!-- make sure this comes after runtime in the reactor build -->
-          <groupId>org.camunda.bpm.qa</groupId>
-          <artifactId>camunda-qa-wildfly-runtime</artifactId>
+          <groupId>com.finture.bpm.qa</groupId>
+          <artifactId>flowee-bpms-qa-wildfly-runtime</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
           <type>pom</type>
@@ -803,8 +809,8 @@
       <dependencies>
         <dependency>
           <!-- make sure this comes after runtime in the reactor build -->
-          <groupId>org.camunda.bpm.qa</groupId>
-          <artifactId>camunda-qa-wildfly-runtime</artifactId>
+          <groupId>com.finture.bpm.qa</groupId>
+          <artifactId>flowee-bpms-qa-wildfly-runtime</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
           <type>pom</type>
@@ -1007,8 +1013,9 @@
       <id>clean-db</id>
       <dependencies>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
+          <version>${project.version}</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1027,8 +1034,9 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm</groupId>
-                      <artifactId>camunda-engine</artifactId>
+                      <groupId>com.finture.bpm</groupId>
+                      <artifactId>flowee-bpms-engine</artifactId>
+                      <version>${project.version}</version>
                       <outputDirectory>${project.build.directory}/sql-scripts/engine</outputDirectory>
                       <overWrite>true</overWrite>
                     </artifactItem>
@@ -1050,13 +1058,13 @@
                 <configuration>
                   <srcFiles>
                     <!-- try dropping the DB if it exists. -->
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.decision.engine.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.case.engine.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.engine.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.identity.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.decision.history.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.case.history.sql</srcFile>
-                    <srcFile>${project.build.directory}/sql-scripts/engine/org/camunda/bpm/engine/db/drop/activiti.${database.type}.drop.history.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.decision.engine.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.case.engine.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.engine.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.identity.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.decision.history.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.case.history.sql</srcFile>
+                    <srcFile>${project.build.directory}/sql-scripts/engine/com/finture/bpm/engine/db/drop/activiti.${database.type}.drop.history.sql</srcFile>
                   </srcFiles>
                   <autocommit>true</autocommit>
                   <onError>continue</onError>

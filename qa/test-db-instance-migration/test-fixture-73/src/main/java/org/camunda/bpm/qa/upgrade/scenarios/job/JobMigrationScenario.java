@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.job;
+package com.finture.bpm.qa.upgrade.scenarios.job;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,15 +22,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.ibatis.session.SqlSession;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.db.sql.DbSqlSessionFactory;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandContext;
-import org.camunda.bpm.engine.impl.interceptor.CommandExecutor;
-import org.camunda.bpm.engine.impl.jobexecutor.TimerStartEventJobHandler;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.db.sql.DbSqlSessionFactory;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandContext;
+import com.finture.bpm.engine.impl.interceptor.CommandExecutor;
+import com.finture.bpm.engine.impl.jobexecutor.TimerStartEventJobHandler;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 /**
  * This actually simulates creation of a job in Camunda 7.0;

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.largedata.util;
+package com.finture.bpm.qa.largedata.util;
 
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.management.JobDefinition;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.engine.test.api.runtime.BatchHelper;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.management.JobDefinition;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.test.api.runtime.BatchHelper;
 
 public class BatchModificationJobHelper extends BatchHelper {
 

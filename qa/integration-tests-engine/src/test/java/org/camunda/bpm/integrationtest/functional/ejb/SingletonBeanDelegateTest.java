@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.ejb;
+package com.finture.bpm.integrationtest.functional.ejb;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.ejb.beans.SingletonBeanClientDelegate;
-import org.camunda.bpm.integrationtest.functional.ejb.beans.SingletonBeanDelegate;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.ejb.beans.SingletonBeanClientDelegate;
+import com.finture.bpm.integrationtest.functional.ejb.beans.SingletonBeanDelegate;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -43,8 +43,8 @@ public class SingletonBeanDelegateTest extends AbstractFoxPlatformIntegrationTes
     return initWebArchiveDeployment()
       .addClass(SingletonBeanDelegate.class)
       .addClass(SingletonBeanClientDelegate.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/SingletonBeanDelegateTest.testBeanResolution.bpmn20.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/functional/ejb/SingletonBeanDelegateTest.testBeanResolutionFromClient.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/SingletonBeanDelegateTest.testBeanResolution.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/functional/ejb/SingletonBeanDelegateTest.testBeanResolutionFromClient.bpmn20.xml");
   }
 
 

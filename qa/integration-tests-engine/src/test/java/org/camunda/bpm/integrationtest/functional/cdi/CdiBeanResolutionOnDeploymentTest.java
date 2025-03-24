@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.cdi;
+package com.finture.bpm.integrationtest.functional.cdi;
 
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.integrationtest.functional.cdi.beans.TimerStartBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.integrationtest.functional.cdi.beans.TimerStartBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -41,13 +41,13 @@ public class CdiBeanResolutionOnDeploymentTest extends AbstractFoxPlatformIntegr
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
             .addClass(TimerStartBean.class)
-            .addAsResource("org/camunda/bpm/integrationtest/functional/cdi/CdiBeanResolutionOnDeploymentTest.testTimerStartWithBeanExpression.bpmn20.xml");
+            .addAsResource("com/finture/bpm/integrationtest/functional/cdi/CdiBeanResolutionOnDeploymentTest.testTimerStartWithBeanExpression.bpmn20.xml");
   }
 
   @Deployment(name="clientDeployment")
   public static WebArchive clientDeployment() {
     WebArchive deployment = ShrinkWrap.create(WebArchive.class, "client.war")
-            .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+            .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
             .addClass(AbstractFoxPlatformIntegrationTest.class)
             .addAsLibraries(DeploymentHelper.getEngineCdi());
 

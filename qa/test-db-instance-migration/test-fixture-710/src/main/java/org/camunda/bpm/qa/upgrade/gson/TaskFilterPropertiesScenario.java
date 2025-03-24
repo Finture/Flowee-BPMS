@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.gson;
+package com.finture.bpm.qa.upgrade.gson;
 
-import org.camunda.bpm.engine.FilterService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.filter.Filter;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.FilterService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.filter.Filter;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 import java.util.ArrayList;
 import java.util.Collections;

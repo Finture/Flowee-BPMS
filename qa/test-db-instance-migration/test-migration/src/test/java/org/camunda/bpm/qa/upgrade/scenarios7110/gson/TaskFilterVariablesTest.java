@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.gson;
+package com.finture.bpm.qa.upgrade.scenarios7110.gson;
 
-import org.camunda.bpm.engine.filter.Filter;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.filter.Filter;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Rule;
 import org.junit.Test;
 

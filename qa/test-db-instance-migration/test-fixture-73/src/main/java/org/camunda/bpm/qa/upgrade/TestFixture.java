@@ -14,28 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.upgrade.scenarios.boundary.NonInterruptingBoundaryEventScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubProcessCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubProcessNestedCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.NestedCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.NestedMultiInstanceCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.NonInterruptingEventSubProcessCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.ParallelMultiInstanceCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SequentialMultiInstanceCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SingleActivityCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SingleActivityConcurrentCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.job.JobMigrationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.sentry.SentryScenario;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.upgrade.scenarios.boundary.NonInterruptingBoundaryEventScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubProcessCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubProcessNestedCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.NestedCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.NestedMultiInstanceCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.NonInterruptingEventSubProcessCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.ParallelMultiInstanceCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SequentialMultiInstanceCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SingleActivityCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SingleActivityConcurrentCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.job.JobMigrationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.sentry.SentryScenario;
 
 /**
  * Sets up scenarios for migration from 7.3.0

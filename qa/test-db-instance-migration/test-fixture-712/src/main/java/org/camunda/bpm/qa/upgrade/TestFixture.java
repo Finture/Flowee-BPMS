@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.upgrade.batch.deploymentaware.DeploymentAwareBatchesScenario;
-import org.camunda.bpm.qa.upgrade.customretries.FailingIntermediateBoundaryTimerJobScenario;
-import org.camunda.bpm.qa.upgrade.restart.StartProcessIntanceWithInitialVariablesScenario;
-import org.camunda.bpm.qa.upgrade.restart.SetVariablesScenario;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.upgrade.batch.deploymentaware.DeploymentAwareBatchesScenario;
+import com.finture.bpm.qa.upgrade.customretries.FailingIntermediateBoundaryTimerJobScenario;
+import com.finture.bpm.qa.upgrade.restart.StartProcessIntanceWithInitialVariablesScenario;
+import com.finture.bpm.qa.upgrade.restart.SetVariablesScenario;
 
 /**
  * @author Nikola Koevski

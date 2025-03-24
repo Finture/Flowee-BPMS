@@ -14,31 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.batch.deploymentaware;
+package com.finture.bpm.qa.upgrade.batch.deploymentaware;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.migration.MigrationPlan;
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.migration.MigrationPlan;
+import com.finture.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class DeploymentAwareBatchesScenario {
 
   @Deployment
   public static String deployOneTask() {
-    return "org/camunda/bpm/qa/upgrade/batch/deploymentaware/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/batch/deploymentaware/oneTaskProcess.bpmn20.xml";
   }
 
   @Deployment
   public static String deployTwoTasks() {
-    return "org/camunda/bpm/qa/upgrade/batch/deploymentaware/twoTasksProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/batch/deploymentaware/twoTasksProcess.bpmn20.xml";
   }
 
   @DescribesScenario("createDeleteInstancesBatch")

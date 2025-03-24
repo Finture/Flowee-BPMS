@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.el;
+package com.finture.bpm.integrationtest.functional.el;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.camunda.bpm.engine.runtime.VariableInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.functional.el.beans.GreeterBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.runtime.VariableInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.functional.el.beans.GreeterBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -39,8 +39,8 @@ public class ResolveBeanFromDmnTest extends AbstractFoxPlatformIntegrationTest {
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
       .addClass(GreeterBean.class)
-      .addAsResource("org/camunda/bpm/integrationtest/functional/el/BusinessRuleProcess.bpmn20.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/functional/el/BeanResolvingDecision.dmn11.xml");
+      .addAsResource("com/finture/bpm/integrationtest/functional/el/BusinessRuleProcess.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/functional/el/BeanResolvingDecision.dmn11.xml");
   }
 
   @Test

@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor;
+package com.finture.bpm.integrationtest.jobexecutor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Map;
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.ProcessEngineService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.digest._apacheCommonsCodec.Base64;
-import org.camunda.bpm.engine.impl.jobexecutor.DefaultJobPriorityProvider;
-import org.camunda.bpm.engine.impl.util.IoUtil;
-import org.camunda.bpm.engine.impl.util.StringUtil;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.Variables.SerializationDataFormats;
-import org.camunda.bpm.integrationtest.jobexecutor.beans.PriorityBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.ProcessEngineService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.digest._apacheCommonsCodec.Base64;
+import com.finture.bpm.engine.impl.jobexecutor.DefaultJobPriorityProvider;
+import com.finture.bpm.engine.impl.util.IoUtil;
+import com.finture.bpm.engine.impl.util.StringUtil;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.engine.variable.Variables.SerializationDataFormats;
+import com.finture.bpm.integrationtest.jobexecutor.beans.PriorityBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -57,7 +57,7 @@ public class JobPrioritizationFailureJavaSerializationTest extends AbstractFoxPl
 
   private ProcessEngine engine1;
 
-  public static final String VARIABLE_CLASS_NAME = "org.camunda.bpm.integrationtest.jobexecutor.beans.PriorityBean";
+  public static final String VARIABLE_CLASS_NAME = "com.finture.bpm.integrationtest.jobexecutor.beans.PriorityBean";
   public static final String PRIORITY_BEAN_INSTANCE_FILE = "priorityBean.instance";
 
   @Before
@@ -70,7 +70,7 @@ public class JobPrioritizationFailureJavaSerializationTest extends AbstractFoxPl
   }
 
   protected void unregisterProcessApplication() {
-    org.camunda.bpm.engine.repository.Deployment deployment =
+    com.finture.bpm.engine.repository.Deployment deployment =
       engine1.getRepositoryService().createDeploymentQuery().singleResult();
 
     engine1.getManagementService().unregisterProcessApplication(deployment.getId(), false);
@@ -78,9 +78,9 @@ public class JobPrioritizationFailureJavaSerializationTest extends AbstractFoxPl
 
   @Deployment(order = 1)
   public static WebArchive createDeployment() {
-    final WebArchive webArchive = initWebArchiveDeployment("paJavaSerialization1.war", "org/camunda/bpm/integrationtest/processes-javaSerializationEnabled-pa1.xml")
+    final WebArchive webArchive = initWebArchiveDeployment("paJavaSerialization1.war", "com/finture/bpm/integrationtest/processes-javaSerializationEnabled-pa1.xml")
       .addClass(PriorityBean.class)
-      .addAsResource("org/camunda/bpm/integrationtest/jobexecutor/JobPrioritizationTest.priorityProcess.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/jobexecutor/JobPrioritizationTest.priorityProcess.bpmn20.xml");
 
     TestContainer.addContainerSpecificProcessEngineConfigurationClass(webArchive);
     return webArchive;
@@ -88,7 +88,7 @@ public class JobPrioritizationFailureJavaSerializationTest extends AbstractFoxPl
 
   @Deployment(name = "dummy-client", order = 2)
   public static WebArchive createDummyClientDeployment() {
-    final WebArchive webArchive = initWebArchiveDeployment("paJavaSerialization2.war", "org/camunda/bpm/integrationtest/processes-javaSerializationEnabled-pa2.xml")
+    final WebArchive webArchive = initWebArchiveDeployment("paJavaSerialization2.war", "com/finture/bpm/integrationtest/processes-javaSerializationEnabled-pa2.xml")
       .addAsResource(new ByteArrayAsset(serializeJavaObjectValue(new PriorityBean())), PRIORITY_BEAN_INSTANCE_FILE);
     return webArchive;
   }

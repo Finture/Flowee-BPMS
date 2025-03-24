@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.connect;
+package com.finture.bpm.integrationtest.functional.connect;
 
 import java.util.Map;
 
-import org.camunda.connect.spi.ConnectorResponse;
+import com.finture.connect.spi.ConnectorResponse;
 
 public class TestConnectorResponse implements ConnectorResponse {
 

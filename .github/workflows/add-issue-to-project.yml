@@ -8,7 +8,7 @@ on:
 
 jobs:
   call-reusable-flow:
-    uses: camunda/automation-platform-github-actions/.github/workflows/add-issue-to-project.yml@main
+    uses: flowee-bpms/automation-platform-github-actions/.github/workflows/add-issue-to-project.yml@main
     secrets: inherit
     with:
       project: '40'

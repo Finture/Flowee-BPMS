@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.spring.timer;
+package com.finture.bpm.integrationtest.deployment.spring.timer;
 
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -35,8 +35,8 @@ public class SpringServletPATimerStartEventExpressionTest extends AbstractFoxPla
       .addClass(ApplicationContext.class)
       .addClass(MyBean.class)
       .addAsResource("META-INF/scan_for_definitions_processes.xml", "META-INF/processes.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/deployment/spring/timer/timer-start-event-process.bpmn", "timer-start-event-process.bpmn")
-      .addAsWebInfResource("org/camunda/bpm/integrationtest/deployment/spring/timer/start-event-expression-web.xml", "web.xml")
+      .addAsResource("com/finture/bpm/integrationtest/deployment/spring/timer/timer-start-event-process.bpmn", "timer-start-event-process.bpmn")
+      .addAsWebInfResource("com/finture/bpm/integrationtest/deployment/spring/timer/start-event-expression-web.xml", "web.xml")
       .addAsLibraries(DeploymentHelper.getEngineSpring());
   }
 

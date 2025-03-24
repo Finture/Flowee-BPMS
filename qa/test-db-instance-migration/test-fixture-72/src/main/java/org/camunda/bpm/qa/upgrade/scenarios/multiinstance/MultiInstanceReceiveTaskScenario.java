@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.multiinstance;
+package com.finture.bpm.qa.upgrade.scenarios.multiinstance;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  * @author Thorben Lindhauer
@@ -30,12 +30,12 @@ public class MultiInstanceReceiveTaskScenario {
 
   @Deployment
   public static String deployProcessParallel() {
-    return "org/camunda/bpm/qa/upgrade/multiinstance/parallelMultiInstanceReceiveTask.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/multiinstance/parallelMultiInstanceReceiveTask.bpmn20.xml";
   }
 
   @Deployment
   public static String deployProcessSequential() {
-    return "org/camunda/bpm/qa/upgrade/multiinstance/sequentialMultiInstanceReceiveTask.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/multiinstance/sequentialMultiInstanceReceiveTask.bpmn20.xml";
   }
 
   @DescribesScenario("initParallel")

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.classloading.beans;
+package com.finture.bpm.integrationtest.functional.classloading.beans;
 
-import org.camunda.bpm.engine.delegate.CaseVariableListener;
-import org.camunda.bpm.engine.delegate.DelegateCaseVariableInstance;
+import com.finture.bpm.engine.delegate.CaseVariableListener;
+import com.finture.bpm.engine.delegate.DelegateCaseVariableInstance;
 
 /**
  * @author Thorben Lindhauer

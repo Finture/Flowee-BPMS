@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.el;
+package com.finture.bpm.integrationtest.functional.el;
 
-import org.camunda.bpm.integrationtest.functional.el.beans.ResolveExpressionBean;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.functional.el.beans.ResolveExpressionBean;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -39,9 +39,9 @@ public class ElResolverLookupTest extends AbstractFoxPlatformIntegrationTest {
       .addClass(NullELResolver.class)
       .addClass(ResolveExpressionBean.class)
       .addAsResource(
-          "org/camunda/bpm/integrationtest/functional/el/services/org.camunda.bpm.application.ProcessApplicationElResolver",
-          "META-INF/services/org.camunda.bpm.application.ProcessApplicationElResolver")
-      .addAsResource("org/camunda/bpm/integrationtest/functional/el/elServiceTaskProcess.bpmn20.xml");
+          "com/finture/bpm/integrationtest/functional/el/services/com.finture.bpm.application.ProcessApplicationElResolver",
+          "META-INF/services/com.finture.bpm.application.ProcessApplicationElResolver")
+      .addAsResource("com/finture/bpm/integrationtest/functional/el/elServiceTaskProcess.bpmn20.xml");
   }
 
   @Test

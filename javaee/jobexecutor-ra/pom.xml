@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>camunda-jobexecutor-ra</artifactId>
-  <packaging>jar</packaging>
-  <name>Camunda Platform - Job Executor RA</name>
+  <artifactId>flowee-bpms-jobexecutor-ra</artifactId>
+  <name>Flowee BPMS Platform - Job Executor RA</name>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-parent</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../../parent</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
   <properties>
@@ -19,8 +18,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -31,8 +30,9 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -58,5 +58,5 @@
 
   </dependencies>
 
-  <groupId>org.camunda.bpm.javaee</groupId>
+  <groupId>com.finture.bpm.javaee</groupId>
 </project>

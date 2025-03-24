@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios770;
+package com.finture.bpm.qa.upgrade.scenarios770;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import org.camunda.bpm.engine.history.HistoricVariableInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.history.HistoricVariableInstance;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Rule;
 import org.junit.Test;
 

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.job;
+package com.finture.bpm.qa.upgrade.scenarios.job;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  * @author Thorben Lindhauer
@@ -30,12 +30,12 @@ public class AsyncSequentialMultiInstanceScenario {
 
   @Deployment
   public static String deployAsyncBeforeProcess() {
-    return "org/camunda/bpm/qa/upgrade/job/asyncBeforeSequentialMultiInstanceSubprocess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/job/asyncBeforeSequentialMultiInstanceSubprocess.bpmn20.xml";
   }
 
   @Deployment
   public static String deployAsyncBeforeTask() {
-    return "org/camunda/bpm/qa/upgrade/job/asyncBeforeSequentialMultiInstanceTask.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/job/asyncBeforeSequentialMultiInstanceTask.bpmn20.xml";
   }
 
   @DescribesScenario("initAsyncBeforeSubprocess")

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.ear;
+package com.finture.bpm.integrationtest.deployment.ear;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.deployment.ear.beans.AnnotatedEjbPa;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.deployment.ear.beans.AnnotatedEjbPa;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -59,7 +59,7 @@ public class TestPaAnnotatedEjb extends AbstractFoxPlatformIntegrationTest {
       .addClass(AbstractFoxPlatformIntegrationTest.class)
       .addClass(TestPaAnnotatedEjb.class)
       .addClass(AnnotatedEjbPa.class)
-      .addAsResource("org/camunda/bpm/integrationtest/deployment/ear/process1.bpmn20.xml", "process.bpmn")
+      .addAsResource("com/finture/bpm/integrationtest/deployment/ear/process1.bpmn20.xml", "process.bpmn")
       .addAsResource("META-INF/processes.xml", "deployment-descriptor-with-custom-filename.xml")
       .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 

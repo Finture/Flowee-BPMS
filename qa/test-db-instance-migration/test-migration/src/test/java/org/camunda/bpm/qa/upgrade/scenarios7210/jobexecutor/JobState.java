@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.qa.upgrade.scenarios7210.jobexecutor;
+package com.finture.bpm.qa.upgrade.scenarios7210.jobexecutor;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandExecutor;
-import org.camunda.bpm.engine.impl.persistence.entity.JobEntity;
-import org.camunda.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandExecutor;
+import com.finture.bpm.engine.impl.persistence.entity.JobEntity;
+import com.finture.bpm.engine.runtime.Job;
 
 import java.util.Date;
 import java.util.HashMap;

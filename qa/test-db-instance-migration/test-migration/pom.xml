@@ -2,34 +2,37 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.qa.upgrade</groupId>
-    <artifactId>camunda-qa-db-instance-migration</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.qa.upgrade</groupId>
+    <artifactId>flowee-bpms-qa-db-instance-migration</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-qa-upgrade-test-migration</artifactId>
+  <artifactId>flowee-bpms-qa-upgrade-test-migration</artifactId>
   <packaging>jar</packaging>
-  <name>Camunda Platform - QA - upgrade - instance migration - test</name>
+  <name>Flowee BPMS Platform - QA - upgrade - instance migration - test</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-spin</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.qa.upgrade</groupId>
-      <artifactId>camunda-qa-upgrade-scenario-util</artifactId>
+      <groupId>com.finture.bpm.qa.upgrade</groupId>
+      <artifactId>flowee-bpms-qa-upgrade-scenario-util</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -118,8 +121,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm.distro</groupId>
-                      <artifactId>camunda-sql-scripts</artifactId>
+                      <groupId>com.finture.bpm.distro</groupId>
+                      <artifactId>flowee-bpms-sql-scripts</artifactId>
                       <version>${project.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/scripts-current</outputDirectory>
@@ -142,7 +145,7 @@
                   <goal>dropAll</goal>
                 </goals>
                 <configuration>
-                  <changeLogFile>camunda-changelog.xml</changeLogFile>
+                  <changeLogFile>flowee-bpms-changelog.xml</changeLogFile>
                   <changeLogDirectory>${project.build.directory}/scripts-current/sql/liquibase/</changeLogDirectory>
                 </configuration>
               </execution>
@@ -170,8 +173,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm.distro</groupId>
-                      <artifactId>camunda-sql-scripts</artifactId>
+                      <groupId>com.finture.bpm.distro</groupId>
+                      <artifactId>flowee-bpms-sql-scripts</artifactId>
                       <version>${project.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/scripts-current</outputDirectory>
@@ -194,7 +197,7 @@
                   <goal>dropAll</goal>
                 </goals>
                 <configuration>
-                  <changeLogFile>camunda-changelog.xml</changeLogFile>
+                  <changeLogFile>flowee-bpms-changelog.xml</changeLogFile>
                   <changeLogDirectory>${project.build.directory}/scripts-current/sql/liquibase/</changeLogDirectory>
                 </configuration>
               </execution>

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.BpmPlatform;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.FailingJsonDataFormatConfigurator;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.JsonSerializable;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
-import org.camunda.spin.spi.DataFormatConfigurator;
+import com.finture.bpm.BpmPlatform;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.FailingJsonDataFormatConfigurator;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.JsonSerializable;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
+import com.finture.spin.spi.DataFormatConfigurator;
 import org.jboss.arquillian.container.test.api.Deployer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
@@ -52,7 +52,7 @@ public class PaDataFormatConfiguratorFailingTest {
         .addAsResource("META-INF/processes.xml")
         .addClass(AbstractFoxPlatformIntegrationTest.class)
         .addClass(ReferenceStoringProcessApplication.class)
-        .addAsResource("org/camunda/bpm/integrationtest/oneTaskProcess.bpmn")
+        .addAsResource("com/finture/bpm/integrationtest/oneTaskProcess.bpmn")
         .addClass(JsonSerializable.class)
         .addClass(FailingJsonDataFormatConfigurator.class)
         .addAsServiceProvider(DataFormatConfigurator.class, FailingJsonDataFormatConfigurator.class);

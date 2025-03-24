@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.springboot.project</groupId>
-    <artifactId>camunda-bpm-spring-boot-starter-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.springboot.project</groupId>
+    <artifactId>flowee-bpms-bpm-spring-boot-starter-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.bpm.springboot</groupId>
-  <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-  <name>Camunda Platform - Spring Boot Starter - Test</name>
+  <groupId>com.finture.bpm.springboot</groupId>
+  <artifactId>flowee-bpms-bpm-spring-boot-starter-test</artifactId>
+  <name>Flowee BPMS Platform - Spring Boot Starter - Test</name>
 
   <dependencies>
 
@@ -34,16 +34,23 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-bpm-assert</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-bpm-assert</artifactId>
       <version>${project.version}</version>
       <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-typed-values</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
   </dependencies>

@@ -3,16 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../database</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-bpm-quarkus-parent</artifactId>
-  <groupId>org.camunda.bpm.quarkus</groupId>
+  <artifactId>flowee-bpms-bpm-quarkus-parent</artifactId>
+  <groupId>com.finture.bpm.quarkus</groupId>
 
-  <name>Camunda Platform - Quarkus Extension - Parent</name>
+  <name>Flowee BPMS Platform - Quarkus Extension - Parent</name>
 
   <packaging>pom</packaging>
 

@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin.dataformat;
+package com.finture.bpm.integrationtest.functional.spin.dataformat;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.regex.Pattern;
 
-import org.camunda.spin.DeserializationTypeValidator;
-import org.camunda.spin.spi.DataFormat;
-import org.camunda.spin.spi.DataFormatMapper;
-import org.camunda.spin.spi.DataFormatReader;
-import org.camunda.spin.spi.DataFormatWriter;
-import org.camunda.spin.spi.TextBasedDataFormatReader;
+import com.finture.spin.DeserializationTypeValidator;
+import com.finture.spin.spi.DataFormat;
+import com.finture.spin.spi.DataFormatMapper;
+import com.finture.spin.spi.DataFormatReader;
+import com.finture.spin.spi.DataFormatWriter;
+import com.finture.spin.spi.TextBasedDataFormatReader;
 
 /**
  * @author Thorben Lindhauer

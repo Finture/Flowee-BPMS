@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>camunda-engine-rest</artifactId>
-  <name>Camunda Platform - engine - REST - Assembly</name>
+  <artifactId>flowee-bpms-engine-rest</artifactId>
+  <name>Flowee BPMS Platform - engine - REST - Assembly</name>
   <packaging>war</packaging>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-engine-rest-root</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-engine-rest-root</artifactId>
     <relativePath>../</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
   
   <properties>
@@ -22,25 +22,24 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <!-- dependencies only used for assemblies should be scope provided -->
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core</artifactId>
       <version>${project.version}</version>
       <classifier>sources</classifier>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core</artifactId>
       <version>${project.version}</version>
-      <classifier>tests</classifier>
       <scope>provided</scope>
     </dependency>
 
@@ -82,13 +81,13 @@
               <archive>
                 <manifestEntries>
                   <!-- module dependencies for deployment on wildfly  -->
-                  <Dependencies>org.camunda.bpm.camunda-engine,org.camunda.bpm.dmn.camunda-engine-dmn,org.camunda.commons.camunda-commons-logging,org.camunda.spin.camunda-spin-core,org.camunda.bpm.juel.camunda-juel services,org.graalvm.js.js-scriptengine services</Dependencies>
+                  <Dependencies>com.finture.bpm.flowee-bpms-engine,com.finture.bpm.dmn.flowee-bpms-engine-dmn,com.finture.commons.flowee-bpms-commons-logging,com.finture.spin.flowee-bpms-spin-core,com.finture.bpm.juel.flowee-bpms-juel services,org.graalvm.js.js-scriptengine services</Dependencies>
                 </manifestEntries>
               </archive>
               <descriptors>
                 <descriptor>assembly-war-wildfly.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <classifier>wildfly</classifier>
               <outputDirectory>target/</outputDirectory>
@@ -106,7 +105,7 @@
               <descriptors>
                 <descriptor>assembly-war-tomcat.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <classifier>tomcat</classifier>
               <outputDirectory>target/</outputDirectory>
@@ -124,7 +123,7 @@
               <descriptors>
                 <descriptor>assembly-war-was.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <classifier>was</classifier>
               <outputDirectory>target/</outputDirectory>
@@ -142,7 +141,7 @@
               <descriptors>
                 <descriptor>assembly-war-wls.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <classifier>wls</classifier>
               <outputDirectory>target/</outputDirectory>
@@ -160,7 +159,7 @@
               <descriptors>
                 <descriptor>assembly-classes.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <outputDirectory>target/</outputDirectory>
               <workDirectory>target/assembly/work</workDirectory>
@@ -177,7 +176,7 @@
               <descriptors>
                 <descriptor>assembly-sources.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <outputDirectory>target/</outputDirectory>
               <workDirectory>target/assembly/work</workDirectory>
@@ -194,7 +193,7 @@
               <descriptors>
                 <descriptor>assembly-tests.xml</descriptor>
               </descriptors>
-              <finalName>camunda-engine-rest-${project.version}</finalName>
+              <finalName>flowee-bpms-engine-rest-${project.version}</finalName>
               <attach>true</attach>
               <outputDirectory>target/</outputDirectory>
               <workDirectory>target/assembly/work</workDirectory>

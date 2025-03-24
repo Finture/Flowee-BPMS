@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.service;
+package com.finture.bpm.container.impl.jboss.service;
 
 import java.io.ByteArrayInputStream;
 import java.util.Collection;
@@ -27,18 +27,18 @@ import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.camunda.bpm.application.ProcessApplicationInterface;
-import org.camunda.bpm.application.ProcessApplicationReference;
-import org.camunda.bpm.application.ProcessApplicationRegistration;
-import org.camunda.bpm.application.impl.metadata.spi.ProcessArchiveXml;
-import org.camunda.bpm.container.impl.jboss.util.Tccl;
-import org.camunda.bpm.container.impl.metadata.PropertyHelper;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.impl.context.Context;
-import org.camunda.bpm.engine.repository.ProcessApplicationDeployment;
-import org.camunda.bpm.engine.repository.ProcessApplicationDeploymentBuilder;
-import org.camunda.bpm.engine.repository.ResumePreviousBy;
+import com.finture.bpm.application.ProcessApplicationInterface;
+import com.finture.bpm.application.ProcessApplicationReference;
+import com.finture.bpm.application.ProcessApplicationRegistration;
+import com.finture.bpm.application.impl.metadata.spi.ProcessArchiveXml;
+import com.finture.bpm.container.impl.jboss.util.Tccl;
+import com.finture.bpm.container.impl.metadata.PropertyHelper;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.impl.context.Context;
+import com.finture.bpm.engine.repository.ProcessApplicationDeployment;
+import com.finture.bpm.engine.repository.ProcessApplicationDeploymentBuilder;
+import com.finture.bpm.engine.repository.ResumePreviousBy;
 import org.jboss.as.ee.component.ComponentView;
 import org.jboss.as.naming.ManagedReference;
 import org.jboss.modules.Module;

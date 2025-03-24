@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <parent>
-    <artifactId>camunda-engine-plugins</artifactId>
-    <groupId>org.camunda.bpm</groupId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-engine-plugins</artifactId>
+    <version>0.5.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-engine-plugin-spin</artifactId>
-  <name>Camunda Platform - engine plugins - spin</name>
+  <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+  <name>Flowee BPMS Platform - engine plugins - spin</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-core</artifactId>
+        <groupId>com.finture.spin</groupId>
+        <artifactId>flowee-bpms-spin-core</artifactId>
+        <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.dmn</groupId>
-      <artifactId>camunda-engine-feel-scala</artifactId>
-      <scope>provided</scope>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-scala</artifactId>
+        <version>${project.version}</version>
+        <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine</artifactId>
+        <version>${project.version}</version>
       <classifier>tests</classifier>
       <scope>test</scope>
-      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+        <groupId>com.finture.spin</groupId>
+        <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+        <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-xml-dom</artifactId>
-      <scope>test</scope>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-xml-dom</artifactId>
+        <version>${project.version}</version>
+        <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -87,8 +90,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.model</groupId>
-      <artifactId>camunda-bpmn-model</artifactId>
+        <groupId>com.finture.bpm.model</groupId>
+        <artifactId>flowee-bpms-bpmn-model</artifactId>
+        <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -123,8 +127,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-testing</artifactId>
+        <groupId>com.finture.commons</groupId>
+        <artifactId>flowee-bpms-commons-testing</artifactId>
+        <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 

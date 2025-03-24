@@ -15,22 +15,22 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.qa.upgrade.scenarios7210.jobexecutor;
+package com.finture.bpm.qa.upgrade.scenarios7210.jobexecutor;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.cmd.AcquireJobsCmd;
-import org.camunda.bpm.engine.impl.interceptor.CommandExecutor;
-import org.camunda.bpm.engine.impl.jobexecutor.AcquiredJobs;
-import org.camunda.bpm.engine.impl.jobexecutor.JobExecutor;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.cmd.AcquireJobsCmd;
+import com.finture.bpm.engine.impl.interceptor.CommandExecutor;
+import com.finture.bpm.engine.impl.jobexecutor.AcquiredJobs;
+import com.finture.bpm.engine.impl.jobexecutor.JobExecutor;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

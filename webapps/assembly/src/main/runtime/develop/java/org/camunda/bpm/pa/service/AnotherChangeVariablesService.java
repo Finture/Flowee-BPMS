@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.pa.service;
+package com.finture.bpm.pa.service;
 
 
-import static org.camunda.bpm.engine.variable.Variables.*;
+import static com.finture.bpm.engine.variable.Variables.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,8 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
 
 public class AnotherChangeVariablesService implements JavaDelegate {
 

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.run</groupId>
-    <artifactId>camunda-bpm-run-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.run</groupId>
+    <artifactId>flowee-bpms-bpm-run-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>camunda-bpm-run-modules</artifactId>
-  <name>Camunda Platform - Run - Modules</name>
+  <artifactId>flowee-bpms-bpm-run-modules</artifactId>
+  <name>Flowee BPMS Platform - Run - Modules</name>
   <packaging>pom</packaging>
 
   <!-- define provided dependencies that will already be present in the Spring 
@@ -18,8 +18,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
+        <version>${project.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -83,8 +84,9 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-core</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-core</artifactId>
+        <version>${project.version}</version>
         <scope>provided</scope>
       </dependency>
     </dependencies>

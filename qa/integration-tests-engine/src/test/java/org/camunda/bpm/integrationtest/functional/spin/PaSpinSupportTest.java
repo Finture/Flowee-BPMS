@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import static org.camunda.bpm.engine.variable.Variables.serializedObjectValue;
-import static org.camunda.spin.Spin.JSON;
-import static org.camunda.spin.Spin.XML;
+import static com.finture.bpm.engine.variable.Variables.serializedObjectValue;
+import static com.finture.spin.Spin.JSON;
+import static com.finture.spin.Spin.XML;
 import static org.junit.Assert.assertEquals;
 
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 
-import org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.spin.impl.util.SpinIoUtil;
-import org.camunda.spin.json.SpinJsonNode;
+import com.finture.bpm.engine.impl.cfg.ProcessEnginePlugin;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.engine.variable.value.ObjectValue;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.spin.impl.util.SpinIoUtil;
+import com.finture.spin.json.SpinJsonNode;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -50,8 +50,8 @@ public class PaSpinSupportTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive createDeployment() {
     return initWebArchiveDeployment()
-        .addAsResource("org/camunda/bpm/integrationtest/oneTaskProcess.bpmn")
-        .addAsResource("org/camunda/bpm/integrationtest/functional/spin/jackson146.json");
+        .addAsResource("com/finture/bpm/integrationtest/oneTaskProcess.bpmn")
+        .addAsResource("com/finture/bpm/integrationtest/functional/spin/jackson146.json");
   }
 
   @Test
@@ -91,7 +91,7 @@ public class PaSpinSupportTest extends AbstractFoxPlatformIntegrationTest {
 
   @Test
   public void testJacksonBug146() {
-    InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("org/camunda/bpm/integrationtest/functional/spin/jackson146.json");
+    InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("com/finture/bpm/integrationtest/functional/spin/jackson146.json");
     String jackson146 = SpinIoUtil.inputStreamAsString(resourceAsStream);
 
     // this should not fail
@@ -104,7 +104,7 @@ public class PaSpinSupportTest extends AbstractFoxPlatformIntegrationTest {
 
   @Test
   public void testJacksonBug146AsVariable() {
-    InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("org/camunda/bpm/integrationtest/functional/spin/jackson146.json");
+    InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("com/finture/bpm/integrationtest/functional/spin/jackson146.json");
     String jackson146 = SpinIoUtil.inputStreamAsString(resourceAsStream);
 
     ProcessInstance pi = runtimeService.startProcessInstanceByKey("testProcess", Variables.createVariables()

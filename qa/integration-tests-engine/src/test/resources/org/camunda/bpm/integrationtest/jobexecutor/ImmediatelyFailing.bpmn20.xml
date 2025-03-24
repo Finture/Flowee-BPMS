@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.camunda.org/test">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowee-bpms.org/test">
   <process id="ImmediatelyFailing" name="ImmediatelyFailing" isExecutable="true" camunda:historyTimeToLive="5">
     <startEvent id="startevent1" name="Start"></startEvent>
     <endEvent id="endevent1" name="End"></endEvent>
@@ -11,7 +11,7 @@
         <timeDuration>PT0S</timeDuration>
       </timerEventDefinition>
     </boundaryEvent>
-    <serviceTask id="servicetask1" name="Do Something" camunda:class="org.camunda.bpm.integrationtest.jobexecutor.beans.DemoDelegate">
+    <serviceTask id="servicetask1" name="Do Something" camunda:class="com.finture.bpm.integrationtest.jobexecutor.beans.DemoDelegate">
       <extensionElements>
         <camunda:field name="fail">
           <camunda:string>true</camunda:string>
@@ -22,7 +22,7 @@
     <sequenceFlow id="flow5" name="" sourceRef="boundarytimer1" targetRef="servicetask1"></sequenceFlow>
     <endEvent id="endevent2" name="End"></endEvent>
     <sequenceFlow id="flow6" name="" sourceRef="servicetask1" targetRef="endevent2"></sequenceFlow>
-    <serviceTask id="servicetask2" name="Set Var" camunda:class="org.camunda.bpm.integrationtest.jobexecutor.beans.DemoDelegate"></serviceTask>
+    <serviceTask id="servicetask2" name="Set Var" camunda:class="com.finture.bpm.integrationtest.jobexecutor.beans.DemoDelegate"></serviceTask>
     <sequenceFlow id="flow7" name="" sourceRef="servicetask2" targetRef="usertask1"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_ImmediatelyFailing">

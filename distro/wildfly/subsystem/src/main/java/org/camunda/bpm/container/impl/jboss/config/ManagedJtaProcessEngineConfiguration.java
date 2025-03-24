@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.config;
+package com.finture.bpm.container.impl.jboss.config;
 
 import java.util.Set;
-import org.camunda.bpm.engine.impl.cfg.JakartaTransactionProcessEngineConfiguration;
-import org.camunda.bpm.engine.impl.persistence.StrongUuidGenerator;
-import org.camunda.bpm.engine.impl.diagnostics.CamundaIntegration;
+import com.finture.bpm.engine.impl.cfg.JakartaTransactionProcessEngineConfiguration;
+import com.finture.bpm.engine.impl.persistence.StrongUuidGenerator;
+import com.finture.bpm.engine.impl.diagnostics.CamundaIntegration;
 
 /**
  *

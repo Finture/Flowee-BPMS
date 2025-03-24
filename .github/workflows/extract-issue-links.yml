@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-reusable-flow:
-    uses: camunda/automation-platform-github-actions/.github/workflows/extract-issue-links.yml@main    
+    uses: flowee-bpms/automation-platform-github-actions/.github/workflows/extract-issue-links.yml@main    
     secrets: inherit
     with: 
       versions: ${{ github.event.inputs.versions }}

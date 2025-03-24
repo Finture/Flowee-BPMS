@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.loadgenerator;
+package com.finture.bpm.qa.performance.engine.loadgenerator;
 
-import static org.camunda.bpm.qa.performance.engine.loadgenerator.CompletionSignalingRunnable.wrap;
+import static com.finture.bpm.qa.performance.engine.loadgenerator.CompletionSignalingRunnable.wrap;
 
 import java.util.Timer;
 import java.util.TimerTask;

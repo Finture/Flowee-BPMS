@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.event.beans;
+package com.finture.bpm.integrationtest.functional.event.beans;
 
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.ExecutionListener;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.ExecutionListener;
 
 /**
  * @author Daniel Meyer
@@ -26,7 +26,7 @@ import org.camunda.bpm.engine.delegate.ExecutionListener;
  */
 @ProcessApplication
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class ExecutionListenerProcessApplication extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class ExecutionListenerProcessApplication extends com.finture.bpm.application.impl.ServletProcessApplication {
 
   public static final String LISTENER_INVOCATION_COUNT = "listenerInvocationCount";
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.container.impl.jboss.deployment.processor;
+package com.finture.bpm.container.impl.jboss.deployment.processor;
 
 import static org.jboss.as.server.deployment.Attachments.MODULE;
 
@@ -25,13 +25,13 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.application.impl.metadata.ProcessesXmlParser;
-import org.camunda.bpm.application.impl.metadata.spi.ProcessesXml;
-import org.camunda.bpm.container.impl.jboss.deployment.marker.ProcessApplicationAttachments;
-import org.camunda.bpm.container.impl.jboss.util.ProcessesXmlWrapper;
-import org.camunda.bpm.engine.ProcessEngineException;
-import org.camunda.bpm.engine.impl.util.IoUtil;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.application.impl.metadata.ProcessesXmlParser;
+import com.finture.bpm.application.impl.metadata.spi.ProcessesXml;
+import com.finture.bpm.container.impl.jboss.deployment.marker.ProcessApplicationAttachments;
+import com.finture.bpm.container.impl.jboss.util.ProcessesXmlWrapper;
+import com.finture.bpm.engine.ProcessEngineException;
+import com.finture.bpm.engine.impl.util.IoUtil;
 import org.jboss.as.ee.component.ComponentDescription;
 import org.jboss.as.server.deployment.DeploymentPhaseContext;
 import org.jboss.as.server.deployment.DeploymentUnit;

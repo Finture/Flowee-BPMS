@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.gson.batch;
+package com.finture.bpm.qa.upgrade.gson.batch;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class DeleteHistoricProcessInstancesBatchScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/upgrade/gson/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/gson/oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("initDeleteHistoricProcessInstancesBatch")

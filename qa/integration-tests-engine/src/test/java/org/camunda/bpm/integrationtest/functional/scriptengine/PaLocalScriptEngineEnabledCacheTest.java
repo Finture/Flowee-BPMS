@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.scriptengine;
+package com.finture.bpm.integrationtest.functional.scriptengine;
 
 import static org.junit.Assert.assertEquals;
 
-import org.camunda.bpm.application.AbstractProcessApplication;
-import org.camunda.bpm.integrationtest.functional.scriptengine.engine.AbstractScriptEngineFactory;
-import org.camunda.bpm.integrationtest.functional.scriptengine.engine.DummyScriptEngineFactory;
+import com.finture.bpm.application.AbstractProcessApplication;
+import com.finture.bpm.integrationtest.functional.scriptengine.engine.AbstractScriptEngineFactory;
+import com.finture.bpm.integrationtest.functional.scriptengine.engine.DummyScriptEngineFactory;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.asset.StringAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;

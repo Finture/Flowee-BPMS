@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.cleanup;
+package com.finture.bpm.qa.rolling.update.cleanup;
 
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
-import org.camunda.bpm.qa.rolling.update.RollingUpdateConstants;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
+import com.finture.bpm.qa.rolling.update.RollingUpdateConstants;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.After;
 import org.junit.Test;
 

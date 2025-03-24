@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.transactions.beans;
+package com.finture.bpm.integrationtest.functional.transactions.beans;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.UserTransaction;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.impl.util.EnsureUtil;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.impl.util.EnsureUtil;
 
 @Named
 public class TransactionRollbackDelegate implements JavaDelegate {

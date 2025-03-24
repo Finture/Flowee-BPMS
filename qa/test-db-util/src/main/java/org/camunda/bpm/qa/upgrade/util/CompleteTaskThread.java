@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.util;
+package com.finture.bpm.qa.upgrade.util;
 
-import org.camunda.bpm.engine.OptimisticLockingException;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.cmd.CompleteTaskCmd;
+import com.finture.bpm.engine.OptimisticLockingException;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.cmd.CompleteTaskCmd;
 
 /**
  * @author Thorben Lindhauer

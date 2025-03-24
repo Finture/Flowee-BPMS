@@ -14,30 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.json;
+package com.finture.bpm.qa.upgrade.json;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.runtime.Execution;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.engine.variable.value.builder.SerializedObjectValueBuilder;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.json.beans.ObjectList;
-import org.camunda.bpm.qa.upgrade.json.beans.Order;
-import org.camunda.bpm.qa.upgrade.json.beans.OrderDetails;
-import org.camunda.bpm.qa.upgrade.json.beans.RegularCustomer;
-import static org.camunda.bpm.engine.variable.Variables.serializedObjectValue;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.runtime.Execution;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.variable.value.builder.SerializedObjectValueBuilder;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.json.beans.ObjectList;
+import com.finture.bpm.qa.upgrade.json.beans.Order;
+import com.finture.bpm.qa.upgrade.json.beans.OrderDetails;
+import com.finture.bpm.qa.upgrade.json.beans.RegularCustomer;
+import static com.finture.bpm.engine.variable.Variables.serializedObjectValue;
 import static org.junit.Assert.assertEquals;
 
 public class CreateProcessInstanceWithJsonVariablesScenario {
 
   @Deployment
   public static String deployProcess() {
-    return "org/camunda/bpm/qa/upgrade/json/simpleProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/json/simpleProcess.bpmn20.xml";
   }
 
   @DescribesScenario("initProcessInstanceWithDifferentVariables")

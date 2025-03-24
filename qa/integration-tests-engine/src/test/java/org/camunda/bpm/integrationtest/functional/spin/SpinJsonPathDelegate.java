@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.spin.json.SpinJsonNode;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
+import com.finture.spin.json.SpinJsonNode;
 
-import static org.camunda.spin.Spin.JSON;
+import static com.finture.spin.Spin.JSON;
 
 /**
  * Created by hawky4s on 04.05.15.

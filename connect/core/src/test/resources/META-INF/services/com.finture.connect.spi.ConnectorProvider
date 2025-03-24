@@ -1,0 +1,2 @@
+com.finture.connect.dummy.DummyConnectorProvider
+com.finture.connect.dummy.MyHttpConnectorProvider

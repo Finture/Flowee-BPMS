@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.util;
+package com.finture.bpm.integrationtest.util;
 
-import org.camunda.bpm.BpmPlatform;
+import com.finture.bpm.BpmPlatform;
 
 /**
  * @author Thorben Lindhauer

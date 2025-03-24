@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.application.ProcessApplication;
+import com.finture.bpm.application.ProcessApplication;
 
 @ProcessApplication("pa3")
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class ProcessApplication3 extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class ProcessApplication3 extends com.finture.bpm.application.impl.ServletProcessApplication {
 
 }

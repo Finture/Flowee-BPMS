@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.framework.aggregate;
+package com.finture.bpm.qa.performance.engine.framework.aggregate;
 
 import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestException;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestResults;
-import org.camunda.bpm.qa.performance.engine.util.JsonUtil;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestException;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestResults;
+import com.finture.bpm.qa.performance.engine.util.JsonUtil;
 
 /**
  * A result aggregator is used to aggregate the results of a

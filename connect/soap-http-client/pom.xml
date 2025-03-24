@@ -2,19 +2,20 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.connect</groupId>
-    <artifactId>camunda-connect-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.connect</groupId>
+    <artifactId>flowee-bpms-connect-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-connect-soap-http-client</artifactId>
-  <name>Camunda Platform - connect - soap http client</name>
+  <artifactId>flowee-bpms-connect-soap-http-client</artifactId>
+  <name>Flowee BPMS Platform - connect - soap http client</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.connect</groupId>
-      <artifactId>camunda-connect-http-client</artifactId>
+      <groupId>com.finture.connect</groupId>
+      <artifactId>flowee-bpms-connect-http-client</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -78,7 +79,7 @@
               <comparisonVersion>${connect.version.old}</comparisonVersion>
               <logResults>true</logResults>
               <excludes>
-                <exclude>org/camunda/connect/httpclient/soap/impl/**</exclude>
+                <exclude>com/finture/connect/httpclient/soap/impl/**</exclude>
               </excludes>
             </configuration>
             <executions>

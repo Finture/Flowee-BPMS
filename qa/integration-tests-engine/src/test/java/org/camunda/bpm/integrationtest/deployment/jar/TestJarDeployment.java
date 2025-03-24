@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.jar;
+package com.finture.bpm.integrationtest.deployment.jar;
 
-import org.camunda.bpm.application.impl.ejb.DefaultEjbProcessApplication;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.application.impl.ejb.DefaultEjbProcessApplication;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OverProtocol;
 import org.jboss.arquillian.junit.Arquillian;
@@ -46,7 +46,7 @@ public class TestJarDeployment extends AbstractFoxPlatformIntegrationTest {
       .addClass(AbstractFoxPlatformIntegrationTest.class)
       .addClass(DefaultEjbProcessApplication.class)
       .addAsResource("META-INF/processes.xml", "META-INF/processes.xml")
-      .addAsResource("org/camunda/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
   }
   
   @Test

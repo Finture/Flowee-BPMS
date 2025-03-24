@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <process-application
-  xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"
+  xmlns="http://www.flowee-bpms.org/schema/1.0/ProcessApplication"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.camunda.org/schema/1.0/ProcessApplication http://www.camunda.org/schema/1.0/ProcessApplication ">
+  xsi:schemaLocation="http://www.flowee-bpms.org/schema/1.0/ProcessApplication http://www.flowee-bpms.org/schema/1.0/ProcessApplication ">
 
   <process-engine name="engineWithJobPriority">
     <job-acquisition>default</job-acquisition>
-    <configuration>org.camunda.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
+    <configuration>com.finture.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
     <properties>
       <property name="history">full</property>
       <property name="historyCleanupEnabled">false</property>

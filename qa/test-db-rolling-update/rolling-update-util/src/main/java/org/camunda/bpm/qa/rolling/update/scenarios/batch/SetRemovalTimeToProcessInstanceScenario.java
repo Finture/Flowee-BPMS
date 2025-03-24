@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.scenarios.batch;
+package com.finture.bpm.qa.rolling.update.scenarios.batch;
 
 import java.util.Date;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 public class SetRemovalTimeToProcessInstanceScenario {
 
@@ -31,7 +31,7 @@ public class SetRemovalTimeToProcessInstanceScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/rolling/update/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/rolling/update/oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("createSetRemovalTimeToProcessInstanceBatch")

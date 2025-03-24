@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
 import java.util.concurrent.Callable;
-import org.camunda.bpm.engine.runtime.ActivityInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.CustomDataFormatConfigurator;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.XmlSerializableJsonDeserializer;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.XmlSerializableJsonSerializer;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
-import org.camunda.spin.DataFormats;
-import org.camunda.spin.spi.DataFormatConfigurator;
+import com.finture.bpm.engine.runtime.ActivityInstance;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.CustomDataFormatConfigurator;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.XmlSerializableJsonDeserializer;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.XmlSerializableJsonSerializer;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
+import com.finture.spin.DataFormats;
+import com.finture.spin.spi.DataFormatConfigurator;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -35,7 +35,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.camunda.bpm.application.ProcessApplicationContext.withProcessApplicationContext;
+import static com.finture.bpm.application.ProcessApplicationContext.withProcessApplicationContext;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Arquillian.class)
@@ -50,7 +50,7 @@ public class PaContextSwitchCustomSerializerTest extends AbstractFoxPlatformInte
         .addClass(XmlSerializable.class)
         .addClass(XmlSerializableJsonDeserializer.class)
         .addClass(XmlSerializableJsonSerializer.class)
-        .addAsResource("org/camunda/bpm/integrationtest/functional/spin/paContextSwitchCustomSerializer.bpmn20.xml")
+        .addAsResource("com/finture/bpm/integrationtest/functional/spin/paContextSwitchCustomSerializer.bpmn20.xml")
         .addClass(CustomDataFormatConfigurator.class)
         .addAsServiceProvider(DataFormatConfigurator.class, CustomDataFormatConfigurator.class);
 
@@ -62,7 +62,7 @@ public class PaContextSwitchCustomSerializerTest extends AbstractFoxPlatformInte
   @Deployment(name = "pa4")
   public static WebArchive createDeployment2() {
     WebArchive webArchive = ShrinkWrap.create(WebArchive.class, "pa4.war")
-        .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+        .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
         .addAsLibraries(DeploymentHelper.getEngineCdi())
         .addAsResource("META-INF/processes.xml")
         .addClass(AbstractFoxPlatformIntegrationTest.class)

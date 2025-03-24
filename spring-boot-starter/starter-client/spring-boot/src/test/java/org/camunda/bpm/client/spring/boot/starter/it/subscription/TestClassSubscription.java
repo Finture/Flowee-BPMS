@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.it.subscription;
+package com.finture.bpm.client.spring.boot.starter.it.subscription;
 
-import org.camunda.bpm.client.spring.annotation.ExternalTaskSubscription;
-import org.camunda.bpm.client.task.ExternalTask;
-import org.camunda.bpm.client.task.ExternalTaskHandler;
-import org.camunda.bpm.client.task.ExternalTaskService;
+import com.finture.bpm.client.spring.annotation.ExternalTaskSubscription;
+import com.finture.bpm.client.task.ExternalTask;
+import com.finture.bpm.client.task.ExternalTaskHandler;
+import com.finture.bpm.client.task.ExternalTaskService;
 import org.springframework.stereotype.Component;
 
 @ExternalTaskSubscription(

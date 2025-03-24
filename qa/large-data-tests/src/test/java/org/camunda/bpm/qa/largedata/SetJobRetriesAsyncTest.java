@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.largedata;
+package com.finture.bpm.qa.largedata;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,16 +22,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.runtime.ProcessInstanceQuery;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.engine.test.util.ProcessEngineTestRule;
-import org.camunda.bpm.qa.largedata.util.BatchModificationJobHelper;
-import org.camunda.bpm.qa.largedata.util.EngineDataGenerator;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.runtime.ProcessInstanceQuery;
+import com.finture.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.test.util.ProcessEngineTestRule;
+import com.finture.bpm.qa.largedata.util.BatchModificationJobHelper;
+import com.finture.bpm.qa.largedata.util.EngineDataGenerator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

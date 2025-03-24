@@ -1,0 +1,149 @@
+/*
+ * Copyright Camunda Services GmbH and/or licensed to Camunda Services GmbH
+ * under one or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information regarding copyright
+ * ownership. Camunda licenses this file to you under the Apache License,
+ * Version 2.0; you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.finture.bpm.engine.rest.impl;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.finture.bpm.engine.rest.UserRestService;
+import com.finture.bpm.engine.rest.dto.CountResultDto;
+import com.finture.bpm.engine.rest.dto.ResourceOptionsDto;
+import com.finture.bpm.engine.rest.dto.identity.UserDto;
+import com.finture.bpm.engine.rest.dto.identity.UserProfileDto;
+import com.finture.bpm.engine.rest.dto.identity.UserQueryDto;
+import com.finture.bpm.engine.rest.exception.InvalidRequestException;
+import com.finture.bpm.engine.rest.sub.identity.UserResource;
+import com.finture.bpm.engine.rest.sub.identity.impl.UserResourceImpl;
+import com.finture.bpm.engine.rest.util.PathUtil;
+import com.finture.bpm.engine.rest.util.QueryUtil;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.identity.User;
+import com.finture.bpm.engine.identity.UserQuery;
+
+import javax.ws.rs.HttpMethod;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
+import java.util.List;
+
+import static com.finture.bpm.engine.authorization.Authorization.ANY;
+import static com.finture.bpm.engine.authorization.Permissions.CREATE;
+import static com.finture.bpm.engine.authorization.Resources.USER;
+
+/**
+ * @author Daniel Meyer
+ *
+ */
+public class UserRestServiceImpl extends AbstractAuthorizedRestResource implements UserRestService {
+
+  public UserRestServiceImpl(String engineName, ObjectMapper objectMapper) {
+    super(engineName, USER, ANY, objectMapper);
+  }
+
+  @Override
+  public UserResource getUser(String id) {
+    id = PathUtil.decodePathParam(id);
+    return new UserResourceImpl(getProcessEngine().getName(), id, relativeRootResourcePath, getObjectMapper());
+  }
+
+  @Override
+  public List<UserProfileDto> queryUsers(UriInfo uriInfo, Integer firstResult, Integer maxResults) {
+    UserQueryDto queryDto = new UserQueryDto(getObjectMapper(), uriInfo.getQueryParameters());
+    return queryUsers(queryDto, firstResult, maxResults);
+  }
+
+  public List<UserProfileDto> queryUsers(UserQueryDto queryDto, Integer firstResult, Integer maxResults) {
+
+    queryDto.setObjectMapper(getObjectMapper());
+    UserQuery query = queryDto.toQuery(getProcessEngine());
+
+    List<User> resultList = QueryUtil.list(query, firstResult, maxResults);
+
+    return UserProfileDto.fromUserList(resultList);
+  }
+
+
+  @Override
+  public CountResultDto getUserCount(UriInfo uriInfo) {
+    UserQueryDto queryDto = new UserQueryDto(getObjectMapper(), uriInfo.getQueryParameters());
+    return getUserCount(queryDto);
+  }
+
+  protected CountResultDto getUserCount(UserQueryDto queryDto) {
+    UserQuery query = queryDto.toQuery(getProcessEngine());
+    long count = query.count();
+    return new CountResultDto(count);
+  }
+
+  @Override
+  public void createUser(UserDto userDto) {
+    final IdentityService identityService = getIdentityService();
+
+    if(identityService.isReadOnly()) {
+      throw new InvalidRequestException(Status.FORBIDDEN, "Identity service implementation is read-only.");
+    }
+
+    UserProfileDto profile = userDto.getProfile();
+    if(profile == null || profile.getId() == null) {
+      throw new InvalidRequestException(Status.BAD_REQUEST, "request object must provide profile information with valid id.");
+    }
+
+    User newUser = identityService.newUser(profile.getId());
+    profile.update(newUser);
+
+    if(userDto.getCredentials() != null) {
+      newUser.setPassword(userDto.getCredentials().getPassword());
+    }
+
+    identityService.saveUser(newUser);
+
+  }
+
+  @Override
+  public ResourceOptionsDto availableOperations(UriInfo context) {
+
+    final IdentityService identityService = getIdentityService();
+
+    UriBuilder baseUriBuilder = context.getBaseUriBuilder()
+        .path(relativeRootResourcePath)
+        .path(UserRestService.PATH);
+
+    ResourceOptionsDto resourceOptionsDto = new ResourceOptionsDto();
+
+    // GET /
+    URI baseUri = baseUriBuilder.build();
+    resourceOptionsDto.addReflexiveLink(baseUri, HttpMethod.GET, "list");
+
+    // GET /count
+    URI countUri = baseUriBuilder.clone().path("/count").build();
+    resourceOptionsDto.addReflexiveLink(countUri, HttpMethod.GET, "count");
+
+    // POST /create
+    if(!identityService.isReadOnly() && isAuthorized(CREATE)) {
+      URI createUri = baseUriBuilder.clone().path("/create").build();
+      resourceOptionsDto.addReflexiveLink(createUri, HttpMethod.POST, "create");
+    }
+
+    return resourceOptionsDto;
+  }
+
+  // utility methods //////////////////////////////////////
+
+  protected IdentityService getIdentityService() {
+    return getProcessEngine().getIdentityService();
+  }
+
+}

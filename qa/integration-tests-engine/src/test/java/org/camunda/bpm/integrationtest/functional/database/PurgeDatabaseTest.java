@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.database;
+package com.finture.bpm.integrationtest.functional.database;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.HistoryLevelSetupCommand;
-import org.camunda.bpm.engine.impl.ManagementServiceImpl;
-import org.camunda.bpm.engine.impl.ProcessEngineImpl;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.impl.db.PersistenceSession;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandContext;
-import org.camunda.bpm.engine.variable.VariableMap;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.HistoryLevelSetupCommand;
+import com.finture.bpm.engine.impl.ManagementServiceImpl;
+import com.finture.bpm.engine.impl.ProcessEngineImpl;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.impl.db.PersistenceSession;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandContext;
+import com.finture.bpm.engine.variable.VariableMap;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -52,7 +52,7 @@ public class PurgeDatabaseTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive processArchive() {
     return initWebArchiveDeployment()
-      .addAsResource("org/camunda/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
+      .addAsResource("com/finture/bpm/integrationtest/testDeployProcessArchive.bpmn20.xml");
   }
 
   @Test

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm;
+package com.finture.bpm;
 
 import com.sun.jersey.api.client.ClientResponse;
 import org.junit.Before;

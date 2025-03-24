@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -26,7 +26,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.camunda.bpm.engine.variable.Variables.*;
+import static com.finture.bpm.engine.variable.Variables.*;
 
 /**
  * @author Daniel Meyer
@@ -39,7 +39,7 @@ public class SpinClassloadingTest extends AbstractFoxPlatformIntegrationTest {
   public final static WebArchive createPaDeployment() {
 
     return initWebArchiveDeployment()
-      .addAsResource("org/camunda/bpm/integrationtest/functional/spin/SpinClassloadingTest.bpmn")
+      .addAsResource("com/finture/bpm/integrationtest/functional/spin/SpinClassloadingTest.bpmn")
       .addClass(XmlSerializable.class)
       .addClass(SpinVariableDelegate.class)
       .addClass(SpinJsonPathDelegate.class);
@@ -66,7 +66,7 @@ public class SpinClassloadingTest extends AbstractFoxPlatformIntegrationTest {
         .putValueTyped("xmlSerializable",
             serializedObjectValue(serializedValue)
               .serializationDataFormat(SerializationDataFormats.XML)
-              .objectTypeName("org.camunda.bpm.integrationtest.functional.spin.XmlSerializable")
+              .objectTypeName("com.finture.bpm.integrationtest.functional.spin.XmlSerializable")
             .create()));
 
   }

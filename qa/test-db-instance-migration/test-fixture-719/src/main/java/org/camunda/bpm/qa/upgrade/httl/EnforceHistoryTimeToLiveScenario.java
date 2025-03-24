@@ -15,24 +15,24 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.qa.upgrade.httl;
+package com.finture.bpm.qa.upgrade.httl;
 
-import org.camunda.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.test.Deployment;
 
 public class EnforceHistoryTimeToLiveScenario {
 
   @Deployment
   public static String processWithoutHTTL() {
-    return "org/camunda/bpm/qa/upgrade/httl/process_without_httl.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/httl/process_without_httl.bpmn20.xml";
   }
 
   @Deployment
   public static String decisionWithoutHTTL() {
-    return "org/camunda/bpm/qa/upgrade/httl/decision_without_httl.dmn";
+    return "com/finture/bpm/qa/upgrade/httl/decision_without_httl.dmn";
   }
 
   @Deployment
   public static String caseWithoutHTTL() {
-    return "org/camunda/bpm/qa/upgrade/httl/case_without_httl.cmmn";
+    return "com/finture/bpm/qa/upgrade/httl/case_without_httl.cmmn";
   }
 }

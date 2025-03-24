@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
-import org.camunda.bpm.engine.history.HistoricDecisionInstance;
-import org.camunda.bpm.engine.variable.VariableMap;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.spin.Spin;
+import com.finture.bpm.engine.history.HistoricDecisionInstance;
+import com.finture.bpm.engine.variable.VariableMap;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.spin.Spin;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -36,7 +36,7 @@ import static org.hamcrest.core.Is.is;
 @RunWith(Arquillian.class)
 public class FeelEngineIT extends AbstractFoxPlatformIntegrationTest {
 
-  protected static final String PATH = "org/camunda/bpm/integrationtest/functional/spin/feel/";
+  protected static final String PATH = "com/finture/bpm/integrationtest/functional/spin/feel/";
 
   protected static final String DMN_JSON = "feel-spin-json-decision.dmn";
   protected static final String DMN_XML = "feel-spin-xml-decision.dmn";

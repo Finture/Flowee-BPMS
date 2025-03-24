@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.util;
+package com.finture.bpm.qa.upgrade.util;
 
-import org.camunda.bpm.engine.delegate.BpmnError;
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.ExecutionListener;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.delegate.BpmnError;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.ExecutionListener;
+import com.finture.bpm.engine.delegate.JavaDelegate;
 
 /**
  * @author Thorben Lindhauer

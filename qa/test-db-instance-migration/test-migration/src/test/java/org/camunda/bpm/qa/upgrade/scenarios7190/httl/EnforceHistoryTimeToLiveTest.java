@@ -15,22 +15,22 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.qa.upgrade.scenarios7190.httl;
+package com.finture.bpm.qa.upgrade.scenarios7190.httl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
-import static org.camunda.bpm.qa.upgrade.scenarios7190.httl.EnforceHistoryTimeToLiveTest.Assert.assertDoesNotThrow;
+import static com.finture.bpm.qa.upgrade.scenarios7190.httl.EnforceHistoryTimeToLiveTest.Assert.assertDoesNotThrow;
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.repository.CaseDefinition;
-import org.camunda.bpm.engine.repository.DecisionDefinition;
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.qa.upgrade.Origin;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
-import org.camunda.bpm.qa.upgrade.UpgradeTestRule;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.engine.repository.CaseDefinition;
+import com.finture.bpm.engine.repository.DecisionDefinition;
+import com.finture.bpm.engine.repository.ProcessDefinition;
+import com.finture.bpm.qa.upgrade.Origin;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.qa.upgrade.UpgradeTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

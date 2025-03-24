@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.client.spring.boot.starter.it;
+package com.finture.bpm.client.spring.boot.starter.it;
 
-import org.camunda.bpm.client.ExternalTaskClient;
-import org.camunda.bpm.client.spring.SpringTopicSubscription;
+import com.finture.bpm.client.ExternalTaskClient;
+import com.finture.bpm.client.spring.SpringTopicSubscription;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;

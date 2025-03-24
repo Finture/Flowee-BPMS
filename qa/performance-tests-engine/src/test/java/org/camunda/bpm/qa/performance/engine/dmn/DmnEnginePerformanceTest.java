@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.dmn;
+package com.finture.bpm.qa.performance.engine.dmn;
 
 import java.util.Map;
 
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
-import org.camunda.bpm.qa.performance.engine.steps.EvaluateDecisionTableStep;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.qa.performance.engine.junit.ProcessEnginePerformanceTestCase;
+import com.finture.bpm.qa.performance.engine.steps.EvaluateDecisionTableStep;
 import org.junit.Test;
 
 /**

@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.camunda.bpm.springboot.project</groupId>
-    <artifactId>camunda-bpm-spring-boot-starter-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.springboot.project</groupId>
+    <artifactId>flowee-bpms-bpm-spring-boot-starter-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.bpm.springboot</groupId>
-  <artifactId>camunda-bpm-spring-boot-starter</artifactId>
-  <name>Camunda Platform - Spring Boot Starter</name>
+  <groupId>com.finture.bpm.springboot</groupId>
+  <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
+  <name>Flowee BPMS Platform - Spring Boot Starter</name>
 
   <dependencyManagement>
     <dependencies>
@@ -24,11 +24,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-spring-6</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-spring-6</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
-    <!-- Spring dependencies required by camunda-engine-spring -->
+    <!-- Spring dependencies required by flowee-bpms-engine-spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -47,20 +48,23 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-spin</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
+      <version>${project.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <version>${project.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-connect</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
+      <version>${project.version}</version>
       <optional>true</optional>
     </dependency>
 
@@ -112,14 +116,14 @@
     </dependency>
 
     <dependency>
-      <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.finture.bpm.springboot</groupId>
+      <artifactId>flowee-bpms-bpm-spring-boot-starter-test</artifactId>
       <version>${project.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-testing</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-testing</artifactId>
+      <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

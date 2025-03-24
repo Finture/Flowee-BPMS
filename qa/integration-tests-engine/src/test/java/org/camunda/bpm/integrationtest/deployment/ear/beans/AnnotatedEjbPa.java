@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.ear.beans;
+package com.finture.bpm.integrationtest.deployment.ear.beans;
 
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.application.ProcessApplicationInterface;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.application.ProcessApplicationInterface;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.ConcurrencyManagement;
@@ -38,7 +38,7 @@ import javax.ejb.TransactionAttributeType;
 @ProcessApplication(deploymentDescriptors = {"deployment-descriptor-with-custom-filename.xml"})
 @Local(ProcessApplicationInterface.class)
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class AnnotatedEjbPa extends org.camunda.bpm.application.impl.EjbProcessApplication {
+public class AnnotatedEjbPa extends com.finture.bpm.application.impl.EjbProcessApplication {
 
   @PostConstruct
   public void start() {

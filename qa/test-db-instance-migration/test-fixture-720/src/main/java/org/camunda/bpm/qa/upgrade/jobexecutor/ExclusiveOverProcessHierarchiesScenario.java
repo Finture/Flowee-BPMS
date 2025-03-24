@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.qa.upgrade.jobexecutor;
+package com.finture.bpm.qa.upgrade.jobexecutor;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class ExclusiveOverProcessHierarchiesScenario {
 

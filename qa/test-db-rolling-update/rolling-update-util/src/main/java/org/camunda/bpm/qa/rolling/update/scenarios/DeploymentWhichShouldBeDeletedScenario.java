@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.scenarios;
+package com.finture.bpm.qa.rolling.update.scenarios;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  *
@@ -32,7 +32,7 @@ public class DeploymentWhichShouldBeDeletedScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/rolling/update/processWithAsyncServiceTask.bpmn20.xml";
+    return "com/finture/bpm/qa/rolling/update/processWithAsyncServiceTask.bpmn20.xml";
   }
 
   @DescribesScenario("init")

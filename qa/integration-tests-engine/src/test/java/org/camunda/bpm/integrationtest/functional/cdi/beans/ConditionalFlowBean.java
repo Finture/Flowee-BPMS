@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.cdi.beans;
+package com.finture.bpm.integrationtest.functional.cdi.beans;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.runtime.ProcessInstance;
 
 /**
  * @author Thorben Lindhauer

@@ -2,24 +2,27 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.spin</groupId>
-    <artifactId>camunda-spin-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.spin</groupId>
+    <artifactId>flowee-bpms-spin-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-spin-core</artifactId>
-  <name>camunda Spin - core</name>
+  <artifactId>flowee-bpms-spin-core</artifactId>
+  <name>Flowee BPMS Spin - core</name>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
+      <version>${project.version}</version>
+
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-utils</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-utils</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -111,7 +114,7 @@
         </plugins>
       </build>
     </profile>
-    <!-- exclude the DataFormatProviderTest until PowerMock 2.0 is released: https://app.camunda.com/jira/browse/CAM-9309 -->
+    <!-- exclude the DataFormatProviderTest until PowerMock 2.0 is released: https://app.flowee-bpms.com/jira/browse/CAM-9309 -->
     <profile>
       <id>jdk-9-and-onwards</id>
       <activation>
@@ -191,7 +194,7 @@
               <comparisonVersion>${spin.version.old}</comparisonVersion>
               <logResults>true</logResults>
               <excludes>
-                <exclude>org/camunda/spin/impl/**</exclude>
+                <exclude>com/finture/spin/impl/**</exclude>
               </excludes>
             </configuration>
             <executions>

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.pa.service;
+package com.finture.bpm.pa.service;
 
-import org.camunda.bpm.engine.delegate.CaseExecutionListener;
-import org.camunda.bpm.engine.delegate.DelegateCaseExecution;
-import org.camunda.bpm.engine.variable.VariableMap;
-import org.camunda.bpm.engine.variable.Variables;
+import com.finture.bpm.engine.delegate.CaseExecutionListener;
+import com.finture.bpm.engine.delegate.DelegateCaseExecution;
+import com.finture.bpm.engine.variable.VariableMap;
+import com.finture.bpm.engine.variable.Variables;
 
 /**
  * @author smirnov

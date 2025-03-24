@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.cfg;
+package com.finture.bpm.integrationtest.deployment.cfg;
 
-import org.camunda.bpm.application.ProcessApplication;
+import com.finture.bpm.application.ProcessApplication;
 
 /**
  * @author Daniel Meyer
@@ -26,7 +26,7 @@ import org.camunda.bpm.application.ProcessApplication;
     deploymentDescriptors = {"my/alternate/location/processes.xml"}
 )
 // Using fully-qualified class name instead of import statement to allow for automatic Jakarta transformation
-public class CustomProcessApplication extends org.camunda.bpm.application.impl.ServletProcessApplication {
+public class CustomProcessApplication extends com.finture.bpm.application.impl.ServletProcessApplication {
   
 
 }

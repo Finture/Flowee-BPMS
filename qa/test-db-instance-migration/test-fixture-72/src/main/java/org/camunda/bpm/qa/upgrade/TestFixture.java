@@ -14,46 +14,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade;
+package com.finture.bpm.qa.upgrade;
 
 
-import org.camunda.bpm.engine.ManagementService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngineConfiguration;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.qa.upgrade.scenarios.boundary.NestedNonInterruptingBoundaryEventOnInnerSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.boundary.NestedNonInterruptingBoundaryEventOnOuterSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.boundary.NonInterruptingBoundaryEventScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubprocessCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SingleActivityCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SubprocessCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SubprocessParallelCreateCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.SubprocessParallelThrowCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.compensation.TransactionCancelCompensationScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.InterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NestedInterruptingErrorEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NestedInterruptingEventSubprocessParallelScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NestedNonInterruptingEventSubprocessNestedSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NestedNonInterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NestedParallelNonInterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.NonInterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.ParallelNestedNonInterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.eventsubprocess.TwoLevelNestedNonInterruptingEventSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.gateway.EventBasedGatewayScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.job.AsyncParallelMultiInstanceScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.job.AsyncSequentialMultiInstanceScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.multiinstance.MultiInstanceReceiveTaskScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.multiinstance.NestedSequentialMultiInstanceSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.multiinstance.ParallelMultiInstanceSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.multiinstance.SequentialMultiInstanceSubprocessScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.histperms.HistoricInstancePermissionsWithoutProcDefKeyScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.task.OneScopeTaskScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.task.OneTaskScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.task.ParallelScopeTasksScenario;
-import org.camunda.bpm.qa.upgrade.scenarios.task.ParallelTasksScenario;
+import com.finture.bpm.engine.ManagementService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.ProcessEngineConfiguration;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.qa.upgrade.scenarios.boundary.NestedNonInterruptingBoundaryEventOnInnerSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.boundary.NestedNonInterruptingBoundaryEventOnOuterSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.boundary.NonInterruptingBoundaryEventScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.InterruptingEventSubprocessCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SingleActivityCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SubprocessCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SubprocessParallelCreateCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.SubprocessParallelThrowCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.compensation.TransactionCancelCompensationScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.InterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NestedInterruptingErrorEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NestedInterruptingEventSubprocessParallelScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NestedNonInterruptingEventSubprocessNestedSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NestedNonInterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NestedParallelNonInterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.NonInterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.ParallelNestedNonInterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.eventsubprocess.TwoLevelNestedNonInterruptingEventSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.gateway.EventBasedGatewayScenario;
+import com.finture.bpm.qa.upgrade.scenarios.job.AsyncParallelMultiInstanceScenario;
+import com.finture.bpm.qa.upgrade.scenarios.job.AsyncSequentialMultiInstanceScenario;
+import com.finture.bpm.qa.upgrade.scenarios.multiinstance.MultiInstanceReceiveTaskScenario;
+import com.finture.bpm.qa.upgrade.scenarios.multiinstance.NestedSequentialMultiInstanceSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.multiinstance.ParallelMultiInstanceSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.multiinstance.SequentialMultiInstanceSubprocessScenario;
+import com.finture.bpm.qa.upgrade.scenarios.histperms.HistoricInstancePermissionsWithoutProcDefKeyScenario;
+import com.finture.bpm.qa.upgrade.scenarios.task.OneScopeTaskScenario;
+import com.finture.bpm.qa.upgrade.scenarios.task.OneTaskScenario;
+import com.finture.bpm.qa.upgrade.scenarios.task.ParallelScopeTasksScenario;
+import com.finture.bpm.qa.upgrade.scenarios.task.ParallelTasksScenario;
 
 /**
  * Sets up scenarios for migration from 7.3.0

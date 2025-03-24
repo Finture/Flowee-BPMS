@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.context;
+package com.finture.bpm.integrationtest.functional.context;
 
 import java.util.Date;
-import org.camunda.bpm.application.InvocationContext;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.EventSubscription;
-import org.camunda.bpm.engine.runtime.Execution;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.integrationtest.functional.context.beans.NoOpJavaDelegate;
-import org.camunda.bpm.integrationtest.functional.context.beans.SignalableTask;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.application.InvocationContext;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.EventSubscription;
+import com.finture.bpm.engine.runtime.Execution;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.integrationtest.functional.context.beans.NoOpJavaDelegate;
+import com.finture.bpm.integrationtest.functional.context.beans.SignalableTask;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -53,9 +53,9 @@ public class InvocationContextTest extends AbstractFoxPlatformIntegrationTest {
         .addClass(ProcessApplicationWithInvocationContext.class)
         .addClass(NoOpJavaDelegate.class)
         .addClass(SignalableTask.class)
-        .addAsResource("org/camunda/bpm/integrationtest/functional/context/InvocationContextTest-timer.bpmn")
-        .addAsResource("org/camunda/bpm/integrationtest/functional/context/InvocationContextTest-message.bpmn")
-        .addAsResource("org/camunda/bpm/integrationtest/functional/context/InvocationContextTest-signalTask.bpmn");
+        .addAsResource("com/finture/bpm/integrationtest/functional/context/InvocationContextTest-timer.bpmn")
+        .addAsResource("com/finture/bpm/integrationtest/functional/context/InvocationContextTest-message.bpmn")
+        .addAsResource("com/finture/bpm/integrationtest/functional/context/InvocationContextTest-signalTask.bpmn");
   }
 
   @After

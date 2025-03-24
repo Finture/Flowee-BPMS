@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin;
+package com.finture.bpm.integrationtest.functional.spin;
 
 import java.util.Date;
 
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.Variables.SerializationDataFormats;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
-import org.camunda.bpm.integrationtest.functional.spin.dataformat.JsonSerializable;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.delegate.DelegateExecution;
+import com.finture.bpm.engine.delegate.JavaDelegate;
+import com.finture.bpm.engine.variable.Variables;
+import com.finture.bpm.engine.variable.Variables.SerializationDataFormats;
+import com.finture.bpm.engine.variable.value.ObjectValue;
+import com.finture.bpm.integrationtest.functional.spin.dataformat.JsonSerializable;
 
 /**
  * @author Thorben Lindhauer

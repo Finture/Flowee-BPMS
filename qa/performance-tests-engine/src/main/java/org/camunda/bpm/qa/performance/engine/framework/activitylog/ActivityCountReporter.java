@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.framework.activitylog;
+package com.finture.bpm.qa.performance.engine.framework.activitylog;
 
 import java.io.File;
 
-import org.camunda.bpm.qa.performance.engine.framework.report.SectionedHtmlReportBuilder;
-import org.camunda.bpm.qa.performance.engine.util.FileUtil;
+import com.finture.bpm.qa.performance.engine.framework.report.SectionedHtmlReportBuilder;
+import com.finture.bpm.qa.performance.engine.util.FileUtil;
 
 public class ActivityCountReporter {
 

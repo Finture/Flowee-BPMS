@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.spin.dataformat;
+package com.finture.bpm.integrationtest.functional.spin.dataformat;
 
 import java.text.SimpleDateFormat;
 
-import org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat;
-import org.camunda.spin.spi.DataFormatConfigurator;
+import com.finture.spin.impl.json.jackson.format.JacksonJsonDataFormat;
+import com.finture.spin.spi.DataFormatConfigurator;
 
 /**
  * @author Thorben Lindhauer

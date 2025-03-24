@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.scriptengine;
+package com.finture.bpm.integrationtest.functional.scriptengine;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-import org.camunda.bpm.application.ProcessApplicationInterface;
-import org.camunda.bpm.application.ProcessApplicationReference;
-import org.camunda.bpm.application.ProcessApplicationUnavailableException;
-import org.camunda.bpm.engine.impl.application.ProcessApplicationManager;
-import org.camunda.bpm.engine.impl.interceptor.Command;
-import org.camunda.bpm.engine.impl.interceptor.CommandContext;
-import org.camunda.bpm.engine.impl.persistence.entity.ProcessDefinitionEntity;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.application.ProcessApplicationInterface;
+import com.finture.bpm.application.ProcessApplicationReference;
+import com.finture.bpm.application.ProcessApplicationUnavailableException;
+import com.finture.bpm.engine.impl.application.ProcessApplicationManager;
+import com.finture.bpm.engine.impl.interceptor.Command;
+import com.finture.bpm.engine.impl.interceptor.CommandContext;
+import com.finture.bpm.engine.impl.persistence.entity.ProcessDefinitionEntity;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.asset.StringAsset;
 import org.junit.runner.RunWith;
@@ -43,7 +43,7 @@ public abstract class AbstractPaLocalScriptEngineTest extends AbstractFoxPlatfor
   public static final String PROCESS_ID = "testProcess";
   public static final String SCRIPT_TEXT = "my-script";
   public static final String SCRIPT_FORMAT = "dummy";
-  public static final String DUMMY_SCRIPT_ENGINE_FACTORY_SPI = "org.camunda.bpm.integrationtest.functional.scriptengine.engine.DummyScriptEngineFactory";
+  public static final String DUMMY_SCRIPT_ENGINE_FACTORY_SPI = "com.finture.bpm.integrationtest.functional.scriptengine.engine.DummyScriptEngineFactory";
   public static final String SCRIPT_ENGINE_FACTORY_PATH = "META-INF/services/javax.script.ScriptEngineFactory";
 
   protected static StringAsset createScriptTaskProcess(String scriptFormat, String scriptText) {

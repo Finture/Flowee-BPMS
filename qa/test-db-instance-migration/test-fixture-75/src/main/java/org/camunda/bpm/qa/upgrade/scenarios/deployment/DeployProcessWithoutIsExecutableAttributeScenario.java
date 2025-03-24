@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios.deployment;
+package com.finture.bpm.qa.upgrade.scenarios.deployment;
 
-import org.camunda.bpm.engine.test.Deployment;
+import com.finture.bpm.engine.test.Deployment;
 
 /**
  * @author Thorben Lindhauer
@@ -26,6 +26,6 @@ public class DeployProcessWithoutIsExecutableAttributeScenario {
 
   @Deployment
   public static String deployNonExecutableProcess() {
-    return "org/camunda/bpm/qa/upgrade/deployment/processWithoutIsExecutableAttribute.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/deployment/processWithoutIsExecutableAttribute.bpmn20.xml";
   }
 }

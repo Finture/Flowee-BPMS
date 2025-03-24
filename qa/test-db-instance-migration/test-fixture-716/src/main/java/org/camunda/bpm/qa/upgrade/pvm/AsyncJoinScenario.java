@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.pvm;
+package com.finture.bpm.qa.upgrade.pvm;
 
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 public class AsyncJoinScenario {
 
   @Deployment
   public static String modelParallelDeployment() {
-    return "org/camunda/bpm/qa/upgrade/pvm/asyncParallelGateway.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/pvm/asyncParallelGateway.bpmn20.xml";
   }
   
   @Deployment
   public static String modelInclusiveDeployment() {
-    return "org/camunda/bpm/qa/upgrade/pvm/asyncInclusiveGateway.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/pvm/asyncInclusiveGateway.bpmn20.xml";
   }
 
   @DescribesScenario("asyncJoinParallel")

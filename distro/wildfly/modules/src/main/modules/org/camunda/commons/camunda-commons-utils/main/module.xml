@@ -1,10 +1,10 @@
-<module xmlns="urn:jboss:module:1.0" name="org.camunda.commons.camunda-commons-utils">
+<module xmlns="urn:jboss:module:1.0" name="com.finture.commons.flowee-bpms-commons-utils">
   <resources>
-    <resource-root path="camunda-commons-utils-@project.version@.jar" />
+    <resource-root path="flowee-bpms-commons-utils-@project.version@.jar" />
   </resources>
 
   <dependencies>
     <module name="java.base" />
-    <module name="org.camunda.commons.camunda-commons-logging" />
+    <module name="com.finture.commons.flowee-bpms-commons-logging" />
   </dependencies>
 </module>

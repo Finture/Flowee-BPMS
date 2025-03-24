@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.jobexecutor.beans;
+package com.finture.bpm.integrationtest.jobexecutor.beans;
 
 import java.io.Serializable;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.cdi.annotation.ProcessVariableTyped;
-import org.camunda.bpm.engine.exception.NullValueException;
-import org.camunda.bpm.engine.runtime.VariableInstance;
-import org.camunda.bpm.engine.variable.value.StringValue;
-import org.camunda.bpm.engine.variable.value.TypedValue;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.cdi.annotation.ProcessVariableTyped;
+import com.finture.bpm.engine.exception.NullValueException;
+import com.finture.bpm.engine.runtime.VariableInstance;
+import com.finture.bpm.engine.variable.value.StringValue;
+import com.finture.bpm.engine.variable.value.TypedValue;
 
 /**
  * @author Tobias Metzke

@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.framework.activitylog;
+package com.finture.bpm.qa.performance.engine.framework.activitylog;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.history.HistoricActivityInstance;
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTest;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestPass;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestRun;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestStep;
-import org.camunda.bpm.qa.performance.engine.framework.PerfTestWatcher;
-import org.camunda.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
-import org.camunda.bpm.qa.performance.engine.steps.PerfTestConstants;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.history.HistoricActivityInstance;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.qa.performance.engine.framework.PerfTest;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestPass;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestRun;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestStep;
+import com.finture.bpm.qa.performance.engine.framework.PerfTestWatcher;
+import com.finture.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
+import com.finture.bpm.qa.performance.engine.steps.PerfTestConstants;
 
 public class ActivityPerfTestWatcher implements PerfTestWatcher {
 

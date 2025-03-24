@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.eventSubProcess;
+package com.finture.bpm.qa.rolling.update.eventSubProcess;
 
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
-import org.camunda.bpm.qa.upgrade.ScenarioUnderTest;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.qa.rolling.update.AbstractRollingUpdateTestCase;
+import com.finture.bpm.qa.upgrade.ScenarioUnderTest;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -4,16 +4,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-parent</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../../parent</relativePath>
-    <version>7.22.0</version>
+    <version>0.5.1</version>
   </parent>
 
-  <groupId>org.camunda.bpm.webapp</groupId>
-  <artifactId>camunda-webapp-webjar</artifactId>
+  <groupId>com.finture.bpm.webapp</groupId>
+  <artifactId>flowee-bpms-webapp-webjar</artifactId>
   <packaging>jar</packaging>
-  <name>Camunda Platform - webapp - webjar</name>
+  <name>Flowee BPMS Platform - webapp - webjar</name>
 
   <properties>
     <skipTests>true</skipTests>
@@ -22,8 +22,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -34,9 +34,9 @@
   <!-- add dependency so this is run after the war was build -->
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp-jakarta</artifactId>
-      <version>${project.parent.version}</version>
+      <groupId>com.finture.bpm.webapp</groupId>
+      <artifactId>flowee-bpms-webapp-jakarta</artifactId>
+      <version>${project.version}</version>
       <type>jar</type>
       <classifier>classes</classifier>
     </dependency>
@@ -57,12 +57,12 @@
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>org.camunda.bpm.webapp</groupId>
-                  <artifactId>camunda-webapp-jakarta</artifactId>
-                  <version>${project.parent.version}</version>
+                  <groupId>com.finture.bpm.webapp</groupId>
+                  <artifactId>flowee-bpms-webapp-jakarta</artifactId>
+                  <version>${project.version}</version>
                   <type>war</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${project.build.outputDirectory}/META-INF/resources/webjars/camunda</outputDirectory>
+                  <outputDirectory>${project.build.outputDirectory}/META-INF/resources/webjars/flowee-bpms</outputDirectory>
                   <excludes>META-INF/**</excludes>
                 </artifactItem>
               </artifactItems>
@@ -80,9 +80,9 @@
             <configuration>
             <skip>${skip.frontend.build}</skip>
               <target>
-                <move file="${project.build.outputDirectory}/META-INF/resources/webjars/camunda/WEB-INF/securityFilterRules.json" todir="${project.build.outputDirectory}/META-INF/resources/webjars/camunda/" />
-                <delete dir="${project.build.outputDirectory}/META-INF/resources/webjars/camunda/WEB-INF" />
-                <move file="${project.build.outputDirectory}/META-INF/resources/webjars/camunda/plugin" tofile="${project.build.outputDirectory}/META-INF/resources/plugin" verbose="true" />
+                <move file="${project.build.outputDirectory}/META-INF/resources/webjars/flowee-bpms/WEB-INF/securityFilterRules.json" todir="${project.build.outputDirectory}/META-INF/resources/webjars/flowee-bpms/" />
+                <delete dir="${project.build.outputDirectory}/META-INF/resources/webjars/flowee-bpms/WEB-INF" />
+                <move file="${project.build.outputDirectory}/META-INF/resources/webjars/flowee-bpms/plugin" tofile="${project.build.outputDirectory}/META-INF/resources/plugin" verbose="true" />
                 <!-- add camunda-welcome page -->
                 <copy todir="${project.build.outputDirectory}/META-INF/resources/camunda-welcome/">
                   <fileset dir="../camunda-welcome/" />

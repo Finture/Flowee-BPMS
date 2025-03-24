@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.run</groupId>
-    <artifactId>camunda-bpm-run-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.run</groupId>
+    <artifactId>flowee-bpms-bpm-run-root</artifactId>
+    <version>0.5.1</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>camunda-bpm-run-assembly</artifactId>
-  <name>Camunda Platform - Run - Assembly</name>
+  <artifactId>flowee-bpms-bpm-run-assembly</artifactId>
+  <name>Flowee BPMS Platform - Run - Assembly</name>
   <packaging>pom</packaging>
   
   <properties>
@@ -22,7 +22,7 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- override the Spring Boot Groovy version with the Camunda Groovy version -->
+      <!-- override the Spring Boot Groovy version with the Flowee BPMS Groovy version -->
       <dependency>
         <groupId>org.apache.groovy</groupId>
         <artifactId>groovy-bom</artifactId>
@@ -36,8 +36,8 @@
   <dependencies>
     <!-- make sure the assembly runs after the REST module -->
     <dependency>
-      <groupId>org.camunda.bpm.run</groupId>
-      <artifactId>camunda-bpm-run-modules-rest</artifactId>
+      <groupId>com.finture.bpm.run</groupId>
+      <artifactId>flowee-bpms-bpm-run-modules-rest</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <exclusions>
@@ -51,8 +51,8 @@
 
     <!-- make sure this runs after the oauth2 module -->
     <dependency>
-      <groupId>org.camunda.bpm.run</groupId>
-      <artifactId>camunda-bpm-run-modules-oauth2</artifactId>
+      <groupId>com.finture.bpm.run</groupId>
+      <artifactId>flowee-bpms-bpm-run-modules-oauth2</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
       <exclusions>
@@ -65,8 +65,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.run</groupId>
-      <artifactId>camunda-bpm-run-modules-example-invoice</artifactId>
+      <groupId>com.finture.bpm.run</groupId>
+      <artifactId>flowee-bpms-bpm-run-modules-example-invoice</artifactId>
       <version>${project.version}</version>
       <type>jar</type>
       <exclusions>
@@ -79,8 +79,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.run</groupId>
-      <artifactId>camunda-bpm-run-core</artifactId>
+      <groupId>com.finture.bpm.run</groupId>
+      <artifactId>flowee-bpms-bpm-run-core</artifactId>
       <version>${project.version}</version>
       <exclusions>
         <!-- we consume an uberjar that contains all of its dependencies -->
@@ -92,7 +92,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
+      <groupId>com.finture.bpm</groupId>
       <artifactId>license-book</artifactId>
       <version>${project.version}</version>
       <type>zip</type>

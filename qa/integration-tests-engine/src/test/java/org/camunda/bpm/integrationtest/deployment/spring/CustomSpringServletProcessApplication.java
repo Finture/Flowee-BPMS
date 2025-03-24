@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.deployment.spring;
+package com.finture.bpm.integrationtest.deployment.spring;
 
-import org.camunda.bpm.application.PostDeploy;
-import org.camunda.bpm.application.PreUndeploy;
-import org.camunda.bpm.engine.spring.application.SpringServletProcessApplication;
+import com.finture.bpm.application.PostDeploy;
+import com.finture.bpm.application.PreUndeploy;
+import com.finture.bpm.engine.spring.application.SpringServletProcessApplication;
 import org.junit.Assert;
 
 /**

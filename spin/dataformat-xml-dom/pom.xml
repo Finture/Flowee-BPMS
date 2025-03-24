@@ -2,28 +2,32 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.spin</groupId>
-    <artifactId>camunda-spin-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.spin</groupId>
+    <artifactId>flowee-bpms-spin-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-spin-dataformat-xml-dom</artifactId>
-  <name>camunda Spin - DOM XML data format</name>
+  <artifactId>flowee-bpms-spin-dataformat-xml-dom</artifactId>
+  <name>Flowee BPMS Spin - DOM XML data format</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-core</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
+      <version>${project.version}</version>
+
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-utils</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-utils</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -93,8 +97,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.spin</groupId>
-      <artifactId>camunda-spin-core</artifactId>
+      <groupId>com.finture.spin</groupId>
+      <artifactId>flowee-bpms-spin-core</artifactId>
+      <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
@@ -201,7 +206,7 @@
               <comparisonVersion>${spin.version.old}</comparisonVersion>
               <logResults>true</logResults>
               <excludes>
-                <exclude>org/camunda/spin/impl/**</exclude>
+                <exclude>com/finture/spin/impl/**</exclude>
               </excludes>
             </configuration>
             <executions>

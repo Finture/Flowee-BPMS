@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.scenarios7110.removaltime;
+package com.finture.bpm.qa.upgrade.scenarios7110.removaltime;
 
-import org.camunda.bpm.engine.HistoryService;
-import org.camunda.bpm.engine.batch.Batch;
-import org.camunda.bpm.engine.history.HistoricProcessInstance;
-import org.camunda.bpm.engine.history.HistoricProcessInstanceQuery;
-import org.camunda.bpm.engine.runtime.Job;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
+import com.finture.bpm.engine.HistoryService;
+import com.finture.bpm.engine.batch.Batch;
+import com.finture.bpm.engine.history.HistoricProcessInstance;
+import com.finture.bpm.engine.history.HistoricProcessInstanceQuery;
+import com.finture.bpm.engine.runtime.Job;
+import com.finture.bpm.engine.test.ProcessEngineRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.upgrade.useroperationlog;
+package com.finture.bpm.qa.upgrade.useroperationlog;
 
 import java.util.Date;
 
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
 
 /**
  * @author Yana.Vasileva
@@ -34,7 +34,7 @@ public class SuspendProcessDefinitionDeleteScenario {
 
   @Deployment
   public static String deploy() {
-    return "org/camunda/bpm/qa/upgrade/useroperationlog/timerBoundaryEventProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/upgrade/useroperationlog/timerBoundaryEventProcess.bpmn20.xml";
   }
 
   @DescribesScenario("createUserOperationLogEntriesForDelete")

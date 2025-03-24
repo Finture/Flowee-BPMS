@@ -2,15 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.dmn</groupId>
-    <artifactId>camunda-engine-dmn-root</artifactId>
-    <version>7.22.0</version>
+    <groupId>com.finture.bpm.dmn</groupId>
+    <artifactId>flowee-bpms-engine-dmn-root</artifactId>
+    <version>0.5.1</version>
   </parent>
 
-  <artifactId>camunda-engine-feel-scala</artifactId>
-  <name>camunda DMN - engine FEEL - SCALA</name>
+  <artifactId>flowee-bpms-engine-feel-scala</artifactId>
+  <name>Flowee BPMS DMN - engine FEEL - SCALA</name>
   <properties>
-    <camunda.artifact>org.camunda.bpm.dmn.feel.impl.scala</camunda.artifact>
+    <camunda.artifact>com.finture.bpm.dmn.feel.impl.scala</camunda.artifact>
   </properties>
   <dependencies>
 
@@ -18,11 +18,13 @@
       <groupId>org.camunda.feel</groupId>
       <artifactId>feel-engine</artifactId>
       <classifier>scala-shaded</classifier>
+      <version>1.19.3</version>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.dmn</groupId>
-      <artifactId>camunda-engine-feel-api</artifactId>
+      <groupId>com.finture.bpm.dmn</groupId>
+      <artifactId>flowee-bpms-engine-feel-api</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>

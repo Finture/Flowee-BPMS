@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.performance.engine.query;
+package com.finture.bpm.qa.performance.engine.query;
 
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.model.bpmn.instance.Process;
-import org.camunda.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.LoadGenerator;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.LoadGeneratorConfiguration;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.tasks.DeployModelInstancesTask;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.tasks.GenerateMetricsTask;
-import org.camunda.bpm.qa.performance.engine.loadgenerator.tasks.StartProcessInstanceTask;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.model.bpmn.instance.Process;
+import com.finture.bpm.qa.performance.engine.junit.PerfTestProcessEngine;
+import com.finture.bpm.qa.performance.engine.loadgenerator.LoadGenerator;
+import com.finture.bpm.qa.performance.engine.loadgenerator.LoadGeneratorConfiguration;
+import com.finture.bpm.qa.performance.engine.loadgenerator.tasks.DeployModelInstancesTask;
+import com.finture.bpm.qa.performance.engine.loadgenerator.tasks.GenerateMetricsTask;
+import com.finture.bpm.qa.performance.engine.loadgenerator.tasks.StartProcessInstanceTask;
 
 import java.util.ArrayList;
 import java.util.List;

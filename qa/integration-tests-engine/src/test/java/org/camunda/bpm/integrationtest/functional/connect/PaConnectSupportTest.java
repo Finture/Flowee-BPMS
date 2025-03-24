@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.connect;
+package com.finture.bpm.integrationtest.functional.connect;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.connect.Connectors;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.connect.Connectors;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -39,7 +39,7 @@ public class PaConnectSupportTest extends AbstractFoxPlatformIntegrationTest {
   @Deployment
   public static WebArchive createDeployment() {
     return initWebArchiveDeployment()
-      .addAsResource("org/camunda/bpm/integrationtest/functional/connect/PaConnectSupportTest.connectorServiceTask.bpmn20.xml")
+      .addAsResource("com/finture/bpm/integrationtest/functional/connect/PaConnectSupportTest.connectorServiceTask.bpmn20.xml")
       .addClass(TestConnector.class)
       .addClass(TestConnectorRequest.class)
       .addClass(TestConnectorResponse.class)

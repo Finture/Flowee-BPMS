@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.integrationtest.functional.event;
+package com.finture.bpm.integrationtest.functional.event;
 
-import org.camunda.bpm.engine.delegate.TaskListener;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.integrationtest.functional.event.beans.TaskListenerProcessApplication;
-import org.camunda.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
-import org.camunda.bpm.integrationtest.util.DeploymentHelper;
-import org.camunda.bpm.integrationtest.util.TestContainer;
+import com.finture.bpm.engine.delegate.TaskListener;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.integrationtest.functional.event.beans.TaskListenerProcessApplication;
+import com.finture.bpm.integrationtest.util.AbstractFoxPlatformIntegrationTest;
+import com.finture.bpm.integrationtest.util.DeploymentHelper;
+import com.finture.bpm.integrationtest.util.TestContainer;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -44,12 +44,12 @@ public class ProcessApplicationTaskListenerTest extends AbstractFoxPlatformInteg
   @Deployment
   public static WebArchive createDeployment() {
     WebArchive archive = ShrinkWrap.create(WebArchive.class, "test.war")
-        .addAsWebInfResource("org/camunda/bpm/integrationtest/beans.xml", "beans.xml")
+        .addAsWebInfResource("com/finture/bpm/integrationtest/beans.xml", "beans.xml")
         .addAsLibraries(DeploymentHelper.getEngineCdi())
         .addAsResource("META-INF/processes.xml", "META-INF/processes.xml")
         .addClass(AbstractFoxPlatformIntegrationTest.class)
         .addClass(TaskListenerProcessApplication.class)
-        .addAsResource("org/camunda/bpm/integrationtest/functional/event/ProcessApplicationEventSupportTest.testTaskListener.bpmn20.xml");
+        .addAsResource("com/finture/bpm/integrationtest/functional/event/ProcessApplicationEventSupportTest.testTaskListener.bpmn20.xml");
 
     TestContainer.addContainerSpecificResourcesForNonPa(archive);
 

@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.qa.rolling.update.scenarios.authorization;
+package com.finture.bpm.qa.rolling.update.scenarios.authorization;
 
-import org.camunda.bpm.engine.AuthorizationService;
-import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.authorization.Authorization;
-import static org.camunda.bpm.engine.authorization.Authorization.AUTH_TYPE_GRANT;
-import org.camunda.bpm.engine.authorization.Permission;
-import org.camunda.bpm.engine.authorization.Permissions;
-import org.camunda.bpm.engine.authorization.Resources;
-import org.camunda.bpm.engine.identity.Group;
-import org.camunda.bpm.engine.identity.User;
-import org.camunda.bpm.engine.test.Deployment;
-import org.camunda.bpm.qa.upgrade.DescribesScenario;
-import org.camunda.bpm.qa.upgrade.ScenarioSetup;
-import org.camunda.bpm.qa.upgrade.Times;
+import com.finture.bpm.engine.AuthorizationService;
+import com.finture.bpm.engine.IdentityService;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.authorization.Authorization;
+import static com.finture.bpm.engine.authorization.Authorization.AUTH_TYPE_GRANT;
+import com.finture.bpm.engine.authorization.Permission;
+import com.finture.bpm.engine.authorization.Permissions;
+import com.finture.bpm.engine.authorization.Resources;
+import com.finture.bpm.engine.identity.Group;
+import com.finture.bpm.engine.identity.User;
+import com.finture.bpm.engine.test.Deployment;
+import com.finture.bpm.qa.upgrade.DescribesScenario;
+import com.finture.bpm.qa.upgrade.ScenarioSetup;
+import com.finture.bpm.qa.upgrade.Times;
 
 /**
  *
@@ -43,7 +43,7 @@ public class AuthorizationScenario {
 
   @Deployment
   public static String deployOneTaskProcess() {
-    return "org/camunda/bpm/qa/rolling/update/oneTaskProcess.bpmn20.xml";
+    return "com/finture/bpm/qa/rolling/update/oneTaskProcess.bpmn20.xml";
   }
 
   @DescribesScenario("startProcessInstance")

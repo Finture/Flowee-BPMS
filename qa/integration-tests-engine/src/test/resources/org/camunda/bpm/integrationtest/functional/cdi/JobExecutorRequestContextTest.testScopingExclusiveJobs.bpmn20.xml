@@ -14,7 +14,7 @@
       camunda:async="true" />
       
     <serviceTask id="servicetask2"      
-      camunda:delegateExpression="${requestScopedDelegateBean}" 
+      camunda:delegateExpression="${requestScopedDelegateBean}"
       camunda:async="true" />
 
     <userTask id="waitHere" />

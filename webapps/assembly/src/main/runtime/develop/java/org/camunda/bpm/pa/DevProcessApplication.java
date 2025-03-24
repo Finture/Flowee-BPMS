@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.pa;
+package com.finture.bpm.pa;
 
-import static org.camunda.bpm.engine.variable.Variables.createVariables;
-import static org.camunda.bpm.engine.variable.Variables.fileValue;
+import static com.finture.bpm.engine.variable.Variables.createVariables;
+import static com.finture.bpm.engine.variable.Variables.fileValue;
 
 import java.io.InputStream;
 import java.util.Arrays;
@@ -30,30 +30,30 @@ import java.util.logging.Logger;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.camunda.bpm.admin.impl.web.SetupResource;
-import org.camunda.bpm.application.PostDeploy;
-import org.camunda.bpm.application.ProcessApplication;
-import org.camunda.bpm.application.impl.ServletProcessApplication;
-import org.camunda.bpm.engine.CaseService;
-import org.camunda.bpm.engine.ExternalTaskService;
-import org.camunda.bpm.engine.externaltask.ExternalTask;
-import org.camunda.bpm.engine.externaltask.LockedExternalTask;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
-import org.camunda.bpm.engine.TaskService;
-import org.camunda.bpm.engine.authorization.Groups;
-import org.camunda.bpm.engine.impl.ProcessEngineImpl;
-import org.camunda.bpm.engine.impl.util.ClockUtil;
-import org.camunda.bpm.engine.impl.util.IoUtil;
-import org.camunda.bpm.engine.rest.dto.identity.UserCredentialsDto;
-import org.camunda.bpm.engine.rest.dto.identity.UserDto;
-import org.camunda.bpm.engine.rest.dto.identity.UserProfileDto;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-import org.camunda.bpm.model.bpmn.Bpmn;
-import org.camunda.bpm.model.bpmn.BpmnModelInstance;
-import org.camunda.bpm.pa.demo.InvoiceDemoDataGenerator;
+import com.finture.bpm.admin.impl.web.SetupResource;
+import com.finture.bpm.application.PostDeploy;
+import com.finture.bpm.application.ProcessApplication;
+import com.finture.bpm.application.impl.ServletProcessApplication;
+import com.finture.bpm.engine.CaseService;
+import com.finture.bpm.engine.ExternalTaskService;
+import com.finture.bpm.engine.externaltask.ExternalTask;
+import com.finture.bpm.engine.externaltask.LockedExternalTask;
+import com.finture.bpm.engine.ProcessEngine;
+import com.finture.bpm.engine.RepositoryService;
+import com.finture.bpm.engine.RuntimeService;
+import com.finture.bpm.engine.TaskService;
+import com.finture.bpm.engine.authorization.Groups;
+import com.finture.bpm.engine.impl.ProcessEngineImpl;
+import com.finture.bpm.engine.impl.util.ClockUtil;
+import com.finture.bpm.engine.impl.util.IoUtil;
+import com.finture.bpm.engine.rest.dto.identity.UserCredentialsDto;
+import com.finture.bpm.engine.rest.dto.identity.UserDto;
+import com.finture.bpm.engine.rest.dto.identity.UserProfileDto;
+import com.finture.bpm.engine.runtime.ProcessInstance;
+import com.finture.bpm.engine.task.Task;
+import com.finture.bpm.model.bpmn.Bpmn;
+import com.finture.bpm.model.bpmn.BpmnModelInstance;
+import com.finture.bpm.pa.demo.InvoiceDemoDataGenerator;
 import org.joda.time.DateTime;
 
 /**
@@ -287,9 +287,9 @@ public class DevProcessApplication extends ServletProcessApplication {
     String topicName = "ATopic";
     long lockDuration = 5 * 60L * 1000L;
     String errorDetails = "java.lang.RuntimeException: A exception message!\n" +
-      "  at org.camunda.bpm.pa.service.FailingDelegate.execute(FailingDelegate.java:10)\n" +
-      "  at org.camunda.bpm.engine.impl.delegate.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:34)\n" +
-      "  at org.camunda.bpm.engine.impl.delegate.DelegateInvocation.proceed(DelegateInvocation.java:37)\n" +
+      "  at com.finture.bpm.pa.service.FailingDelegate.execute(FailingDelegate.java:10)\n" +
+      "  at com.finture.bpm.engine.impl.delegate.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:34)\n" +
+      "  at com.finture.bpm.engine.impl.delegate.DelegateInvocation.proceed(DelegateInvocation.java:37)\n" +
       "  ...\n";
 
 
