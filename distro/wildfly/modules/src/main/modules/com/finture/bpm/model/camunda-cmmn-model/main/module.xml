@@ -1,0 +1,13 @@
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.model.flowee-bpms-bpmn-model">
+  <resources>
+    <resource-root path="flowee-bpms-bpmn-model-@project.version@.jar" />
+  </resources>
+
+  <dependencies>
+
+    <module name="java.base" />
+    <module name="java.xml" />
+    <module name="com.finture.bpm.model.flowee-bpms-xml-model" />
+
+  </dependencies>
+</module>

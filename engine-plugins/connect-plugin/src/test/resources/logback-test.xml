@@ -12,13 +12,13 @@
   <logger name="javax.activation" level="info" />
   <logger name="org.springframework" level="info" />
 
-  <logger name="org.camunda" level="info" />
-  <logger name="org.camunda.bpm.engine.impl.bpmn" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.cfg" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.cmd" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.jobexecutor" level="debug" />
-  <logger name="org.camunda.bpm.engine.impl.pvm" level="debug" />
-  <logger name="org.camunda.connect" level="debug" />
+  <logger name="com.finture" level="info" />
+  <logger name="com.finture.bpm.engine.impl.bpmn" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.cfg" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.cmd" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.jobexecutor" level="debug" />
+  <logger name="com.finture.bpm.engine.impl.pvm" level="debug" />
+  <logger name="com.finture.connect" level="debug" />
   
   <root level="debug">
     <appender-ref ref="STDOUT" />

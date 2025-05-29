@@ -3,16 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../../database</relativePath>
   </parent>
 
-  <groupId>org.camunda.bpm.run</groupId>
-  <artifactId>camunda-bpm-run-root</artifactId>
-  <name>Camunda Platform - Run - Root</name>
-  <description>This is the root of Camunda Platform Run</description>
+  <groupId>com.finture.bpm.run</groupId>
+  <artifactId>flowee-bpms-bpm-run-root</artifactId>
+  <name>Flowee BPMS Platform - Run - Root</name>
+  <description>This is the root of Flowee BPMS Platform Run</description>
   <packaging>pom</packaging>
 
   <dependencyManagement>

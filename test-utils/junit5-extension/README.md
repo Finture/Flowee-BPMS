@@ -9,7 +9,7 @@ Add the dependency to your pom.xml
 
 ```xml
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
+      <groupId>com.finture.bpm</groupId>
       <artifactId>camunda-bpm-junit5</artifactId>
       <version>7.17.0</version>
       <scope>test</scope>
@@ -49,7 +49,7 @@ If you don't want to create a configuration file, you can add a process engine, 
 ```java
     public ProcessEngine myProcessEngine = ProcessEngineConfiguration
         .createStandaloneInMemProcessEngineConfiguration()
-        .setJdbcUrl("jdbc:h2:mem:camunda;DB_CLOSE_DELAY=1000")
+        .setJdbcUrl("jdbc:h2:mem:flowee-bpms;DB_CLOSE_DELAY=1000")
         .buildProcessEngine();
     
     @RegisterExtension

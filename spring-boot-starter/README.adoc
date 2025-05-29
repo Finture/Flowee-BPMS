@@ -7,12 +7,12 @@ image::https://travis-ci.org/camunda/camunda-bpm-spring-boot-starter.svg?branch=
 // license
 image::https://img.shields.io/badge/License-Apache%202.0-blue.svg[link="./LICENSE"]
 // mvn central
-image::https://maven-badges.herokuapp.com/maven-central/org.camunda.bpm.springboot/camunda-bpm-spring-boot-starter/badge.svg[link="https://maven-badges.herokuapp.com/maven-central/org.camunda.bpm.springboot/camunda-bpm-spring-boot-starter"]
+image::https://maven-badges.herokuapp.com/maven-central/com.finture.bpm.springboot/camunda-bpm-spring-boot-starter/badge.svg[link="https://maven-badges.herokuapp.com/maven-central/com.finture.bpm.springboot/camunda-bpm-spring-boot-starter"]
 // openhub
 image::https://www.openhub.net/p/camunda-bpm-spring-boot-starter/widgets/project_thin_badge.gif[link="https://www.openhub.net/p/camunda-bpm-spring-boot-starter"]
 ,====
 
-This project provides Spring Boot starters that allow you to integrate the Camunda Platform into your Spring Boot applications.
+This project provides Spring Boot starters that allow you to integrate the Flowee BPMS into your Spring Boot applications.
 
 Please check out the https://docs.camunda.org/manual/develop/user-guide/spring-boot-integration/[Documentation],
 the https://docs.camunda.org/get-started/spring-boot/[Getting Started Guide] and
@@ -45,8 +45,8 @@ Before version 2.2.0, the project existed as a community extension. Therefore th
 #### Migration hints from < 1.3.0 to >= 1.3.0
 
 [IMPORTANT]
-We have decided to refactor the configuration mechanism. Especially, we removed the  `org.camunda.bpm.spring.boot.starter.configuration.CamundaConfiguration` interface. For now, each configuration is a `org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin`. With this it is possible to hook into `preInit`, `postInit` and `postProcessEngineBuild`, which supports more complex situations.
-If you have implemented a `CamundaConfiguration`, you have to switch to `ProcessEnginePlugin` (and its `preInit` method). You can also extend your configuration from `org.camunda.bpm.spring.boot.starter.configuration.impl.AbstractCamundaConfiguration` to avoid a cast to `SpringProcessEngineConfiguration`.
+We have decided to refactor the configuration mechanism. Especially, we removed the  `com.finture.bpm.spring.boot.starter.configuration.CamundaConfiguration` interface. For now, each configuration is a `com.finture.bpm.engine.impl.cfg.ProcessEnginePlugin`. With this it is possible to hook into `preInit`, `postInit` and `postProcessEngineBuild`, which supports more complex situations.
+If you have implemented a `CamundaConfiguration`, you have to switch to `ProcessEnginePlugin` (and its `preInit` method). You can also extend your configuration from `com.finture.bpm.spring.boot.starter.configuration.impl.AbstractCamundaConfiguration` to avoid a cast to `SpringProcessEngineConfiguration`.
 
 ### 1.2.1
 
@@ -61,7 +61,7 @@ The Camunda Spring Boot Starter project used to be the community extension, crea
 *  _https://github.com/jangalinski[Jan Galinski]_
 *  _https://github.com/hawky-4s-[Christian Lipphardt]_
 
-Starting from version 2.3.0 it was adopted as part of the Camunda Platform.
+Starting from version 2.3.0 it was adopted as part of the Flowee BPMS.
 
 ## License
 

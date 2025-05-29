@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-qa-integration-tests-webapps-root</artifactId>
-  <name>Camunda Platform - QA Integration Tests - Webapps Root</name>
+  <artifactId>flowee-bpms-qa-integration-tests-webapps-root</artifactId>
+  <name>Flowee BPMS - QA Integration Tests - Webapps Root</name>
 
   <packaging>pom</packaging>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -169,28 +169,28 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.example</groupId>
-      <artifactId>camunda-example-invoice</artifactId>
+      <groupId>com.finture.bpm.example</groupId>
+      <artifactId>flowee-bpms-example-invoice</artifactId>
       <version>${project.version}</version>
       <type>war</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest</artifactId>
       <type>jar</type>
       <classifier>classes</classifier>
       <scope>test</scope>

@@ -3,18 +3,18 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-bom-root</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-bom-root</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>camunda-only-bom</artifactId>
+  <artifactId>flowee-bpms-only-bom</artifactId>
   <packaging>pom</packaging>
-  <name>Camunda Platform Only - Bom</name>
-  <url>http://camunda.org</url>
+  <name>Flowee BPMS Only - Bom</name>
+  <url>http://flowee-bpms.org</url>
 
-  <description>Camunda Platform Only bill of material</description>
+  <description>Flowee BPMS Platform Only bill of material</description>
 
   <licenses>
     <license>
@@ -24,213 +24,213 @@
   </licenses>
 
   <organization>
-    <name>camunda services GmbH</name>
-    <url>http://www.camunda.com</url>
+    <name>flowee-bpms services GmbH</name>
+    <url>http://www.flowee-bpms.com</url>
   </organization>
 
   <dependencyManagement>
     <dependencies>
-      <!-- Camunda Platform public artifacts -->
+      <!-- Flowee BPMS Platform public artifacts -->
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-cdi</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-cdi</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-cdi-jakarta</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-cdi-jakarta</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-spring</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-spring</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-spring-6</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-spring-6</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-core</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-core</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-core-jakarta</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-core-jakarta</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.identity</groupId>
-        <artifactId>camunda-identity-ldap</artifactId>
+        <groupId>com.finture.bpm.identity</groupId>
+        <artifactId>flowee-bpms-identity-ldap</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-plugin-spin</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-plugin-connect</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.javaee</groupId>
-        <artifactId>camunda-ejb-client</artifactId>
+        <groupId>com.finture.bpm.javaee</groupId>
+        <artifactId>flowee-bpms-ejb-client</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.javaee</groupId>
-        <artifactId>camunda-ejb-client-jakarta</artifactId>
+        <groupId>com.finture.bpm.javaee</groupId>
+        <artifactId>flowee-bpms-ejb-client-jakarta</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.juel</groupId>
-        <artifactId>camunda-juel</artifactId>
+        <groupId>com.finture.bpm.juel</groupId>
+        <artifactId>flowee-bpms-juel</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.model</groupId>
-        <artifactId>camunda-xml-model</artifactId>
+        <groupId>com.finture.bpm.model</groupId>
+        <artifactId>flowee-bpms-xml-model</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.model</groupId>
-        <artifactId>camunda-bpmn-model</artifactId>
+        <groupId>com.finture.bpm.model</groupId>
+        <artifactId>flowee-bpms-bpmn-model</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.model</groupId>
-        <artifactId>camunda-cmmn-model</artifactId>
+        <groupId>com.finture.bpm.model</groupId>
+        <artifactId>flowee-bpms-cmmn-model</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.model</groupId>
-        <artifactId>camunda-dmn-model</artifactId>
+        <groupId>com.finture.bpm.model</groupId>
+        <artifactId>flowee-bpms-dmn-model</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest</artifactId>
-        <version>${project.version}</version>
-        <classifier>classes</classifier>
-      </dependency>
-      <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-jakarta</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest</artifactId>
         <version>${project.version}</version>
         <classifier>classes</classifier>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp-webjar</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-jakarta</artifactId>
+        <version>${project.version}</version>
+        <classifier>classes</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp-webjar</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp</artifactId>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp-jakarta</artifactId>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp-jakarta</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp</artifactId>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp</artifactId>
         <version>${project.version}</version>
         <type>jar</type>
         <classifier>classes</classifier>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp-jakarta</artifactId>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp-jakarta</artifactId>
         <version>${project.version}</version>
         <type>jar</type>
         <classifier>classes</classifier>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.webapp</groupId>
-        <artifactId>camunda-webapp-webjar-ee</artifactId>
+        <groupId>com.finture.bpm.webapp</groupId>
+        <artifactId>flowee-bpms-webapp-webjar-ee</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-rest</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-webapp</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-security</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-security</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-webapp-ee</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-test</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.quarkus</groupId>
-        <artifactId>camunda-bpm-quarkus-engine</artifactId>
+        <groupId>com.finture.bpm.quarkus</groupId>
+        <artifactId>flowee-bpms-bpm-quarkus-engine</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-bpm-junit5</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-bpm-junit5</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-bpm-assert</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-bpm-assert</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.spin</groupId>
-        <artifactId>camunda-spin-bom</artifactId>
-        <version>${project.version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.camunda.commons</groupId>
-        <artifactId>camunda-commons-bom</artifactId>
+        <groupId>com.finture.spin</groupId>
+        <artifactId>flowee-bpms-spin-bom</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.camunda.template-engines</groupId>
-        <artifactId>camunda-template-engines-freemarker</artifactId>
+        <groupId>com.finture.commons</groupId>
+        <artifactId>flowee-bpms-commons-bom</artifactId>
+        <version>${project.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>com.finture.template-engines</groupId>
+        <artifactId>flowee-bpms-template-engines-freemarker</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.connect</groupId>
-        <artifactId>camunda-connect-bom</artifactId>
+        <groupId>com.finture.connect</groupId>
+        <artifactId>flowee-bpms-connect-bom</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -239,40 +239,40 @@
       <!-- dmn engine dependencies
        -->
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-dmn</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-dmn</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-api</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-api</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-juel</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-juel</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-feel-scala</artifactId>
+        <groupId>com.finture.bpm.dmn</groupId>
+        <artifactId>flowee-bpms-engine-feel-scala</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <!-- Java External Task Client -->
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-external-task-client</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-external-task-client</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-external-task-client-spring</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-external-task-client-spring</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm.springboot</groupId>
-        <artifactId>camunda-bpm-spring-boot-starter-external-task-client</artifactId>
+        <groupId>com.finture.bpm.springboot</groupId>
+        <artifactId>flowee-bpms-bpm-spring-boot-starter-external-task-client</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>

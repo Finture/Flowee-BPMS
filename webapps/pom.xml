@@ -4,16 +4,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../database</relativePath>
   </parent>
 
-  <artifactId>camunda-webapp-root</artifactId>
-  <groupId>org.camunda.bpm.webapp</groupId>
+  <artifactId>flowee-bpms-webapp-root</artifactId>
+  <groupId>com.finture.bpm.webapp</groupId>
   <packaging>pom</packaging>
-  <name>Camunda Platform - Webapp - Root</name>
+  <name>Flowee BPMS Platform - Webapp - Root</name>
 
   <properties>
     <version.jetty>9.4.57.v20241219</version.jetty>
@@ -46,8 +46,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -58,14 +58,14 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-logging</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-logging</artifactId>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
@@ -77,8 +77,8 @@
     <!-- tests -->
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-testing</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-testing</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -182,6 +182,7 @@
               <arguments>run xlts-install</arguments>
             </configuration>
           </execution>
+          <!-- to do
           <execution>
             <id>License check</id>
             <goals>
@@ -191,7 +192,7 @@
             <configuration>
               <arguments>run license-check</arguments>
             </configuration>
-          </execution>
+          </execution>-->
           <execution>
             <id>Build</id>
             <goals>

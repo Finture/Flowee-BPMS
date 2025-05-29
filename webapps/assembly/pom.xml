@@ -4,15 +4,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.webapp</groupId>
-    <artifactId>camunda-webapp-root</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm.webapp</groupId>
+    <artifactId>flowee-bpms-webapp-root</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>camunda-webapp</artifactId>
+  <artifactId>flowee-bpms-webapp</artifactId>
   <packaging>war</packaging>
-  <name>Camunda Platform - Webapp - Assembly</name>
+  <name>Flowee BPMS Platform - Webapp - Assembly</name>
   <inceptionYear>2014</inceptionYear>
 
   <properties>
@@ -28,13 +28,13 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-core</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-core</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -69,8 +69,8 @@
 
     <!-- rest api -->
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core</artifactId>
     </dependency>
 
     <dependency>
@@ -88,8 +88,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
       <classifier>tests</classifier>
@@ -97,7 +97,7 @@
   </dependencies>
 
   <build>
-    <finalName>camunda-webapp</finalName>
+    <finalName>flowee-bpms-webapp</finalName>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -222,28 +222,28 @@
           <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-spin</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-dataformat-xml-dom</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-dataformat-xml-dom</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-connect</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm.identity</groupId>
-          <artifactId>camunda-identity-ldap</artifactId>
+          <groupId>com.finture.bpm.identity</groupId>
+          <artifactId>flowee-bpms-identity-ldap</artifactId>
         </dependency>
         <dependency>
           <groupId>com.h2database</groupId>
@@ -412,13 +412,13 @@
             </configuration>
             <dependencies>
               <dependency>
-                <groupId>org.camunda.bpm</groupId>
-                <artifactId>camunda-engine</artifactId>
+                <groupId>com.finture.bpm</groupId>
+                <artifactId>flowee-bpms-engine</artifactId>
                 <version>${project.version}</version>
               </dependency>
               <dependency>
-                <groupId>org.camunda.bpm.identity</groupId>
-                <artifactId>camunda-identity-ldap</artifactId>
+                <groupId>com.finture.bpm.identity</groupId>
+                <artifactId>flowee-bpms-identity-ldap</artifactId>
                 <version>${project.version}</version>
               </dependency>
               <dependency>
@@ -482,8 +482,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm</groupId>
-                      <artifactId>camunda-engine-rest</artifactId>
+                      <groupId>com.finture.bpm</groupId>
+                      <artifactId>flowee-bpms-engine-rest</artifactId>
                       <version>${project.version}</version>
                       <type>war</type>
                       <classifier>tomcat</classifier>
@@ -528,7 +528,7 @@
               </execution>
             </executions>
             <configuration>
-              <mainClass>org.camunda.bpm.engine.impl.db.DbSchemaDrop</mainClass>
+              <mainClass>com.finture.bpm.engine.impl.db.DbSchemaDrop</mainClass>
               <classpathScope>test</classpathScope>
             </configuration>
           </plugin>
@@ -542,8 +542,8 @@
       <!-- imports the DbSchemaPrefixTestHelper class -->
       <dependencies>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
           <version>${project.version}</version>
           <scope>test</scope>
           <classifier>tests</classifier>

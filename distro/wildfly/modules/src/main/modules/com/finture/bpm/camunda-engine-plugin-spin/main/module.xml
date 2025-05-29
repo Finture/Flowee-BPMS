@@ -1,0 +1,22 @@
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.camunda-engine-plugin-spin">
+  <resources>
+    <resource-root path="camunda-engine-plugin-spin-@project.version@.jar" />
+  </resources>
+
+  <dependencies>
+
+    <module name="java.base" />
+    <module name="org.joda.time" slot="2.1" />
+
+    <module name="com.finture.commons.camunda-commons-typed-values" />
+    <module name="com.finture.commons.camunda-commons-logging" />
+    <module name="com.finture.bpm.camunda-engine" />
+
+    <module name="com.finture.spin.camunda-spin-core" />
+    <module name="com.finture.spin.camunda-spin-dataformat-json-jackson" services="import" />
+    <module name="com.finture.spin.camunda-spin-dataformat-xml-dom-jakarta" services="import" />
+
+    <module name="com.finture.bpm.dmn.camunda-engine-feel-scala" />
+    <module name="com.finture.feel.feel-engine" />
+  </dependencies>
+</module>

@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <name>Camunda Platform - engine - Cdi</name>
-  <artifactId>camunda-engine-cdi</artifactId>
+  <name>Flowee BPMS Platform - engine - Cdi</name>
+  <artifactId>flowee-bpms-engine-cdi</artifactId>
   <packaging>jar</packaging>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -24,8 +24,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -42,8 +42,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -118,8 +118,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-bpm-archunit</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-bpm-archunit</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
@@ -152,7 +152,7 @@
           <trimStackTrace>false</trimStackTrace>
           <redirectTestOutputToFile>true</redirectTestOutputToFile>
           <dependenciesToScan>
-            <dependency>org.camunda.bpm:camunda-bpm-archunit</dependency>
+            <dependency>com.finture.bpm:flowee-bpms-bpm-archunit</dependency>
           </dependenciesToScan>
         </configuration>
       </plugin>

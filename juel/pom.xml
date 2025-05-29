@@ -3,15 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.camunda.bpm.juel</groupId>
-  <artifactId>camunda-juel</artifactId>
-  <name>Camunda Platform - JUEL</name>
+  <groupId>com.finture.bpm.juel</groupId>
+  <artifactId>flowee-bpms-juel</artifactId>
+  <name>Flowee BPMS Platform - JUEL</name>
 
   <properties>
     <!-- We only wrap and maintain external code in here that has
@@ -68,7 +68,7 @@
               <relocations>
                 <relocation>
                   <pattern>jakarta.el</pattern>
-                  <shadedPattern>org.camunda.bpm.impl.juel.jakarta.el</shadedPattern>
+                  <shadedPattern>com.finture.bpm.impl.juel.jakarta.el</shadedPattern>
                 </relocation>
               </relocations>
             </configuration>

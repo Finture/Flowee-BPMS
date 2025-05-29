@@ -2,19 +2,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-root</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-root</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>camunda-parent</artifactId>
-  <name>Camunda Platform - Parent Pom</name>
+  <artifactId>flowee-bpms-parent</artifactId>
+  <name>Flowee BPMS Platform - Parent Pom</name>
   <inceptionYear>2013</inceptionYear>
   <packaging>pom</packaging>
 
   <description>
-    This pom is the parent of all Camunda Platform projects
+    This pom is the parent of all Flowee BPMS Platform projects
   </description>
 
   <properties>
@@ -79,41 +79,41 @@
     <version.npm>10.7.0</version.npm>
 
     <!-- OSGi bundles properties -->
-    <camunda.artifact />
-    <camunda.osgi.import.camunda.spin.version>version="[$(version;==;${camunda.spin.version.clean}),$(version;=+;${camunda.spin.version.clean}))"</camunda.osgi.import.camunda.spin.version>
-    <camunda.osgi.import.camunda.connect.version>version="[$(version;==;${camunda.connect.version.clean}),$(version;=+;${camunda.connect.version.clean}))"</camunda.osgi.import.camunda.connect.version>
-    <camunda.osgi.import.camunda.commons.version>version="[$(version;==;${camunda.commons.version.clean}),$(version;=+;${camunda.commons.version.clean}))"</camunda.osgi.import.camunda.commons.version>
-    <camunda.osgi.import.camunda.version>version="[$(version;==;${camunda.osgi.version.clean}),$(version;=+;${camunda.osgi.version.clean}))"</camunda.osgi.import.camunda.version>
-    <camunda.osgi.import.strict.version>version="[$(version;===;${camunda.osgi.version.clean}),$(version;==+;${camunda.osgi.version.clean}))"</camunda.osgi.import.strict.version>
-    <camunda.osgi.import.default.version>[$(version;==;$(@)),$(version;+;$(@)))</camunda.osgi.import.default.version>
-    <camunda.osgi.import.defaults>
-    </camunda.osgi.import.defaults>
-    <camunda.osgi.import.before.defaults />
-    <camunda.osgi.import.additional />
-    <camunda.osgi.import.pkg>
-      ${camunda.osgi.import.before.defaults},
-      ${camunda.osgi.import.defaults},
-      ${camunda.osgi.import.additional},
+    <flowee-bpms.artifact />
+    <flowee-bpms.osgi.import.flowee-bpms.spin.version>version="[$(version;==;${flowee-bpms.spin.version.clean}),$(version;=+;${flowee-bpms.spin.version.clean}))"</flowee-bpms.osgi.import.flowee-bpms.spin.version>
+    <flowee-bpms.osgi.import.flowee-bpms.connect.version>version="[$(version;==;${flowee-bpms.connect.version.clean}),$(version;=+;${flowee-bpms.connect.version.clean}))"</flowee-bpms.osgi.import.flowee-bpms.connect.version>
+    <flowee-bpms.osgi.import.flowee-bpms.commons.version>version="[$(version;==;${flowee-bpms.commons.version.clean}),$(version;=+;${flowee-bpms.commons.version.clean}))"</flowee-bpms.osgi.import.flowee-bpms.commons.version>
+    <flowee-bpms.osgi.import.flowee-bpms.version>version="[$(version;==;${flowee-bpms.osgi.version.clean}),$(version;=+;${flowee-bpms.osgi.version.clean}))"</flowee-bpms.osgi.import.flowee-bpms.version>
+    <flowee-bpms.osgi.import.strict.version>version="[$(version;===;${flowee-bpms.osgi.version.clean}),$(version;==+;${flowee-bpms.osgi.version.clean}))"</flowee-bpms.osgi.import.strict.version>
+    <flowee-bpms.osgi.import.default.version>[$(version;==;$(@)),$(version;+;$(@)))</flowee-bpms.osgi.import.default.version>
+    <flowee-bpms.osgi.import.defaults>
+    </flowee-bpms.osgi.import.defaults>
+    <flowee-bpms.osgi.import.before.defaults />
+    <flowee-bpms.osgi.import.additional />
+    <flowee-bpms.osgi.import.pkg>
+      ${flowee-bpms.osgi.import.before.defaults},
+      ${flowee-bpms.osgi.import.defaults},
+      ${flowee-bpms.osgi.import.additional},
       *
-    </camunda.osgi.import.pkg>
-    <camunda.osgi.activator />
-    <camunda.osgi.failok>false</camunda.osgi.failok>
-    <camunda.osgi.export>${camunda.osgi.export.pkg};${camunda.osgi.version};-noimport:=true</camunda.osgi.export>
+    </flowee-bpms.osgi.import.pkg>
+    <flowee-bpms.osgi.activator />
+    <flowee-bpms.osgi.failok>false</flowee-bpms.osgi.failok>
+    <flowee-bpms.osgi.export>${flowee-bpms.osgi.export.pkg};${flowee-bpms.osgi.version};-noimport:=true</flowee-bpms.osgi.export>
     <!--
-    <camunda.osgi.export.pkg>!*.impl;${camunda.artifact}*</camunda.osgi.export.pkg>
-    <camunda.osgi.private.pkg>${camunda.artifact}*.impl</camunda.osgi.private.pkg>
+    <flowee-bpms.osgi.export.pkg>!*.impl;${flowee-bpms.artifact}*</flowee-bpms.osgi.export.pkg>
+    <flowee-bpms.osgi.private.pkg>${flowee-bpms.artifact}*.impl</flowee-bpms.osgi.private.pkg>
     -->
-    <camunda.osgi.export.pkg>${camunda.artifact}*</camunda.osgi.export.pkg>
-    <camunda.osgi.private.pkg />
-    <camunda.osgi.version>version=${project.version}</camunda.osgi.version>
-    <camunda.osgi.split.pkg>-split-package:=first</camunda.osgi.split.pkg>
-    <camunda.osgi.import>${camunda.osgi.import.pkg}</camunda.osgi.import>
-    <camunda.osgi.dynamic />
-    <camunda.osgi.symbolic.name>${camunda.artifact}</camunda.osgi.symbolic.name>
-    <camunda.osgi.exclude.dependencies>false</camunda.osgi.exclude.dependencies>
-    <camunda.osgi.remove.headers>Ignore-Package,Include-Resource,Private-Package,Bundle-DocURL</camunda.osgi.remove.headers>
-    <camunda.osgi.include.resource>{maven-resources}</camunda.osgi.include.resource>
-    <camunda.osgi.embed />
+    <flowee-bpms.osgi.export.pkg>${flowee-bpms.artifact}*</flowee-bpms.osgi.export.pkg>
+    <flowee-bpms.osgi.private.pkg />
+    <flowee-bpms.osgi.version>version=${project.version}</flowee-bpms.osgi.version>
+    <flowee-bpms.osgi.split.pkg>-split-package:=first</flowee-bpms.osgi.split.pkg>
+    <flowee-bpms.osgi.import>${flowee-bpms.osgi.import.pkg}</flowee-bpms.osgi.import>
+    <flowee-bpms.osgi.dynamic />
+    <flowee-bpms.osgi.symbolic.name>${flowee-bpms.artifact}</flowee-bpms.osgi.symbolic.name>
+    <flowee-bpms.osgi.exclude.dependencies>false</flowee-bpms.osgi.exclude.dependencies>
+    <flowee-bpms.osgi.remove.headers>Ignore-Package,Include-Resource,Private-Package,Bundle-DocURL</flowee-bpms.osgi.remove.headers>
+    <flowee-bpms.osgi.include.resource>{maven-resources}</flowee-bpms.osgi.include.resource>
+    <flowee-bpms.osgi.embed />
     <plugin.version.maven-bundle>5.1.9</plugin.version.maven-bundle> <!-- compatible with JDK 17 -->
   </properties>
 
@@ -121,8 +121,8 @@
     <dependencies>
 
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-bom</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-bom</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -212,30 +212,30 @@
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${plugin.version.maven-bundle}</version>
           <configuration>
-           <excludeDependencies>${camunda.osgi.exclude.dependencies}</excludeDependencies>
+           <excludeDependencies>${flowee-bpms.osgi.exclude.dependencies}</excludeDependencies>
            <instructions>
              <Bundle-Name>${project.name}</Bundle-Name>
-             <Bundle-SymbolicName>${camunda.osgi.symbolic.name}</Bundle-SymbolicName>
-             <Bundle-Activator>${camunda.osgi.activator}</Bundle-Activator>
-             <Export-Package>${camunda.osgi.export}</Export-Package>
-             <Import-Package>${camunda.osgi.import}</Import-Package>
-             <DynamicImport-Package>${camunda.osgi.dynamic}</DynamicImport-Package>
-             <Private-Package>${camunda.osgi.private.pkg}</Private-Package>
-             <Implementation-Title>camunda</Implementation-Title>
+             <Bundle-SymbolicName>${flowee-bpms.osgi.symbolic.name}</Bundle-SymbolicName>
+             <Bundle-Activator>${flowee-bpms.osgi.activator}</Bundle-Activator>
+             <Export-Package>${flowee-bpms.osgi.export}</Export-Package>
+             <Import-Package>${flowee-bpms.osgi.import}</Import-Package>
+             <DynamicImport-Package>${flowee-bpms.osgi.dynamic}</DynamicImport-Package>
+             <Private-Package>${flowee-bpms.osgi.private.pkg}</Private-Package>
+             <Implementation-Title>flowee-bpms</Implementation-Title>
              <Implementation-Version>${project.version}</Implementation-Version>
-             <Include-Resource>${camunda.osgi.include.resource}</Include-Resource>
-             <_versionpolicy>${camunda.osgi.import.default.version}</_versionpolicy>
-             <_removeheaders>${camunda.osgi.remove.headers}</_removeheaders>
-             <_failok>${camunda.osgi.failok}</_failok>
-             <Export-Service>${camunda.osgi.export.service}</Export-Service>
-             <Import-Service>${camunda.osgi.import.service}</Import-Service>
-             <Embed-Dependency>${camunda.osgi.embed}</Embed-Dependency>
+             <Include-Resource>${flowee-bpms.osgi.include.resource}</Include-Resource>
+             <_versionpolicy>${flowee-bpms.osgi.import.default.version}</_versionpolicy>
+             <_removeheaders>${flowee-bpms.osgi.remove.headers}</_removeheaders>
+             <_failok>${flowee-bpms.osgi.failok}</_failok>
+             <Export-Service>${flowee-bpms.osgi.export.service}</Export-Service>
+             <Import-Service>${flowee-bpms.osgi.import.service}</Import-Service>
+             <Embed-Dependency>${flowee-bpms.osgi.embed}</Embed-Dependency>
             </instructions>
            <versions>
-            <camunda.osgi.version.clean>${project.version}</camunda.osgi.version.clean>
-            <camunda.connect.version.clean>${project.version}</camunda.connect.version.clean>
-            <camunda.spin.version.clean>${project.version}</camunda.spin.version.clean>
-            <camunda.commons.version.clean>${project.version}</camunda.commons.version.clean>
+            <flowee-bpms.osgi.version.clean>${project.version}</flowee-bpms.osgi.version.clean>
+            <flowee-bpms.connect.version.clean>${project.version}</flowee-bpms.connect.version.clean>
+            <flowee-bpms.spin.version.clean>${project.version}</flowee-bpms.spin.version.clean>
+            <flowee-bpms.commons.version.clean>${project.version}</flowee-bpms.commons.version.clean>
            </versions>
           </configuration>
         </plugin>
@@ -282,8 +282,8 @@
               <additionalJOption>-Xdoclint:none</additionalJOption>
               <additionalJOption>--ignore-source-errors</additionalJOption>
             </additionalJOptions>
-            <doctitle>Camunda Platform Javadocs ${project.version}</doctitle>
-            <windowtitle>Camunda Platform Javadocs ${project.version}</windowtitle>
+            <doctitle>Flowee BPMS Platform Javadocs ${project.version}</doctitle>
+            <windowtitle>Flowee BPMS Platform Javadocs ${project.version}</windowtitle>
           </configuration>
         </plugin>
 
@@ -295,8 +295,8 @@
             <rules>
               <jakartaDefaults>true</jakartaDefaults>
               <renames>
-                <rename>jar:file:${org.camunda.bpm:camunda-engine:jar}!/META-INF/jakarta-renames.properties</rename>
-                <rename>jar:file:${org.camunda.bpm:camunda-engine:jar}!/META-INF/camunda-renames.properties</rename>
+                <rename>jar:file:${com.finture.bpm:flowee-bpms-engine:jar}!/META-INF/jakarta-renames.properties</rename>
+                <rename>jar:file:${com.finture.bpm:flowee-bpms-engine:jar}!/META-INF/flowee-bpms-renames.properties</rename>
               </renames>
             </rules>
             <classifier>jakarta</classifier>
@@ -317,7 +317,7 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <configuration>
-            <!-- https://github.com/camunda/camunda-bpm-platform/issues/3996 -->
+            <!-- https://github.com/flowee-bpms/flowee-bpms-bpm-platform/issues/3996 -->
             <wait>750</wait>
           </configuration>
         </plugin>
@@ -355,11 +355,11 @@
   </licenses>
 
   <organization>
-    <name>camunda services GmbH</name>
-    <url>http://www.camunda.com</url>
+    <name>flowee-bpms services GmbH</name>
+    <url>http://www.flowee-bpms.com</url>
   </organization>
 
-  <url>http://www.camunda.org</url>
+  <url>http://www.flowee-bpms.org</url>
 </project>
 
 

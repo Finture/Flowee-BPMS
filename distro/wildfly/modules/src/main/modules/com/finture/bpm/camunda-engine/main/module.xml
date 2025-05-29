@@ -1,0 +1,51 @@
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.flowee-bpms-engine">
+  <resources>
+    <resource-root path="flowee-bpms-engine-@project.version@.jar" />
+  </resources>
+
+  <dependencies>
+
+    <module name="java.base" />
+    <module name="java.desktop" />
+    <module name="java.management" />
+    <module name="java.naming" />
+    <module name="java.scripting" />
+    <module name="java.sql" />
+    <module name="jakarta.transaction.api"/>
+    <module name="jakarta.enterprise.api" />
+    <module name="jakarta.inject.api" />
+    <module name="jakarta.ejb.api" />
+    <module name="jakarta.xml.bind.api" />
+    <module name="jakarta.servlet.api" />
+
+    <module name="org.jboss.vfs" />
+
+    <module name="org.mybatis.mybatis" />
+    <module name="com.fasterxml.uuid.java-uuid-generator"/>
+    <module name="org.joda.time" slot="2.1" />
+
+    <module name="org.apache.groovy.groovy-all" services="import"/>
+    <module name="org.graalvm.js.js-scriptengine" services="import"/>
+    <module name="org.graalvm.js.js" services="import"/>
+    <module name="org.graalvm.regex.regex" services="import"/>
+    <module name="org.graalvm.sdk.graal-sdk" services="import"/>
+    <module name="org.graalvm.truffle.truffle-api" services="import"/>
+
+    <module name="sun.jdk" services="import"/>
+
+    <module name="com.finture.bpm.model.flowee-bpms-xml-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-bpmn-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-cmmn-model" />
+    <module name="com.finture.bpm.model.flowee-bpms-dmn-model" />
+
+    <module name="com.finture.commons.flowee-bpms-commons-logging" />
+    <module name="com.finture.commons.flowee-bpms-commons-utils" />
+    <module name="com.finture.commons.flowee-bpms-commons-typed-values" export="true" />
+    <module name="com.finture.template-engines.flowee-bpms-template-engines-freemarker" services="import" />
+    <module name="com.finture.spin.flowee-bpms-spin-core" services="import"/>
+
+    <module name="com.finture.bpm.dmn.flowee-bpms-engine-dmn" />
+    <module name="com.finture.bpm.juel.flowee-bpms-juel" services="import"/>
+
+  </dependencies>
+</module>

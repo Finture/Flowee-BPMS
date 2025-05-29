@@ -1,1 +1,1 @@
-org.camunda.bpm.spring.boot.starter.rest.CamundaBpmRestJerseyAutoConfiguration
+com.finture.bpm.spring.boot.starter.rest.CamundaBpmRestJerseyAutoConfiguration

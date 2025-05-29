@@ -65,7 +65,7 @@ Build the web apps using Webpack:
 
 ```sh
 # cd <path to your workspace>
-git clone git@github.com:camunda/camunda-bpm-platform.git
+git clone git@github.com:flowee-bpms/camunda-bpm-platform.git
 cd camunda-bpm-platform/webapps/frontend
 npm install
 npm start

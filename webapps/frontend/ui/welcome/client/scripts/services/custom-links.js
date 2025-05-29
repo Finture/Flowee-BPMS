@@ -19,7 +19,7 @@
 var _links = [
   {
     label: 'DOCUMENTATION',
-    href: 'https://docs.camunda.org/manual/latest/webapps/',
+    href: 'https://bpms.finture.com/',
     description: 'DOCUMENTATION_DESCRIPTION'
   }
 ];

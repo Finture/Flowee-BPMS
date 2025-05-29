@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <groupId>org.camunda.bpm.tomcat</groupId>
-    <artifactId>camunda-tomcat</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm.tomcat</groupId>
+    <artifactId>flowee-bpms-tomcat</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <name>Camunda Platform - webapp - Tomcat</name>
-  <groupId>org.camunda.bpm.webapp</groupId>
-  <artifactId>camunda-webapp-tomcat</artifactId>
+  <name>Flowee BPMS Platform - webapp - Tomcat</name>
+  <groupId>com.finture.bpm.webapp</groupId>
+  <artifactId>flowee-bpms-webapp-tomcat</artifactId>
   <packaging>war</packaging>
   
   <properties>
@@ -18,8 +18,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp</artifactId>
+      <groupId>com.finture.bpm.webapp</groupId>
+      <artifactId>flowee-bpms-webapp</artifactId>
       <version>${project.version}</version>
       <type>war</type>
       <scope>runtime</scope>
@@ -32,7 +32,7 @@
   </dependencies>
 
   <build>
-    <finalName>camunda-webapp</finalName>
+    <finalName>flowee-bpms-webapp</finalName>
 
     <plugins>
       <plugin>

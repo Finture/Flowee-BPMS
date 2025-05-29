@@ -2,16 +2,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-engine-plugins</artifactId>
+  <artifactId>flowee-bpms-engine-plugins</artifactId>
   <packaging>pom</packaging>
 
-  <name>Camunda Platform - engine plugins</name>
+  <name>Flowee BPMS Platform - engine plugins</name>
 
   <modules>
     <module>identity-ldap</module>
@@ -22,8 +22,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -38,8 +38,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
       <scope>provided</scope>
     </dependency>
 
@@ -62,8 +62,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.commons</groupId>
-      <artifactId>camunda-commons-testing</artifactId>
+      <groupId>com.finture.commons</groupId>
+      <artifactId>flowee-bpms-commons-testing</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

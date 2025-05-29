@@ -13,10 +13,10 @@
   </difference>
   <difference>
     <differenceType>8001</differenceType>
-    <className>camundajar/com/sun/activation/**/*</className>
+    <className>floweebpmsjar/com/sun/activation/**/*</className>
   </difference>
   <difference>
     <differenceType>8001</differenceType>
-    <className>camundajar/javax/activation/**/*</className>
+    <className>floweebpmsjar/javax/activation/**/*</className>
   </difference>
 </differences>

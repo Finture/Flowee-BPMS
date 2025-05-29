@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.qa</groupId>
-    <artifactId>camunda-qa</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm.qa</groupId>
+    <artifactId>flowee-bpms-qa</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-qa-old-engine</artifactId>
+  <artifactId>flowee-bpms-qa-old-engine</artifactId>
   <packaging>jar</packaging>
-  <name>Camunda Platform - QA - test new schema with old engine</name>
+  <name>Flowee BPMS - QA - test new schema with old engine</name>
 
   <properties>
     <camunda.old.engine.version>7.23.0</camunda.old.engine.version>
@@ -77,8 +77,8 @@
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-bom</artifactId>
+            <groupId>com.finture.bpm</groupId>
+            <artifactId>flowee-bpms-bom</artifactId>
             <!-- Cannot use variables due to bug in Maven Release Plugin -->
             <version>7.23.0</version>
             <scope>import</scope>
@@ -174,15 +174,15 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm.distro</groupId>
-          <artifactId>camunda-sql-scripts</artifactId>
+          <groupId>com.finture.bpm.distro</groupId>
+          <artifactId>flowee-bpms-sql-scripts</artifactId>
           <version>${project.version}</version>
           <type>test-jar</type>
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -206,8 +206,8 @@
         </dependency>
 
         <dependency>
-          <groupId>org.camunda.commons</groupId>
-          <artifactId>camunda-commons-testing</artifactId>
+          <groupId>com.finture.commons</groupId>
+          <artifactId>flowee-bpms-commons-testing</artifactId>
           <scope>test</scope>
         </dependency>
 
@@ -275,8 +275,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm</groupId>
-                      <artifactId>camunda-engine</artifactId>
+                      <groupId>com.finture.bpm</groupId>
+                      <artifactId>flowee-bpms-engine</artifactId>
                       <version>${camunda.old.engine.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/test-classes</outputDirectory>
@@ -295,8 +295,8 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.camunda.bpm.distro</groupId>
-                      <artifactId>camunda-sql-scripts</artifactId>
+                      <groupId>com.finture.bpm.distro</groupId>
+                      <artifactId>flowee-bpms-sql-scripts</artifactId>
                       <version>${project.version}</version>
                       <type>test-jar</type>
                       <outputDirectory>${project.build.directory}/scripts-current</outputDirectory>

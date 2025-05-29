@@ -4,15 +4,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm.webapp</groupId>
-    <artifactId>camunda-webapp-root</artifactId>
-    <version>7.24.0-SNAPSHOT</version>
+    <groupId>com.finture.bpm.webapp</groupId>
+    <artifactId>flowee-bpms-webapp-root</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>camunda-webapp-jakarta</artifactId>
+  <artifactId>flowee-bpms-webapp-jakarta</artifactId>
   <packaging>war</packaging>
-  <name>Camunda Platform - Webapp - Assembly Jakarta</name>
+  <name>Flowee BPMS Platform - Webapp - Assembly Jakarta</name>
 
   <properties>
     <jakarta.webapp>${project.build.directory}/generated-resources/jakarta-webapp</jakarta.webapp>
@@ -35,13 +35,13 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-core-jakarta</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-core-jakarta</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-engine-rest-jakarta</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-engine-rest-jakarta</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -110,13 +110,13 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core-jakarta</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core-jakarta</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-rest-core-jakarta</artifactId>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine-rest-core-jakarta</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
       <classifier>tests</classifier>
@@ -124,7 +124,7 @@
   </dependencies>
 
   <build>
-    <finalName>camunda-webapp-jakarta</finalName>
+    <finalName>flowee-bpms-webapp-jakarta</finalName>
 
     <plugins>
       <plugin>
@@ -480,28 +480,28 @@
           <artifactId>jakarta.ws.rs-api</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-spin</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-spin</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.spin</groupId>
-          <artifactId>camunda-spin-dataformat-xml-dom-jakarta</artifactId>
+          <groupId>com.finture.spin</groupId>
+          <artifactId>flowee-bpms-spin-dataformat-xml-dom-jakarta</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm</groupId>
-          <artifactId>camunda-engine-plugin-connect</artifactId>
+          <groupId>com.finture.bpm</groupId>
+          <artifactId>flowee-bpms-engine-plugin-connect</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.camunda.bpm.identity</groupId>
-          <artifactId>camunda-identity-ldap</artifactId>
+          <groupId>com.finture.bpm.identity</groupId>
+          <artifactId>flowee-bpms-identity-ldap</artifactId>
         </dependency>
         <dependency>
           <groupId>com.h2database</groupId>

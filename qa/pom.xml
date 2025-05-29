@@ -1,17 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>camunda-qa</artifactId>
-  <groupId>org.camunda.bpm.qa</groupId>
+  <artifactId>flowee-bpms-qa</artifactId>
+  <groupId>com.finture.bpm.qa</groupId>
 
   <packaging>pom</packaging>
-  <name>Camunda Platform - QA</name>
+  <name>Flowee BPMS Platform - QA</name>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -52,8 +52,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -74,14 +74,11 @@
       </activation>
       <modules>
         <module>wildfly-runtime</module>
-        <module>wildfly26-runtime</module>
         <module>tomcat-runtime</module>
         <module>tomcat9-runtime</module>
         <module>integration-tests-webapps</module>
         <module>integration-tests-engine</module>
         <module>test-db-util</module>
-        <module>test-db-instance-migration</module>
-        <module>test-db-rolling-update</module>
         <module>test-old-engine</module>
         <module>performance-tests-engine</module>
         <module>large-data-tests</module>
@@ -101,19 +98,6 @@
       <id>wildfly-domain</id>
       <modules>
         <module>wildfly-runtime</module>
-      </modules>
-    </profile>
-    
-    <profile>
-      <id>wildfly26</id>
-      <modules>
-        <module>wildfly26-runtime</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>wildfly26-domain</id>
-      <modules>
-        <module>wildfly26-runtime</module>
       </modules>
     </profile>
 
@@ -151,22 +135,6 @@
       <id>engine-integration-jakarta</id>
       <modules>
         <module>integration-tests-engine-jakarta</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>instance-migration</id>
-      <modules>
-        <module>test-db-util</module>
-        <module>test-db-instance-migration</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>rolling-update</id>
-      <modules>
-        <module>test-db-util</module>
-        <module>test-db-rolling-update</module>
       </modules>
     </profile>
 

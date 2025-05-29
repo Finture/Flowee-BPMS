@@ -2,24 +2,24 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.camunda.bpm.model</groupId>
-  <artifactId>camunda-model-apis</artifactId>
+  <groupId>com.finture.bpm.model</groupId>
+  <artifactId>flowee-bpms-model-apis</artifactId>
 
-  <name>camunda Model APIs</name>
+  <name>Flowee BPMS Model APIs</name>
   <packaging>pom</packaging>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>

@@ -1,0 +1,6 @@
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.juel.flowee-bpms-juel">
+  <resources>
+    <resource-root path="flowee-bpms-juel-@project.version@.jar" />
+  </resources>
+
+</module>

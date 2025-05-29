@@ -3,22 +3,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-parent</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../parent</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-core-internal-dependencies</artifactId>
+  <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
   <packaging>pom</packaging>
-  <name>Camunda Platform - Core - Internal Dependencies</name>
+  <name>Flowee BPMS Platform - Core - Internal Dependencies</name>
 
-  <description>Camunda Platform core internal bill of material for dependencies</description>
+  <description>Flowee BPMS Platform core internal bill of material for dependencies</description>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.feel</groupId>
+        <groupId>com.finture.feel</groupId>
         <artifactId>feel-engine</artifactId>
         <version>${version.feel-scala}</version>
         <classifier>scala-shaded</classifier>

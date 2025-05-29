@@ -1,0 +1,16 @@
+<module xmlns="urn:jboss:module:1.0" name="com.finture.bpm.identity.flowee-bpms-identity-ldap">
+  <resources>
+    <resource-root path="flowee-bpms-identity-ldap-@project.version@.jar" />
+  </resources>
+
+  <dependencies>
+
+    <module name="sun.jdk" />
+
+    <module name="java.base" />
+    <module name="java.naming" />
+    <module name="com.finture.bpm.flowee-bpms-engine" />
+    <module name="com.finture.commons.flowee-bpms-commons-logging" />
+
+  </dependencies>
+</module>

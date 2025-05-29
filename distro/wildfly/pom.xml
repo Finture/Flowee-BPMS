@@ -2,23 +2,23 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.camunda.bpm</groupId>
-    <artifactId>camunda-database-settings</artifactId>
+    <groupId>com.finture.bpm</groupId>
+    <artifactId>flowee-bpms-database-settings</artifactId>
     <relativePath>../../database</relativePath>
-    <version>7.24.0-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>org.camunda.bpm.wildfly</groupId>
-  <artifactId>camunda-wildfly</artifactId>
+  <groupId>com.finture.bpm.wildfly</groupId>
+  <artifactId>flowee-bpms-wildfly</artifactId>
   <packaging>pom</packaging>
 
-  <name>Camunda Platform - Wildfly</name>
+  <name>Flowee BPMS Platform - Wildfly</name>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.camunda.bpm</groupId>
-        <artifactId>camunda-core-internal-dependencies</artifactId>
+        <groupId>com.finture.bpm</groupId>
+        <artifactId>flowee-bpms-core-internal-dependencies</artifactId>
         <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -45,7 +45,7 @@
                   <message>
                     *****************************************************************************************************
                     *                                                                                                   *
-                    *                You must use at least JDK 11 to compile Camunda Platform Wildfly!!!                *
+                    *                You must use at least JDK 11 to compile Flowee BPMS Platform Wildfly!!!                *
                     *                                                                                                   *
                     *****************************************************************************************************
                   </message>
