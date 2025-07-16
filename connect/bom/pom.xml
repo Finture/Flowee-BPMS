@@ -46,11 +46,4 @@
     </dependencies>
   </dependencyManagement>
 
-  <scm>
-    <url>https://github.com/flowee-bpms/flowee-bpms-bpm-platform</url>
-    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</connection>
-    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</developerConnection>
-    <tag>0.1</tag>
-  </scm>
-
 </project>

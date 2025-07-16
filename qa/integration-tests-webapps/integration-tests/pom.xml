@@ -8,7 +8,7 @@
     <groupId>com.finture.bpm.qa</groupId>
     <artifactId>flowee-bpms-qa-integration-tests-webapps-root</artifactId>
     <version>0.7.1-SNAPSHOT</version>
-    <relativePath>../</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   
   <!-- 

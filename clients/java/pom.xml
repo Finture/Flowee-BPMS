@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-database-settings</artifactId>
-    <relativePath>../../database</relativePath>
+    <relativePath>../../database/pom.xml</relativePath>
     <version>0.7.1-SNAPSHOT</version>
   </parent>
 
@@ -32,12 +32,5 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <scm>
-    <url>http://github.com/flowee-bpms/flowee-bpms-external-task-client-java</url>
-    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-external-task-client-java.git</connection>
-    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-external-task-client-java.git</developerConnection>
-    <tag>0.5</tag>
-  </scm>
 
 </project>

@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-parent</artifactId>
-    <relativePath>../parent</relativePath>
+    <relativePath>../parent/pom.xml</relativePath>
     <version>0.7.1-SNAPSHOT</version>
   </parent>
 
@@ -193,12 +193,5 @@
       </modules>
     </profile>
   </profiles>
-
-  <scm>
-    <url>https://github.com/flowee-bpms/flowee-bpms-bpm-platform</url>
-    <connection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</connection>
-    <developerConnection>scm:git:git@github.com:flowee-bpms/flowee-bpms-bpm-platform.git</developerConnection>
-    <tag>0.1</tag>
-  </scm>
 
 </project>

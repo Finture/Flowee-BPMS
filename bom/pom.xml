@@ -6,7 +6,7 @@
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-root</artifactId>
     <version>0.7.1-SNAPSHOT</version>
-    <relativePath>../</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>flowee-bpms-bom-root</artifactId>

@@ -7,7 +7,7 @@
     <groupId>com.finture.bpm.webapp</groupId>
     <artifactId>flowee-bpms-webapp-root</artifactId>
     <version>0.7.1-SNAPSHOT</version>
-    <relativePath>../</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>flowee-bpms-webapp</artifactId>
