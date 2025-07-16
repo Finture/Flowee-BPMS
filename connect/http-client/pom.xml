@@ -4,7 +4,7 @@
   <parent>
     <artifactId>flowee-bpms-connect-root</artifactId>
     <groupId>com.finture.connect</groupId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 

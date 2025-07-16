@@ -5,13 +5,13 @@
   <parent>
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-root</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.1</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>com.finture.bpm.dmn</groupId>
   <artifactId>flowee-bpms-engine-dmn-bom</artifactId>
-  <version>0.7.1-SNAPSHOT</version>
+  <version>0.7.1</version>
   <name>Flowee BPMS DMN - engine - bom</name>
   <packaging>pom</packaging>
 

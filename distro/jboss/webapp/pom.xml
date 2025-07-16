@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.finture.bpm.jboss</groupId>
     <artifactId>flowee-bpms-jboss</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.1</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
