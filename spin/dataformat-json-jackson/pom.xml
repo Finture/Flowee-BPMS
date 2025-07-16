@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.finture.spin</groupId>
     <artifactId>flowee-bpms-spin-root</artifactId>
-    <version>0.7.1</version>
+    <version>0.7.2-SNAPSHOT</version>
   </parent>
 
   <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>

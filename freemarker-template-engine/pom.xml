@@ -5,12 +5,12 @@
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../parent/pom.xml</relativePath>
-    <version>0.7.1</version>
+    <version>0.7.2-SNAPSHOT</version>
   </parent>
 
   <groupId>com.finture.template-engines</groupId>
   <artifactId>flowee-bpms-template-engines-freemarker</artifactId>
-  <version>0.7.1</version>
+  <version>0.7.2-SNAPSHOT</version>
   
   <name>Flowee BPMS template engine jsr223 freemarker</name>
 
