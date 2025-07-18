@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.finture</groupId>
     <artifactId>flowee-bpms-release-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <!-- do not remove empty tag - http://jira.codehaus.org/browse/MNG-4687 -->
     <relativePath />
   </parent>
@@ -33,7 +33,7 @@
     <url>https://finture.com</url>
   </organization>
 
-  <url>https://finture.com</url>
+  <url>https://github.com/Finture/Flowee-BPMS</url>
 
   <developers>
     <developer>
