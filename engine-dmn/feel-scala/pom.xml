@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.finture.bpm.dmn</groupId>
     <artifactId>flowee-bpms-engine-dmn-root</artifactId>
-    <version>0.7.2-SNAPSHOT</version>
+    <version>0.7.2</version>
   </parent>
 
   <artifactId>flowee-bpms-engine-feel-scala</artifactId>

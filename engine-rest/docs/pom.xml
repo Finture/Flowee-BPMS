@@ -3,7 +3,7 @@
   <parent>
     <artifactId>flowee-bpms-engine-rest-root</artifactId>
     <groupId>com.finture.bpm</groupId>
-    <version>0.7.2-SNAPSHOT</version>
+    <version>0.7.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 

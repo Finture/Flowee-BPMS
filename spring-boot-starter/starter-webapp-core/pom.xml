@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.finture.bpm.springboot.project</groupId>
     <artifactId>flowee-bpms-bpm-spring-boot-starter-root</artifactId>
-    <version>0.7.2-SNAPSHOT</version>
+    <version>0.7.2</version>
   </parent>
 
   <groupId>com.finture.bpm.springboot</groupId>

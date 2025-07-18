@@ -5,7 +5,7 @@
     <groupId>com.finture.bpm.model</groupId>
     <artifactId>flowee-bpms-model-apis</artifactId>
     <relativePath>../pom.xml</relativePath>
-    <version>0.7.2-SNAPSHOT</version>
+    <version>0.7.2</version>
   </parent>
 
   <artifactId>flowee-bpms-xml-model</artifactId>

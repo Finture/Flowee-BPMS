@@ -7,7 +7,7 @@
   <parent>
     <artifactId>flowee-bpms-qa</artifactId>
     <groupId>com.finture.bpm.qa</groupId>
-    <version>0.7.2-SNAPSHOT</version>
+    <version>0.7.2</version>
   </parent>
 
   <dependencies>

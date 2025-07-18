@@ -11,7 +11,7 @@
 
   <groupId>com.finture.bpm</groupId>
   <artifactId>flowee-bpms-root</artifactId>
-  <version>0.7.2-SNAPSHOT</version>
+  <version>0.7.2</version>
   <packaging>pom</packaging>
   <name>Flowee BPMS - Root Pom</name>
   <inceptionYear>2013</inceptionYear>
@@ -48,7 +48,7 @@
     <url>https://github.com/Finture/Flowee-BPMS</url>
     <connection>scm:git:git@github.com:Finture/Flowee-BPMS.git</connection>
     <developerConnection>scm:git:git@github.com:Finture/Flowee-BPMS.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v0.7.2</tag>
   </scm>
 
   <issueManagement>
