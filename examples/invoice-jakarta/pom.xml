@@ -9,7 +9,7 @@
     <groupId>com.finture.bpm.example</groupId>
     <artifactId>flowee-bpms-example-root</artifactId>
     <relativePath>../pom.xml</relativePath>
-    <version>0.7.2</version>
+    <version>0.7.3-SNAPSHOT</version>
   </parent>
 
   <dependencyManagement>

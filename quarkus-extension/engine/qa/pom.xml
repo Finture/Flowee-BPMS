@@ -2,7 +2,7 @@
   <parent>
     <groupId>com.finture.bpm.quarkus</groupId>
     <artifactId>flowee-bpms-bpm-quarkus-engine-parent</artifactId>
-    <version>0.7.2</version>
+    <version>0.7.3-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
