@@ -12,6 +12,10 @@
   <artifactId>flowee-bpms-bpm-run-qa-runtime</artifactId>
   <name>Flowee BPMS Platform - Run - QA - Runtime</name>
   <packaging>jar</packaging>
+
+  <description>
+    Note: 7.24.0 is the last community edition release published on Maven Central. This library will not receive any new versions or releases. However, if you are interested in extended maintenance you could look into our enterprise edition. Get in touch with us: https://camunda.com/contact/
+  </description>
   
   <properties>
     <run-home>${project.build.directory}/run/flowee-bpms-bpm-run-distro</run-home>
@@ -81,13 +85,6 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- SpringBoot BOM excludes commons-logging, so we need to add it explicitly -->
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <!-- Webapps -->
     <dependency>
       <groupId>com.finture.bpm.qa</groupId>
@@ -108,27 +105,29 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${version.httpclient}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sun.jersey.contribs</groupId>
-      <artifactId>jersey-apache-client4</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sun.jersey</groupId>
-      <artifactId>jersey-json</artifactId>
+      <groupId>org.apache.httpcomponents.client5</groupId>
+      <artifactId>httpclient5</artifactId>
+      <version>${version.httpclient5}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.konghq</groupId>
+      <artifactId>unirest-java</artifactId>
+      <version>${version.unirest-java}</version>
+      <classifier>standalone</classifier>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
       <scope>test</scope>
     </dependency>
 
