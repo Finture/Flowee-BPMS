@@ -32,10 +32,10 @@ import com.finture.bpm.container.RuntimeContainerDelegate;
 import com.finture.bpm.engine.ProcessEngine;
 import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import com.finture.bpm.engine.spring.application.SpringProcessApplication;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaDeploymentConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSDeploymentConfiguration;
 import com.finture.bpm.spring.boot.starter.event.PostDeployEvent;
 import com.finture.bpm.spring.boot.starter.event.PreUndeployEvent;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -50,8 +50,8 @@ import org.springframework.web.context.ServletContextAware;
 public class SpringBootProcessApplication extends SpringProcessApplication {
 
   @Bean
-  public static CamundaDeploymentConfiguration deploymentConfiguration() {
-    return new CamundaDeploymentConfiguration() {
+  public static FloweeBPMSDeploymentConfiguration deploymentConfiguration() {
+    return new FloweeBPMSDeploymentConfiguration() {
       @Override
       public Set<Resource> getDeploymentResources() {
         return Collections.emptySet();
@@ -75,7 +75,7 @@ public class SpringBootProcessApplication extends SpringProcessApplication {
   protected String contextPath = "/";
 
   @Autowired
-  protected CamundaBpmProperties camundaBpmProperties;
+  protected FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   @Autowired
   protected ProcessEngine processEngine;
@@ -89,8 +89,8 @@ public class SpringBootProcessApplication extends SpringProcessApplication {
       .apply(springApplicationName)
       .ifPresent(this::setBeanName);
 
-    if (camundaBpmProperties.getGenerateUniqueProcessApplicationName()) {
-      setBeanName(CamundaBpmProperties.getUniqueName(CamundaBpmProperties.UNIQUE_APPLICATION_NAME_PREFIX));
+    if (floweeBPMSBpmProperties.getGenerateUniqueProcessApplicationName()) {
+      setBeanName(FloweeBPMSBpmProperties.getUniqueName(FloweeBPMSBpmProperties.UNIQUE_APPLICATION_NAME_PREFIX));
     }
 
     String processEngineName = processEngine.getName();

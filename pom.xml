@@ -53,7 +53,7 @@
 
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/Finture/Flowee-BPMS/Issues</url>
+    <url>https://github.com/Finture/Flowee-BPMS/issues</url>
   </issueManagement>
 
   <properties>
@@ -308,7 +308,7 @@
     </profile>
 
     <profile>
-      <id>central-sonatype-publish</id>
+      <id>sonatype-oss-release</id>
       <modules>
         <module>spring-boot-starter</module>
         <module>quarkus-extension</module>

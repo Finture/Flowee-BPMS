@@ -30,13 +30,13 @@ public enum Namespace {
    */
   UNKNOWN((String) null),
   
-  CAMUNDA_BPM_PLATFORM_1_1("urn:com.finture.bpm.jboss:1.1");
+  FLOWEE_BPMS_BPM_PLATFORM_1_1("urn:com.finture.bpm.jboss:1.1");
   
   /**
    * The current namespace version.
    */
   
-  public static final Namespace CURRENT = CAMUNDA_BPM_PLATFORM_1_1;
+  public static final Namespace CURRENT = FLOWEE_BPMS_BPM_PLATFORM_1_1;
   
   private final String name;
 

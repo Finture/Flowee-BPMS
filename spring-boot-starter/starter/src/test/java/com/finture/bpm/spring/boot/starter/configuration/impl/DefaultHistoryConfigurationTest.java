@@ -26,7 +26,7 @@ import java.util.List;
 import com.finture.bpm.engine.impl.history.HistoryLevel;
 import com.finture.bpm.engine.impl.history.handler.HistoryEventHandler;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,15 +40,15 @@ public class DefaultHistoryConfigurationTest {
   @Mock
   private SpringProcessEngineConfiguration springProcessEngineConfiguration;
 
-  private CamundaBpmProperties camundaBpmProperties;
+  private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   private DefaultHistoryConfiguration defaultHistoryConfiguration;
 
   @Before
   public void before() {
-    camundaBpmProperties = new CamundaBpmProperties();
+    floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
     defaultHistoryConfiguration = new DefaultHistoryConfiguration();
-    defaultHistoryConfiguration.camundaBpmProperties = camundaBpmProperties;
+    defaultHistoryConfiguration.floweeBPMSBpmProperties = floweeBPMSBpmProperties;
   }
 
   @Test
@@ -59,7 +59,7 @@ public class DefaultHistoryConfigurationTest {
 
   @Test
   public void historyLevelTest() {
-    camundaBpmProperties.setHistoryLevel(HistoryLevel.HISTORY_LEVEL_AUDIT.getName());
+    floweeBPMSBpmProperties.setHistoryLevel(HistoryLevel.HISTORY_LEVEL_AUDIT.getName());
     defaultHistoryConfiguration.preInit(springProcessEngineConfiguration);
     verify(springProcessEngineConfiguration).setHistory(HistoryLevel.HISTORY_LEVEL_AUDIT.getName());
   }

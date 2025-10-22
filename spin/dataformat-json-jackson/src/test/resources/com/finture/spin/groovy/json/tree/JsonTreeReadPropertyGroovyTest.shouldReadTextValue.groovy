@@ -1,4 +1,4 @@
-package org.camunda.spin.groovy.json.tree
+package com.finture.spin.groovy.json.tree
 
 node = S(input, "application/json")
 childNode1 = node.prop("customers")

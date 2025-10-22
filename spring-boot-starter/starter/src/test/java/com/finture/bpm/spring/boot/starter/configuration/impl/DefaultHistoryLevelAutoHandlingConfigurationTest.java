@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.jdbc.HistoryLevelDeterminator;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,15 +39,15 @@ public class DefaultHistoryLevelAutoHandlingConfigurationTest {
   @Mock
   private HistoryLevelDeterminator historyLevelDeterminator;
 
-  private CamundaBpmProperties camundaBpmProperties;
+  private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   private DefaultHistoryLevelAutoHandlingConfiguration historyLevelAutoHandlingConfiguration;
 
   @Before
   public void before() {
-    camundaBpmProperties = new CamundaBpmProperties();
+    floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
     historyLevelAutoHandlingConfiguration = new DefaultHistoryLevelAutoHandlingConfiguration();
-    historyLevelAutoHandlingConfiguration.camundaBpmProperties = camundaBpmProperties;
+    historyLevelAutoHandlingConfiguration.floweeBPMSBpmProperties = floweeBPMSBpmProperties;
     historyLevelAutoHandlingConfiguration.historyLevelDeterminator = historyLevelDeterminator;
   }
 

@@ -39,7 +39,7 @@
         <extension module="org.wildfly.extension.security.manager"/>
         <extension module="org.wildfly.extension.undertow"/>
         <extension module="org.wildfly.iiop-openjdk"/>
-        <extension module="com.finture.bpm.wildfly.camunda-wildfly-subsystem"/>
+        <extension module="com.finture.bpm.wildfly.flowee-bpms-wildfly-subsystem"/>
     </extensions>
     <system-properties>
         <property name="java.net.preferIPv4Stack" value="true"/>

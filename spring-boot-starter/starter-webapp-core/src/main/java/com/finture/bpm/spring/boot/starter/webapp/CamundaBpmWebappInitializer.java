@@ -34,7 +34,7 @@ import com.finture.bpm.cockpit.impl.web.CockpitApplication;
 import com.finture.bpm.cockpit.impl.web.bootstrap.CockpitContainerBootstrap;
 import com.finture.bpm.engine.rest.filter.CacheControlFilter;
 import com.finture.bpm.engine.rest.filter.EmptyBodyFilter;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.WebappProperty;
 import com.finture.bpm.spring.boot.starter.webapp.filter.AppendTrailingSlashFilter;
 import com.finture.bpm.spring.boot.starter.webapp.filter.LazyProcessEnginesFilter;
@@ -68,9 +68,9 @@ public class CamundaBpmWebappInitializer implements ServletContextInitializer {
 
   private ServletContext servletContext;
 
-  private final CamundaBpmProperties properties;
+  private final FloweeBPMSBpmProperties properties;
 
-  public CamundaBpmWebappInitializer(CamundaBpmProperties properties) {
+  public CamundaBpmWebappInitializer(FloweeBPMSBpmProperties properties) {
     this.properties = properties;
   }
 

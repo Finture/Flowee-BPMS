@@ -16,8 +16,7 @@
  */
 package com.finture.bpm.spring.boot.starter.runlistener;
 
-import com.finture.bpm.spring.boot.starter.util.CamundaBpmVersion;
-import com.finture.bpm.spring.boot.starter.util.CamundaBpmVersionTest;
+import com.finture.bpm.spring.boot.starter.util.FloweeBPMSBpmVersion;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -60,7 +59,7 @@ public class PropertiesListenerTest {
 
   @Test
   public void addPropertiesPropertySource() throws Exception {
-    final CamundaBpmVersion version = new CamundaBpmVersion();
+    final FloweeBPMSBpmVersion version = new FloweeBPMSBpmVersion();
 
     new PropertiesListener(version).onApplicationEvent(event);
 

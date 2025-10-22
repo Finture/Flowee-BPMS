@@ -23,8 +23,8 @@ import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
 import com.finture.bpm.engine.spring.SpringProcessEnginePlugin;
 
-import static com.finture.bpm.spring.boot.starter.util.CamundaSpringBootUtil.processEngineImpl;
-import static com.finture.bpm.spring.boot.starter.util.CamundaSpringBootUtil.springProcessEngineConfiguration;
+import static com.finture.bpm.spring.boot.starter.util.FloweeBPMSSpringBootUtil.processEngineImpl;
+import static com.finture.bpm.spring.boot.starter.util.FloweeBPMSSpringBootUtil.springProcessEngineConfiguration;
 
 /**
  * Convenience class that specializes {@link AbstractProcessEnginePlugin} to

@@ -19,7 +19,7 @@ package com.finture.bpm.engine.impl.diagnostics;
 public class CamundaIntegration {
 
   public static final String SPRING_BOOT_STARTER = "spring-boot-starter";
-  public static final String CAMUNDA_BPM_RUN = "camunda-bpm-run";
+  public static final String FLOWEE_BPMS_BPM_RUN = "flowee-bpms-bpm-run";
   public static final String WILDFLY_SUBSYSTEM = "wildfly-subsystem";
   public static final String JBOSS_SUBSYSTEM = "jboss-subsystem";
   public static final String CAMUNDA_EJB_SERVICE = "camunda-ejb-service";

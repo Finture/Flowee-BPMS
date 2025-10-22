@@ -625,7 +625,7 @@ public class HistoricProcessInstanceQueryOrTest {
 
   @Test
   @RequiredHistoryLevel(ProcessEngineConfiguration.HISTORY_FULL)
-  @Deployment(resources={"org/camunda/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
+  @Deployment(resources={"com/finture/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
   public void shouldReturnHistoricProcInstWithMultipleStates() {
     // given
     setupMultipleProcessInstances();
@@ -644,7 +644,7 @@ public class HistoricProcessInstanceQueryOrTest {
 
   @Test
   @RequiredHistoryLevel(ProcessEngineConfiguration.HISTORY_FULL)
-  @Deployment(resources={"org/camunda/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
+  @Deployment(resources={"com/finture/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
   public void shouldReturnHistoricProcInstWithMatchingState() {
     // given
     setupMultipleProcessInstances();
@@ -894,7 +894,7 @@ public class HistoricProcessInstanceQueryOrTest {
 
   @Test
   @RequiredHistoryLevel(ProcessEngineConfiguration.HISTORY_FULL)
-  @Deployment(resources={"org/camunda/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
+  @Deployment(resources={"com/finture/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
   public void shouldReturnHistoricProcInstWithVarValue1OrVarValue21() {
     // given
     Map<String, Object> vars = new HashMap<String, Object>();
@@ -947,7 +947,7 @@ public class HistoricProcessInstanceQueryOrTest {
 
   @Test
   @RequiredHistoryLevel(ProcessEngineConfiguration.HISTORY_FULL)
-  @Deployment(resources={"org/camunda/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
+  @Deployment(resources={"com/finture/bpm/engine/test/api/oneTaskProcess.bpmn20.xml"})
   public void shouldReturnHistoricProcInstWithVarValue1OrVarValue23() {
     // given
     Map<String, Object> vars = new HashMap<String, Object>();

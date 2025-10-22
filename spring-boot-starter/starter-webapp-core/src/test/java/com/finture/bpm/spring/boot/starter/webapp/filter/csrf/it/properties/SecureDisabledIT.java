@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { FilterTestApp.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.csrf.enableSecureCookie=false"
+  "flowee-bpms.bpm.webapp.csrf.enableSecureCookie=false"
 })
 @DirtiesContext
 public class SecureDisabledIT {

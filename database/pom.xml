@@ -28,7 +28,7 @@
     <version.liquibase>4.8.0</version.liquibase>
 
     <!-- needed for sql script and backward compatibility checks -->
-    <flowee-bpms.version.old>7.23.0</flowee-bpms.version.old>
+    <flowee-bpms.version.old>0.7.2</flowee-bpms.version.old>
 
     <!-- Testcontainers JDBC URL parameters. By default, an empty string -->
     <database.tc.params />

@@ -24,7 +24,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import java.util.HashMap;
 import java.util.Map;
 
-@ConfigurationProperties(prefix = "camunda.bpm.client")
+@ConfigurationProperties(prefix = "flowee-bpms.bpm.client")
 public class ClientProperties extends ClientConfiguration {
 
   @NestedConfigurationProperty

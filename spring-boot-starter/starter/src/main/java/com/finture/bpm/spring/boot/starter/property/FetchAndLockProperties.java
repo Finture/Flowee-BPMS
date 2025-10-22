@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 public class FetchAndLockProperties {
 

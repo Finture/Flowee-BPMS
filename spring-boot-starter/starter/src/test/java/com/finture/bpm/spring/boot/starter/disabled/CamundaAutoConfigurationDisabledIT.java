@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(
   classes = {CamundaAutoConfigurationDisabledIT.NoCamundaApplication.class},
   webEnvironment = WebEnvironment.NONE,
-  properties = {"camunda.bpm.enabled=false"}
+  properties = {"flowee-bpms.bpm.enabled=false"}
 )
 public class CamundaAutoConfigurationDisabledIT {
 

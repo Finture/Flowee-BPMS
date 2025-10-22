@@ -38,7 +38,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import com.finture.bpm.client.ExternalTaskClient;
 import com.finture.bpm.client.ExternalTaskClientBuilder;
-import com.finture.bpm.client.UrlResolver;
 import com.finture.bpm.client.backoff.BackoffStrategy;
 import com.finture.bpm.client.backoff.ErrorAwareBackoffStrategy;
 import com.finture.bpm.client.dto.ProcessDefinitionDto;
@@ -71,8 +70,8 @@ public class ClientIT {
 
   static {
     Properties properties = loadProperties(DEFAULT_PROPERTIES_PATH);
-    String engineRest = properties.getProperty(PropertyUtil.CAMUNDA_ENGINE_REST);
-    String engineName = properties.getProperty(PropertyUtil.CAMUNDA_ENGINE_NAME);
+    String engineRest = properties.getProperty(PropertyUtil.FLOWEE_BPMS_ENGINE_REST);
+    String engineName = properties.getProperty(PropertyUtil.FLOWEE_BPMS_ENGINE_NAME);
     BASE_URL = engineRest + engineName;
   }
 

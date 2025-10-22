@@ -1,2 +1,2 @@
-camunda.bpm.run.ldap:
+flowee-bpms.bpm.run.ldap:
   password-check-catch-authentication-exception: false

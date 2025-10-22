@@ -22,7 +22,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import com.finture.bpm.engine.identity.User;
 import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import com.finture.bpm.engine.test.ProcessEngineRule;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.test.helper.StandaloneInMemoryTestConfiguration;
 import com.finture.bpm.spring.boot.starter.util.SpringBootProcessEngineLogger;
 import com.finture.commons.testing.ProcessEngineLoggingRule;
@@ -36,15 +36,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CreateAdminUserConfigurationTest {
 
-  private final CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
+  private final FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
   {
-    camundaBpmProperties.getAdminUser().setId("admin");
-    camundaBpmProperties.getAdminUser().setPassword("password");
+    floweeBPMSBpmProperties.getAdminUser().setId("admin");
+    floweeBPMSBpmProperties.getAdminUser().setPassword("password");
   }
 
   private final CreateAdminUserConfiguration createAdminUserConfiguration = new CreateAdminUserConfiguration();
   {
-    ReflectionTestUtils.setField(createAdminUserConfiguration, "camundaBpmProperties", camundaBpmProperties);
+    ReflectionTestUtils.setField(createAdminUserConfiguration, "floweeBPMSBpmProperties", floweeBPMSBpmProperties);
     createAdminUserConfiguration.init();
   }
 

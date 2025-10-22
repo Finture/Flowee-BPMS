@@ -19,14 +19,14 @@ package com.finture.bpm.spring.boot.starter.configuration.impl;
 import com.finture.bpm.engine.ProcessEngines;
 import com.finture.bpm.engine.impl.cfg.IdGenerator;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSProcessEngineConfiguration;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 
-public class DefaultProcessEngineConfiguration extends AbstractCamundaConfiguration implements CamundaProcessEngineConfiguration {
+public class DefaultProcessEngineConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSProcessEngineConfiguration {
 
   @Autowired
   private Optional<IdGenerator> idGenerator;
@@ -45,7 +45,7 @@ public class DefaultProcessEngineConfiguration extends AbstractCamundaConfigurat
   }
 
   private void setDefaultSerializationFormat(SpringProcessEngineConfiguration configuration) {
-    String defaultSerializationFormat = camundaBpmProperties.getDefaultSerializationFormat();
+    String defaultSerializationFormat = floweeBPMSBpmProperties.getDefaultSerializationFormat();
     if (StringUtils.hasText(defaultSerializationFormat)) {
       configuration.setDefaultSerializationFormat(defaultSerializationFormat);
     } else {
@@ -54,30 +54,30 @@ public class DefaultProcessEngineConfiguration extends AbstractCamundaConfigurat
   }
 
   private void setProcessEngineName(SpringProcessEngineConfiguration configuration) {
-    String processEngineName = StringUtils.trimAllWhitespace(camundaBpmProperties.getProcessEngineName());
+    String processEngineName = StringUtils.trimAllWhitespace(floweeBPMSBpmProperties.getProcessEngineName());
     if (!StringUtils.isEmpty(processEngineName) && !processEngineName.contains("-")) {
 
-      if (camundaBpmProperties.getGenerateUniqueProcessEngineName()) {
+      if (floweeBPMSBpmProperties.getGenerateUniqueProcessEngineName()) {
         if (!processEngineName.equals(ProcessEngines.NAME_DEFAULT)) {
           throw new RuntimeException(String.format("A unique processEngineName cannot be generated "
             + "if a custom processEngineName is already set: %s", processEngineName));
         }
-        processEngineName = CamundaBpmProperties.getUniqueName(camundaBpmProperties.UNIQUE_ENGINE_NAME_PREFIX);
+        processEngineName = FloweeBPMSBpmProperties.getUniqueName(floweeBPMSBpmProperties.UNIQUE_ENGINE_NAME_PREFIX);
       }
 
       configuration.setProcessEngineName(processEngineName);
     } else {
-      logger.warn("Ignoring invalid processEngineName='{}' - must not be null, blank or contain hyphen", camundaBpmProperties.getProcessEngineName());
+      logger.warn("Ignoring invalid processEngineName='{}' - must not be null, blank or contain hyphen", floweeBPMSBpmProperties.getProcessEngineName());
     }
   }
 
   private void setJobExecutorAcquireByPriority(SpringProcessEngineConfiguration configuration) {
-    Optional.ofNullable(camundaBpmProperties.getJobExecutorAcquireByPriority())
+    Optional.ofNullable(floweeBPMSBpmProperties.getJobExecutorAcquireByPriority())
       .ifPresent(configuration::setJobExecutorAcquireByPriority);
   }
 
   private void setDefaultNumberOfRetries(SpringProcessEngineConfiguration configuration) {
-    Optional.ofNullable(camundaBpmProperties.getDefaultNumberOfRetries())
+    Optional.ofNullable(floweeBPMSBpmProperties.getDefaultNumberOfRetries())
       .ifPresent(configuration::setDefaultNumberOfRetries);
   }
 }

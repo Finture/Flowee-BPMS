@@ -19,14 +19,14 @@ package com.finture.bpm.spring.boot.starter.configuration.impl;
 import javax.sql.DataSource;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaDatasourceConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSDatasourceConfiguration;
 import com.finture.bpm.spring.boot.starter.property.DatabaseProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.util.StringUtils;
 
-public class DefaultDatasourceConfiguration extends AbstractCamundaConfiguration implements CamundaDatasourceConfiguration {
+public class DefaultDatasourceConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSDatasourceConfiguration {
 
   @Autowired
   protected PlatformTransactionManager transactionManager;
@@ -44,7 +44,7 @@ public class DefaultDatasourceConfiguration extends AbstractCamundaConfiguration
 
   @Override
   public void preInit(SpringProcessEngineConfiguration configuration) {
-    final DatabaseProperty database = camundaBpmProperties.getDatabase();
+    final DatabaseProperty database = floweeBPMSBpmProperties.getDatabase();
 
     if (camundaTransactionManager == null) {
       configuration.setTransactionManager(transactionManager);

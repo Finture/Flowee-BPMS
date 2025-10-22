@@ -1,3 +1,3 @@
-camunda.bpm:
+flowee-bpms.bpm:
   filter:
     create: All tasks

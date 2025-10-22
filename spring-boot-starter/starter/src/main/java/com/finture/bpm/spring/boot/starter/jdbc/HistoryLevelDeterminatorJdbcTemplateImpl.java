@@ -23,7 +23,7 @@ import java.util.List;
 
 import com.finture.bpm.engine.impl.history.HistoryLevel;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.dao.DataAccessException;
@@ -35,9 +35,9 @@ public class HistoryLevelDeterminatorJdbcTemplateImpl implements HistoryLevelDet
   
   private static final Logger log = org.slf4j.LoggerFactory.getLogger(HistoryLevelDeterminatorJdbcTemplateImpl.class);
 
-  public static HistoryLevelDeterminator createHistoryLevelDeterminator(CamundaBpmProperties camundaBpmProperties, JdbcTemplate jdbcTemplate) {
+  public static HistoryLevelDeterminator createHistoryLevelDeterminator(FloweeBPMSBpmProperties floweeBPMSBpmProperties, JdbcTemplate jdbcTemplate) {
     final HistoryLevelDeterminatorJdbcTemplateImpl determinator = new HistoryLevelDeterminatorJdbcTemplateImpl();
-    determinator.setCamundaBpmProperties(camundaBpmProperties);
+    determinator.setFloweeBPMSBpmProperties(floweeBPMSBpmProperties);
     determinator.setJdbcTemplate(jdbcTemplate);
     return determinator;
   }
@@ -55,7 +55,7 @@ public class HistoryLevelDeterminatorJdbcTemplateImpl implements HistoryLevelDet
 
   protected boolean ignoreDataAccessException = true;
 
-  protected CamundaBpmProperties camundaBpmProperties;
+  protected FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   public String getDefaultHistoryLevel() {
     return defaultHistoryLevel;
@@ -81,19 +81,19 @@ public class HistoryLevelDeterminatorJdbcTemplateImpl implements HistoryLevelDet
     this.ignoreDataAccessException = ignoreDataAccessException;
   }
 
-  public CamundaBpmProperties getCamundaBpmProperties() {
-    return camundaBpmProperties;
+  public FloweeBPMSBpmProperties getFloweeBPMSBpmProperties() {
+    return floweeBPMSBpmProperties;
   }
 
-  public void setCamundaBpmProperties(CamundaBpmProperties camundaBpmProperties) {
-    this.camundaBpmProperties = camundaBpmProperties;
+  public void setFloweeBPMSBpmProperties(FloweeBPMSBpmProperties floweeBPMSBpmProperties) {
+    this.floweeBPMSBpmProperties = floweeBPMSBpmProperties;
   }
 
   @Override
   public void afterPropertiesSet() throws Exception {
     Assert.notNull(jdbcTemplate, "a jdbc template must be set");
-    Assert.notNull(camundaBpmProperties, "Camunda Platform properties must be set");
-    String historyLevelDefault = camundaBpmProperties.getHistoryLevelDefault();
+    Assert.notNull(floweeBPMSBpmProperties, "Camunda Platform properties must be set");
+    String historyLevelDefault = floweeBPMSBpmProperties.getHistoryLevelDefault();
     if (StringUtils.hasText(historyLevelDefault)) {
       defaultHistoryLevel = historyLevelDefault;
     }
@@ -117,7 +117,7 @@ public class HistoryLevelDeterminatorJdbcTemplateImpl implements HistoryLevelDet
   }
 
   protected String getSql() {
-    String tablePrefix = camundaBpmProperties.getDatabase().getTablePrefix();
+    String tablePrefix = floweeBPMSBpmProperties.getDatabase().getTablePrefix();
     if (tablePrefix == null) {
       tablePrefix = "";
     }

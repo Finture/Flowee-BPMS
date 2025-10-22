@@ -17,7 +17,7 @@
 package com.finture.bpm.spring.boot.starter.configuration.impl;
 
 import com.finture.bpm.spring.boot.starter.configuration.Ordering;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.util.SpringBootProcessEngineLogger;
 import com.finture.bpm.spring.boot.starter.util.SpringBootProcessEnginePlugin;
 import org.slf4j.Logger;
@@ -53,7 +53,7 @@ public abstract class AbstractCamundaConfiguration extends SpringBootProcessEngi
   protected final Logger logger = getLogger(this.getClass());
 
   @Autowired
-  protected CamundaBpmProperties camundaBpmProperties;
+  protected FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
 
 }

@@ -17,7 +17,7 @@
 package com.finture.bpm.spring.boot.starter.event;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.EventingProperty;
 import com.finture.bpm.spring.boot.starter.util.SpringBootProcessEnginePlugin;
 import org.slf4j.Logger;
@@ -34,7 +34,7 @@ public class EventPublisherPlugin extends SpringBootProcessEnginePlugin {
   private final EventingProperty property;
   private final ApplicationEventPublisher publisher;
 
-  public EventPublisherPlugin(final CamundaBpmProperties properties, final ApplicationEventPublisher publisher) {
+  public EventPublisherPlugin(final FloweeBPMSBpmProperties properties, final ApplicationEventPublisher publisher) {
     this(properties.getEventing(), publisher);
   }
 

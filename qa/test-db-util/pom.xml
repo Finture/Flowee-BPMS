@@ -17,7 +17,7 @@
       <dependency>
         <groupId>com.finture.bpm</groupId>
         <artifactId>flowee-bpms-bom</artifactId>
-        <version>0.5.1</version>
+        <version>${project.version}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>

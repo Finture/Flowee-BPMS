@@ -18,7 +18,7 @@ package com.finture.bpm.spring.boot.starter.rest;
 
 import com.finture.bpm.engine.rest.filter.CacheControlFilter;
 import com.finture.bpm.engine.rest.filter.EmptyBodyFilter;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.web.servlet.JerseyApplicationPath;
@@ -47,9 +47,9 @@ public class CamundaBpmRestInitializer implements ServletContextInitializer {
 
   private JerseyApplicationPath applicationPath;
 
-  private final CamundaBpmProperties properties;
+  private final FloweeBPMSBpmProperties properties;
 
-  public CamundaBpmRestInitializer(JerseyApplicationPath applicationPath, CamundaBpmProperties properties) {
+  public CamundaBpmRestInitializer(JerseyApplicationPath applicationPath, FloweeBPMSBpmProperties properties) {
     this.applicationPath = applicationPath;
     this.properties = properties;
   }

@@ -16,8 +16,8 @@
  */
 package com.finture.bpm.spring.boot.starter.webapp;
 
-import com.finture.bpm.spring.boot.starter.CamundaBpmAutoConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.WebappProperty;
 import com.finture.bpm.spring.boot.starter.webapp.filter.LazyDelegateFilter.InitHook;
 import com.finture.bpm.spring.boot.starter.webapp.filter.LazyInitRegistration;
@@ -36,16 +36,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @ConditionalOnProperty(prefix = WebappProperty.PREFIX, name = "enabled", matchIfMissing = true)
-@ConditionalOnBean(CamundaBpmProperties.class)
+@ConditionalOnBean(FloweeBPMSBpmProperties.class)
 @ConditionalOnWebApplication
-@AutoConfigureAfter(CamundaBpmAutoConfiguration.class)
+@AutoConfigureAfter(FloweeBPMSBpmAutoConfiguration.class)
 public class CamundaBpmWebappAutoConfiguration implements WebMvcConfigurer {
 
   @Autowired
   private ResourceLoader resourceLoader;
 
   @Autowired
-  private CamundaBpmProperties properties;
+  private FloweeBPMSBpmProperties properties;
 
 
   @Bean

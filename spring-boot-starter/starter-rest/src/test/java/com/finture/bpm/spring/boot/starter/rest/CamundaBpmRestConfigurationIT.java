@@ -19,7 +19,7 @@ package com.finture.bpm.spring.boot.starter.rest;
 import static org.junit.Assert.assertEquals;
 
 import com.finture.bpm.engine.rest.dto.repository.ProcessDefinitionDto;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.rest.test.TestRestApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,7 +39,7 @@ public class CamundaBpmRestConfigurationIT {
   private TestRestTemplate testRestTemplate;
 
   @Autowired
-  private CamundaBpmProperties camundaBpmProperties;
+  private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   @Test
   public void processDefinitionTest() {
@@ -47,7 +47,7 @@ public class CamundaBpmRestConfigurationIT {
     testRestTemplate.postForEntity("/engine-rest/start/process", HttpEntity.EMPTY, String.class);
 
     ResponseEntity<ProcessDefinitionDto> entity = testRestTemplate.getForEntity("/engine-rest/engine/{engineName}/process-definition/key/TestProcess/",
-        ProcessDefinitionDto.class, camundaBpmProperties.getProcessEngineName());
+        ProcessDefinitionDto.class, floweeBPMSBpmProperties.getProcessEngineName());
 
     assertEquals(HttpStatus.OK, entity.getStatusCode());
     assertEquals("TestProcess", entity.getBody().getKey());

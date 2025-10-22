@@ -18,8 +18,8 @@ package com.finture.bpm.spring.boot.starter.jdbc;
 
 import javax.sql.DataSource;
 
-import com.finture.bpm.spring.boot.starter.CamundaBpmAutoConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,12 +27,12 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-@EnableAutoConfiguration(exclude = CamundaBpmAutoConfiguration.class)
+@EnableAutoConfiguration(exclude = FloweeBPMSBpmAutoConfiguration.class)
 public class HistoryLevelDeterminatorJdbcTemplateImplTestApplication {
 
   @Bean
-  public CamundaBpmProperties camundaBpmProperties() {
-    return new CamundaBpmProperties();
+  public FloweeBPMSBpmProperties floweeBPMSBpmProperties() {
+    return new FloweeBPMSBpmProperties();
   }
 
   @Bean
@@ -49,7 +49,7 @@ public class HistoryLevelDeterminatorJdbcTemplateImplTestApplication {
   }
 
   @Bean
-  public HistoryLevelDeterminator historyLevelDeterminator(JdbcTemplate jdbcTemplate, CamundaBpmProperties camundaBpmProperties) {
-    return HistoryLevelDeterminatorJdbcTemplateImpl.createHistoryLevelDeterminator(camundaBpmProperties, jdbcTemplate);
+  public HistoryLevelDeterminator historyLevelDeterminator(JdbcTemplate jdbcTemplate, FloweeBPMSBpmProperties floweeBPMSBpmProperties) {
+    return HistoryLevelDeterminatorJdbcTemplateImpl.createHistoryLevelDeterminator(floweeBPMSBpmProperties, jdbcTemplate);
   }
 }

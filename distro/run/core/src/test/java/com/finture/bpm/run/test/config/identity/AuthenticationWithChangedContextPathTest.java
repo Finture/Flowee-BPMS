@@ -16,7 +16,7 @@
  */
 package com.finture.bpm.run.test.config.identity;
 
-import com.finture.bpm.run.property.CamundaBpmRunAuthenticationProperties;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunAuthenticationProperties;
 import com.finture.bpm.run.test.AbstractRestTest;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
@@ -37,7 +37,7 @@ import static org.assertj.core.api.Assertions.assertThat;
     "test-auth-enabled"
 })
 @TestPropertySource(properties = {
-    CamundaBpmRunAuthenticationProperties.PREFIX + "=basic"
+    FloweeBPMSBpmRunAuthenticationProperties.PREFIX + "=basic"
 })
 public class AuthenticationWithChangedContextPathTest extends AbstractRestTest {
 

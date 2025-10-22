@@ -16,8 +16,8 @@
  */
 package com.finture.bpm.spring.boot.starter.webapp;
 
-import com.finture.bpm.spring.boot.starter.CamundaBpmAutoConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.WebappProperty;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,9 +30,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CamundaBpmWebappAutoConfigurationIntegrationTest {
 
-  private String bpmEnabled = CamundaBpmProperties.PREFIX + ".enabled=true";
+  private String bpmEnabled = FloweeBPMSBpmProperties.PREFIX + ".enabled=true";
 
-  private String bpmDisabled = CamundaBpmProperties.PREFIX + ".enabled=false";
+  private String bpmDisabled = FloweeBPMSBpmProperties.PREFIX + ".enabled=false";
 
   private String webappEnabled = WebappProperty.PREFIX + ".enabled=true";
 
@@ -42,7 +42,7 @@ public class CamundaBpmWebappAutoConfigurationIntegrationTest {
 
   @Before
   public void setUp() {
-    AutoConfigurations autoConfigurationsUnderTest = AutoConfigurations.of(CamundaBpmAutoConfiguration.class, CamundaBpmWebappAutoConfiguration.class);
+    AutoConfigurations autoConfigurationsUnderTest = AutoConfigurations.of(FloweeBPMSBpmAutoConfiguration.class, CamundaBpmWebappAutoConfiguration.class);
     AutoConfigurations additionalAutoConfigurations = AutoConfigurations.of(DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class);
     contextRunner = new WebApplicationContextRunner().withConfiguration(autoConfigurationsUnderTest).withConfiguration(additionalAutoConfigurations);
   }

@@ -27,7 +27,7 @@ import com.finture.bpm.engine.RuntimeService;
 import com.finture.bpm.engine.rest.dto.runtime.ProcessInstanceDto;
 import com.finture.bpm.engine.runtime.ProcessInstance;
 import com.finture.bpm.engine.runtime.VariableInstance;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +42,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
 import my.own.custom.spring.boot.project.SampleCamundaRestApplication;
 
@@ -57,7 +56,7 @@ public class SampleCamundaRestApplicationIT {
   private RuntimeService runtimeService;
 
   @Autowired
-  private CamundaBpmProperties camundaBpmProperties;
+  private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   @Test
   public void restApiIsAvailable() throws Exception {
@@ -90,7 +89,7 @@ public class SampleCamundaRestApplicationIT {
 
     HttpEntity<LinkedMultiValueMap<String, Object>> requestEntity = new HttpEntity<>(map, headers);
     ResponseEntity<String> exchange = testRestTemplate.exchange("/engine-rest/engine/{enginename}/process-instance/{id}/variables/{variableName}/data",
-        HttpMethod.POST, requestEntity, String.class, camundaBpmProperties.getProcessEngineName(), processInstance.getId(), variableName);
+        HttpMethod.POST, requestEntity, String.class, floweeBPMSBpmProperties.getProcessEngineName(), processInstance.getId(), variableName);
 
     assertEquals(HttpStatus.NO_CONTENT, exchange.getStatusCode());
 
@@ -115,7 +114,7 @@ public class SampleCamundaRestApplicationIT {
     headers.setContentType(MediaType.APPLICATION_JSON);
     HttpEntity<String> requestEntity = new HttpEntity<String>(requestJson, headers);
     ResponseEntity<String> entity = testRestTemplate.postForEntity("/engine-rest/engine/{enginename}/external-task/fetchAndLock", requestEntity, String.class,
-      camundaBpmProperties.getProcessEngineName());
+      floweeBPMSBpmProperties.getProcessEngineName());
     assertEquals(HttpStatus.OK, entity.getStatusCode());
     assertEquals("[]", entity.getBody());
   }

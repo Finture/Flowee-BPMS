@@ -23,7 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.core.io.Resource;
@@ -31,17 +31,17 @@ import org.springframework.core.io.Resource;
 public class DefaultDeploymentConfigurationTest {
 
   private final DefaultDeploymentConfiguration defaultDeploymentConfiguration = new DefaultDeploymentConfiguration();
-  private final CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
+  private final FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
   private final SpringProcessEngineConfiguration configuration = new SpringProcessEngineConfiguration();
 
   @Before
   public void before() {
-    defaultDeploymentConfiguration.camundaBpmProperties = camundaBpmProperties;
+    defaultDeploymentConfiguration.floweeBPMSBpmProperties = floweeBPMSBpmProperties;
   }
 
   @Test
   public void noDeploymentTest() {
-    camundaBpmProperties.setAutoDeploymentEnabled(false);
+    floweeBPMSBpmProperties.setAutoDeploymentEnabled(false);
     defaultDeploymentConfiguration.preInit(configuration);
 
     assertThat(configuration.getDeploymentResources()).isEmpty();
@@ -49,7 +49,7 @@ public class DefaultDeploymentConfigurationTest {
 
   @Test
   public void deploymentTest() throws IOException {
-    camundaBpmProperties.setAutoDeploymentEnabled(true);
+    floweeBPMSBpmProperties.setAutoDeploymentEnabled(true);
     defaultDeploymentConfiguration.preInit(configuration);
 
     final Resource[] resources = configuration.getDeploymentResources();

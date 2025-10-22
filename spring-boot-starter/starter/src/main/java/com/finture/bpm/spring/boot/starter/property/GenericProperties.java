@@ -19,7 +19,7 @@ package com.finture.bpm.spring.boot.starter.property;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 public class GenericProperties {
 

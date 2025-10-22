@@ -39,7 +39,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = { TestApplication.class },
   webEnvironment = WebEnvironment.NONE,
   properties = {
-    "camunda.bpm.generate-unique-process-application-name=true",
+    "flowee-bpms.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
   })
 @ActiveProfiles("nojpa")

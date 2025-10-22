@@ -22,10 +22,10 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-  "camunda.bpm.eventing.execution=false",
-  "camunda.bpm.eventing.task=false",
-  "camunda.bpm.eventing.history=false",
-  "camunda.bpm.eventing.skippable=false"})
+  "flowee-bpms.bpm.eventing.execution=false",
+  "flowee-bpms.bpm.eventing.task=false",
+  "flowee-bpms.bpm.eventing.history=false",
+  "flowee-bpms.bpm.eventing.skippable=false"})
 public class EventingPropertyTest extends ParsePropertiesHelper {
 
   @Test

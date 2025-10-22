@@ -20,7 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.finture.bpm.engine.identity.User;
 
 import static java.util.Objects.requireNonNull;
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 
 public class AdminUserProperty implements User {

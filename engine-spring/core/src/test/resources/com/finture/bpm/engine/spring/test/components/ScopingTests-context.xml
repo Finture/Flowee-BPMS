@@ -5,7 +5,7 @@
        xmlns:activiti="http://www.activiti.org/schema/spring/components"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.activiti.org/schema/spring/components http://www.activiti.org/schema/spring/components/activiti.xsd
+                           http://www.activiti.org/schema/spring/components https://www.activiti.org/schema/spring/components/activiti.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 

@@ -39,8 +39,8 @@ import java.util.Collections;
 import java.util.Properties;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.finture.bpm.client.util.PropertyUtil.CAMUNDA_ENGINE_NAME;
-import static com.finture.bpm.client.util.PropertyUtil.CAMUNDA_ENGINE_REST;
+import static com.finture.bpm.client.util.PropertyUtil.FLOWEE_BPMS_ENGINE_NAME;
+import static com.finture.bpm.client.util.PropertyUtil.FLOWEE_BPMS_ENGINE_REST;
 import static com.finture.bpm.client.util.PropertyUtil.DEFAULT_PROPERTIES_PATH;
 import static com.finture.bpm.client.util.PropertyUtil.loadProperties;
 
@@ -64,7 +64,7 @@ public class PaSerializationIT {
 
   protected ClientRule clientRule = new ClientRule(() -> {
     Properties properties = loadProperties(DEFAULT_PROPERTIES_PATH);
-    String baseUrl = properties.getProperty(CAMUNDA_ENGINE_REST) + ENGINE_NAME;
+    String baseUrl = properties.getProperty(FLOWEE_BPMS_ENGINE_REST) + ENGINE_NAME;
     return ExternalTaskClient.create()
       .baseUrl(baseUrl)
       .disableAutoFetching();
@@ -72,7 +72,7 @@ public class PaSerializationIT {
 
   protected EngineRule engineRule = new EngineRule(() -> {
     Properties properties = loadProperties(DEFAULT_PROPERTIES_PATH);
-    properties.put(CAMUNDA_ENGINE_NAME, ENGINE_NAME);
+    properties.put(FLOWEE_BPMS_ENGINE_NAME, ENGINE_NAME);
     return properties;
   });
 
