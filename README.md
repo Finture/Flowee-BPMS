@@ -58,7 +58,7 @@ To run the tests in this repository, please see our [testing tips and tricks](TE
 
 ## Migration
 
-To migrate from Camunda BPM 7 to Flowee BPMS, please see our [migration guide](MIGRATION.md).
+To migrate from Camunda BPM 7 to Flowee BPMS, please see our [migration guide](https://bpms.finture.com/update/723_to_07/).
 
 ## License
 

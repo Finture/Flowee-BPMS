@@ -20,14 +20,14 @@ Found a bug in the code or have a feature that you would like to see in the futu
 Try to apply our best practices for creating issues:
 
 * Only Raise an issue if your request requires a code change in Flowee BPMS 7
-  * If you want to contact the Flowee BPMS customer support, please see our [Contact Form](https://finture.com/en/flowee-bpms/#formularz).
-  * If you have an understanding question or need help building your solution, check out our [user forum](https://forum.camunda.io/).
+    * If you want to contact the Flowee BPMS customer support, please see our [Contact Form](https://finture.com/en/flowee-bpms/#formularz).
+    * If you have an understanding question or need help building your solution, check out our [user forum](https://forum.camunda.io/).
 * Create a high-quality issue:
-  * Give enough context so that a person who doesn't know your project can understand your request
-  * Be concise, only add what's needed to understand the core of the request
-  * If you raise a bug report, describe the steps to reproduce the problem
-  * Specify your environment (e.g. Flowee BPMS version, Flowee BPMS modules you use, ...)
-  * Provide code. For a bug report, create a test that reproduces the problem. For feature requests, create mockup code that shows how the feature might look like. Fork our [unit test Github template](https://github.com/camunda/camunda-engine-unittest) to get started quickly.
+    * Give enough context so that a person who doesn't know your project can understand your request
+    * Be concise, only add what's needed to understand the core of the request
+    * If you raise a bug report, describe the steps to reproduce the problem
+    * Specify your environment (e.g. Flowee BPMS version, Flowee BPMS modules you use, ...)
+    * Provide code. For a bug report, create a test that reproduces the problem. For feature requests, create mockup code that shows how the feature might look like. Fork our [unit test Github template](https://github.com/camunda/camunda-engine-unittest) to get started quickly.
 
 
 ## Write code
@@ -63,25 +63,25 @@ In order to build our codebase from source, add the following to your Maven `set
 
 ```xml
 <profiles>
-  <profile>
-    <id>flowee-bpms</id>
-    <repositories>
-      <repository>
-        <id>flowee-bpms-nexus</id>
-        <name>flowee-bpms-nexus</name>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-        <url>https://artifacts.finture.com/artifactory/public/</url>
-      </repository>
-    </repositories>
-  </profile>
+    <profile>
+        <id>flowee-bpms</id>
+        <repositories>
+            <repository>
+                <id>flowee-bpms-nexus</id>
+                <name>flowee-bpms-nexus</name>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <url>https://artifacts.finture.com/artifactory/public/</url>
+            </repository>
+        </repositories>
+    </profile>
 </profiles>
 <activeProfiles>
-  <activeProfile>flowee-bpms</activeProfile>
+<activeProfile>flowee-bpms</activeProfile>
 </activeProfiles>
 ```
 
@@ -98,7 +98,7 @@ Integration tests (e.g. tests that run in an actual application server) are usua
 
 In order to show us your code, you can create a pull request on Github. Do this when your contribution is ready for review, or if you have started with your implementation and want some feedback before you continue. It is always easier to help if we can see your work in progress.
 
-A pull request can be submitted as follows: 
+A pull request can be submitted as follows:
 
 1. [Fork the Flowee BPMS repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) you are contributing to
 1. Commit and push your changes to a branch in your fork
@@ -135,7 +135,7 @@ The Contributor agrees to the following terms and conditions:
 - In this Agreement, the Contributor shall mean the owner of the Contribution.
 - The term "Contribution" shall mean any original work of authorship and any modifications or addition thereof, including software source code, software object code, or the respective documentation, which the Contributor makes available or submits to Finture Sp. z o.o. or any of its Affiliates for inclusion into software development projects managed or owned by Finture Sp. z o.o.. Contributions shall not include any software or documentation which have been explicitly marked to indicate that it is not a Contribution to Flowee BPMS.
 - “Submit” shall mean any form of communication sent to Finture Sp. z o.o., including but not limited to communication on mailing lists, source code control, or issue tracking systems.
-- “Submission Date” shall mean the date on which the Contributor first time submits their Contributions to Flowee BPMS. 
+- “Submission Date” shall mean the date on which the Contributor first time submits their Contributions to Flowee BPMS.
 2. Grant of Copyright License: The Contributor hereby grants to Finture Sp. z o.o. and recipients of software distributed by Finture Sp. z o.o., the worldwide, non-exclusive, transferable, irrevocable, no-charge, perpetual, royalty-free right to use, to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute the Contributions and any derivative works thereof. Finture Sp. z o.o. shall be put in the position of an owner of the Contribution as far as legally possible. The Contributor also grants Finture Sp. z o.o. the right to make changes and amendments to the Contribution(s) submitted. The Contributor agrees that Finture Sp. z o.o. will not explicitly name the Contributor in connection with their Contribution and that they will not assert any moral rights in their contribution against Flowee BPMS or Flowee BPMS´s sublicensees.
 
 3. Grant of Patent License: The Contributor hereby grants to Finture Sp. z o.o. and recipients of software distributed by Finture Sp. z o.o., the worldwide, non-exclusive, transferable, irrevocable, no-charge, perpetual, royalty-free patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the work, where such license applies only to those patent claims licensable by the Contributor that is necessarily infringed by his Contribution(s) alone or by the combination of their Contribution(s) with the work to which such Contribution(s) was submitted.
@@ -192,7 +192,7 @@ One of the following:
 * refactor
 * test (when adding missing tests)
 * chore (maintain)
- 
+
 ## \<scope\>
 
 The scope is the module that is changed by the commit. E.g. `engine` in the case of https://github.com/Finture/Flowee-BPMS/tree/master/engine.
@@ -203,13 +203,13 @@ A brief summary of the change. Use imperative form (e.g. *implement* instead of 
 
 ## \<body\>
 
-A list of bullet points giving a high-level overview of the contribution, e.g. which strategy was used for implementing the feature. Use present tense here (e.g. *implements* instead of *implemented*). A line in the body shall not exceed 80 characters. For small changes, the body can be omitted. 
+A list of bullet points giving a high-level overview of the contribution, e.g. which strategy was used for implementing the feature. Use present tense here (e.g. *implements* instead of *implemented*). A line in the body shall not exceed 80 characters. For small changes, the body can be omitted.
 
 ## \<footer\>
 
 # Review process
 
-We usually check for new community-submitted pull requests once a week. We will then assign a reviewer from our development team and that person will provide feedback as soon as possible. 
+We usually check for new community-submitted pull requests once a week. We will then assign a reviewer from our development team and that person will provide feedback as soon as possible.
 
 Note that due to other responsibilities (our own implementation tasks, releases), feedback can sometimes be a bit delayed. Especially for larger contributions, it can take a bit until we have the time to assess your code properly.
 
