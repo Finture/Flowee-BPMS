@@ -19,7 +19,7 @@ package com.finture.bpm.spring.boot.starter.configuration.impl;
 import static org.junit.Assert.assertEquals;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.util.SpringBootStarterException;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,20 +28,20 @@ public class GenericPropertiesConfigurationTest {
 
   private SpringProcessEngineConfiguration processEngineConfiguration;
   private GenericPropertiesConfiguration genericPropertiesConfiguration;
-  private CamundaBpmProperties camundaBpmProperties;
+  private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
 
   @Before
   public void init() {
     processEngineConfiguration = new SpringProcessEngineConfiguration();
     genericPropertiesConfiguration = new GenericPropertiesConfiguration();
-    camundaBpmProperties = new CamundaBpmProperties();
-    genericPropertiesConfiguration.camundaBpmProperties = camundaBpmProperties;
+    floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
+    genericPropertiesConfiguration.floweeBPMSBpmProperties = floweeBPMSBpmProperties;
   }
 
   @Test
   public void genericBindingTestWithType() {
     final int batchPollTimeValue = Integer.MAX_VALUE;
-    camundaBpmProperties.getGenericProperties().getProperties().put("batch-poll-time", batchPollTimeValue);
+    floweeBPMSBpmProperties.getGenericProperties().getProperties().put("batch-poll-time", batchPollTimeValue);
     genericPropertiesConfiguration.preInit(processEngineConfiguration);
     assertEquals(batchPollTimeValue, processEngineConfiguration.getBatchPollTime());
   }
@@ -49,7 +49,7 @@ public class GenericPropertiesConfigurationTest {
   @Test
   public void genericBindingTestAsString() {
     final int batchPollTimeValue = Integer.MAX_VALUE;
-    camundaBpmProperties.getGenericProperties().getProperties().put("batch-poll-time", Integer.valueOf(batchPollTimeValue).toString());
+    floweeBPMSBpmProperties.getGenericProperties().getProperties().put("batch-poll-time", Integer.valueOf(batchPollTimeValue).toString());
     genericPropertiesConfiguration.preInit(processEngineConfiguration);
     assertEquals(batchPollTimeValue, processEngineConfiguration.getBatchPollTime());
   }
@@ -57,7 +57,7 @@ public class GenericPropertiesConfigurationTest {
   @Test(expected = SpringBootStarterException.class)
   public void genericBindingTestWithNotExistingProperty() {
     final int dontExistValue = Integer.MAX_VALUE;
-    camundaBpmProperties.getGenericProperties().getProperties().put("dont-exist", dontExistValue);
+    floweeBPMSBpmProperties.getGenericProperties().getProperties().put("dont-exist", dontExistValue);
     genericPropertiesConfiguration.preInit(processEngineConfiguration);
   }
 }

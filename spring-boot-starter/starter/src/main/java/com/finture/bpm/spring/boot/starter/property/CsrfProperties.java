@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 /**
  * @author Nikola Koevski

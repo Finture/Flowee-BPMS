@@ -18,8 +18,6 @@ package com.finture.connect.spi;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Set;
-
 import com.finture.connect.Connectors;
 import com.finture.connect.dummy.DummyConnector;
 import org.junit.Test;

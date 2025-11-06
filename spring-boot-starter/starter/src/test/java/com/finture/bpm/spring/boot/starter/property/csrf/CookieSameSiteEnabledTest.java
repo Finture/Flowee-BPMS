@@ -24,7 +24,7 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.csrf.enableSameSiteCookie=true"
+  "flowee-bpms.bpm.webapp.csrf.enableSameSiteCookie=true"
 })
 public class CookieSameSiteEnabledTest extends ParsePropertiesHelper {
 

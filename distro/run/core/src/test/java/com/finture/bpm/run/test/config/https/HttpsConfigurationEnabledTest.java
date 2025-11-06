@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import com.finture.bpm.run.CamundaBpmRun;
+import com.finture.bpm.run.FloweeBPMSBpmRun;
 import com.finture.bpm.run.test.AbstractRestTest;
 import com.finture.bpm.run.test.util.TestUtils;
 import org.junit.Before;
@@ -36,7 +36,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.ResourceAccessException;
 
-@SpringBootTest(classes = { CamundaBpmRun.class }, webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = { FloweeBPMSBpmRun.class }, webEnvironment = WebEnvironment.DEFINED_PORT)
 @ActiveProfiles(profiles = { "test-https-enabled" }, inheritProfiles = true)
 public class HttpsConfigurationEnabledTest extends AbstractRestTest {
   

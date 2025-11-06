@@ -22,7 +22,7 @@ import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@TestPropertySource(properties = {"camunda.bpm.client.foo=bar"})
+@TestPropertySource(properties = {"flowee-bpms.bpm.client.foo=bar"})
 public class DefaultClientConfigurationTest extends ParsePropertiesHelper {
 
   @Test

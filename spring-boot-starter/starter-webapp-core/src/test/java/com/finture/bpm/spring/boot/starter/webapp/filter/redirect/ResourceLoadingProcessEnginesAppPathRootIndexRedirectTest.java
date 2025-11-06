@@ -35,9 +35,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = { FilterTestApp.class},
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     properties = {
-        "camunda.bpm.webapp.application-path=/",
-        "camunda.bpm.webapp.index-redirect-enabled=true",
-        "camunda.bpm.admin-user.id=admin" })
+        "flowee-bpms.bpm.webapp.application-path=/",
+        "flowee-bpms.bpm.webapp.index-redirect-enabled=true",
+        "flowee-bpms.bpm.admin-user.id=admin" })
 @DirtiesContext
 public class ResourceLoadingProcessEnginesAppPathRootIndexRedirectTest {
 

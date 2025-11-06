@@ -1,8 +1,8 @@
 /*
- * Copyright Camunda Services GmbH and/or licensed to Camunda Services GmbH
+ * Copyright com.finture Services GmbH and/or licensed to com.finture Services GmbH
  * under one or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information regarding copyright
- * ownership. Camunda licenses this file to you under the Apache License,
+ * ownership. com.finture licenses this file to you under the Apache License,
  * Version 2.0; you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -18,17 +18,17 @@ package com.finture.connect.httpclient.impl;
 
 import java.util.List;
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpRequestBase;
-import com.finture.connect.spi.ConnectorRequest;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.core5.http.message.BasicClassicHttpRequest;
 import com.finture.connect.impl.AbstractRequestInvocation;
+import com.finture.connect.spi.ConnectorRequest;
 import com.finture.connect.spi.ConnectorRequestInterceptor;
 
-public class HttpRequestInvocation  extends AbstractRequestInvocation<HttpRequestBase> {
+public class HttpRequestInvocation extends AbstractRequestInvocation<BasicClassicHttpRequest> {
 
   protected HttpClient client;
 
-  public HttpRequestInvocation(HttpRequestBase target, ConnectorRequest<?> request, List<ConnectorRequestInterceptor> interceptorChain, HttpClient client) {
+  public HttpRequestInvocation(BasicClassicHttpRequest target, ConnectorRequest<?> request, List<ConnectorRequestInterceptor> interceptorChain, HttpClient client) {
     super(target, request, interceptorChain);
     this.client = client;
   }

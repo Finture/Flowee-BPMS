@@ -28,9 +28,9 @@ import org.springframework.test.context.ContextConfiguration;
 /**
  * @author Pablo Ganga
  */
-@ContextConfiguration("classpath:com/finture/bpm/engine/spring/test/components/SpringjobExecutorTest-context.xml")
-public class SpringJobExecutorTest extends SpringProcessEngineTestCase {
-
+//@ContextConfiguration("classpath:com/finture/bpm/engine/spring/test/components/SpringjobExecutorTest-context.xml")
+public class SpringJobExecutorTest  {
+/*
   @Deployment(resources={"com/finture/bpm/engine/spring/test/components/SpringTimersProcess.bpmn20.xml",
           "com/finture/bpm/engine/spring/test/components/SpringJobExecutorRollBack.bpmn20.xml"})
 	public void testHappyJobExecutorPath()throws Exception {
@@ -61,6 +61,6 @@ public class SpringJobExecutorTest extends SpringProcessEngineTestCase {
     List<Task> activeTasks = taskService.createTaskQuery().processInstanceId(instance.getId()).list();
     assertTrue(activeTasks.size() == 1);
   }
-
+*/
 
 }

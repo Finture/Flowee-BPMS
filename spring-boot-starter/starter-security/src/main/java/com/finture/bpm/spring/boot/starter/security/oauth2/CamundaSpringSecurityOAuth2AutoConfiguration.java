@@ -21,8 +21,8 @@ import jakarta.servlet.DispatcherType;
 import jakarta.servlet.Filter;
 import com.finture.bpm.engine.rest.security.auth.ProcessEngineAuthenticationFilter;
 import com.finture.bpm.engine.spring.SpringProcessEngineServicesConfiguration;
-import com.finture.bpm.spring.boot.starter.CamundaBpmAutoConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.WebappProperty;
 import com.finture.bpm.spring.boot.starter.security.oauth2.impl.AuthorizeTokenFilter;
 import com.finture.bpm.spring.boot.starter.security.oauth2.impl.OAuth2AuthenticationProvider;
@@ -55,8 +55,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import java.util.Map;
 
 @AutoConfigureOrder(CamundaSpringSecurityOAuth2AutoConfiguration.CAMUNDA_OAUTH2_ORDER)
-@AutoConfigureAfter({ CamundaBpmAutoConfiguration.class, SpringProcessEngineServicesConfiguration.class })
-@ConditionalOnBean(CamundaBpmProperties.class)
+@AutoConfigureAfter({ FloweeBPMSBpmAutoConfiguration.class, SpringProcessEngineServicesConfiguration.class })
+@ConditionalOnBean(FloweeBPMSBpmProperties.class)
 @Conditional(ClientsConfiguredCondition.class)
 @EnableConfigurationProperties(OAuth2Properties.class)
 public class CamundaSpringSecurityOAuth2AutoConfiguration {
@@ -66,7 +66,7 @@ public class CamundaSpringSecurityOAuth2AutoConfiguration {
   private final OAuth2Properties oAuth2Properties;
   private final String webappPath;
 
-  public CamundaSpringSecurityOAuth2AutoConfiguration(CamundaBpmProperties properties,
+  public CamundaSpringSecurityOAuth2AutoConfiguration(FloweeBPMSBpmProperties properties,
                                                       OAuth2Properties oAuth2Properties) {
     this.oAuth2Properties = oAuth2Properties;
     WebappProperty webapp = properties.getWebapp();

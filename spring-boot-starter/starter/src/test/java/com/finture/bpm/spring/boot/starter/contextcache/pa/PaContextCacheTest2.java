@@ -42,8 +42,8 @@ import static com.finture.bpm.engine.test.assertions.bpmn.AbstractAssertions.ini
 @SpringBootTest(
   classes = { TestProcessApplication.class },
   properties = {
-    "camunda.bpm.generate-unique-process-engine-name=true",
-    "camunda.bpm.generate-unique-process-application-name=true",
+    "flowee-bpms.bpm.generate-unique-process-engine-name=true",
+    "flowee-bpms.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
     "paTest2Property=paTest2Value"
   },

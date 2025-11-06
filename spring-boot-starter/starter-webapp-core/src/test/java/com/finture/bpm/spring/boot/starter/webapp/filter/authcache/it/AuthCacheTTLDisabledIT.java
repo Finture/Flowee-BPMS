@@ -40,9 +40,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { FilterTestApp.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {
-  "camunda.bpm.admin-user.id=demo",
-  "camunda.bpm.admin-user.password=demo",
-  "camunda.bpm.webapp.auth.cache.ttl-enabled=false"
+  "flowee-bpms.bpm.admin-user.id=demo",
+  "flowee-bpms.bpm.admin-user.password=demo",
+  "flowee-bpms.bpm.webapp.auth.cache.ttl-enabled=false"
 })
 @DirtiesContext
 public class AuthCacheTTLDisabledIT {

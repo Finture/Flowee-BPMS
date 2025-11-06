@@ -29,7 +29,7 @@ import com.finture.bpm.engine.impl.jobexecutor.JobHandler;
 import com.finture.bpm.engine.impl.jobexecutor.NotifyAcquisitionRejectedJobsHandler;
 import com.finture.bpm.engine.impl.jobexecutor.RejectedJobsHandler;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.test.nonpa.TestApplication;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,14 +49,14 @@ public class DefaultJobConfigurationTest {
 
   private final SpringProcessEngineConfiguration processEngineConfiguration = new SpringProcessEngineConfiguration();
   private final DefaultJobConfiguration jobConfiguration = new DefaultJobConfiguration();
-  private final CamundaBpmProperties properties = new CamundaBpmProperties();
+  private final FloweeBPMSBpmProperties properties = new FloweeBPMSBpmProperties();
 
   @Autowired
   JobExecutor jobExecutor;
 
   @Before
   public void setUp() {
-    setField(jobConfiguration, "camundaBpmProperties", properties);
+    setField(jobConfiguration, "floweeBPMSBpmProperties", properties);
   }
 
   @Test

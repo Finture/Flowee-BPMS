@@ -6,7 +6,7 @@
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-parent</artifactId>
     <relativePath>../parent/pom.xml</relativePath>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>flowee-bpms-database-settings</artifactId>
@@ -28,7 +28,7 @@
     <version.liquibase>4.8.0</version.liquibase>
 
     <!-- needed for sql script and backward compatibility checks -->
-    <flowee-bpms.version.old>7.23.0</flowee-bpms.version.old>
+    <flowee-bpms.version.old>0.7.2</flowee-bpms.version.old>
 
     <!-- Testcontainers JDBC URL parameters. By default, an empty string -->
     <database.tc.params />

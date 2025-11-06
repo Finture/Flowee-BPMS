@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>flowee-bpms-bpm-assert-qa</artifactId>
   <packaging>jar</packaging>
-  
+
   <name>Flowee BPMS Platform - QA - Assert</name>
 
   <parent>
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-bpm-assert-root</artifactId>
     <relativePath>../pom.xml</relativePath>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <dependencies>

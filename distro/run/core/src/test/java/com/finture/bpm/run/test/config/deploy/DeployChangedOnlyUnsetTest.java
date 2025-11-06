@@ -16,7 +16,7 @@
  */
 package com.finture.bpm.run.test.config.deploy;
 
-import com.finture.bpm.run.CamundaBpmRunProcessEngineConfiguration;
+import com.finture.bpm.run.FloweeBPMSBpmRunProcessEngineConfiguration;
 import com.finture.bpm.run.test.AbstractRestTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DeployChangedOnlyUnsetTest extends AbstractRestTest {
 
   @Autowired
-  private CamundaBpmRunProcessEngineConfiguration engineConfig;
+  private FloweeBPMSBpmRunProcessEngineConfiguration engineConfig;
 
   @Test
   public void shouldEnableDeployChangedOnlyOnCamundaRunProperty() {

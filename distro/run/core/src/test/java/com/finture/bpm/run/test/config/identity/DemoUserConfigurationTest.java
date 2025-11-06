@@ -25,8 +25,8 @@ import com.finture.bpm.engine.ProcessEngine;
 import com.finture.bpm.engine.identity.User;
 import com.finture.bpm.engine.identity.UserQuery;
 import com.finture.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin;
-import com.finture.bpm.run.CamundaBpmRun;
-import com.finture.bpm.run.property.CamundaBpmRunLdapProperties;
+import com.finture.bpm.run.FloweeBPMSBpmRun;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunLdapProperties;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,7 +38,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { CamundaBpmRun.class })
+@SpringBootTest(classes = { FloweeBPMSBpmRun.class })
 @ActiveProfiles(profiles = { "test-auth-disabled", "test-demo-user" })
 public class DemoUserConfigurationTest {
 
@@ -47,7 +47,7 @@ public class DemoUserConfigurationTest {
   IdentityService identityService;
 
   @Autowired(required = false)
-  CamundaBpmRunLdapProperties props;
+  FloweeBPMSBpmRunLdapProperties props;
 
   @Autowired(required = false)
   LdapIdentityProviderPlugin ldapPlugin;

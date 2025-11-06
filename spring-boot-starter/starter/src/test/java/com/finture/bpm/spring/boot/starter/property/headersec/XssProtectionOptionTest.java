@@ -24,7 +24,7 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.headerSecurity.xssProtectionOption=anOption"
+  "flowee-bpms.bpm.webapp.headerSecurity.xssProtectionOption=anOption"
 })
 public class XssProtectionOptionTest extends ParsePropertiesHelper {
 

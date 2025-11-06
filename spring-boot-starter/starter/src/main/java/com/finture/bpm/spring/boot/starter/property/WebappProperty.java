@@ -18,13 +18,13 @@ package com.finture.bpm.spring.boot.starter.property;
 
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 public class WebappProperty {
 
   public static final String DEFAULT_APP_PATH = "/camunda";
 
-  public static final String PREFIX = CamundaBpmProperties.PREFIX + ".webapp";
+  public static final String PREFIX = FloweeBPMSBpmProperties.PREFIX + ".webapp";
 
   protected boolean indexRedirectEnabled = true;
 

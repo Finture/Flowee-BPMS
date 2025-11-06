@@ -41,8 +41,8 @@ public class ClientRule extends ExternalResource {
 
   public ClientRule(Properties properties) {
     this(() -> {
-      String endpoint = properties.getProperty(CAMUNDA_ENGINE_REST);
-      String engine = properties.getProperty(CAMUNDA_ENGINE_NAME);
+      String endpoint = properties.getProperty(FLOWEE_BPMS_ENGINE_REST);
+      String engine = properties.getProperty(FLOWEE_BPMS_ENGINE_NAME);
       return ExternalTaskClient.create()
           .baseUrl(endpoint + engine)
           .lockDuration(LOCK_DURATION);

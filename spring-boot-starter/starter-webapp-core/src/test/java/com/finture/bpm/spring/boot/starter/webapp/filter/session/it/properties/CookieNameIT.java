@@ -32,7 +32,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { FilterTestApp.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.session-cookie.cookieName=myFancyCookieName",
+  "flowee-bpms.bpm.webapp.session-cookie.cookieName=myFancyCookieName",
   "server.servlet.session.cookie.name=myFancyCookieName"
 })
 @DirtiesContext

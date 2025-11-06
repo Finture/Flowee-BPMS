@@ -1,4 +1,4 @@
-import org.camunda.spin.DataFormats.json as json;
+import com.finture.spin.DataFormats.json as json;
 
 json1 = S(input, json())
 

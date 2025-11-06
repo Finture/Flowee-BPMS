@@ -18,9 +18,9 @@ package com.finture.bpm.spring.boot.starter.configuration.id;
 
 import com.finture.bpm.engine.ProcessEngine;
 import com.finture.bpm.engine.impl.cfg.IdGenerator;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.test.nonpa.TestApplication;
-import com.finture.bpm.spring.boot.starter.util.CamundaSpringBootUtil;
+import com.finture.bpm.spring.boot.starter.util.FloweeBPMSSpringBootUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ import static com.finture.bpm.spring.boot.starter.configuration.id.IdGeneratorCo
 @SpringBootTest(
   classes = {TestApplication.class},
   properties = {
-    "camunda.bpm.id-generator=" + PREFIXED,
+    "flowee-bpms.bpm.id-generator=" + PREFIXED,
     "spring.application.name=myapp"
   })
 public class PrefixedUuidGeneratorIT {
@@ -42,7 +42,7 @@ public class PrefixedUuidGeneratorIT {
   private IdGenerator idGenerator;
 
   @Autowired
-  private CamundaBpmProperties properties;
+  private FloweeBPMSBpmProperties properties;
 
   @Autowired
   private ProcessEngine processEngine;
@@ -54,7 +54,7 @@ public class PrefixedUuidGeneratorIT {
 
   @Test
   public void configured_idGenerator_is_uuid() throws Exception {
-    final IdGenerator idGenerator = CamundaSpringBootUtil.get(processEngine).getIdGenerator();
+    final IdGenerator idGenerator = FloweeBPMSSpringBootUtil.get(processEngine).getIdGenerator();
 
     assertThat(idGenerator).isOfAnyClassIn(PrefixedUuidGenerator.class);
   }

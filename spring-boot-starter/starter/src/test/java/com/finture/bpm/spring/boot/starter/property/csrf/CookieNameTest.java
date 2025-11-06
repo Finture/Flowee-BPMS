@@ -24,7 +24,7 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.csrf.cookieName=myFancyCookie"
+  "flowee-bpms.bpm.webapp.csrf.cookieName=myFancyCookie"
 })
 public class CookieNameTest extends ParsePropertiesHelper {
 

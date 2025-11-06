@@ -38,8 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 @TestPropertySource(properties = {
-    "camunda.bpm.client.basic-auth.username=my-username",
-    "camunda.bpm.client.basic-auth.password=my-password",
+    "flowee-bpms.bpm.client.basic-auth.username=my-username",
+    "flowee-bpms.bpm.client.basic-auth.password=my-password",
 })
 @ContextConfiguration(classes = {
     ParsePropertiesHelper.TestConfig.class,

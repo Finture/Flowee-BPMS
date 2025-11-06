@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.finture.bpm.tomcat</groupId>
     <artifactId>flowee-bpms-tomcat</artifactId>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
   <groupId>com.finture.bpm.webapp</groupId>
   <artifactId>flowee-bpms-webapp-tomcat-jakarta</artifactId>
   <packaging>war</packaging>
-  
+
   <properties>
     <skip-third-party-bom>false</skip-third-party-bom>
 

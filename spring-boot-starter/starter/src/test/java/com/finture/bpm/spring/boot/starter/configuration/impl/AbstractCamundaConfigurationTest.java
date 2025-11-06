@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.finture.bpm.spring.boot.starter.util.CamundaSpringBootUtil.join;
+import static com.finture.bpm.spring.boot.starter.util.FloweeBPMSSpringBootUtil.join;
 
 public class AbstractCamundaConfigurationTest {
 

@@ -30,7 +30,7 @@ import com.finture.bpm.engine.ProcessEngine;
 import com.finture.bpm.engine.filter.Filter;
 import com.finture.bpm.engine.filter.FilterQuery;
 import com.finture.bpm.engine.test.ProcessEngineRule;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.test.helper.StandaloneInMemoryTestConfiguration;
 import com.finture.bpm.spring.boot.starter.util.SpringBootProcessEngineLogger;
 import com.finture.commons.testing.ProcessEngineLoggingRule;
@@ -43,16 +43,16 @@ import java.util.List;
 
 public class CreateFilterConfigurationTest {
 
-  private final CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
+  private final FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
 
   {
-    camundaBpmProperties.getFilter().setCreate("All");
+    floweeBPMSBpmProperties.getFilter().setCreate("All");
   }
 
   private final CreateFilterConfiguration configuration = new CreateFilterConfiguration();
 
   {
-    ReflectionTestUtils.setField(configuration, "camundaBpmProperties", camundaBpmProperties);
+    ReflectionTestUtils.setField(configuration, "floweeBPMSBpmProperties", floweeBPMSBpmProperties);
     configuration.init();
   }
 
@@ -74,9 +74,9 @@ public class CreateFilterConfigurationTest {
   @Test
   public void fail_if_not_configured_onInit() throws Exception {
     thrown.expect(IllegalStateException.class);
-    CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
+    FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
     final CreateFilterConfiguration configuration = new CreateFilterConfiguration();
-    ReflectionTestUtils.setField(configuration, "camundaBpmProperties", camundaBpmProperties);
+    ReflectionTestUtils.setField(configuration, "floweeBPMSBpmProperties", floweeBPMSBpmProperties);
     configuration.init();
   }
 
@@ -84,10 +84,10 @@ public class CreateFilterConfigurationTest {
   public void fail_if_not_configured_onExecution() throws Exception {
     thrown.expect(NullPointerException.class);
 
-    CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
-    camundaBpmProperties.getFilter().setCreate("All");
+    FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
+    floweeBPMSBpmProperties.getFilter().setCreate("All");
     final CreateFilterConfiguration configuration = new CreateFilterConfiguration();
-    ReflectionTestUtils.setField(configuration, "camundaBpmProperties", camundaBpmProperties);
+    ReflectionTestUtils.setField(configuration, "floweeBPMSBpmProperties", floweeBPMSBpmProperties);
     configuration.init();
     configuration.filterName = null;
 
@@ -96,10 +96,10 @@ public class CreateFilterConfigurationTest {
 
   @Test
   public void do_not_create_when_already_exist() throws Exception {
-    CamundaBpmProperties camundaBpmProperties = new CamundaBpmProperties();
-    camundaBpmProperties.getFilter().setCreate("All");
+    FloweeBPMSBpmProperties floweeBPMSBpmProperties = new FloweeBPMSBpmProperties();
+    floweeBPMSBpmProperties.getFilter().setCreate("All");
     final CreateFilterConfiguration configuration = new CreateFilterConfiguration();
-    ReflectionTestUtils.setField(configuration, "camundaBpmProperties", camundaBpmProperties);
+    ReflectionTestUtils.setField(configuration, "floweeBPMSBpmProperties", floweeBPMSBpmProperties);
     configuration.init();
 
     ProcessEngine engine = mock(ProcessEngine.class);

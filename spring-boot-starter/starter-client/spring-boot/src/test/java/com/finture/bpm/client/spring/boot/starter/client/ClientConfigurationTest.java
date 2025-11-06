@@ -23,18 +23,18 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-    "camunda.bpm.client.base-url=base-url",
-    "camunda.bpm.client.worker-id=worker-id",
-    "camunda.bpm.client.max-tasks=111",
-    "camunda.bpm.client.use-priority=false",
-    "camunda.bpm.client.default-serialization-format=serialization-format",
-    "camunda.bpm.client.date-format=date-format",
-    "camunda.bpm.client.async-response-timeout=555",
-    "camunda.bpm.client.lock-duration=777",
-    "camunda.bpm.client.disable-auto-fetching=true",
-    "camunda.bpm.client.disable-backoff-strategy=true",
-    "camunda.bpm.client.basic-auth.username=username",
-    "camunda.bpm.client.basic-auth.password=password",
+    "flowee-bpms.bpm.client.base-url=base-url",
+    "flowee-bpms.bpm.client.worker-id=worker-id",
+    "flowee-bpms.bpm.client.max-tasks=111",
+    "flowee-bpms.bpm.client.use-priority=false",
+    "flowee-bpms.bpm.client.default-serialization-format=serialization-format",
+    "flowee-bpms.bpm.client.date-format=date-format",
+    "flowee-bpms.bpm.client.async-response-timeout=555",
+    "flowee-bpms.bpm.client.lock-duration=777",
+    "flowee-bpms.bpm.client.disable-auto-fetching=true",
+    "flowee-bpms.bpm.client.disable-backoff-strategy=true",
+    "flowee-bpms.bpm.client.basic-auth.username=username",
+    "flowee-bpms.bpm.client.basic-auth.password=password",
 })
 public class ClientConfigurationTest extends ParsePropertiesHelper {
 

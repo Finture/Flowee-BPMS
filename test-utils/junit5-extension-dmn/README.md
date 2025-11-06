@@ -10,8 +10,8 @@ Add the dependency to your pom.xml
 ```xml
     <dependency>
       <groupId>com.finture.bpm.dmn</groupId>
-      <artifactId>camunda-dmn-junit5</artifactId>
-      <version>7.20.0</version>
+      <artifactId>flowee-bpms-dmn-junit5</artifactId>
+      <version>1.0.0</version>
       <scope>test</scope>
     </dependency>
 ```

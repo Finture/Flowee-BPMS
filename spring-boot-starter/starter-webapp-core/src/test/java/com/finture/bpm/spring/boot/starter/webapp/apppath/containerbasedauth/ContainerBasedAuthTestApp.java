@@ -16,13 +16,13 @@
  */
 package com.finture.bpm.spring.boot.starter.webapp.apppath.containerbasedauth;
 
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
-@EnableConfigurationProperties(CamundaBpmProperties.class)
+@EnableConfigurationProperties(FloweeBPMSBpmProperties.class)
 public class ContainerBasedAuthTestApp {
 
   public static void main(String[] args) {

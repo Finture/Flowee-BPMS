@@ -26,7 +26,7 @@ import static com.finture.bpm.engine.ProcessEngineConfiguration.DB_SCHEMA_UPDATE
 import static com.finture.bpm.engine.ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE;
 import static com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.DB_SCHEMA_UPDATE_CREATE;
 import static com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.DB_SCHEMA_UPDATE_DROP_CREATE;
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 public class DatabaseProperty {
   public static final List<String> SCHEMA_UPDATE_VALUES = Arrays.asList(

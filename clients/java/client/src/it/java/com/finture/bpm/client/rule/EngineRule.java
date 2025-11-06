@@ -431,8 +431,8 @@ public class EngineRule extends ExternalResource {
   }
 
   protected String getEngineUrl() {
-    return properties.get("camunda.engine.rest").toString() +
-        properties.get("camunda.engine.name").toString();
+    return properties.get("flowee-bpms.engine.rest").toString() +
+        properties.get("flowee-bpms.engine.name").toString();
   }
 
   protected String toRestApiTypeName(String name) {

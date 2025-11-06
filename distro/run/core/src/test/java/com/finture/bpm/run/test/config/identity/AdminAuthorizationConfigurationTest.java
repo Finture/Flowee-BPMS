@@ -19,9 +19,9 @@ package com.finture.bpm.run.test.config.identity;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.finture.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin;
-import com.finture.bpm.run.CamundaBpmRun;
-import com.finture.bpm.run.property.CamundaBpmRunAdministratorAuthorizationProperties;
-import com.finture.bpm.run.property.CamundaBpmRunProperties;
+import com.finture.bpm.run.FloweeBPMSBpmRun;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunAdministratorAuthorizationProperties;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { CamundaBpmRun.class })
+@SpringBootTest(classes = { FloweeBPMSBpmRun.class })
 @ActiveProfiles(profiles = { "test-auth-enabled" , "test-admin-auth-enabled" })
 public class AdminAuthorizationConfigurationTest {
 
@@ -40,12 +40,12 @@ public class AdminAuthorizationConfigurationTest {
   protected AdministratorAuthorizationPlugin authorizationPlugin;
 
   @Autowired
-  protected CamundaBpmRunProperties properties;
+  protected FloweeBPMSBpmRunProperties properties;
 
   @Test
   public void shouldPickUpConfiguration() {
     // given
-    CamundaBpmRunAdministratorAuthorizationProperties adminProps = properties.getAdminAuth();
+    FloweeBPMSBpmRunAdministratorAuthorizationProperties adminProps = properties.getAdminAuth();
 
     // then
     assertThat(adminProps.isEnabled()).isTrue();

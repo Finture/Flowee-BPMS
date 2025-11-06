@@ -23,7 +23,7 @@ import java.util.List;
 import com.finture.bpm.engine.impl.cfg.CompositeProcessEnginePlugin;
 import com.finture.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import com.finture.bpm.engine.impl.cfg.ProcessEnginePlugin;
-import com.finture.bpm.run.CamundaBpmRun;
+import com.finture.bpm.run.FloweeBPMSBpmRun;
 import com.finture.bpm.spring.boot.starter.spin.SpringBootSpinProcessEnginePlugin;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +36,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { CamundaBpmRun.class })
+@SpringBootTest(classes = { FloweeBPMSBpmRun.class })
 @ActiveProfiles(profiles = { "test-new-plugins", "test-plugins-config-override" }, inheritProfiles = true)
 public class ProcessEnginePluginsConfigurationOverrideTest {
 

@@ -24,10 +24,10 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-  "camunda.bpm.webapp.headerSecurity.xssProtectionValue=aValue",
-  "camunda.bpm.webapp.headerSecurity.contentSecurityPolicyValue=aValue",
-  "camunda.bpm.webapp.headerSecurity.contentTypeOptionsValue=aValue",
-  "camunda.bpm.webapp.headerSecurity.hstsValue=aValue"
+  "flowee-bpms.bpm.webapp.headerSecurity.xssProtectionValue=aValue",
+  "flowee-bpms.bpm.webapp.headerSecurity.contentSecurityPolicyValue=aValue",
+  "flowee-bpms.bpm.webapp.headerSecurity.contentTypeOptionsValue=aValue",
+  "flowee-bpms.bpm.webapp.headerSecurity.hstsValue=aValue"
 })
 public class HttpHeaderSecurityValueTest extends ParsePropertiesHelper {
 

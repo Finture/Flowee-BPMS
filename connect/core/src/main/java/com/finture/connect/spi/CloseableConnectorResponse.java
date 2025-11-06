@@ -27,6 +27,6 @@ package com.finture.connect.spi;
  */
 public interface CloseableConnectorResponse extends ConnectorResponse {
 
-  public void close();
+  void close();
 
 }

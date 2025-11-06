@@ -29,7 +29,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { TestRestApplication.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(properties = {"camunda.bpm.rest-api.fetch-and-lock.queue-capacity=333"})
+@TestPropertySource(properties = {"flowee-bpms.bpm.rest-api.fetch-and-lock.queue-capacity=333"})
 public class FetchAndLockHandlerConfigureQueueCapacityIT {
 
     @Autowired

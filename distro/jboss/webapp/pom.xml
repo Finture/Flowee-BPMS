@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.finture.bpm.jboss</groupId>
     <artifactId>flowee-bpms-jboss</artifactId>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
   <name>Flowee BPMS Platform - webapp - JBoss</name>
   <artifactId>flowee-bpms-webapp-jboss</artifactId>
   <packaging>war</packaging>
-  
+
   <properties>
     <!-- generate a bom of compile time dependencies for the license book.
     Note: Every compile time dependency will end up in the license book. Please

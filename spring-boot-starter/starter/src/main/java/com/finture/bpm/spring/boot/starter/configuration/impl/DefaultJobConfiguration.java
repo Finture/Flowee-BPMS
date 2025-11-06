@@ -16,7 +16,7 @@
  */
 package com.finture.bpm.spring.boot.starter.configuration.impl;
 
-import static com.finture.bpm.spring.boot.starter.util.CamundaSpringBootUtil.join;
+import static com.finture.bpm.spring.boot.starter.util.FloweeBPMSSpringBootUtil.join;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,9 +26,9 @@ import com.finture.bpm.engine.impl.jobexecutor.JobHandler;
 import com.finture.bpm.engine.impl.jobexecutor.NotifyAcquisitionRejectedJobsHandler;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
 import com.finture.bpm.engine.spring.components.jobexecutor.SpringJobExecutor;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaJobConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSJobConfiguration;
 import com.finture.bpm.spring.boot.starter.event.JobExecutorStartingEventListener;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.property.JobExecutionProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -42,7 +42,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 /**
  * Prepares JobExecutor and registers all known custom JobHandlers.
  */
-public class DefaultJobConfiguration extends AbstractCamundaConfiguration implements CamundaJobConfiguration {
+public class DefaultJobConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSJobConfiguration {
 
   @Autowired
   protected JobExecutor jobExecutor;
@@ -67,7 +67,7 @@ public class DefaultJobConfiguration extends AbstractCamundaConfiguration implem
     // note: the job executor will be activated in
     // com.finture.bpm.spring.boot.starter.runlistener.JobExecutorRunListener
     configuration.setJobExecutorActivate(false);
-    configuration.setJobExecutorDeploymentAware(camundaBpmProperties.getJobExecution().isDeploymentAware());
+    configuration.setJobExecutorDeploymentAware(floweeBPMSBpmProperties.getJobExecution().isDeploymentAware());
     configuration.setJobExecutor(jobExecutor);
 
   }
@@ -78,8 +78,8 @@ public class DefaultJobConfiguration extends AbstractCamundaConfiguration implem
 
     @Bean(name = CAMUNDA_TASK_EXECUTOR_QUALIFIER)
     @ConditionalOnMissingBean(name = CAMUNDA_TASK_EXECUTOR_QUALIFIER)
-    @ConditionalOnProperty(prefix = "camunda.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
-    public static TaskExecutor camundaTaskExecutor(CamundaBpmProperties properties) {
+    @ConditionalOnProperty(prefix = "flowee-bpms.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
+    public static TaskExecutor camundaTaskExecutor(FloweeBPMSBpmProperties properties) {
       int corePoolSize = properties.getJobExecution().getCorePoolSize();
       int maxPoolSize = properties.getJobExecution().getMaxPoolSize();
       int queueCapacity = properties.getJobExecution().getQueueCapacity();
@@ -99,8 +99,8 @@ public class DefaultJobConfiguration extends AbstractCamundaConfiguration implem
 
     @Bean
     @ConditionalOnMissingBean(JobExecutor.class)
-    @ConditionalOnProperty(prefix = "camunda.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
-    public static JobExecutor jobExecutor(@Qualifier(CAMUNDA_TASK_EXECUTOR_QUALIFIER) final TaskExecutor taskExecutor, CamundaBpmProperties properties) {
+    @ConditionalOnProperty(prefix = "flowee-bpms.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
+    public static JobExecutor jobExecutor(@Qualifier(CAMUNDA_TASK_EXECUTOR_QUALIFIER) final TaskExecutor taskExecutor, FloweeBPMSBpmProperties properties) {
       final SpringJobExecutor springJobExecutor = new SpringJobExecutor();
       springJobExecutor.setTaskExecutor(taskExecutor);
       springJobExecutor.setRejectedJobsHandler(new NotifyAcquisitionRejectedJobsHandler());
@@ -119,7 +119,7 @@ public class DefaultJobConfiguration extends AbstractCamundaConfiguration implem
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = "camunda.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "flowee-bpms.bpm.job-execution", name = "enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnBean(JobExecutor.class)
     public static JobExecutorStartingEventListener jobExecutorStartingEventListener() {
       return new JobExecutorStartingEventListener();

@@ -17,9 +17,9 @@
 package com.finture.connect.httpclient.soap.impl;
 
 import com.finture.connect.httpclient.soap.SoapHttpConnector;
-import com.finture.connect.spi.ConnectorProvider;
+import com.finture.connect.httpclient.soap.SoapHttpConnectorProvider;
 
-public class SoapHttpConnectorProviderImpl implements ConnectorProvider {
+public class SoapHttpConnectorProviderImpl implements SoapHttpConnectorProvider {
 
   public String getConnectorId() {
     return SoapHttpConnector.ID;

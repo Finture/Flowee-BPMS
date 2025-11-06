@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.finture.bpm.run</groupId>
     <artifactId>flowee-bpms-bpm-run-modules</artifactId>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
   <artifactId>flowee-bpms-bpm-run-modules-rest</artifactId>
   <name>Flowee BPMS Platform - Run - Module REST</name>
   <packaging>pom</packaging>
-  
+
   <properties>
     <!-- generate a bom of compile time dependencies for the license book.
     Note: Every compile time dependency will end up in the license book. Please

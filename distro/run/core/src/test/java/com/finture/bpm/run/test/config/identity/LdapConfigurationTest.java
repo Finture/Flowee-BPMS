@@ -19,8 +19,8 @@ package com.finture.bpm.run.test.config.identity;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.finture.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin;
-import com.finture.bpm.run.CamundaBpmRun;
-import com.finture.bpm.run.property.CamundaBpmRunLdapProperties;
+import com.finture.bpm.run.FloweeBPMSBpmRun;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunLdapProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { CamundaBpmRun.class })
+@SpringBootTest(classes = { FloweeBPMSBpmRun.class })
 @ActiveProfiles(profiles = { "test-auth-disabled" , "test-ldap-enabled", "test-ldap-auth-exception" })
 public class LdapConfigurationTest {
 
   @Autowired
-  CamundaBpmRunLdapProperties props;
+  FloweeBPMSBpmRunLdapProperties props;
 
   @Autowired
   LdapIdentityProviderPlugin plugin;

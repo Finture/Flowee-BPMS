@@ -18,7 +18,7 @@ package com.finture.bpm.spring.boot.starter.configuration.id;
 
 import com.finture.bpm.engine.impl.cfg.IdGenerator;
 import com.finture.bpm.engine.impl.persistence.StrongUuidGenerator;
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -35,7 +35,7 @@ public class IdGeneratorConfiguration {
 
   @Bean
   @ConditionalOnMissingBean(IdGenerator.class)
-  @ConditionalOnProperty(prefix = CamundaBpmProperties.PREFIX, name = PROPERTY_NAME, havingValue = STRONG, matchIfMissing = true)
+  @ConditionalOnProperty(prefix = FloweeBPMSBpmProperties.PREFIX, name = PROPERTY_NAME, havingValue = STRONG, matchIfMissing = true)
   public IdGenerator strongUuidGenerator() {
     return new StrongUuidGenerator();
   }
@@ -43,7 +43,7 @@ public class IdGeneratorConfiguration {
 
   @Bean
   @ConditionalOnMissingBean(IdGenerator.class)
-  @ConditionalOnProperty(prefix = CamundaBpmProperties.PREFIX, name = PROPERTY_NAME, havingValue = PREFIXED)
+  @ConditionalOnProperty(prefix = FloweeBPMSBpmProperties.PREFIX, name = PROPERTY_NAME, havingValue = PREFIXED)
   public IdGenerator prefixedUuidGenerator(@Value("${spring.application.name}") String applicationName) {
     return new PrefixedUuidGenerator(applicationName);
   }

@@ -1,4 +1,4 @@
-import org.camunda.spin.DataFormats.xml as xml;
+import com.finture.spin.DataFormats.xml as xml;
 
 xml1 = S(input, xml())
 

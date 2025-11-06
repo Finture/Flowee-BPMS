@@ -19,14 +19,14 @@ package com.finture.bpm.spring.boot.starter.configuration.impl;
 import com.finture.bpm.engine.impl.bpmn.parser.DefaultFailedJobParseListener;
 import com.finture.bpm.engine.impl.jobexecutor.DefaultFailedJobCommandFactory;
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaFailedJobConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSFailedJobConfiguration;
 
 import java.util.ArrayList;
 
 /**
  * Register parseListener to setup failed job retry specification.
  */
-public class DefaultFailedJobConfiguration extends AbstractCamundaConfiguration implements CamundaFailedJobConfiguration {
+public class DefaultFailedJobConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSFailedJobConfiguration {
 
   @Override
   public void preInit(SpringProcessEngineConfiguration configuration) {

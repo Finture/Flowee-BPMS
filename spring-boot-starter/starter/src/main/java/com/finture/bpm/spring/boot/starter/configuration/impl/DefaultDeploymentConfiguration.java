@@ -17,7 +17,7 @@
 package com.finture.bpm.spring.boot.starter.configuration.impl;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaDeploymentConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSDeploymentConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -33,12 +33,12 @@ import java.util.stream.Collectors;
 
 import static java.util.Collections.EMPTY_SET;
 
-public class DefaultDeploymentConfiguration extends AbstractCamundaConfiguration implements CamundaDeploymentConfiguration {
+public class DefaultDeploymentConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSDeploymentConfiguration {
   private final Logger logger = LoggerFactory.getLogger(DefaultDeploymentConfiguration.class);
 
   @Override
   public void preInit(SpringProcessEngineConfiguration configuration) {
-    if (camundaBpmProperties.isAutoDeploymentEnabled()) {
+    if (floweeBPMSBpmProperties.isAutoDeploymentEnabled()) {
       final Set<Resource> resources = getDeploymentResources();
       configuration.setDeploymentResources(resources.toArray(new Resource[resources.size()]));
       LOG.autoDeployResources(resources);
@@ -51,7 +51,7 @@ public class DefaultDeploymentConfiguration extends AbstractCamundaConfiguration
     final ResourceArrayPropertyEditor resolver = new ResourceArrayPropertyEditor();
 
     try {
-      final String[] resourcePattern = camundaBpmProperties.getDeploymentResourcePattern();
+      final String[] resourcePattern = floweeBPMSBpmProperties.getDeploymentResourcePattern();
       logger.debug("resolving deployment resources for pattern {}", (Object[]) resourcePattern);
       resolver.setValue(resourcePattern);
 

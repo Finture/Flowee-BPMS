@@ -18,13 +18,13 @@ package com.finture.bpm.spring.boot.starter.configuration.impl;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
 import com.finture.bpm.spring.boot.starter.property.AuthorizationProperty;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaAuthorizationConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSAuthorizationConfiguration;
 
-public class DefaultAuthorizationConfiguration extends AbstractCamundaConfiguration implements CamundaAuthorizationConfiguration {
+public class DefaultAuthorizationConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSAuthorizationConfiguration {
 
   @Override
   public void preInit(final SpringProcessEngineConfiguration configuration) {
-    final AuthorizationProperty authorization = camundaBpmProperties.getAuthorization();
+    final AuthorizationProperty authorization = floweeBPMSBpmProperties.getAuthorization();
     configuration.setAuthorizationEnabled(authorization.isEnabled());
     configuration.setAuthorizationEnabledForCustomCode(authorization.isEnabledForCustomCode());
     configuration.setAuthorizationCheckRevokes(authorization.getAuthorizationCheckRevokes());

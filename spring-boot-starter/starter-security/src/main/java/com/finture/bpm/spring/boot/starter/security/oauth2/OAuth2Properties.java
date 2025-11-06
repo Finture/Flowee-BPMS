@@ -16,7 +16,7 @@
  */
 package com.finture.bpm.spring.boot.starter.security.oauth2;
 
-import com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties;
+import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import com.finture.bpm.spring.boot.starter.security.oauth2.impl.OAuth2IdentityProvider;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
@@ -24,7 +24,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 @ConfigurationProperties(OAuth2Properties.PREFIX)
 public class OAuth2Properties {
 
-  public static final String PREFIX = CamundaBpmProperties.PREFIX + ".oauth2";
+  public static final String PREFIX = FloweeBPMSBpmProperties.PREFIX + ".oauth2";
 
   /**
    * OAuth2 SSO logout properties.

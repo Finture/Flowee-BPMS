@@ -16,7 +16,7 @@
  */
 package com.finture.bpm.run.test.config.rest;
 
-import com.finture.bpm.run.property.CamundaBpmRunRestProperties;
+import com.finture.bpm.run.property.FloweeBPMSBpmRunRestProperties;
 import com.finture.bpm.run.test.AbstractRestTest;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@TestPropertySource(properties = { CamundaBpmRunRestProperties.PREFIX + ".disable-wadl=false" })
+@TestPropertySource(properties = { FloweeBPMSBpmRunRestProperties.PREFIX + ".disable-wadl=false" })
 public class WadlEnabledTest extends AbstractRestTest {
 
   @Test

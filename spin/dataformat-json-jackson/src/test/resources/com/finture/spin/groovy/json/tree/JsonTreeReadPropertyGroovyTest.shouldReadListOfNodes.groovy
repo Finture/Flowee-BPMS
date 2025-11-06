@@ -1,4 +1,4 @@
-package org.camunda.spin.groovy.json.tree
+package com.finture.spin.groovy.json.tree
 
 node = S(input, "application/json")
 list = node.fieldNames()

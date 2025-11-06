@@ -17,18 +17,18 @@
 package com.finture.bpm.spring.boot.starter.configuration.impl;
 
 import com.finture.bpm.engine.spring.SpringProcessEngineConfiguration;
-import com.finture.bpm.spring.boot.starter.configuration.CamundaMetricsConfiguration;
+import com.finture.bpm.spring.boot.starter.configuration.FloweeBPMSMetricsConfiguration;
 import com.finture.bpm.spring.boot.starter.property.MetricsProperty;
 
 import jakarta.annotation.PostConstruct;
 
-public class DefaultMetricsConfiguration extends AbstractCamundaConfiguration implements CamundaMetricsConfiguration {
+public class DefaultMetricsConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSMetricsConfiguration {
 
   private MetricsProperty metrics;
 
   @PostConstruct
   void init() {
-    metrics = camundaBpmProperties.getMetrics();
+    metrics = floweeBPMSBpmProperties.getMetrics();
   }
 
   @Override

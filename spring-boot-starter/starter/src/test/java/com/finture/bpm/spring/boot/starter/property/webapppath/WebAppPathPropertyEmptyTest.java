@@ -23,7 +23,7 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-    "camunda.bpm.webapp.applicationPath=",
+    "flowee-bpms.bpm.webapp.applicationPath=",
 })
 public class WebAppPathPropertyEmptyTest extends ParsePropertiesHelper {
 

@@ -18,7 +18,7 @@ package com.finture.bpm.spring.boot.starter.property;
 
 import org.apache.commons.lang3.BooleanUtils;
 
-import static com.finture.bpm.spring.boot.starter.property.CamundaBpmProperties.joinOn;
+import static com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties.joinOn;
 
 /**
  * Properties controlling spring eventing.
