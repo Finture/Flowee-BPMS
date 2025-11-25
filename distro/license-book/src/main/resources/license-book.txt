@@ -2836,43 +2836,43 @@ Copyright 2002-present the original author or authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-common-ee-dependency-management:pom:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/boms/common-ee
+org.wildfly:wildfly-common-ee-dependency-management:pom:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/boms/common-ee
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-common-expansion-dependency-management:pom:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/boms/common-expansion
+org.wildfly:wildfly-common-expansion-dependency-management:pom:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/boms/common-expansion
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-dist:tar.gz:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/dist
+org.wildfly:wildfly-dist:tar.gz:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/dist
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-galleon-pack:zip:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/galleon-pack
+org.wildfly:wildfly-galleon-pack:zip:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/galleon-pack
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-standard-ee-bom:pom:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/boms/standard-ee
+org.wildfly:wildfly-standard-ee-bom:pom:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/boms/standard-ee
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
 
 ===========================================================================================
-org.wildfly:wildfly-standard-expansion-bom:pom:37.0.0.Final
-https://github.com/wildfly/wildfly/tree/37.0.0.Final/boms/standard-expansion
+org.wildfly:wildfly-standard-expansion-bom:pom:38.0.0.Final
+https://github.com/wildfly/wildfly/tree/38.0.0.Final/boms/standard-expansion
 
 Copyright The WildFly Authors
 Licensed under Apache 2.0
