@@ -9,7 +9,7 @@
   <parent>
     <groupId>com.finture.bpm</groupId>
     <artifactId>flowee-bpms-database-settings</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <relativePath>../../database/pom.xml</relativePath>
   </parent>
 
