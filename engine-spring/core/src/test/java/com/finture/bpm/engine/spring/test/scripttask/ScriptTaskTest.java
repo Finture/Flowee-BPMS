@@ -16,6 +16,7 @@
  */
 package com.finture.bpm.engine.spring.test.scripttask;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,6 +25,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
     "classpath:com/finture/bpm/engine/spring/test/scripttask/ScriptTaskTest-applicationContext.xml" })
+@Ignore("GraalJS incompatible with JDK 22")
 public class ScriptTaskTest extends AbstractScriptTaskTest {
 
   private static final String JAVASCRIPT = "javascript";

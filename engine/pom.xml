@@ -56,7 +56,7 @@
       <artifactId>flowee-bpms-cmmn-model</artifactId>
     </dependency>
 
-    <dependency>
+<dependency>
       <groupId>com.finture.bpm.juel</groupId>
       <artifactId>flowee-bpms-juel</artifactId>
     </dependency>

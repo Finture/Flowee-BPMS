@@ -116,10 +116,10 @@
         <module>javaee/jobexecutor-ra</module>
         <module>javaee/jobexecutor-rar</module>
 
+        <module>juel</module>
         <module>model-api</module>
         <module>engine-dmn</module>
         <module>connect</module>
-        <module>juel</module>
         <module>spin</module>
         <module>commons</module>
         <module>freemarker-template-engine</module>
@@ -317,11 +317,11 @@
         <module>engine</module>
         <module>engine-cdi</module>
         <module>engine-spring</module>
+        <module>juel</module>
         <module>engine-rest</module>
 
         <module>engine-dmn</module>
         <module>connect</module>
-        <module>juel</module>
         <module>spin</module>
         <module>commons</module>
         <module>freemarker-template-engine</module>

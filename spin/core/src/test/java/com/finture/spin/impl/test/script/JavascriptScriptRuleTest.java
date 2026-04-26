@@ -18,10 +18,12 @@ package com.finture.spin.impl.test.script;
 
 import com.finture.spin.impl.test.ScriptEngine;
 import com.finture.spin.impl.test.ScriptRuleTest;
+import org.junit.Ignore;
 
 /**
  * @author Sebastian Menski
  */
 @ScriptEngine("graal.js")
+@Ignore("GraalJS incompatible with JDK 22")
 public class JavascriptScriptRuleTest extends ScriptRuleTest {
 }

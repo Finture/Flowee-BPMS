@@ -34,6 +34,10 @@ public class SpinTestLogger extends SpinLogger {
     logInfo("001", "Script engine found for script language '{}'", scriptLanguage);
   }
 
+  public void scriptEngineNotFoundForLanguage(String scriptLanguage) {
+    logInfo("001", "Script engine not found for script language '{}' - skipping tests", scriptLanguage);
+  }
+
   public void scriptLoaded(String scriptPath) {
     logInfo("002", "Script loaded with filename '{}'", scriptPath);
   }
