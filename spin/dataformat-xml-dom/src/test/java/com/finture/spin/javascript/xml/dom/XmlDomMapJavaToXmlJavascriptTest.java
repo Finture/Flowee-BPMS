@@ -17,11 +17,13 @@
 package com.finture.spin.javascript.xml.dom;
 
 import com.finture.spin.impl.test.ScriptEngine;
+import org.junit.Ignore;
 import com.finture.spin.xml.dom.XmlDomMapJavaToXmlScriptTest;
 
 /**
  * @author Stefan Hentschel.
  */
 @ScriptEngine("graal.js")
+@org.junit.Ignore("GraalJS incompatible with JDK 22")
 public class XmlDomMapJavaToXmlJavascriptTest extends XmlDomMapJavaToXmlScriptTest {
 }

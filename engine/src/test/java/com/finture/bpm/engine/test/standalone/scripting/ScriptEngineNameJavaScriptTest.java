@@ -39,6 +39,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+@org.junit.Ignore("GraalJS incompatible with JDK 22")
 public class ScriptEngineNameJavaScriptTest {
 
   @Rule

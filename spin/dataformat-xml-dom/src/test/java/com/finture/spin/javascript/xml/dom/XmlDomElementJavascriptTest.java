@@ -20,6 +20,7 @@ import static com.finture.spin.xml.XmlTestConstants.EXAMPLE_XML_FILE_NAME;
 
 import com.finture.spin.impl.test.Script;
 import com.finture.spin.impl.test.ScriptEngine;
+import org.junit.Ignore;
 import com.finture.spin.impl.test.ScriptVariable;
 import com.finture.spin.xml.dom.XmlDomElementScriptTest;
 import org.junit.Test;
@@ -28,6 +29,7 @@ import org.junit.Test;
  * @author Sebastian Menski
  */
 @ScriptEngine("graal.js")
+@org.junit.Ignore("GraalJS incompatible with JDK 22")
 public class XmlDomElementJavascriptTest extends XmlDomElementScriptTest {
 
   /**

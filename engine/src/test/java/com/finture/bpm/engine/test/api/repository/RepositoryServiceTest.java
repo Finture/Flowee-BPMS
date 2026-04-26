@@ -284,6 +284,7 @@ public class RepositoryServiceTest extends PluggableProcessEngineTest {
   }
 
   @Test
+  @org.junit.Ignore("GraalJS incompatible with JDK 22")
   public void testDeleteDeploymentWithoutSkipIoMappings() {
     DeploymentBuilder deploymentBuilder = repositoryService.createDeployment()
         .addClasspathResource("com/finture/bpm/engine/test/api/repository/RepositoryServiceTest.testDeleteDeploymentSkipIoMappings.bpmn20.xml");
