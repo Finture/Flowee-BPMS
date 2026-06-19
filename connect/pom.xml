@@ -17,8 +17,7 @@
   <properties>
     <commons-codec.version>1.15</commons-codec.version>
     <connect.version.old>0.7.2</connect.version.old>
-    <mockito.version>1.9.5</mockito.version>
-    <wiremock.version>1.58</wiremock.version>
+    <wiremock.version>${version.wiremock}</wiremock.version>
     <maven-bundle-plugin.version>5.1.1</maven-bundle-plugin.version>
 
     <license.includeTransitiveDependencies>false</license.includeTransitiveDependencies>
@@ -61,7 +60,7 @@
       </dependency>
 
       <dependency>
-        <groupId>com.github.tomakehurst</groupId>
+        <groupId>org.wiremock</groupId>
         <artifactId>wiremock</artifactId>
         <version>${wiremock.version}</version>
       </dependency>
@@ -69,7 +68,7 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>${mockito.version}</version>
+        <version>${version.mockito}</version>
       </dependency>
 
     </dependencies>

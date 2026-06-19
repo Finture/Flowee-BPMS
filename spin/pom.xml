@@ -19,13 +19,12 @@
     <module>core</module>
     <module>dataformat-json-jackson</module>
     <module>dataformat-xml-dom</module>
+    <module>dataformat-xml-dom-jakarta</module>
     <module>dataformat-all</module>
   </modules>
 
   <properties>
     <json-junit-fluent.version>1.1.6</json-junit-fluent.version>
-    <powermock.version>2.0.9</powermock.version>
-    <mockito.version>3.3.3</mockito.version>
     <spin.version.old>0.7.2</spin.version.old>
     <plugin.version.javadoc>3.3.1</plugin.version.javadoc>
 
@@ -52,21 +51,9 @@
       </dependency>
 
       <dependency>
-        <groupId>org.powermock</groupId>
-        <artifactId>powermock-module-junit4</artifactId>
-        <version>${powermock.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>${mockito.version}</version>
-      </dependency>      
-
-      <dependency>
-        <groupId>org.powermock</groupId>
-        <artifactId>powermock-api-mockito2</artifactId>
-        <version>${powermock.version}</version>
+        <version>${version.mockito}</version>
       </dependency>
 
       <dependency>
@@ -141,7 +128,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
           <configuration>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
@@ -149,7 +135,6 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.5.0</version>
           <configuration>
             <instructions>
               <Export-Package>com.finture.spin*</Export-Package>
@@ -182,15 +167,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-    <profile>
-      <id>jdk11</id>
-      <activation>
-        <jdk>[11,)</jdk>
-      </activation>
-      <modules>
-        <module>dataformat-xml-dom-jakarta</module>
-      </modules>
     </profile>
   </profiles>
 

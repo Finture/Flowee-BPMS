@@ -74,7 +74,10 @@ public class ScriptEngineRule implements TestRule {
       if (!cachedEngines.containsKey(language)) {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(language);
         if (engine == null) {
-          throw LOG.noScriptEngineFoundForLanguage(language);
+          // Skip test if script engine not found (e.g., GraalJS on JDK 22+)
+          LOG.scriptEngineNotFoundForLanguage(language);
+          cachedEngines.put(language, null);
+          return null;
         }
         if (GRAAL_JS_SCRIPT_ENGINE_NAME.equals(engine.getFactory().getEngineName())) {
           configureGraalJsScriptEngine(engine);

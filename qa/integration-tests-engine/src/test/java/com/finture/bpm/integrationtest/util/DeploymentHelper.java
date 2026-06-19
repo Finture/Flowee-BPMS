@@ -22,7 +22,7 @@ public class DeploymentHelper extends AbstractDeploymentHelper {
 
   protected static final String CAMUNDA_EJB_CLIENT = "com.finture.bpm.javaee:flowee-bpms-ejb-client";
   protected static final String CAMUNDA_ENGINE_CDI = "com.finture.bpm:flowee-bpms-engine-cdi";
-  protected static final String CAMUNDA_ENGINE_SPRING = "com.finture.bpm:flowee-bpms-engine-spring";
+  protected static final String CAMUNDA_ENGINE_SPRING = "com.finture.bpm:flowee-bpms-engine-spring-6";
 
   public static JavaArchive getEjbClient() {
     return getEjbClient(CAMUNDA_EJB_CLIENT);

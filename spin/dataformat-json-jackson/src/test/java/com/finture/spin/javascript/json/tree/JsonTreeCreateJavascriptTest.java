@@ -18,12 +18,14 @@ package com.finture.spin.javascript.json.tree;
 
 import com.finture.spin.impl.test.ScriptEngine;
 import com.finture.spin.json.tree.JsonTreeCreateScriptTest;
+import org.junit.Ignore;
 
 /**
  * @author Thorben Lindhauer
  *
  */
 @ScriptEngine("graal.js")
+@Ignore("GraalJS incompatible with JDK 22")
 public class JsonTreeCreateJavascriptTest extends JsonTreeCreateScriptTest {
 
 }

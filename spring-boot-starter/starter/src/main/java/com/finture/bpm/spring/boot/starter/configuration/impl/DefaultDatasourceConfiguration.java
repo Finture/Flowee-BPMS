@@ -28,14 +28,14 @@ import org.springframework.util.StringUtils;
 
 public class DefaultDatasourceConfiguration extends AbstractCamundaConfiguration implements FloweeBPMSDatasourceConfiguration {
 
-  @Autowired
+  @Autowired(required = false)
   protected PlatformTransactionManager transactionManager;
 
   @Autowired(required = false)
   @Qualifier("camundaBpmTransactionManager")
   protected PlatformTransactionManager camundaTransactionManager;
 
-  @Autowired
+  @Autowired(required = false)
   protected DataSource dataSource;
 
   @Autowired(required = false)
@@ -46,16 +46,20 @@ public class DefaultDatasourceConfiguration extends AbstractCamundaConfiguration
   public void preInit(SpringProcessEngineConfiguration configuration) {
     final DatabaseProperty database = floweeBPMSBpmProperties.getDatabase();
 
-    if (camundaTransactionManager == null) {
-      configuration.setTransactionManager(transactionManager);
-    } else {
-      configuration.setTransactionManager(camundaTransactionManager);
+    if (transactionManager != null || camundaTransactionManager != null) {
+      if (camundaTransactionManager == null) {
+        configuration.setTransactionManager(transactionManager);
+      } else {
+        configuration.setTransactionManager(camundaTransactionManager);
+      }
     }
 
-    if (camundaDataSource == null) {
-      configuration.setDataSource(dataSource);
-    } else {
-      configuration.setDataSource(camundaDataSource);
+    if (dataSource != null || camundaDataSource != null) {
+      if (camundaDataSource == null) {
+        configuration.setDataSource(dataSource);
+      } else {
+        configuration.setDataSource(camundaDataSource);
+      }
     }
 
     configuration.setDatabaseType(database.getType());

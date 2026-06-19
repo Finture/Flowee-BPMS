@@ -45,18 +45,11 @@
     </pluginManagement>
   </build>
 
+  <modules>
+    <module>engine</module>
+  </modules>
+
   <profiles>
-    <profile>
-      <id>jdk17-and-onwards</id>
-      <activation>
-        <jdk>[17,)</jdk>
-      </activation>
-
-      <modules>
-        <module>engine</module>
-      </modules>
-    </profile>
-
     <profile>
       <id>quarkus-tests</id>
       <build>

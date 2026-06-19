@@ -15,8 +15,6 @@
     <!-- Needs to be updated after a new WildFly release -->
     <wildfly.container.adapter.groupId>org.wildfly.arquillian</wildfly.container.adapter.groupId>
     <wildfly.container.adapter.version>5.0.1.Final</wildfly.container.adapter.version>
-    <version.spring.framework>${version.spring.framework6}</version.spring.framework>
-
     <version.arquillian>1.7.0.Final</version.arquillian>
 
     <redirect.test.output>true</redirect.test.output>
@@ -253,7 +251,7 @@
     </dependency>
 
     <!-- explicit Spring dependencies for applications
-      that pack camunda-engine-spring -->
+      that pack flowee-bpms-engine-spring-6 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -324,9 +322,8 @@
                 <resource>
                   <directory>${basedir}/../integration-tests-engine/src/test/java</directory>
                   <filtering>false</filtering>
-                  <!-- Spring excluded until Spring 6 is supported in Engine Spring,
-                       Jakarta JPA not supported,
-                       some classes manually overridden -->
+                  <!-- Spring-specific helpers are overridden in this Jakarta module,
+                       Jakarta JPA is still not supported for this copied test source set -->
                   <excludes>**/DeploymentHelper.java,**/JavascriptScriptEngineSupportNashornTest.java</excludes>
                 </resource>
               </resources>
@@ -540,7 +537,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.2.0</version>
         <executions>
           <execution>
             <id>add-jakarta-test-source</id>

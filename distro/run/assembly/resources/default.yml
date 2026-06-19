@@ -2,7 +2,7 @@
 # https://docs.camunda.org/manual/latest/user-guide/camunda-bpm-run/#configure-camunda-bpm-run
 # https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/configuration/#camunda-engine-properties
 
-camunda.bpm:
+flowee-bpms.bpm:
   admin-user:
     id: demo
     password: demo

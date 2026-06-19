@@ -119,7 +119,7 @@
             <configuration>
               <runOrder>alphabetical</runOrder>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
               <includes>
                  <include>%regex[.*(${test.includes}).*Test.*.class]</include>
               </includes>
@@ -132,7 +132,6 @@
 
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>database-test-drop-schema</id>
@@ -141,7 +140,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating reports" />
                     <copy todir="${basedir}/target/reports/images" flatten="true">
                       <fileset dir="${basedir}/src/test/resources">
@@ -149,7 +148,7 @@
                       </fileset>
                     </copy>
                     <java classname="com.finture.bpm.qa.performance.engine.benchmark.BenchmarkReport" classpathref="maven.test.classpath" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>
@@ -190,7 +189,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
               <includes>
                  <include>%regex[.*(${test.includes}).*Test.*.class]</include>
               </includes>
@@ -203,7 +202,6 @@
 
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>database-test-drop-schema</id>
@@ -212,7 +210,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating reports" />
                     <copy todir="${basedir}/target/reports/images" flatten="true">
                       <fileset dir="${basedir}/src/test/resources">
@@ -220,7 +218,7 @@
                       </fileset>
                     </copy>
                     <java classname="com.finture.bpm.qa.performance.engine.benchmark.BenchmarkReport" classpathref="maven.test.classpath" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>
@@ -259,7 +257,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
               <includes>
                  <include>%regex[.*(${test.includes}).*Test.*.class]</include>
               </includes>
@@ -271,7 +269,6 @@
           </plugin>
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>database-test-drop-schema</id>
@@ -280,7 +277,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating reports in ${basedir}/target/reports/" />
                     <copy todir="${basedir}/target/reports/images" flatten="true">
                       <fileset dir="${basedir}/src/test/resources">
@@ -288,7 +285,7 @@
                       </fileset>
                     </copy>
                     <java classname="com.finture.bpm.qa.performance.engine.sqlstatementlog.SqlStatementLogReport" classpathref="maven.test.classpath" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>
@@ -322,7 +319,6 @@
         <plugins>
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>generate load</id>
@@ -331,10 +327,10 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating load" />
                     <java classname="com.finture.bpm.qa.performance.engine.query.DefaultLoadGenerator" classpathref="maven.test.classpath" failonerror="true" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>
@@ -378,7 +374,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
               <includes>
                  <include>%regex[.*(${test.includes}).*Test.*.class]</include>
               </includes>
@@ -390,7 +386,6 @@
           </plugin>
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>database-test-drop-schema</id>
@@ -399,7 +394,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating reports in ${basedir}/target/reports/" />
                     <copy todir="${basedir}/target/reports/images" flatten="true">
                       <fileset dir="${basedir}/src/test/resources">
@@ -407,7 +402,7 @@
                       </fileset>
                     </copy>
                     <java classname="com.finture.bpm.qa.performance.engine.sqlstatementlog.SqlStatementLogReport" classpathref="maven.test.classpath" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>
@@ -445,7 +440,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
               <includes>
                  <include>%regex[.*(${test.includes}).*Test.*.class]</include>
               </includes>
@@ -458,7 +453,6 @@
 
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
             <executions>
               <execution>
                 <id>generate-report</id>
@@ -467,7 +461,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
-                  <tasks>
+                  <target>
                     <echo message="Generating reports" />
                     <copy todir="${basedir}/target/reports/images" flatten="true">
                       <fileset dir="${basedir}/src/test/resources">
@@ -475,7 +469,7 @@
                       </fileset>
                     </copy>
                     <java classname="com.finture.bpm.qa.performance.engine.framework.activitylog.ActivityCountReporter" classpathref="maven.test.classpath" />
-                  </tasks>
+                  </target>
                 </configuration>
               </execution>
             </executions>

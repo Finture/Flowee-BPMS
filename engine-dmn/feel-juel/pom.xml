@@ -30,9 +30,16 @@
       <artifactId>flowee-bpms-commons-typed-values</artifactId>
     </dependency>
 
-    <dependency>
+<dependency>
       <groupId>com.finture.bpm.juel</groupId>
       <artifactId>flowee-bpms-juel</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.el</groupId>
+      <artifactId>jakarta.el-api</artifactId>
+      <version>4.0.0</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -51,6 +58,35 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-shaded-classes</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <mkdir dir="${project.build.directory}/classes"/>
+                <copy todir="${project.build.directory}/classes" flatten="false">
+                  <fileset dir="${settings.localRepository}/com/finture/bpm/juel/flowee-bpms-juel/${project.version}/">
+                    <include name="flowee-bpms-juel-${project.version}.jar"/>
+                  </fileset>
+                </copy>
+                <unzip src="${project.build.directory}/classes/flowee-bpms-juel-${project.version}.jar" dest="${project.build.directory}/classes">
+                  <patternset>
+                    <include name="com/finture/bpm/impl/juel/jakarta/**"/>
+                  </patternset>
+                </unzip>
+                <delete file="${project.build.directory}/classes/flowee-bpms-juel-${project.version}.jar"/>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>

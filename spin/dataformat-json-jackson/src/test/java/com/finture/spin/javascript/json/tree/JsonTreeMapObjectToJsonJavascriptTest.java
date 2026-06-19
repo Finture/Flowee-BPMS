@@ -26,8 +26,8 @@ import org.junit.Ignore;
  *
  * @author Thorben Lindhauer
  */
-@Ignore
 @ScriptEngine("graal.js")
+@Ignore("GraalJS incompatible with JDK 22")
 public class JsonTreeMapObjectToJsonJavascriptTest extends JsonTreeMapObjectToJsonScriptTest {
 
 }

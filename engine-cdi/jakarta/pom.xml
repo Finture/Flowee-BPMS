@@ -166,7 +166,7 @@
                   <directory>${basedir}/../core/src/main/java</directory>
                   <filtering>false</filtering>
                   <!-- exclude manual overrides -->
-                  <excludes>**/CdiEventListener.java,**/CdiJtaProcessEngineConfiguration.java</excludes>
+                  <excludes>**/CdiEventListener.java,**/CdiJtaProcessEngineConfiguration.java,**/CdiResolver.java</excludes>
                 </resource>
               </resources>
             </configuration>
@@ -286,7 +286,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.2.0</version>
         <executions>
           <execution>
             <id>add-jakarta-source</id>

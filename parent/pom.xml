@@ -18,15 +18,15 @@
   </description>
 
   <properties>
+    <version.java>21</version.java>
     <version.quarkus>3.27.0</version.quarkus>
-    <version.spring.framework>5.3.39</version.spring.framework>
-    <version.spring.framework6>6.2.10</version.spring.framework6>
-    <version.spring-boot>3.5.5</version.spring-boot>
+    <version.spring.framework>7.0.0</version.spring.framework>
+    <version.spring-boot>4.0.6</version.spring-boot>
     <version.resteasy>3.15.6.Final</version.resteasy>
     <version.jersey2>2.34</version.jersey2>
     <!-- use minimum version of resteasy and jersey -->
     <version.jaxrs.api>2.0.1.Final</version.jaxrs.api>
-    <version.groovy>4.0.22</version.groovy>
+    <version.groovy>5.0.6</version.groovy>
     <version.graal.js>21.3.12</version.graal.js>
     <version.icu.icu4j>71.1</version.icu.icu4j>
     <!-- json-smart and accessors-smart are runtime dependencies of json-path -->
@@ -35,9 +35,7 @@
     <version.accessors-smart>2.5.2</version.accessors-smart>
     <version.gson>2.8.9</version.gson>
     <version.openjpa>2.4.3</version.openjpa>
-    <version.hibernate>5.6.5.Final</version.hibernate>
-    <version.hikaricp>4.0.3</version.hikaricp>
-    <version.jackson>2.15.2</version.jackson>
+    <version.jackson>2.21.2</version.jackson>
     <version.xml.bind-api>2.3.3</version.xml.bind-api>
     <version.xml.jaxb-impl>2.3.6</version.xml.jaxb-impl>
     <version.xml.jaxb-impl4>4.0.5</version.xml.jaxb-impl4>
@@ -46,17 +44,20 @@
     <version.httpcore5>5.3.4</version.httpcore5>
     <version.cronutils>9.2.1</version.cronutils>
 
-    <version.slf4j>1.7.26</version.slf4j>
-    <version.logback>1.2.11</version.logback>
+    <version.slf4j>2.0.18</version.slf4j>
+    <version.logback>1.5.34</version.logback>
     <version.junit>4.13.1</version.junit>
-    <version.assertj>2.9.1</version.assertj>
-    <version.mockito>5.10.0</version.mockito>
-    <version.wiremock>2.27.2</version.wiremock>
-    <version.testcontainers>1.16.0</version.testcontainers>
+    <version.junit5>6.0.3</version.junit5>
+    <version.hikaricp>7.0.2</version.hikaricp>
+    <version.mockito>5.23.0</version.mockito>
+    <version.assertj>3.27.7</version.assertj>
+    <version.byte-buddy>1.18.9</version.byte-buddy>
+    <version.wiremock>3.10.0</version.wiremock>
+    <version.testcontainers>1.20.4</version.testcontainers>
     <version.unirest-java>2.3.10</version.unirest-java>
 
     <version.commonj>1.1.0</version.commonj>
-    <version.bouncycastle>1.47</version.bouncycastle>
+    <version.bouncycastle>1.78.1</version.bouncycastle>
 
     <!-- application servers -->
     <version.wildfly>38.0.0.Final</version.wildfly>
@@ -66,17 +67,19 @@
     <version.wildfly26.core>18.0.4.Final</version.wildfly26.core>
 
     <version.tomcat9>9.0.107</version.tomcat9>
-    <version.tomcat>10.1.43</version.tomcat>
+    <version.tomcat>11.0.0</version.tomcat>
 
-    <version.arquillian>1.1.10.Final</version.arquillian>
+    <version.arquillian>1.9.1.Final</version.arquillian>
     <version.shrinkwrap.resolvers>2.2.2</version.shrinkwrap.resolvers>
     <version.selenium>4.10.0</version.selenium>
-    <version.freemarker>2.3.31</version.freemarker>
+    <version.freemarker>2.3.34</version.freemarker>
+    <version.build-helper>3.2.0</version.build-helper>
+    <version.cglib>3.3.0</version.cglib>
 
     <version.jboss-javaee-spec>3.0.2.Final</version.jboss-javaee-spec>
-    <version.jakarta-ee-spec>10.0.0</version.jakarta-ee-spec>
+    <version.jakarta-ee-spec>11.0.0</version.jakarta-ee-spec>
 
-    <version.eirslett.frontend.maven.plugin>1.12.1</version.eirslett.frontend.maven.plugin>
+    <version.eirslett.frontend.maven.plugin>1.15.0</version.eirslett.frontend.maven.plugin>
     <version.nodejs>20.14.0</version.nodejs>
     <version.npm>10.7.0</version.npm>
 
@@ -117,6 +120,9 @@
     <flowee-bpms.osgi.include.resource>{maven-resources}</flowee-bpms.osgi.include.resource>
     <flowee-bpms.osgi.embed />
     <plugin.version.maven-bundle>5.1.9</plugin.version.maven-bundle> <!-- compatible with JDK 17 -->
+
+    <!-- Default empty; overridden by JaCoCo prepare-agent when present -->
+    <argLine></argLine>
   </properties>
 
   <dependencyManagement>
@@ -140,7 +146,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.2</version>
+          <version>3.5.2</version>
           <configuration>
             <runOrder>hourly</runOrder>
             <systemPropertyVariables>
@@ -149,16 +155,17 @@
             <argLine>-Xmx968m -Duser.language=en -Duser.region=US -XX:+HeapDumpOnOutOfMemoryError
               -XX:HeapDumpPath=${project.build.directory}/heap_dump.hprof
               --add-opens=java.base/java.util=ALL-UNNAMED
-              --add-opens=java.base/java.lang=ALL-UNNAMED</argLine>
+              --add-opens=java.base/java.lang=ALL-UNNAMED
+              -Dnet.bytebuddy.experimental=true</argLine>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.16</version>
+          <version>3.5.2</version>
           <configuration>
-            <argLine>-Xmx968m</argLine>
+            <argLine>-Xmx968m -Dnet.bytebuddy.experimental=true</argLine>
             <runOrder>hourly</runOrder>
           </configuration>
           <executions>
@@ -175,18 +182,27 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.8</version>
+          <version>3.8.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+          <configuration>
+            <release>${version.java}</release>
+          </configuration>
         </plugin>
 
         <!-- artifact plugins -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
+          <version>3.5.3</version>
           <configuration>
             <createSourcesJar>true</createSourcesJar>
           </configuration>
@@ -201,13 +217,37 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.5.0</version>
+          <executions>
+            <execution>
+              <id>enforce-java</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+                <configuration>
+                  <rules>
+                    <requireJavaVersion>
+                      <version>[21,)</version>
+                    </requireJavaVersion>
+                    <requireMavenVersion>
+                      <version>[3.9.0,)</version>
+                    </requireMavenVersion>
+                  </rules>
+                  <failFast>true</failFast>
+                </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.9.1</version>
+          <version>${version.build-helper}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.felix</groupId>
@@ -297,8 +337,8 @@
             <rules>
               <jakartaDefaults>true</jakartaDefaults>
               <renames>
-                <rename>jar:file:${com.finture.bpm:flowee-bpms-engine:jar}!/META-INF/jakarta-renames.properties</rename>
-                <rename>jar:file:${com.finture.bpm:flowee-bpms-engine:jar}!/META-INF/flowee-bpms-renames.properties</rename>
+                <rename>file:${maven.multiModuleProjectDirectory}/engine/target/classes/META-INF/jakarta-renames.properties</rename>
+                <rename>file:${maven.multiModuleProjectDirectory}/engine/target/classes/META-INF/flowee-bpms-renames.properties</rename>
               </renames>
             </rules>
             <classifier>jakarta</classifier>
@@ -325,6 +365,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 
   <profiles>
@@ -363,5 +410,3 @@
 
   <url>http://www.flowee-bpms.org</url>
 </project>
-
-

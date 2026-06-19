@@ -31,8 +31,8 @@ public class AdminUserProperty implements User {
   private String password;
 
   public User init() {
-    requireNonNull(getId(), "missing field: camunda.bpm.admin-user.id");
-    requireNonNull(getPassword(), "missing field: camunda.bpm.admin-user.password");
+    requireNonNull(getId(), "missing field: flowee-bpms.bpm.admin-user.id");
+    requireNonNull(getPassword(), "missing field: flowee-bpms.bpm.admin-user.password");
 
     if (StringUtils.isBlank(getFirstName())) {
       setFirstName(StringUtils.capitalize(id));

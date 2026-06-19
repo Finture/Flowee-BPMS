@@ -28,7 +28,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -36,6 +35,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Note: To run this test via an IDE you must set the system property
@@ -48,14 +48,14 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles(profiles = { "test-cors-enabled", "test-auth-enabled", "test-demo-user" }, inheritProfiles = false)
 public class CorsAuthenticationTest extends AbstractRestTest {
 
-  TestRestTemplate authTestRestTemplate;
+  RestTemplate authTestRestTemplate;
 
   @Autowired
   ProcessEngine processEngine;
 
   @Before
   public void init() {
-    authTestRestTemplate = testRestTemplate.withBasicAuth("demo", "demo");
+    authTestRestTemplate = withBasicAuth("demo", "demo");
   }
 
   @After

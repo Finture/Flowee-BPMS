@@ -18,7 +18,7 @@
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-beans</artifactId>
-        <version>${version.spring.framework6}</version>
+        <version>${version.spring.framework}</version>
       </dependency>
       <dependency>
         <groupId>com.finture.bpm</groupId>
@@ -165,7 +165,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
-            <version>3.0.0-M1</version>
+            <version>3.5.0</version>
             <executions>
               <execution>
                 <id>enforce-java</id>
@@ -175,11 +175,11 @@
                 <configuration>
                   <rules>
                     <requireJavaVersion>
-                      <version>[11,)</version>
+                      <version>[21,)</version>
                       <message>
                         *****************************************************************************************************
                         *                                                                                                   *
-                        *               You must use at least JDK 11 to start Flowee BPMS Wildfly!!!                  *
+                        *               You must use at least JDK 21 to start Flowee BPMS Wildfly!!!                  *
                         *                                                                                                   *
                         *****************************************************************************************************
                       </message>

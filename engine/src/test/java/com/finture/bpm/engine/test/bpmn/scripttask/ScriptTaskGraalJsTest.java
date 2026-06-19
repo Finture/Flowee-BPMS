@@ -44,6 +44,7 @@ import com.oracle.truffle.js.scriptengine.GraalJSEngineFactory;
 import com.oracle.truffle.js.scriptengine.GraalJSScriptEngine;
 
 @RunWith(Parameterized.class)
+@org.junit.Ignore("GraalJS 21.3.12 incompatible with JDK 22 due to sun.misc.Unsafe removal")
 public class ScriptTaskGraalJsTest extends AbstractScriptTaskTest {
 
   private static final String GRAALJS = "graal.js";

@@ -32,20 +32,19 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles(profiles = {
-    "test-cors-enabled",
-    "test-changed-rest-context-path"
+    "test-cors-enabled"
 })
 @TestPropertySource(properties = {
     FloweeBPMSBpmRunCorsProperty.PREFIX + ".allowed-origins=http://other.origin:8081"
 })
 /*
- * The purpose of the test is to check if the path of the CORS filter can be changed.
+ * The purpose of the test is to check if the CORS filter works on the default REST path.
  * The CORS behavior is tested elsewhere.
  */
 public class CorsWithChangedContextPathTest extends AbstractRestTest {
 
   @Test
-  public void shouldCheckCorsAvailabilityOnPathChange() {
+  public void shouldCheckCorsAvailabilityOnDefaultPath() {
     // given
     String origin = "http://other.origin:8081";
 
@@ -53,7 +52,7 @@ public class CorsWithChangedContextPathTest extends AbstractRestTest {
     headers.add(HttpHeaders.ORIGIN, origin);
 
     // when
-    ResponseEntity<List> response = testRestTemplate.exchange("/rest/task",
+    ResponseEntity<List> response = testRestTemplate.exchange("/engine-rest/task",
         HttpMethod.GET, new HttpEntity<>(headers), List.class);
 
     // then

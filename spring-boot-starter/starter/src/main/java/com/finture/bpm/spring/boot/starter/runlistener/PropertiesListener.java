@@ -21,7 +21,7 @@ import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEven
 import org.springframework.context.ApplicationListener;
 
 /**
- * Adds camunda.bpm.version properties to environment.
+ * Adds flowee-bpms.bpm.version properties to environment.
  */
 public class PropertiesListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 

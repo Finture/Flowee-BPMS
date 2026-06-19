@@ -17,6 +17,7 @@
 package com.finture.spin.javascript.json.tree;
 
 import com.finture.spin.impl.test.ScriptEngine;
+import org.junit.Ignore;
 import com.finture.spin.json.tree.JsonTreeSetPropertyScriptTest;
 
 /**
@@ -24,6 +25,7 @@ import com.finture.spin.json.tree.JsonTreeSetPropertyScriptTest;
  *
  */
 @ScriptEngine("graal.js")
+@Ignore("GraalJS incompatible with JDK 22")
 public class JsonTreeSetPropertyJavascriptTest extends JsonTreeSetPropertyScriptTest {
 
 }

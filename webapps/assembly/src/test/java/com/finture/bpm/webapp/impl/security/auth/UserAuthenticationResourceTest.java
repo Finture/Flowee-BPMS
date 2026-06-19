@@ -17,9 +17,16 @@
 package com.finture.bpm.webapp.impl.security.auth;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.when;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import com.finture.bpm.engine.AuthorizationService;
@@ -39,7 +46,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.MockedStatic;
-import org.springframework.mock.web.MockHttpServletRequest;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author Thorben Lindhauer
@@ -78,6 +87,90 @@ public class UserAuthenticationResourceTest {
     clearAuthentication();
   }
 
+  private HttpSession createMockSession() {
+    HttpSession session = mock(HttpSession.class);
+    Map<String, Object> attrs = new HashMap<>();
+    when(session.getAttribute(any())).thenAnswer(invocation -> attrs.get(invocation.getArgument(0)));
+    doAnswer(invocation -> {
+      attrs.put(invocation.getArgument(0), invocation.getArgument(1));
+      return null;
+    }).when(session).setAttribute(anyString(), any());
+    return session;
+  }
+
+  private ServletContext createTrackingServletContext() {
+    ServletContext ctx = mock(ServletContext.class);
+    Map<String, Object> attrs = new HashMap<>();
+    when(ctx.getAttribute(any())).thenAnswer(invocation -> attrs.get(invocation.getArgument(0)));
+    doAnswer(invocation -> {
+      attrs.put(invocation.getArgument(0), invocation.getArgument(1));
+      return null;
+    }).when(ctx).setAttribute(anyString(), any());
+    return ctx;
+  }
+
+  private HttpServletRequest createMockRequest() {
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    HttpSession session = createMockSession();
+    ServletContext servletContext = createTrackingServletContext();
+    when(request.getSession()).thenReturn(session);
+    when(request.getSession(true)).thenReturn(session);
+    when(request.getSession(false)).thenReturn(session);
+    when(request.getServletContext()).thenReturn(servletContext);
+    return request;
+  }
+
+  private HttpServletRequest createSessionTrackingRequest() {
+    HttpSession[] sessions = new HttpSession[]{
+        createMockSession(),
+        createMockSession(),
+        createMockSession()
+    };
+    for (int i = 0; i < sessions.length; i++) {
+      when(sessions[i].getId()).thenReturn("session-" + (i + 1));
+    }
+
+    int[] sessionIdx = {0};
+    boolean[] invalidated = {false};
+
+    for (HttpSession s : sessions) {
+      doAnswer(inv -> {
+        invalidated[0] = true;
+        return null;
+      }).when(s).invalidate();
+    }
+
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    ServletContext trackingCtx = createTrackingServletContext();
+    when(request.getServletContext()).thenReturn(trackingCtx);
+
+    when(request.getSession()).thenAnswer(inv -> {
+      if (invalidated[0]) {
+        invalidated[0] = false;
+        sessionIdx[0]++;
+      }
+      return sessions[Math.min(sessionIdx[0], sessions.length - 1)];
+    });
+
+    when(request.getSession(true)).thenAnswer(inv -> {
+      if (invalidated[0]) {
+        invalidated[0] = false;
+        sessionIdx[0]++;
+      }
+      return sessions[Math.min(sessionIdx[0], sessions.length - 1)];
+    });
+
+    when(request.getSession(false)).thenAnswer(inv -> {
+      if (invalidated[0]) {
+        invalidated[0] = false;
+        sessionIdx[0]++;
+      }
+      return sessions[Math.min(sessionIdx[0], sessions.length - 1)];
+    });
+
+    return request;
+  }
+
   @Test
   public void testAuthorizationCheckGranted() {
     // given
@@ -97,7 +190,7 @@ public class UserAuthenticationResourceTest {
 
     // when
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
     Response response = authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");
 
     // then
@@ -123,7 +216,7 @@ public class UserAuthenticationResourceTest {
 
     // when
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createSessionTrackingRequest();
     String oldSessionId = authResource.request.getSession().getId();
 
     // first login session
@@ -154,7 +247,7 @@ public class UserAuthenticationResourceTest {
 
     // when
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
     Response response = authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");
 
     // then
@@ -173,7 +266,7 @@ public class UserAuthenticationResourceTest {
 
     // when
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
     Response response = authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");
 
     // then
@@ -188,7 +281,7 @@ public class UserAuthenticationResourceTest {
     jonny.setPassword("jonnyspassword");
     identityService.saveUser(jonny);
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
     ServletContextUtil.setCacheTTLForLogin(1000 * 60 * 5, request.getServletContext());
 
     // when
@@ -211,7 +304,7 @@ public class UserAuthenticationResourceTest {
     jonny.setPassword("jonnyspassword");
     identityService.saveUser(jonny);
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     try (MockedStatic<AuthenticationUtil> authenticationUtilMock = mockStatic(AuthenticationUtil.class)) {
       authenticationUtilMock.when(() -> AuthenticationUtil.createAuthentication("webapps-test-engine", "jonny")).thenReturn(null);

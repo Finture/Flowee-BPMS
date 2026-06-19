@@ -41,6 +41,11 @@ public class CamundaJerseyResourceConfig extends ResourceConfig implements Initi
     this.registerClasses(CamundaRestResources.getConfigurationClasses());
     this.register(JacksonFeature.class);
 
+    // Disable Jersey bean validation: the shaded JUEL library relocates jakarta.el classes
+    // to a non-standard package, which breaks Hibernate Validator's ExpressionFactory discovery.
+    // The Camunda REST API does not rely on bean validation for request/response validation.
+    this.property("jersey.config.beanValidation.disable.server", true);
+
     log.info("Finished configuring camunda rest api.");
   }
 

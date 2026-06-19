@@ -27,10 +27,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.MockedStatic;
-import org.springframework.mock.web.MockFilterChain;
-import org.springframework.mock.web.MockFilterConfig;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
@@ -38,14 +39,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static com.finture.bpm.engine.rest.util.DateTimeUtils.addDays;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
@@ -82,8 +87,8 @@ public class AuthCacheTest {
   @Test
   public void shouldThrowExceptionWhenTimeToLiveIsNegative() {
     AuthenticationFilter authenticationFilter = new AuthenticationFilter();
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME, "-1000");
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME)).thenReturn("-1000");
     assertThatThrownBy(() -> authenticationFilter.init(config))
       .isInstanceOf(IllegalWebAppConfigurationException.class)
       .hasMessage("'cacheTimeToLive' cannot be negative.");
@@ -92,8 +97,8 @@ public class AuthCacheTest {
   @Test
   public void shouldThrowExceptionSinceTimeToLiveIsNotALong() {
     AuthenticationFilter authenticationFilter = new AuthenticationFilter();
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME, "6.7");
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME)).thenReturn("6.7");
     assertThatThrownBy(() -> authenticationFilter.init(config))
       .isInstanceOf(NumberFormatException.class)
       .hasMessage("For input string: \"6.7\"");
@@ -102,8 +107,8 @@ public class AuthCacheTest {
   @Test
   public void shouldTrimTimeToLive() throws ServletException {
     AuthenticationFilter authenticationFilter = new AuthenticationFilter();
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME, " 123   ");
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME)).thenReturn(" 123   ");
     authenticationFilter.init(config);
     assertThat(authenticationFilter.getCacheTimeToLive()).isEqualTo(123);
   }
@@ -119,7 +124,7 @@ public class AuthCacheTest {
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
 
-    applyFilter(filter, new MockHttpServletRequest());
+    applyFilter(filter, createMockRequest());
 
     UserAuthentication nextAuth = getAuthByEngine(authentications, "engine1");
     assertThat(nextAuth.getCacheValidationTime())
@@ -131,7 +136,7 @@ public class AuthCacheTest {
     ClockUtil.setCurrentTime(currentTime);
 
     // when
-    applyFilter(filter, new MockHttpServletRequest());
+    applyFilter(filter, createMockRequest());
 
     // then
     assertThat(getAuthByEngine(authentications, "engine1").getCacheValidationTime())
@@ -150,7 +155,7 @@ public class AuthCacheTest {
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
 
-    applyFilter(filter, new MockHttpServletRequest());
+    applyFilter(filter, createMockRequest());
 
     UserAuthentication nextAuth = getAuthByEngine(authentications, "engine1");
     assertThat(nextAuth.getCacheValidationTime()).isNull();
@@ -161,7 +166,7 @@ public class AuthCacheTest {
     ClockUtil.setCurrentTime(currentTime);
 
     // when
-    applyFilter(filter, new MockHttpServletRequest());
+    applyFilter(filter, createMockRequest());
 
     // then
     assertThat(getAuthByEngine(authentications, "engine1").getCacheValidationTime()).isNull();
@@ -176,7 +181,7 @@ public class AuthCacheTest {
     Authentications authentications = setupAuth();
     UserAuthentication initialAuthentication = getAuthByEngine(authentications, "engine1");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
@@ -204,13 +209,13 @@ public class AuthCacheTest {
     Authentications authentications = setupAuth();
     UserAuthentication initialAuthentication = getAuthByEngine(authentications, "engine1");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
 
     // when
-    applyFilter(setupFilter(new MockFilterConfig()), request);
+    applyFilter(setupFilter(mock(FilterConfig.class)), request);
 
     // then
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
@@ -224,7 +229,7 @@ public class AuthCacheTest {
     Authentications authentications = setupAuth();
     UserAuthentication initialAuthentication = getAuthByEngine(authentications, "engine1");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
@@ -246,7 +251,7 @@ public class AuthCacheTest {
     Authentications authentications = setupAuth();
     UserAuthentication initialAuthentication = getAuthByEngine(authentications, "engine1");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(ServletContextUtil.getAuthCacheValidationTime(request.getServletContext())).isNull();
@@ -270,7 +275,7 @@ public class AuthCacheTest {
     UserAuthentication initialAuthentication = getAuthByEngine(authentications, "engine1");
     AuthenticationFilter filter = setupFilter(1000 * 60 * 5);
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(initialAuthentication.getCacheValidationTime()).isNull();
@@ -291,7 +296,7 @@ public class AuthCacheTest {
     Date currentTime = addDays(ClockUtil.getCurrentTime(), 2);
     ClockUtil.setCurrentTime(currentTime);
 
-    MockHttpServletResponse response = new MockHttpServletResponse();
+    HttpServletResponse response = mock(HttpServletResponse.class);
 
     // when
     applyFilter(filter, request, response);
@@ -311,7 +316,7 @@ public class AuthCacheTest {
     UserAuthentication authEngineTwo = getAuthByEngine(authentications, "engine2");
     UserAuthentication authEngineThree = getAuthByEngine(authentications, "engine3");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(authEngineOne.getCacheValidationTime()).isNull();
@@ -335,7 +340,7 @@ public class AuthCacheTest {
     Date currentTime = addDays(ClockUtil.getCurrentTime(), 2);
     ClockUtil.setCurrentTime(currentTime);
 
-    request = new MockHttpServletRequest();
+    request = createMockRequest();
 
     // when
     applyFilter(filter, request);
@@ -370,7 +375,7 @@ public class AuthCacheTest {
     UserAuthentication authEngineTwo = getAuthByEngine(authentications, "engine2");
     UserAuthentication authEngineThree = getAuthByEngine(authentications, "engine3");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(authEngineOne.getCacheValidationTime()).isNull();
@@ -404,7 +409,7 @@ public class AuthCacheTest {
     Date currentTime = addDays(ClockUtil.getCurrentTime(), 2);
     ClockUtil.setCurrentTime(currentTime);
 
-    MockHttpServletResponse response = new MockHttpServletResponse();
+    HttpServletResponse response = mock(HttpServletResponse.class);
 
     // when
     applyFilter(filter, request, response);
@@ -426,7 +431,7 @@ public class AuthCacheTest {
     UserAuthentication authEngineTwo = getAuthByEngine(authentications, "engine2");
     UserAuthentication authEngineThree = getAuthByEngine(authentications, "engine3");
 
-    MockHttpServletRequest request = new MockHttpServletRequest();
+    HttpServletRequest request = createMockRequest();
 
     // assume
     assertThat(authEngineOne.getCacheValidationTime()).isNull();
@@ -464,6 +469,28 @@ public class AuthCacheTest {
 
   // helpers ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  private ServletContext createTrackingServletContext() {
+    ServletContext ctx = mock(ServletContext.class);
+    Map<String, Object> attrs = new HashMap<>();
+    when(ctx.getAttribute(any())).thenAnswer(invocation -> attrs.get(invocation.getArgument(0)));
+    doAnswer(invocation -> {
+      attrs.put(invocation.getArgument(0), invocation.getArgument(1));
+      return null;
+    }).when(ctx).setAttribute(anyString(), any());
+    return ctx;
+  }
+
+  private HttpServletRequest createMockRequest() {
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    HttpSession session = mock(HttpSession.class);
+    ServletContext servletContext = createTrackingServletContext();
+    when(request.getSession()).thenReturn(session);
+    when(request.getSession(true)).thenReturn(session);
+    when(request.getSession(false)).thenReturn(session);
+    when(request.getServletContext()).thenReturn(servletContext);
+    return request;
+  }
+
   protected ProcessEngine[] setupEngineMock(String... engines) {
     if (engines.length == 0) engines = new String[]{"engine1"};
 
@@ -500,28 +527,28 @@ public class AuthCacheTest {
   }
 
   protected AuthenticationFilter setupFilter(long cacheTTL) throws ServletException {
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME, String.valueOf(cacheTTL));
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(AuthenticationFilter.AUTH_CACHE_TTL_INIT_PARAM_NAME)).thenReturn(String.valueOf(cacheTTL));
     return setupFilter(config);
   }
 
-  protected AuthenticationFilter setupFilter(MockFilterConfig config) throws ServletException {
+  protected AuthenticationFilter setupFilter(FilterConfig config) throws ServletException {
     mockedSecurityActions = mockStatic(SecurityActions.class);
     AuthenticationFilter authenticationFilter = new AuthenticationFilter();
     authenticationFilter.init(config);
     return authenticationFilter;
   }
 
-  protected void applyFilter(AuthenticationFilter filter, MockHttpServletRequest request) throws ServletException, IOException {
+  protected void applyFilter(AuthenticationFilter filter, HttpServletRequest request) throws ServletException, IOException {
     applyFilter(filter, request, null);
   }
 
-  protected void applyFilter(AuthenticationFilter filter, MockHttpServletRequest request, MockHttpServletResponse response) throws ServletException, IOException {
+  protected void applyFilter(AuthenticationFilter filter, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     if (response == null) {
-      response = new MockHttpServletResponse();
+      response = mock(HttpServletResponse.class);
     }
 
-    filter.doFilter(request, response, new MockFilterChain());
+    filter.doFilter(request, response, mock(FilterChain.class));
   }
 
   protected UserAuthentication getAuthByEngine(Authentications authentications, String engineName) {
