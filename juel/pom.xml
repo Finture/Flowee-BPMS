@@ -70,12 +70,9 @@
             </goals>
             <configuration>
               <target>
-                <!-- Unpack ALL classes from the shaded JAR to overwrite unshaded compiled
-                     classes with relocated bytecode. This ensures reactor builds see
-                     properly shaded classes (jakarta.el -> com.finture.bpm.impl.juel.jakarta.el). -->
                 <unzip src="${project.build.directory}/${project.build.finalName}.jar" dest="${project.build.directory}/classes">
                   <patternset>
-                    <include name="com/finture/bpm/impl/juel/**"/>
+                    <include name="com/finture/bpm/impl/juel/jakarta/**"/>
                   </patternset>
                 </unzip>
               </target>
