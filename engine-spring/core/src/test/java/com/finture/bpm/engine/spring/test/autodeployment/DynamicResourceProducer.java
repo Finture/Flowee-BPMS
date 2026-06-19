@@ -47,9 +47,6 @@ public class DynamicResourceProducer {
     return resources.toArray(new Resource[resources.size()]);
   }
 
-  /*
-   * In Spring 5, #getDescription is implemented differently
-   */
   public static class NamedByteArrayResource extends ByteArrayResource
   {
     private String description;

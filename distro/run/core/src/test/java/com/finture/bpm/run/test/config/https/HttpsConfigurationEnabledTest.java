@@ -30,6 +30,7 @@ import org.junit.rules.ExpectedException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +55,7 @@ public class HttpsConfigurationEnabledTest extends AbstractRestTest {
     String url = "https://localhost:" + localPort + CONTEXT_PATH + "/task";
 
     // when
-    ResponseEntity<List> response = testRestTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(null), List.class);
+    ResponseEntity<List> response = testRestTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>((HttpHeaders) null), List.class);
 
     // then
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -70,6 +71,6 @@ public class HttpsConfigurationEnabledTest extends AbstractRestTest {
     exceptionRule.expectMessage("I/O error on GET request for \"http://localhost:8080/engine-rest/task\":");
 
     // then
-    ResponseEntity<String> response = testRestTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(null), String.class);
+    ResponseEntity<String> response = testRestTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>((HttpHeaders) null), String.class);
   }
 }

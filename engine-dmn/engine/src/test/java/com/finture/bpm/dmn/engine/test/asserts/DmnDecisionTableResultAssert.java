@@ -16,14 +16,29 @@
  */
 package com.finture.bpm.dmn.engine.test.asserts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.assertj.core.api.AbstractListAssert;
 import com.finture.bpm.dmn.engine.DmnDecisionRuleResult;
 import com.finture.bpm.dmn.engine.DmnDecisionTableResult;
+import com.finture.bpm.dmn.engine.impl.DmnDecisionTableResultImpl;
 
 public class DmnDecisionTableResultAssert extends AbstractListAssert<DmnDecisionTableResultAssert, DmnDecisionTableResult, DmnDecisionRuleResult, DmnDecisionRuleResultAssert> {
 
   public DmnDecisionTableResultAssert(DmnDecisionTableResult decisionTableResult) {
     super(decisionTableResult, DmnDecisionTableResultAssert.class);
+  }
+
+  private DmnDecisionTableResultAssert(List<? extends DmnDecisionRuleResult> list) {
+    super(new DmnDecisionTableResultImpl(new ArrayList<>(list)), DmnDecisionTableResultAssert.class);
+  }
+
+  @Override
+  protected DmnDecisionTableResultAssert newAbstractIterableAssert(Iterable<? extends DmnDecisionRuleResult> iterable) {
+    List<DmnDecisionRuleResult> list = new ArrayList<>();
+    iterable.forEach(list::add);
+    return new DmnDecisionTableResultAssert(list);
   }
 
   public DmnDecisionRuleResultAssert hasSingleResult() {

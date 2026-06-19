@@ -24,19 +24,22 @@ import com.finture.bpm.spring.boot.starter.rest.test.TestRestApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { TestRestApplication.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CamundaBpmRestConfigurationIT {
 
-  @Autowired
-  private TestRestTemplate testRestTemplate;
+  private RestTemplate restTemplate = new RestTemplate();
+
+  @Value("${local.server.port}")
+  private int port;
 
   @Autowired
   private FloweeBPMSBpmProperties floweeBPMSBpmProperties;
@@ -44,9 +47,9 @@ public class CamundaBpmRestConfigurationIT {
   @Test
   public void processDefinitionTest() {
     // start process
-    testRestTemplate.postForEntity("/engine-rest/start/process", HttpEntity.EMPTY, String.class);
+    restTemplate.postForEntity("http://localhost:" + port + "/engine-rest/start/process", HttpEntity.EMPTY, String.class);
 
-    ResponseEntity<ProcessDefinitionDto> entity = testRestTemplate.getForEntity("/engine-rest/engine/{engineName}/process-definition/key/TestProcess/",
+    ResponseEntity<ProcessDefinitionDto> entity = restTemplate.getForEntity("http://localhost:" + port + "/engine-rest/engine/{engineName}/process-definition/key/TestProcess/",
         ProcessDefinitionDto.class, floweeBPMSBpmProperties.getProcessEngineName());
 
     assertEquals(HttpStatus.OK, entity.getStatusCode());

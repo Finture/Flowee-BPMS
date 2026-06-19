@@ -36,7 +36,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.springframework.mock.web.MockHttpServletRequest;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class UserAuthenticationResourceLoggingTest {
 
@@ -81,6 +85,16 @@ public class UserAuthenticationResourceLoggingTest {
     Authentications.clearCurrent();
   }
 
+  private HttpServletRequest createMockRequest() {
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    HttpSession session = mock(HttpSession.class);
+    when(request.getSession()).thenReturn(session);
+    when(request.getSession(true)).thenReturn(session);
+    when(request.getSession(false)).thenReturn(session);
+    when(request.getServletContext()).thenReturn(mock(ServletContext.class));
+    return request;
+  }
+
   @Test
   public void shouldProduceLogStatementOnValidLogin() {
     // given
@@ -89,7 +103,7 @@ public class UserAuthenticationResourceLoggingTest {
     identityService.saveUser(jonny);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
@@ -110,7 +124,7 @@ public class UserAuthenticationResourceLoggingTest {
     identityService.saveUser(jonny);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(false);
 
@@ -130,7 +144,7 @@ public class UserAuthenticationResourceLoggingTest {
     identityService.saveUser(jonny);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
@@ -151,7 +165,7 @@ public class UserAuthenticationResourceLoggingTest {
     identityService.saveUser(jonny);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(false);
 
@@ -172,7 +186,7 @@ public class UserAuthenticationResourceLoggingTest {
     setAuthentication("jonny", "webapps-test-engine");
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
@@ -194,7 +208,7 @@ public class UserAuthenticationResourceLoggingTest {
     setAuthentication("jonny", "webapps-test-engine");
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(false);
 
@@ -210,7 +224,7 @@ public class UserAuthenticationResourceLoggingTest {
   public void shouldNotProduceLogStatementOnLogoutWhenNoAuthentication() {
     // given
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
@@ -240,7 +254,7 @@ public class UserAuthenticationResourceLoggingTest {
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     // when
     authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");
@@ -262,7 +276,7 @@ public class UserAuthenticationResourceLoggingTest {
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(true);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     // when
     authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");
@@ -284,7 +298,7 @@ public class UserAuthenticationResourceLoggingTest {
     processEngineConfiguration.setWebappsAuthenticationLoggingEnabled(false);
 
     UserAuthenticationResource authResource = new UserAuthenticationResource();
-    authResource.request = new MockHttpServletRequest();
+    authResource.request = createMockRequest();
 
     // when
     authResource.doLogin("webapps-test-engine", "tasklist", "jonny", "jonnyspassword");

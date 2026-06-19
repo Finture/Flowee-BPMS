@@ -7,8 +7,8 @@ Clean, package and install it via [Maven](https://maven.apache.org/).
 
 The structure is as follows:
 
-* `assembly` - Java sources and tests for the Camunda web application based on `javax` namespace.
-* `assembly-jakarta` - Java sources and tests for the Camunda web application based on `jakarta` namespace.
+* `assembly` - legacy Java sources and tests based on the `javax` namespace; not part of the supported Spring 6/Jakarta development path.
+* `assembly-jakarta` - supported Java sources and tests for the Camunda web application based on `jakarta` namespace.
   * This module is created from the `assembly` module via code transformation.
 * `frontend` - HTML, CSS and Javascript sources as well as Plugins and tests for the Camunda webapplications Cockpit, Tasklist and Admin.
 
@@ -51,7 +51,7 @@ Contains resources like images, [`.less`](http://lesscss.org) stylesheets as wel
 
 ### Prerequisite
 
-You need [node.js](http://nodejs.org) >= 17 and npm.
+Use the Node.js and npm versions pinned by the Maven frontend build (currently Node.js 20.14.0 and npm 10.7.0). For local frontend-only work, use a matching Node.js 20/npm 10 toolchain.
 
 ### Setup
 
@@ -61,36 +61,39 @@ See https://github.com/camunda/camunda-bpm-platform/blob/master/CONTRIBUTING.md#
 
 #### Using Webpack
 
-Build the web apps using Webpack:
+Install frontend dependencies:
 
 ```sh
 # cd <path to your workspace>
-git clone git@github.com:flowee-bpms/camunda-bpm-platform.git
-cd camunda-bpm-platform/webapps/frontend
-npm install
-npm start
+git clone git@github.com:Finture/Flowee-BPMS.git
+cd Flowee-BPMS/webapps/frontend
+npm ci
 ```
-
-To start the server in development mode, call
-
-```sh
-cd camunda-bpm-platform/webapps/assembly
-mvn jetty:run -Pdevelop
-```
-
-The webapps are then available pointing a browser at [http://localhost:8080](http://localhost:8080). To login as an admin user, use `jonny1` as username and password.
-
-You can now start developing using the `npm run start` command in the frontend directory.
 
 ##### Jakarta Webapps
 
-In order to run the Jakarta Webapps start Jetty the same way from the `assembly-jakarta` folder
+Start the Jakarta server used by the Spring 6 line in development mode from the `assembly-jakarta` folder in one terminal:
 
 ```sh
-cd camunda-bpm-platform/webapps/assembly
+cd Flowee-BPMS/webapps/assembly-jakarta
 mvn jetty:run -Pdevelop
+```
+
+Start the frontend development server from the frontend directory in a second terminal:
+
+```sh
+cd Flowee-BPMS/webapps/frontend
 npm run start
 ```
+
+The Jakarta backend runs on [http://localhost:8080/camunda](http://localhost:8080/camunda). The webpack frontend development server serves the UI on [http://localhost:8081/camunda/app/cockpit/default/](http://localhost:8081/camunda/app/cockpit/default/) and proxies API requests to the backend at `http://localhost:8080/camunda/api`. To login as an admin user, use `jonny1` as username and password.
+
+Default developer routes:
+
+* backend application context: `/camunda`
+* webapp UI routes: `/camunda/app/**`
+* REST API routes: `/camunda/api/**`
+* webpack dev UI: `http://localhost:8081/camunda/...`, proxying API calls to `http://localhost:8080/camunda/api`
 
 #### Extended Support libraries from HeroDevs
 
@@ -132,8 +135,8 @@ npm set //${HERODEVS_REGISTRY}/:_authToken ${HERODEVS_AUTH_TOKEN}
 Alternatively, you can set the following environment variables:
 
 ```sh
-export HERODEVS_REGISTRY = "example.com" # Hostname without protocol (e.g., "https://"), leading or trailing slashes
-export HERODEVS_AUTH_TOKEN = "abc..."    # Token to authenticate against the registry
+export HERODEVS_REGISTRY="example.com" # Hostname without protocol (e.g., "https://"), leading or trailing slashes
+export HERODEVS_AUTH_TOKEN="abc..."    # Token to authenticate against the registry
 ```
 
 You receive the information about the registry and the auth token directly from XLTS.dev.

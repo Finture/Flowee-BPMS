@@ -18,10 +18,12 @@ package com.finture.spin.python.json.tree;
 
 import com.finture.spin.impl.test.ScriptEngine;
 import com.finture.spin.json.tree.JsonTreeMapJsonToJavaScriptTest;
+import org.junit.Ignore;
 
 /**
  * @author Sebastian Menski
  */
+@Ignore("Python script engine (Nashorn/Jython) is not available in Java 25")
 @ScriptEngine("python")
 public class JsonTreeMapJsonToJavaPythonTest extends JsonTreeMapJsonToJavaScriptTest {
 }

@@ -17,6 +17,7 @@
 package com.finture.bpm.engine.impl.telemetry.dto;
 
 import java.util.Map;
+import java.util.Objects;
 
 import com.finture.bpm.engine.telemetry.LicenseKeyData;
 
@@ -96,6 +97,28 @@ public class LicenseKeyDataImpl implements LicenseKeyData {
 
   public void setRaw(String raw) {
     this.raw = raw;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    LicenseKeyDataImpl that = (LicenseKeyDataImpl) o;
+    return Objects.equals(customer, that.customer)
+        && Objects.equals(type, that.type)
+        && Objects.equals(validUntil, that.validUntil)
+        && Objects.equals(isUnlimited, that.isUnlimited)
+        && Objects.equals(features, that.features)
+        && Objects.equals(raw, that.raw);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(customer, type, validUntil, isUnlimited, features, raw);
   }
 
 }

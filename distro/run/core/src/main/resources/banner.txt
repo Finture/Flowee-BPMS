@@ -7,4 +7,4 @@ ______ _                         _______________  ___ _____  ______
 \_|   |_|\___/ \_/\_/ \___|\___| \____/\_|   \_|  |_/\____/  \_| \_\__,_|_| |_|
 
   Spring-Boot: ${spring-boot.formatted-version}
-  Flowee BPMS: ${camunda.bpm.formatted-version}
+  Flowee BPMS: ${flowee-bpms.bpm.formatted-version}

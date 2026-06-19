@@ -377,22 +377,13 @@
 
     <profile>
       <id>testcontainers</id>
-      <dependencyManagement>
-        <dependencies>
-          <dependency>
-            <groupId>com.fasterxml.jackson</groupId>
-            <artifactId>jackson-bom</artifactId>
-            <version>${version.jackson}</version>
-            <scope>import</scope>
-            <type>pom</type>
-          </dependency>
-        </dependencies>
-      </dependencyManagement>
       <dependencies>
-        <!-- Testcontainers depends on docker-java which depends on jackson-annotations -->
+        <!-- Jackson annotations for Testcontainers' docker-java compatibility -->
+        <!-- Using 2.x version since Jackson 3.0.0 BOM is not yet on Maven Central -->
         <dependency>
-          <artifactId>jackson-annotations</artifactId>
           <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+          <version>${version.jackson}</version>
           <scope>test</scope>
         </dependency>
       </dependencies>

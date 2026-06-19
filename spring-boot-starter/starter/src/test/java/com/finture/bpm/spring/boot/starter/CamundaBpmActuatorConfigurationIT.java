@@ -21,18 +21,20 @@ import static org.junit.Assert.assertTrue;
 import com.finture.bpm.spring.boot.starter.test.nonpa.TestApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { TestApplication.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CamundaBpmActuatorConfigurationIT extends AbstractCamundaAutoConfigurationIT{
 
-  @Autowired
-  private TestRestTemplate testRestTemplate;
+  private final RestTemplate restTemplate = new RestTemplate();
+
+  @Value("${local.server.port}")
+  private int port;
 
   @Test
   public void jobExecutorHealthIndicatorTest() {
@@ -47,7 +49,8 @@ public class CamundaBpmActuatorConfigurationIT extends AbstractCamundaAutoConfig
   }
 
   private String getHealthBody() {
-    ResponseEntity<String> entity = testRestTemplate.getForEntity("/actuator/health", String.class);
+    String baseUrl = "http://localhost:" + port;
+    ResponseEntity<String> entity = restTemplate.getForEntity(baseUrl + "/actuator/health", String.class);
     final String body = entity.getBody();
     return body;
   }

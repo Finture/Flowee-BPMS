@@ -20,13 +20,9 @@ import com.finture.bpm.engine.rest.impl.FetchAndLockContextListener;
 import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
 import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.jersey.JerseyAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.JerseyApplicationPath;
 import org.springframework.context.annotation.Bean;
 
-@AutoConfigureBefore({ JerseyAutoConfiguration.class })
 @AutoConfigureAfter({ FloweeBPMSBpmAutoConfiguration.class })
 public class CamundaBpmRestJerseyAutoConfiguration {
 
@@ -42,7 +38,7 @@ public class CamundaBpmRestJerseyAutoConfiguration {
   }
 
   @Bean
-  public CamundaBpmRestInitializer camundaBpmRestInitializer(JerseyApplicationPath applicationPath, FloweeBPMSBpmProperties props) {
-    return new CamundaBpmRestInitializer(applicationPath, props);
+  public CamundaBpmRestInitializer camundaBpmRestInitializer(CamundaJerseyResourceConfig resourceConfig, FloweeBPMSBpmProperties props) {
+    return new CamundaBpmRestInitializer(resourceConfig, props);
   }
 }

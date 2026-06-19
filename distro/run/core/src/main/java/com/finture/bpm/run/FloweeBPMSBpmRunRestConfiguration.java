@@ -29,7 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.web.servlet.JerseyApplicationPath;
+import jakarta.ws.rs.ApplicationPath;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -64,13 +64,15 @@ public class FloweeBPMSBpmRunRestConfiguration {
 
   @Bean
   @ConditionalOnProperty(name = "enabled", havingValue = "true", prefix = FloweeBPMSBpmRunAuthenticationProperties.PREFIX)
-  public FilterRegistrationBean<Filter> processEngineAuthenticationFilter(JerseyApplicationPath applicationPath) {
+  public FilterRegistrationBean<Filter> processEngineAuthenticationFilter(CamundaJerseyResourceConfig resourceConfig) {
     FilterRegistrationBean<Filter> registration = new FilterRegistrationBean<>();
     registration.setName("camunda-auth");
     registration.setFilter(new ProcessEngineAuthenticationFilter());
     registration.setOrder(AUTH_FILTER_PRECEDENCE);
 
-    String restApiPathPattern = applicationPath.getUrlMapping();
+    ApplicationPath annotation = resourceConfig.getClass().getAnnotation(ApplicationPath.class);
+    String restApiPath = annotation != null ? annotation.value() : "/engine-rest";
+    String restApiPathPattern = restApiPath + "/*";
     registration.addUrlPatterns(restApiPathPattern);
 
     // if nothing is set, use Http Basic authentication
@@ -83,14 +85,16 @@ public class FloweeBPMSBpmRunRestConfiguration {
 
   @Bean
   @ConditionalOnProperty(name = "enabled", havingValue = "true", prefix = FloweeBPMSBpmRunCorsProperty.PREFIX)
-  public FilterRegistrationBean<Filter> corsFilter(JerseyApplicationPath applicationPath) {
+  public FilterRegistrationBean<Filter> corsFilter(CamundaJerseyResourceConfig resourceConfig) {
     FilterRegistrationBean<Filter> registration = new FilterRegistrationBean<>();
     registration.setName("camunda-cors");
     CorsFilter corsFilter = new CorsFilter();
     registration.setFilter(corsFilter);
     registration.setOrder(CORS_FILTER_PRECEDENCE);
 
-    String restApiPathPattern = applicationPath.getUrlMapping();
+    ApplicationPath annotation = resourceConfig.getClass().getAnnotation(ApplicationPath.class);
+    String restApiPath = annotation != null ? annotation.value() : "/engine-rest";
+    String restApiPathPattern = restApiPath + "/*";
     registration.addUrlPatterns(restApiPathPattern);
 
     registration.addInitParameter(CorsFilter.PARAM_CORS_ALLOWED_ORIGINS,

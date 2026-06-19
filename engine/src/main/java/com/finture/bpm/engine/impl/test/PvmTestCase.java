@@ -32,7 +32,7 @@ public class PvmTestCase extends TestCase {
    * However, some Test classes in the following modules still use it:
    *   * camunda-engine-plugin-spin
    *   * camunda-engine-plugin-connect
-   *   * camunda-engine-spring
+   *   * flowee-bpms-engine-spring-6
    *   * camunda-identity-ldap
    *
    * It should be removed once those Test classes are migrated to JUnit 4.

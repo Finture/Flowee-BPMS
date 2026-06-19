@@ -22,6 +22,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.fail;
 
+import java.lang.reflect.Field;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -39,7 +40,6 @@ import com.finture.connect.httpclient.impl.util.ParseUtil;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.internal.util.reflection.Whitebox;
 
 public class HttpRequestConfigTest {
 
@@ -319,7 +319,14 @@ public class HttpRequestConfigTest {
   @Test
   public void shouldNotChangeDefaultConfig() {
     // given
-    HttpClient client = (HttpClient) Whitebox.getInternalState(connector, "httpClient");
+    HttpClient client;
+    try {
+      Field httpClientField = findField(connector.getClass(), "httpClient");
+      httpClientField.setAccessible(true);
+      client = (HttpClient) httpClientField.get(connector);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
     connector.createRequest().url(EXAMPLE_URL).get()
         .configOption(RequestConfigOption.CONNECTION_TIMEOUT.getName(), Timeout.ofSeconds(10))
         .configOption(RequestConfigOption.CONNECTION_REQUEST_TIMEOUT.getName(), Timeout.ofSeconds(10))
@@ -328,13 +335,37 @@ public class HttpRequestConfigTest {
         .execute();
 
     // when
-    RequestConfig config = (RequestConfig) Whitebox.getInternalState(client, "defaultConfig");
+    RequestConfig config;
+    try {
+      Field defaultConfigField = findField(client.getClass(), "defaultConfig");
+      defaultConfigField.setAccessible(true);
+      config = (RequestConfig) defaultConfigField.get(client);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
 
     // then
     assertThat(config.getMaxRedirects()).isEqualTo(50);
     assertThat(config.getConnectTimeout()).isNull();
     assertThat(config.getConnectionRequestTimeout()).isEqualTo(Timeout.ofMinutes(3));
     assertThat(config.getConnectionKeepAlive()).isEqualTo(Timeout.ofMinutes(3));
+  }
+
+  /**
+   * Walks up the class hierarchy to find a declared field by name.
+   * This is more robust than {@link Class#getDeclaredField(String)} which only
+   * looks at fields declared directly in the given class.
+   */
+  private static Field findField(Class<?> clazz, String fieldName) throws NoSuchFieldException {
+    Class<?> current = clazz;
+    while (current != null) {
+      try {
+        return current.getDeclaredField(fieldName);
+      } catch (NoSuchFieldException e) {
+        current = current.getSuperclass();
+      }
+    }
+    throw new NoSuchFieldException(fieldName);
   }
 
   @Test

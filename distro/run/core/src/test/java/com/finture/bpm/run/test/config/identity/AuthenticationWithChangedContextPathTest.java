@@ -33,7 +33,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @ActiveProfiles(profiles = {
-    "test-changed-rest-context-path",
     "test-auth-enabled"
 })
 @TestPropertySource(properties = {
@@ -46,7 +45,7 @@ public class AuthenticationWithChangedContextPathTest extends AbstractRestTest {
     // given
 
     // when
-    ResponseEntity<List> response = testRestTemplate.exchange("/rest/task",
+    ResponseEntity<List> response = testRestTemplate.exchange("/engine-rest/task",
         HttpMethod.GET, HttpEntity.EMPTY, List.class);
 
     // then

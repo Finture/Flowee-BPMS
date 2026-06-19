@@ -31,7 +31,7 @@ public class AdminUserPropertyTest {
   @Test
   public void fillMissingFields_fail_no_id() throws Exception {
     thrown.expect(NullPointerException.class);
-    thrown.expectMessage("missing field: camunda.bpm.admin-user.id");
+    thrown.expectMessage("missing field: flowee-bpms.bpm.admin-user.id");
 
     adminUser(null, null, null, null, null).init();
   }

@@ -29,7 +29,7 @@
       <artifactId>flowee-bpms-engine-spring-6</artifactId>
     </dependency>
 
-    <!-- Spring dependencies required by camunda-engine-spring -->
+    <!-- Spring dependencies required by flowee-bpms-engine-spring-6 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -56,6 +56,25 @@
     <dependency>
       <groupId>com.finture.spin</groupId>
       <artifactId>flowee-bpms-spin-dataformat-json-jackson</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- Jackson modules previously provided transitively by spring-boot-starter-jersey;
+         required by CamundaBpmPluginConfiguration and Spin Jackson format configurators.
+         Marked optional because the using classes are @ConditionalOnClass. -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jdk8</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-parameter-names</artifactId>
       <optional>true</optional>
     </dependency>
 
@@ -86,11 +105,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jersey</artifactId>
       <optional>true</optional>
     </dependency>
 
@@ -157,6 +171,12 @@
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
       <version>${version.xml.jaxb-impl4}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.expressly</groupId>
+      <artifactId>expressly</artifactId>
+      <version>6.0.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

@@ -18,16 +18,23 @@ package com.finture.bpm.webapp.impl.security.filter.csrf;
 
 import com.finture.bpm.webapp.impl.util.ServletContextUtil;
 import org.junit.Test;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.mock.web.MockHttpSession;
-import org.springframework.mock.web.MockServletContext;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static com.finture.bpm.webapp.impl.security.filter.util.CsrfConstants.CSRF_PATH_FIELD_NAME;
 import static com.finture.bpm.webapp.impl.security.filter.util.CookieConstants.SET_COOKIE_HEADER_NAME;
 
@@ -35,7 +42,7 @@ public class CsrfPreventionFilterAppPathTest extends CsrfPreventionFilterTest {
 
   protected static final String MY_APP_PATH = "/my/application/path";
 
-  protected MockServletContext mockServletContext;
+  protected ServletContext mockServletContext;
 
   public CsrfPreventionFilterAppPathTest(String nonModifyingRequestUrl,
                                          String modifyingRequestUrl,
@@ -45,7 +52,7 @@ public class CsrfPreventionFilterAppPathTest extends CsrfPreventionFilterTest {
 
   @Override
   public void setup() throws Exception {
-    mockServletContext = new MockServletContext();
+    mockServletContext = createTrackingServletContext();
     ServletContextUtil.setAppPath(MY_APP_PATH, mockServletContext);
     super.setup();
   }
@@ -54,20 +61,20 @@ public class CsrfPreventionFilterAppPathTest extends CsrfPreventionFilterTest {
   public void shouldCheckNonModifyingRequestTokenGenerationWithRootContextPathAndEmptyAppPath()
     throws IOException, ServletException {
     // given
-    MockServletContext mockServletContext = new MockServletContext();
-    ServletContextUtil.setAppPath("", mockServletContext);
+    ServletContext emptyPathContext = createTrackingServletContext();
+    ServletContextUtil.setAppPath("", emptyPathContext);
 
-    MockHttpSession session = new MockHttpSession();
-    MockHttpServletRequest nonModifyingRequest = new MockHttpServletRequest(mockServletContext);
-    nonModifyingRequest.setMethod("GET");
-    nonModifyingRequest.setSession(session);
+    HttpSession session = createMockSession();
+    HttpServletRequest nonModifyingRequest = createMockRequestWithServletContext(emptyPathContext);
+    when(nonModifyingRequest.getMethod()).thenReturn("GET");
+    when(nonModifyingRequest.getSession()).thenReturn(session);
 
     // set root context path in request
-    nonModifyingRequest.setRequestURI("/"  + nonModifyingRequestUrl);
-    nonModifyingRequest.setContextPath("");
+    when(nonModifyingRequest.getRequestURI()).thenReturn("/"  + nonModifyingRequestUrl);
+    when(nonModifyingRequest.getContextPath()).thenReturn("");
 
     // when
-    MockHttpServletResponse response = new MockHttpServletResponse();
+    HttpServletResponse response = createMockResponse();
     applyFilter(nonModifyingRequest, response);
 
     // then
@@ -91,8 +98,30 @@ public class CsrfPreventionFilterAppPathTest extends CsrfPreventionFilterTest {
   }
 
   @Override
-  protected MockHttpServletRequest getMockedRequest() {
-    return new MockHttpServletRequest(mockServletContext);
+  protected HttpServletRequest getMockedRequest() {
+    return createMockRequestWithServletContext(mockServletContext);
+  }
+
+  // helper methods ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  private ServletContext createTrackingServletContext() {
+    ServletContext ctx = mock(ServletContext.class);
+    Map<String, Object> attrs = new HashMap<>();
+    doAnswer(invocation -> {
+      attrs.put(invocation.getArgument(0), invocation.getArgument(1));
+      return null;
+    }).when(ctx).setAttribute(anyString(), any());
+    when(ctx.getAttribute(any())).thenAnswer(invocation -> attrs.get(invocation.getArgument(0)));
+    return ctx;
+  }
+
+  private HttpServletRequest createMockRequestWithServletContext(ServletContext servletContext) {
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    when(request.getServletContext()).thenReturn(servletContext);
+    when(request.getServletPath()).thenReturn("");
+    when(request.getPathInfo()).thenReturn(null);
+    when(request.getRemoteAddr()).thenReturn("127.0.0.1");
+    return request;
   }
 
 }

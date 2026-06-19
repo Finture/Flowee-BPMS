@@ -17,18 +17,19 @@
 package com.finture.bpm.spring.boot.starter.security.oauth2.impl;
 
 import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
-import org.springframework.boot.autoconfigure.security.oauth2.client.ClientsConfiguredCondition;
+import org.springframework.boot.autoconfigure.condition.SpringBootCondition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 
 /**
- * Condition that matches if no {@code spring.security.oauth2.client.registration} properties are defined
- * by inverting the outcome of {@link ClientsConfiguredCondition}.
+ * Condition that matches if no {@link ClientRegistrationRepository} bean is configured.
  */
-public class ClientsNotConfiguredCondition extends ClientsConfiguredCondition {
+public class ClientsNotConfiguredCondition extends SpringBootCondition {
   @Override
   public ConditionOutcome getMatchOutcome(ConditionContext context, AnnotatedTypeMetadata metadata) {
-    var matchOutcome = super.getMatchOutcome(context, metadata);
-    return new ConditionOutcome(!matchOutcome.isMatch(), matchOutcome.getConditionMessage());
+    String[] beanNames = context.getBeanFactory().getBeanNamesForType(ClientRegistrationRepository.class);
+    boolean configured = beanNames.length > 0;
+    return new ConditionOutcome(!configured, "ClientRegistrationRepository " + (configured ? "is" : "is not") + " configured");
   }
 }

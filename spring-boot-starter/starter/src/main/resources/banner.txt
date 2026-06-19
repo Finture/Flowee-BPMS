@@ -7,5 +7,5 @@ ______ _                         _______________  ___ _____
 \_|   |_|\___/ \_/\_/ \___|\___| \____/\_|   \_|  |_/\____/
 
   Spring-Boot: ${spring-boot.formatted-version}
-  Flowee BPMS: ${camunda.bpm.formatted-version}
+  Flowee BPMS: ${flowee-bpms.bpm.formatted-version}
   Flowee BPMS Spring Boot Starter: (v@project.version@)

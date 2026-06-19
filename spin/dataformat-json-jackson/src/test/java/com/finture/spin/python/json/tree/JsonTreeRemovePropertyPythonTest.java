@@ -18,11 +18,13 @@ package com.finture.spin.python.json.tree;
 
 import com.finture.spin.impl.test.ScriptEngine;
 import com.finture.spin.json.tree.JsonTreeRemovePropertyScriptTest;
+import org.junit.Ignore;
 
 /**
  * @author Thorben Lindhauer
  *
  */
+@Ignore("Python script engine (Nashorn/Jython) is not available in Java 25")
 @ScriptEngine("python")
 public class JsonTreeRemovePropertyPythonTest extends JsonTreeRemovePropertyScriptTest {
 

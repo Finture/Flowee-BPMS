@@ -18,17 +18,20 @@ package com.finture.bpm.spring.boot.starter.security.oauth2;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CamundaBpmSampleApplicationIT extends AbstractSpringSecurityIT {
 
-  @Autowired
-  private TestRestTemplate testRestTemplate;
+  private RestTemplate restTemplate = new RestTemplate();
+
+  @Value("${local.server.port}")
+  private int port;
 
   @Autowired
   private WebApplicationContext webApplicationContext;
@@ -45,7 +48,7 @@ public class CamundaBpmSampleApplicationIT extends AbstractSpringSecurityIT {
   public void testWebappApiIsAvailableAndRequiresAuthorization() {
     // given oauth2 client disabled
     // when calling the webapp api
-    ResponseEntity<String> entity = testRestTemplate.getForEntity(baseUrl + "/camunda/api/engine/engine/default/user", String.class);
+    ResponseEntity<String> entity = restTemplate.getForEntity(baseUrl + "/camunda/api/engine/engine/default/user", String.class);
     // then webapp api returns unauthorized
     assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
   }
@@ -54,7 +57,7 @@ public class CamundaBpmSampleApplicationIT extends AbstractSpringSecurityIT {
   public void testRestApiIsAvailable() {
     // given oauth2 client disabled
     // when calling the rest api
-    ResponseEntity<String> entity = testRestTemplate.getForEntity(baseUrl + "/engine-rest/engine/", String.class);
+    ResponseEntity<String> entity = restTemplate.getForEntity(baseUrl + "/engine-rest/engine/", String.class);
     // then rest api is accessible
     assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     assertThat(entity.getBody()).isEqualTo(EXPECTED_NAME_DEFAULT);

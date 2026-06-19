@@ -19,9 +19,9 @@ package com.finture.bpm.spring.boot.starter.rest;
 import com.finture.bpm.engine.rest.filter.CacheControlFilter;
 import com.finture.bpm.engine.rest.filter.EmptyBodyFilter;
 import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
+import jakarta.ws.rs.ApplicationPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.web.servlet.JerseyApplicationPath;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 
 import jakarta.servlet.DispatcherType;
@@ -45,12 +45,13 @@ public class CamundaBpmRestInitializer implements ServletContextInitializer {
 
   private ServletContext servletContext;
 
-  private JerseyApplicationPath applicationPath;
+  private final String restApiPath;
 
   private final FloweeBPMSBpmProperties properties;
 
-  public CamundaBpmRestInitializer(JerseyApplicationPath applicationPath, FloweeBPMSBpmProperties properties) {
-    this.applicationPath = applicationPath;
+  public CamundaBpmRestInitializer(CamundaJerseyResourceConfig resourceConfig, FloweeBPMSBpmProperties properties) {
+    ApplicationPath annotation = resourceConfig.getClass().getAnnotation(ApplicationPath.class);
+    this.restApiPath = annotation != null ? annotation.value() : "/engine-rest";
     this.properties = properties;
   }
 
@@ -60,7 +61,7 @@ public class CamundaBpmRestInitializer implements ServletContextInitializer {
 
     properties.getRestApi().getFetchAndLock().getInitParams().forEach(servletContext::setInitParameter);
 
-    String restApiPathPattern = applicationPath.getUrlMapping();
+    String restApiPathPattern = restApiPath + "/*";
 
     registerFilter("EmptyBodyFilter", EmptyBodyFilter.class, restApiPathPattern);
     registerFilter("CacheControlFilter", CacheControlFilter.class, restApiPathPattern);

@@ -18,11 +18,13 @@ package com.finture.spin.python.xml.dom;
 
 import com.finture.spin.impl.test.ScriptEngine;
 import com.finture.spin.xml.dom.XmlDomCreateScriptTest;
+import org.junit.Ignore;
 
 /**
  * @author Daniel Meyer
  *
  */
+@Ignore("Python script engine (Nashorn/Jython) is not available in Java 25")
 @ScriptEngine("python")
 public class XmlDomCreatePythonTest extends XmlDomCreateScriptTest {
 

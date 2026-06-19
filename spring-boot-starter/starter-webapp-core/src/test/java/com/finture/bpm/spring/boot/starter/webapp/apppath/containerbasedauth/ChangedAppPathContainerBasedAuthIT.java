@@ -18,13 +18,13 @@ package com.finture.bpm.spring.boot.starter.webapp.apppath.containerbasedauth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,15 +39,17 @@ public class ChangedAppPathContainerBasedAuthIT {
 
   protected static final String MY_APP_PATH = "/my/application/path";
 
-  @Autowired
-  protected TestRestTemplate testRestTemplate;
+  private RestTemplate restTemplate = new RestTemplate();
+
+  @Value("${local.server.port}")
+  private int port;
 
   @Test
   public void shouldCheckContainerBasedAuthFilterAvailable() {
     // given
 
     // when
-    ResponseEntity<String> response = testRestTemplate.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/app/welcome/default/", String.class);
 
     // then

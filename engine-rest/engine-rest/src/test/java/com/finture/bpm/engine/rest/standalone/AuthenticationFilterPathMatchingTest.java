@@ -18,23 +18,31 @@ package com.finture.bpm.engine.rest.standalone;
 
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyBoolean;
+import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.anyList;
 import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Response.Status;
 
 import com.finture.bpm.engine.AuthorizationService;
@@ -59,10 +67,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.springframework.mock.web.MockFilterChain;
-import org.springframework.mock.web.MockFilterConfig;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
 
 @RunWith(Parameterized.class)
 public class AuthenticationFilterPathMatchingTest extends AbstractRestServiceTest {
@@ -177,16 +181,17 @@ public class AuthenticationFilterPathMatchingTest extends AbstractRestServiceTes
   }
 
   protected void setupFilter() throws ServletException {
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(ProcessEngineAuthenticationFilter.AUTHENTICATION_PROVIDER_PARAM, HttpBasicAuthenticationProvider.class.getName());
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(ProcessEngineAuthenticationFilter.AUTHENTICATION_PROVIDER_PARAM))
+        .thenReturn(HttpBasicAuthenticationProvider.class.getName());
     authenticationFilter = new ProcessEngineAuthenticationFilter();
     authenticationFilter.init(config);
   }
 
-  protected void applyFilter(MockHttpServletRequest request, MockHttpServletResponse response, String username, String password) throws IOException, ServletException {
+  protected void applyFilter(HttpServletRequest request, HttpServletResponse response, String username, String password) throws IOException, ServletException {
     String credentials = username + ":" + password;
-    request.addHeader("Authorization", "Basic " + new String(Base64.encodeBase64(credentials.getBytes())));
-    FilterChain filterChain = new MockFilterChain();
+    when(request.getHeader("Authorization")).thenReturn("Basic " + new String(Base64.encodeBase64(credentials.getBytes())));
+    FilterChain filterChain = mock(FilterChain.class);
 
     authenticationFilter.doFilter(request, response, filterChain);
   }
@@ -197,14 +202,22 @@ public class AuthenticationFilterPathMatchingTest extends AbstractRestServiceTes
       when(identityServiceMock.checkPassword(MockProvider.EXAMPLE_USER_ID, MockProvider.EXAMPLE_USER_PASSWORD)).thenReturn(true);
     }
 
-    MockHttpServletResponse response = new MockHttpServletResponse();
-    MockHttpServletRequest request = new MockHttpServletRequest();
-    request.setRequestURI(SERVICE_PATH + servletPath + requestUrl);
-    request.setContextPath(SERVICE_PATH);
-    request.setServletPath(servletPath);
+    AtomicInteger responseStatus = new AtomicInteger(200);
+    HttpServletResponse response = mock(HttpServletResponse.class);
+    doAnswer(invocation -> {
+      responseStatus.set(invocation.getArgument(0));
+      return null;
+    }).when(response).setStatus(anyInt());
+    StringWriter stringWriter = new StringWriter();
+    when(response.getWriter()).thenReturn(new PrintWriter(stringWriter));
+
+    HttpServletRequest request = mock(HttpServletRequest.class);
+    when(request.getRequestURI()).thenReturn(SERVICE_PATH + servletPath + requestUrl);
+    when(request.getContextPath()).thenReturn(SERVICE_PATH);
+    when(request.getServletPath()).thenReturn(servletPath);
     applyFilter(request, response, MockProvider.EXAMPLE_USER_ID, MockProvider.EXAMPLE_USER_PASSWORD);
 
-    Assert.assertEquals(Status.OK.getStatusCode(), response.getStatus());
+    Assert.assertEquals(Status.OK.getStatusCode(), responseStatus.get());
 
     if (authenticationExpected) {
       verify(identityServiceMock).setAuthentication(MockProvider.EXAMPLE_USER_ID, groupIds, tenantIds);

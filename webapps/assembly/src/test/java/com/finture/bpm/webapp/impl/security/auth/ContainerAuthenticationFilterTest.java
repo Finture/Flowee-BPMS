@@ -16,9 +16,11 @@
  */
 package com.finture.bpm.webapp.impl.security.auth;
 
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.anyBoolean;
-import static org.mockito.Mockito.anyString;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
@@ -30,6 +32,9 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -62,11 +67,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.MockedStatic;
-import org.springframework.mock.web.MockFilterChain;
-import org.springframework.mock.web.MockFilterConfig;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.mock.web.MockServletContext;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @RunWith(Parameterized.class)
 public class ContainerAuthenticationFilterTest {
@@ -205,18 +211,19 @@ public class ContainerAuthenticationFilterTest {
   }
 
   protected void setupFilter() throws ServletException {
-    MockFilterConfig config = new MockFilterConfig();
-    config.addInitParameter(ProcessEngineAuthenticationFilter.AUTHENTICATION_PROVIDER_PARAM, ContainerBasedAuthenticationProvider.class.getName());
+    FilterConfig config = mock(FilterConfig.class);
+    when(config.getInitParameter(ProcessEngineAuthenticationFilter.AUTHENTICATION_PROVIDER_PARAM)).thenReturn(ContainerBasedAuthenticationProvider.class.getName());
+    when(config.getServletContext()).thenReturn(mock(ServletContext.class));
     authenticationFilter = new ContainerBasedAuthenticationFilter();
     authenticationFilter.init(config);
   }
 
-  protected void applyFilter(MockHttpServletRequest request, MockHttpServletResponse response, String username) throws IOException, ServletException {
+  protected void applyFilter(HttpServletRequest request, HttpServletResponse response, String username) throws IOException, ServletException {
     Principal principal = mock(Principal.class);
     when(principal.getName()).thenReturn(username);
-    request.setUserPrincipal(principal);
-    request.setMethod("GET");
-    FilterChain filterChain = new MockFilterChain();
+    when(request.getUserPrincipal()).thenReturn(principal);
+    when(request.getMethod()).thenReturn("GET");
+    FilterChain filterChain = mock(FilterChain.class);
     authenticationFilter.doFilter(request, response, filterChain);
   }
 
@@ -248,22 +255,42 @@ public class ContainerAuthenticationFilterTest {
       when(authentications.getAuthenticationForProcessEngine(anyString())).thenReturn(null);
     }
 
-    MockHttpServletResponse response = new MockHttpServletResponse();
-    MockHttpServletRequest request = null;
+    HttpServletResponse response = mock(HttpServletResponse.class);
+    AtomicInteger responseStatus = new AtomicInteger(200);
+    doAnswer(invocation -> {
+      responseStatus.set(invocation.getArgument(0));
+      return null;
+    }).when(response).setStatus(anyInt());
+    when(response.getStatus()).thenAnswer(invocation -> responseStatus.get());
+
+    HttpServletRequest request = null;
 
     if (!applicationPath.isEmpty()) {
-      MockServletContext mockServletContext = new MockServletContext();
-      request = new MockHttpServletRequest(mockServletContext);
+      ServletContext mockServletContext = mock(ServletContext.class);
+      Map<String, Object> servletContextAttrs = new HashMap<>();
+      doAnswer(invocation -> {
+        servletContextAttrs.put(invocation.getArgument(0), invocation.getArgument(1));
+        return null;
+      }).when(mockServletContext).setAttribute(anyString(), any());
+      when(mockServletContext.getAttribute(any())).thenAnswer(invocation -> servletContextAttrs.get(invocation.getArgument(0)));
+
+      request = mock(HttpServletRequest.class);
+      HttpSession session = mock(HttpSession.class);
+      when(request.getSession()).thenReturn(session);
+      when(request.getServletContext()).thenReturn(mockServletContext);
       requestUrl = applicationPath + requestUrl;
       ServletContextUtil.setAppPath(applicationPath, mockServletContext);
 
     } else {
-      request = new MockHttpServletRequest();
+      request = mock(HttpServletRequest.class);
+      HttpSession session = mock(HttpSession.class);
+      when(request.getSession()).thenReturn(session);
+      when(request.getServletContext()).thenReturn(mock(ServletContext.class));
 
     }
 
-    request.setRequestURI(SERVICE_PATH  + requestUrl);
-    request.setContextPath(SERVICE_PATH);
+    when(request.getRequestURI()).thenReturn(SERVICE_PATH  + requestUrl);
+    when(request.getContextPath()).thenReturn(SERVICE_PATH);
     applyFilter(request, response, MockProvider.EXAMPLE_USER_ID);
 
     Assert.assertEquals(Status.OK.getStatusCode(), response.getStatus());

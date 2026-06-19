@@ -25,11 +25,11 @@ import com.finture.bpm.spring.boot.starter.webapp.WebappTestApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(
@@ -39,7 +39,7 @@ public class RequestTrailingSlashIT {
 
   public static final List<String> REDIRECT_PATHS = List.of("/app", "/app/cockpit", "/app/admin", "/app/tasklist", "/app/welcome");
 
-  TestRestTemplate client = new TestRestTemplate();
+  RestTemplate client = new RestTemplate();
 
   @LocalServerPort
   public int port;

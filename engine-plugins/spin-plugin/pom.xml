@@ -27,6 +27,11 @@
     <dependency>
       <groupId>com.finture.bpm</groupId>
       <artifactId>flowee-bpms-engine</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.finture.bpm</groupId>
+      <artifactId>flowee-bpms-engine</artifactId>
       <classifier>tests</classifier>
       <scope>test</scope>
       <version>${project.version}</version>

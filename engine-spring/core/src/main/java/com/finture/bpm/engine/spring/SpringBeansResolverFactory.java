@@ -25,6 +25,7 @@ import com.finture.bpm.engine.delegate.VariableScope;
 import com.finture.bpm.engine.impl.scripting.engine.Resolver;
 import com.finture.bpm.engine.impl.scripting.engine.ResolverFactory;
 import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.support.ScopeNotActiveException;
 import org.springframework.context.ApplicationContext;
 
 /**
@@ -41,8 +42,6 @@ import org.springframework.context.ApplicationContext;
 public class SpringBeansResolverFactory implements ResolverFactory, Resolver {
 
   protected static Logger LOG = Logger.getLogger(SpringBeansResolverFactory.class.getName());
-
-  protected static String SCOPE_NOT_ACTIVE_EXCEPTION = "org.springframework.beans.factory.support.ScopeNotActiveException";
 
   private ApplicationContext applicationContext;
   private Set<String> keySet;
@@ -75,9 +74,7 @@ public class SpringBeansResolverFactory implements ResolverFactory, Resolver {
         return applicationContext.getBean((String) key);
       } catch (BeanCreationException ex) {
         // Only swallow exceptions for beans with inactive scope.
-        // Unfortunately, we cannot use ScopeNotActiveException directly as
-        // it is only available starting with Spring 5.3, but we still support Spring 4.
-        if (SCOPE_NOT_ACTIVE_EXCEPTION.equals(ex.getClass().getName())) {
+        if (ex instanceof ScopeNotActiveException) {
           LOG.info("Bean '" + key + "' cannot be accessed since scope is not active. Instead, null is returned. "
               + "Full exception message: " + ex.getMessage());
           return null;

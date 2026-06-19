@@ -16,19 +16,23 @@
  */
 package com.finture.bpm.run.test;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import com.finture.bpm.run.FloweeBPMSBpmRun;
 import com.finture.bpm.run.test.util.LoggingInterceptor;
 import org.junit.Before;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.ResponseErrorHandler;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { FloweeBPMSBpmRun.class }, webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -36,15 +40,48 @@ import org.springframework.test.context.junit4.SpringRunner;
 public abstract class AbstractRestTest {
 
   public static String CONTEXT_PATH = "/engine-rest";
-  
-  @Autowired
-  protected TestRestTemplate testRestTemplate;
+
+  protected RestTemplate testRestTemplate;
 
   @LocalServerPort
   protected int localPort;
 
   @Before
   public void enableRequestResponseLogging() {
-    testRestTemplate.getRestTemplate().setInterceptors(Collections.singletonList(new LoggingInterceptor()));
+    testRestTemplate = new RestTemplate();
+    testRestTemplate.setUriTemplateHandler(
+        new DefaultUriBuilderFactory("http://localhost:" + localPort));
+    testRestTemplate.setInterceptors(Collections.singletonList(new LoggingInterceptor()));
+    // Don't throw on 4xx responses so tests can assert on status codes directly
+    testRestTemplate.setErrorHandler(new NoOpErrorHandler());
+  }
+
+  protected RestTemplate withBasicAuth(String username, String password) {
+    RestTemplate authTemplate = new RestTemplate();
+    authTemplate.setUriTemplateHandler(testRestTemplate.getUriTemplateHandler());
+    List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>(testRestTemplate.getInterceptors());
+    interceptors.add((request, body, execution) -> {
+      request.getHeaders().setBasicAuth(username, password);
+      return execution.execute(request, body);
+    });
+    authTemplate.setInterceptors(interceptors);
+    authTemplate.setErrorHandler(new NoOpErrorHandler());
+    return authTemplate;
+  }
+
+  /**
+   * Error handler that never throws, allowing tests to assert on status codes directly.
+   */
+  private static class NoOpErrorHandler implements ResponseErrorHandler {
+    @Override
+    public boolean hasError(org.springframework.http.client.ClientHttpResponse response) {
+      return false;
+    }
+
+    @Override
+    public void handleError(java.net.URI url, org.springframework.http.HttpMethod method,
+        org.springframework.http.client.ClientHttpResponse response) {
+      // no-op
+    }
   }
 }

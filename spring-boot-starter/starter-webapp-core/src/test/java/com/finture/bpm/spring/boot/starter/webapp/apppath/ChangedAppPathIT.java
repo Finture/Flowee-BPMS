@@ -21,14 +21,13 @@ import com.finture.bpm.spring.boot.starter.webapp.filter.util.HttpClientRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -54,8 +53,7 @@ public class ChangedAppPathIT {
   @LocalServerPort
   public int port;
 
-  @Autowired
-  protected TestRestTemplate restClient;
+  private RestTemplate restClient = new RestTemplate();
 
   @Test
   public void shouldCheckPresenceOfCsrfPreventionFilter() {
@@ -93,7 +91,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/app/tasklist/default", String.class);
 
     // then
@@ -109,7 +107,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/app/admin/styles/styles.css", String.class);
 
     // then
@@ -124,7 +122,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/api/engine/engine/", String.class);
 
     // then
@@ -136,7 +134,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/api/engine/engine/default/group/count", String.class);
 
     // then
@@ -148,7 +146,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/lib/deps.js", String.class);
 
     // then
@@ -160,7 +158,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/app/admin/styles/user-styles.css", String.class);
 
     // then
@@ -172,7 +170,7 @@ public class ChangedAppPathIT {
     // given
 
     // when
-    ResponseEntity<String> response = restClient.getForEntity(MY_APP_PATH +
+    ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
         "/api/admin/plugin/adminPlugins/static/app/plugin.css", String.class);
 
     // then

@@ -1,4 +1,4 @@
-camunda.bpm:
+flowee-bpms.bpm:
   admin-user:
     id: demo
     password: demo
