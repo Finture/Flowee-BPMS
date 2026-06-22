@@ -2,7 +2,7 @@
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.finture.bpm/flowee-bpms-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.finture.bpm/flowee-bpms-parent) [![flowee bpms manual latest](https://img.shields.io/badge/manual-latest-brown.svg)](https://finture.com/flowee-bpms/docs/manual/latest/) [![License](https://img.shields.io/github/license/Finture/Flowee-BPMS?color=blue&logo=apache)](https://github.com/Finture/Flowee-BPMS/blob/master/LICENSE)
 
-Flowee BPMS 7 is a flexible framework for workflow and process automation. Its core is a native BPMN 2.0 process engine that runs inside the Java Virtual Machine. It can be embedded inside any Java application and any Runtime Container. The supported Spring integration line is Spring Boot 4 / Spring Framework 7 / Jakarta EE 11. On top of the process engine, you can choose from a stack of tools for human workflow management, operations and monitoring.
+Flowee BPMS is a flexible framework for workflow and process automation. Its core is a native BPMN 2.0 process engine that runs inside the Java Virtual Machine. It can be embedded inside any Java application and any Runtime Container. The supported Spring integration line is Spring Boot 4 / Spring Framework 7 / Jakarta EE 11. On top of the process engine, you can choose from a stack of tools for human workflow management, operations and monitoring.
 
 - Web Site: https://www.finture.com/flowee-bpms/
 - Getting Started: https://finture.com/flowee-bpms/docs/get-started/
