@@ -169,7 +169,7 @@
                 </goals>
                 <phase>generate-test-resources</phase>
                 <configuration>
-                  <includeArtifactIds>camunda-bpm-run</includeArtifactIds>
+                  <includeArtifactIds>flowee-bpms-bpm-run</includeArtifactIds>
                   <overWriteSnapshots>true</overWriteSnapshots>
                   <excludeTransitive>true</excludeTransitive>
                   <outputDirectory>${run-home}</outputDirectory>
@@ -193,25 +193,6 @@
                   <overWriteSnapshots>true</overWriteSnapshots>
                   <stripVersion>true</stripVersion>
                   <outputDirectory>${example-plugin-home}</outputDirectory>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>com.googlecode.maven-download-plugin</groupId>
-            <artifactId>download-maven-plugin</artifactId>
-            <version>1.3.0</version>
-            <executions>
-              <execution>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>wget</goal>
-                </goals>
-                <configuration>
-                  <url>https://chromedriver.storage.googleapis.com/${version.chromedriver}/chromedriver_${os.type}.zip</url>
-                  <outputFileName>chromedriver.zip</outputFileName>
-                  <unpack>true</unpack>
-                  <outputDirectory>${project.build.directory}/chromedriver</outputDirectory>
                 </configuration>
               </execution>
             </executions>

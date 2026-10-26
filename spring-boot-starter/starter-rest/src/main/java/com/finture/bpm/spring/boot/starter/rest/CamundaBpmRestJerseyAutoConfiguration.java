@@ -20,10 +20,12 @@ import com.finture.bpm.engine.rest.impl.FetchAndLockContextListener;
 import com.finture.bpm.spring.boot.starter.FloweeBPMSBpmAutoConfiguration;
 import com.finture.bpm.spring.boot.starter.property.FloweeBPMSBpmProperties;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 
 @AutoConfigureAfter({ FloweeBPMSBpmAutoConfiguration.class })
+@AutoConfigureBefore(name = "org.springframework.boot.jersey.autoconfigure.JerseyAutoConfiguration")
 public class CamundaBpmRestJerseyAutoConfiguration {
 
   @Bean

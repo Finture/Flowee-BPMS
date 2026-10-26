@@ -35,7 +35,7 @@ import static org.assertj.core.api.Assertions.fail;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { FilterTestApp.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    properties = {"server.error.include-message=always"})
+    properties = {"spring.web.error.include-message=always"})
 @DirtiesContext
 public class CsrfPreventionIT {
 

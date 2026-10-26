@@ -24,14 +24,11 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
-import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Locale;
 
 /**
  * NOTE: copied from
@@ -47,29 +44,14 @@ public class AbstractWebappUiIT extends AbstractWebIT {
 
   @BeforeClass
   public static void createDriver() {
-    String chromeDriverExecutable = "chromedriver";
-    if (System.getProperty( "os.name" ).toLowerCase(Locale.US).indexOf("windows") > -1) {
-      chromeDriverExecutable += ".exe";
-    }
-
-    File chromeDriver = new File("target/chromedriver/" + chromeDriverExecutable);
-    if (!chromeDriver.exists()) {
-      throw new RuntimeException("chromedriver could not be located!");
-    }
-
-    ChromeDriverService chromeDriverService = new ChromeDriverService.Builder()
-        .withVerbose(true)
-        .usingAnyFreePort()
-        .usingDriverExecutable(chromeDriver)
-        .build();
-
     ChromeOptions chromeOptions = new ChromeOptions()
         .addArguments("--headless=new")
         .addArguments("--window-size=1920,1200")
         .addArguments("--remote-allow-origins=*")
         .addArguments("--disable-dev-shm-usage");
 
-    driver = new ChromeDriver(chromeDriverService, chromeOptions);
+    // the chromedriver matching the installed Chrome is resolved by Selenium Manager
+    driver = new ChromeDriver(chromeOptions);
   }
 
   public static ExpectedCondition<Boolean> currentURIIs(final URI pageURI) {

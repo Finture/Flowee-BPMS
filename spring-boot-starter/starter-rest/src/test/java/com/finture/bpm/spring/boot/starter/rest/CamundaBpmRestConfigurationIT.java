@@ -27,7 +27,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
@@ -47,7 +49,10 @@ public class CamundaBpmRestConfigurationIT {
   @Test
   public void processDefinitionTest() {
     // start process
-    restTemplate.postForEntity("http://localhost:" + port + "/engine-rest/start/process", HttpEntity.EMPTY, String.class);
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    restTemplate.postForEntity("http://localhost:" + port + "/engine-rest/engine/{engineName}/process-definition/key/TestProcess/start",
+        new HttpEntity<>("{}", headers), String.class, floweeBPMSBpmProperties.getProcessEngineName());
 
     ResponseEntity<ProcessDefinitionDto> entity = restTemplate.getForEntity("http://localhost:" + port + "/engine-rest/engine/{engineName}/process-definition/key/TestProcess/",
         ProcessDefinitionDto.class, floweeBPMSBpmProperties.getProcessEngineName());
