@@ -21,6 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -29,6 +31,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CamundaBpmSampleApplicationIT extends AbstractSpringSecurityIT {
 
   private RestTemplate restTemplate = new RestTemplate();
+
+  {
+    // assertions inspect 4xx responses (e.g. 401) instead of expecting an exception
+    restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {
+      @Override
+      public boolean hasError(ClientHttpResponse response) {
+        return false;
+      }
+    });
+  }
 
   @Value("${local.server.port}")
   private int port;

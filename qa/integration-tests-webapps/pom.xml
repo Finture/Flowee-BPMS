@@ -26,7 +26,6 @@
     <http.ctx-path.webapp>camunda/</http.ctx-path.webapp>
     <http.ctx-path.rest>engine-rest/</http.ctx-path.rest>
 
-    <version.chromedriver>112.0.5615.49</version.chromedriver>
 
     <!-- default os -->
     <os.type>linux64</os.type>
@@ -224,25 +223,6 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>download-maven-plugin</artifactId>
-        <version>1.3.0</version>
-        <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>https://chromedriver.storage.googleapis.com/${version.chromedriver}/chromedriver_${os.type}.zip</url>
-              <outputFileName>chromedriver.zip</outputFileName>
-              <unpack>true</unpack>
-              <outputDirectory>${project.build.directory}/chromedriver</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 

@@ -25,8 +25,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -54,6 +56,16 @@ public class ChangedAppPathIT {
   public int port;
 
   private RestTemplate restClient = new RestTemplate();
+
+  {
+    // assertions inspect 4xx responses (e.g. 401) instead of expecting an exception
+    restClient.setErrorHandler(new DefaultResponseErrorHandler() {
+      @Override
+      public boolean hasError(ClientHttpResponse response) {
+        return false;
+      }
+    });
+  }
 
   @Test
   public void shouldCheckPresenceOfCsrfPreventionFilter() {
@@ -108,7 +120,7 @@ public class ChangedAppPathIT {
 
     // when
     ResponseEntity<String> response = restClient.getForEntity("http://localhost:" + port + MY_APP_PATH +
-        "/app/admin/styles/styles.css", String.class);
+        "/app/admin/styles/user-styles.css", String.class);
 
     // then
     List<String> cacheControlHeaders = response.getHeaders()

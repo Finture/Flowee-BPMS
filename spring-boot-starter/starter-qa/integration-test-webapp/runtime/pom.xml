@@ -18,7 +18,6 @@
     <version.jaxb-api>2.3.1</version.jaxb-api>
     <version.jersey-apache-client>1.15</version.jersey-apache-client>
     <version.junit>4.12</version.junit>
-    <version.chromedriver>112.0.5615.49</version.chromedriver>
 
     <http.port>58080</http.port>
     <http.ctx-path.webapp>flowee-bpms/</http.ctx-path.webapp>
@@ -56,6 +55,11 @@
           <groupId>com.finture.bpm.springboot.project</groupId>
           <artifactId>qa-webapp-invoice-example</artifactId>
           <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
         <dependency>
@@ -174,25 +178,6 @@
             </executions>
           </plugin>
 
-          <plugin>
-            <groupId>com.googlecode.maven-download-plugin</groupId>
-            <artifactId>download-maven-plugin</artifactId>
-            <version>1.3.0</version>
-            <executions>
-              <execution>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>wget</goal>
-                </goals>
-                <configuration>
-                  <url>https://chromedriver.storage.googleapis.com/${version.chromedriver}/chromedriver_${os.type}.zip</url>
-                  <outputFileName>chromedriver.zip</outputFileName>
-                  <unpack>true</unpack>
-                  <outputDirectory>${project.build.directory}/chromedriver</outputDirectory>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
 
         <testResources>

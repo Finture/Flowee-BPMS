@@ -16,6 +16,7 @@
  */
 package com.finture.bpm.spring.boot.starter;
 
+import java.util.regex.Pattern;
 import static org.junit.Assert.assertTrue;
 
 import com.finture.bpm.spring.boot.starter.test.nonpa.TestApplication;
@@ -39,13 +40,13 @@ public class CamundaBpmActuatorConfigurationIT extends AbstractCamundaAutoConfig
   @Test
   public void jobExecutorHealthIndicatorTest() {
     final String body = getHealthBody();
-    assertTrue("wrong body " + body, body.contains("jobExecutor\":{\"status\":\"UP\""));
+    assertTrue("wrong body " + body, Pattern.compile("\"jobExecutor\":\\{\"details\":\\{\"jobExecutor\":\\{[^}]*\\}\\},\"status\":\"UP\"\\}").matcher(body).find());
   }
 
   @Test
   public void processEngineHealthIndicatorTest() {
     final String body = getHealthBody();
-    assertTrue("wrong body " + body, body.contains("processEngine\":{\"status\":\"UP\",\"details\":{\"name\":\"testEngine\"}}"));
+    assertTrue("wrong body " + body, body.contains("processEngine\":{\"details\":{\"name\":\"testEngine\"},\"status\":\"UP\"}"));
   }
 
   private String getHealthBody() {

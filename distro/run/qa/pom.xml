@@ -21,11 +21,20 @@
     <version.jersey-apache-client>1.15</version.jersey-apache-client>
     <version.httpcomponents>5.3.1</version.httpcomponents>
     <version.junit>4.13.1</version.junit>
-    <version.chromedriver>112.0.5615.49</version.chromedriver>
+    <!-- rest-assured 5.4.0 is built against Groovy 4; Groovy 5 breaks its closure handling -->
+    <version.groovy.rest-assured>4.0.30</version.groovy.rest-assured>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+
+      <dependency>
+        <groupId>org.apache.groovy</groupId>
+        <artifactId>groovy-bom</artifactId>
+        <version>${version.groovy.rest-assured}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
@@ -38,7 +47,7 @@
       <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.10.0</version>
+        <version>${version.selenium}</version>
       </dependency>
 
       <!-- using 4.13 in order to have @BeforeParam/@AfterParam for parameterized 

@@ -98,7 +98,7 @@ public class CamundaBpmSecurityAutoConfigOauth2ApplicationIT extends AbstractSpr
         // then oauth2 redirection occurs
         .andExpect(MockMvcResultMatchers.status().isFound())
         .andExpect(MockMvcResultMatchers.header().exists("Location"))
-        .andExpect(MockMvcResultMatchers.header().string("Location", baseUrl + "/oauth2/authorization/" + PROVIDER));
+        .andExpect(MockMvcResultMatchers.header().string("Location", "/oauth2/authorization/" + PROVIDER));
   }
 
   @Test
@@ -130,7 +130,7 @@ public class CamundaBpmSecurityAutoConfigOauth2ApplicationIT extends AbstractSpr
         // then authorization fails and redirection occurs
         .andExpect(MockMvcResultMatchers.status().isFound())
         .andExpect(MockMvcResultMatchers.header().exists("Location"))
-        .andExpect(MockMvcResultMatchers.header().string("Location", baseUrl + "/oauth2/authorization/" + PROVIDER));
+        .andExpect(MockMvcResultMatchers.header().string("Location", "/oauth2/authorization/" + PROVIDER));
 
     String expectedWarn = "Authorize failed for '" + UNAUTHORIZED_USER + "'";
     assertThat(loggingRule.getFilteredLog(expectedWarn)).hasSize(1);

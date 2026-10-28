@@ -71,7 +71,7 @@
 
     <version.arquillian>1.9.1.Final</version.arquillian>
     <version.shrinkwrap.resolvers>2.2.2</version.shrinkwrap.resolvers>
-    <version.selenium>4.10.0</version.selenium>
+    <version.selenium>4.35.0</version.selenium>
     <version.freemarker>2.3.34</version.freemarker>
     <version.build-helper>3.2.0</version.build-helper>
     <version.cglib>3.3.0</version.cglib>

@@ -52,7 +52,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import java.util.Map;
 
 @AutoConfigureOrder(CamundaSpringSecurityOAuth2AutoConfiguration.CAMUNDA_OAUTH2_ORDER)
-@AutoConfigureAfter({ FloweeBPMSBpmAutoConfiguration.class, SpringProcessEngineServicesConfiguration.class })
+@AutoConfigureAfter(value = { FloweeBPMSBpmAutoConfiguration.class, SpringProcessEngineServicesConfiguration.class },
+    // the ClientRegistrationRepository checked by @ConditionalOnBean is registered by Spring Boot's OAuth2 client auto-configuration
+    name = "org.springframework.boot.security.oauth2.client.autoconfigure.OAuth2ClientAutoConfiguration")
 @ConditionalOnBean({ FloweeBPMSBpmProperties.class, ClientRegistrationRepository.class })
 @EnableConfigurationProperties(OAuth2Properties.class)
 public class CamundaSpringSecurityOAuth2AutoConfiguration {

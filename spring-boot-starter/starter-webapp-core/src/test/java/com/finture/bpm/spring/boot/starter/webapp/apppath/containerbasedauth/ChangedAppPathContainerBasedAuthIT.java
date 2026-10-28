@@ -22,8 +22,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -40,6 +42,16 @@ public class ChangedAppPathContainerBasedAuthIT {
   protected static final String MY_APP_PATH = "/my/application/path";
 
   private RestTemplate restTemplate = new RestTemplate();
+
+  {
+    // assertions inspect 4xx responses (e.g. 401) instead of expecting an exception
+    restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {
+      @Override
+      public boolean hasError(ClientHttpResponse response) {
+        return false;
+      }
+    });
+  }
 
   @Value("${local.server.port}")
   private int port;
